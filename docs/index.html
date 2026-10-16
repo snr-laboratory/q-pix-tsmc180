@@ -1,0 +1,286 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Q-Pix TSMC180 analog front-end: charge, timing, noise and heat at room temperature and 77 K.">
+  <title>Q-Pix in TSMC180 — charge, timing and heat</title>
+  <link rel="stylesheet" href="assets/report.css">
+  <script>window.MathJax={tex:{inlineMath:[['\\(','\\)']],displayMath:[['\\[','\\]']],tags:'ams'},svg:{fontCache:'global'},startup:{typeset:false}};</script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-svg.js"></script>
+  <script defer src="https://cdn.plot.ly/plotly-4.1.1.min.js"></script>
+  <script defer src="data/report-data.js"></script>
+  <script defer src="assets/report.js"></script>
+</head>
+<body>
+<a class="skip-link" href="#report">Skip to the report</a>
+<aside class="sidebar">
+  <a class="brand" href="#overview"><span class="brand-mark">Q</span><span>Q-Pix<span class="brand-sub">TSMC180 / design report</span></span></a>
+  <div class="sidebar-meta">15 October 2026<br>298.15 K &amp; 77 K</div>
+  <nav aria-label="Report contents">
+    <a href="#overview">01 <span>Findings</span></a>
+    <a href="#architecture">02 <span>Architecture &amp; timing</span></a>
+    <a href="#clock">03 <span>Single-clock generator</span></a>
+    <a href="#frequency">04 <span>Clock-rate envelope</span></a>
+    <a href="#detector">05 <span>Historical detector event</span></a>
+    <a href="#waveform">06 <span>Analytic waveform study</span></a>
+    <a href="#charge">07 <span>Charge &amp; calibration</span></a>
+    <a href="#noise">08 <span>Noise &amp; interference</span></a>
+    <a href="#power">09 <span>Heat &amp; energy</span></a>
+    <a href="#startup">10 <span>Startup &amp; stress</span></a>
+    <a href="#limits">11 <span>Limits &amp; next work</span></a>
+    <a href="#evidence">12 <span>Evidence &amp; reproduction</span></a>
+  </nav>
+  <div class="sidebar-foot"><span class="status-dot"></span>Numerical prototype<br><span>Factory room card<br>Exploratory cold card</span></div>
+</aside>
+<main id="report">
+<header class="hero" id="overview">
+  <div class="eyebrow">ANALOG DESIGN NOTE <span>QP180 / 2026-10-15</span></div>
+  <h1>Charge, timing<br>and heat.</h1>
+  <p class="hero-deck">A Q-Pix replenishment front end in TSMC180, evaluated from 1 to 50 MHz at room temperature and 77 K.</p>
+  <div class="hero-grid">
+    <div>
+      <p>The present integration reference combines a continuous PMOS-input CSA and differential preamplifier with a dynamic comparator, static decision capture and calibrated current replenishment. The circuit keeps charge on the feedback capacitor within a working range, without a normal reset switch across that capacitor.</p>
+      <p>The selected point is <strong>10 MHz, 3 pF detector load, 50 fF feedback capacitance and a nominal 0.5 fC quantum</strong>. The current derivative generates its phases from one incoming clock. The report includes the historical detector-current replay, every requested nominal rate/load point, and retained failures above this choice.</p>
+    </div>
+    <div class="operating-card">
+      <div class="card-label">Integration reference</div>
+      <dl><dt>Sampling clock</dt><dd>10 MHz</dd><dt>Supply</dt><dd>1.8 V</dd><dt>Detector / feedback C</dt><dd>3 pF / 50 fF</dd><dt>Charge quantum</dt><dd>0.5 fC ≈ 3121 e⁻</dd><dt>Analog allocation</dt><dd>24 µW / channel</dd><dt>Channel core</dt><dd>102 MOS + shared timing</dd><dt>Incoming clock</dt><dd>One CLK</dd></dl>
+    </div>
+  </div>
+  <div class="finding-strip">
+    <div><strong>30</strong><span>measured nominal points<br>2 temperatures × 3 loads × 5 rates</span></div>
+    <div><strong>10</strong><span>physical single-clock timing points<br>2 temperatures × 5 rates</span></div>
+    <div><strong>38.2479 fC</strong><span>unscaled historical detector event<br>physical replay at both temperatures</span></div>
+  </div>
+  <div class="notice"><strong>Scope.</strong> These are reproducible circuit-model calculations in declared TT cards. Cryogenic noise/CV, silicon behavior, layout/PEX, PVT/mismatch and a complete chip remain outside this qualification. A passing nominal point does not imply that every noise, startup or overload condition has passed there.</div>
+</header>
+
+<section id="architecture">
+  <div class="section-number">02 / CIRCUIT</div><h2>Continuous integration, discrete replenishment</h2>
+  <p>Collected negative detector charge increases the CSA output. When a sampled decision requests replenishment, the opposing current source injects a controlled positive charge. Each recorded one identifies a replenishment operation. The event charge consists of the counted quanta together with stored residual and the measured interference/noise terms.</p>
+  <div class="equation">\[
+    \Delta V_{\mathrm{CSA}}\simeq\frac{\Delta Q}{C_f},
+    \qquad \frac{0.5\,\mathrm{fC}}{50\,\mathrm{fF}}=10\,\mathrm{mV},
+    \qquad I_{\mathrm{capacity,nom}}=f_s Q_{\mathrm{nom}} .
+  \]</div>
+  <p>At the nominal 0.900 V initial output and 0.905 V threshold, the ideal additional charge to the next decision is only <strong>0.25 fC ≈ 1560 electrons</strong>: \(Q_{\mathrm{to\ next}}\simeq C_f(V_{\mathrm{TH}}-V_{\mathrm{out}})\). This state-dependent margin differs from the replenishment quantum. Residual charge, comparator offset/aperture, finite gain and noise prevent treating it as a measured fixed detection threshold.</p>
+  <p>The 0.3/3/6 pF sweep changes <em>external detector capacitance</em>, including any assumed sensor-side wiring. MOS terminal capacitances are additional. The 50 fF feedback capacitor, 50 fF OTA compensation, 20 fF preamplifier output filters and 5 fF regenerative-node loads have separate roles.</p>
+  <p class="scope-note">The 0.5 fC design quantum lies within the 0.3–1.0 fC CMOS target and near the 0.46 fC discrete replenishment measurement in <a href="https://arxiv.org/html/2311.09568v1#S2.SS5" target="_blank" rel="noopener">Miao et al., sections 2.5 and 4.2</a>. The <a href="https://arxiv.org/abs/1809.10213" target="_blank" rel="noopener">original Q-Pix concept</a> also connects charge/time capture, local clocks and resilient dynamic networks. These literature results motivate this architecture; they do not qualify the present ASIC model.</p>
+  <figure class="schematic-main"><a href="figures/channel_preamplified_tb.svg" target="_blank" rel="noopener"><img src="figures/channel_preamplified_tb.svg" alt="Selected Q-Pix channel with separate signal, supply, timing and test-source panels"></a><figcaption><span class="figure-number">FIG. 1</span> Current editable channel drawing. Click for its full vector view. Supply and reference sources are explicit; arrows are current probes. The optional clock-to-SUM capacitor is isolated in a test-only panel and normally set to zero. The drawing retains GUI defaults; every numerical chart uses the recorded run parameters, including its actual rate, phases and frozen trims.</figcaption></figure>
+  <div class="schematic-gallery" id="schematic-gallery"></div>
+  <p><a class="text-link" href="figures/selected-schematics.pdf" target="_blank" rel="noopener">Open the complete 13-page vector schematic review ↗</a></p>
+  <h3>What the replenishment block contains</h3>
+  <p>The nine-MOS replenisher has one continuously biased PMOS source, two steering PMOS devices, two NMOS common-gate isolation devices, two shorted-drain/source PMOS cancellation devices and a two-MOS complement driver. With EN low, current goes to the dummy load; with EN high, it goes to the sensor summing node. The two half-width cancellation devices receive opposite gate drive to their main switches.</p>
+  <p>The <em>dummy load branch</em> and the <em>dummy cancellation transistors</em> serve different purposes. Steering preserves source operation between pulses; the extra transistors attempt partial cancellation of edge injection. The testbench holds the dummy output at 0.9 V with an ideal reference. A physical load/reference and its shared heat still need implementation.</p>
+  <h3>EVAL, CAPTURE and PHASE</h3>
+  <p>EVAL starts dynamic regeneration. While CAPTURE is high, the static capture latch follows the comparator output; CAPTURE falling closes the latch and retains the decision through comparator precharge. PHASE defines the short replenishment interval after the decision is retained. The separate CLK signal in this bench is a diagnostic coupling aggressor. The external phase waveforms share one period and epoch; this is the preserved ideal-phase reference. The physical single-clock derivative and its measured heat appear in the next section.</p>
+  <h3 id="decision-signals">HELD, EVENT and EN</h3>
+  <div class="table-wrap"><table class="signal-glossary"><caption>Per-channel decision storage and replenishment control; all three signals are one bit</caption><thead><tr><th>Signal</th><th>Meaning</th></tr></thead><tbody><tr><td>HELD</td><td>Stored comparator decision: 1 requests replenishment. It is retained after CAPTURE closes, until the next capture window or digital RESET.</td></tr><tr><td>EVENT</td><td>Replenishment request qualified by FORCE, INHIBIT and RESET. During normal acquisition these controls are zero, so EVENT equals HELD.</td></tr><tr><td>EN</td><td>Physical replenisher switch command: EVENT AND PHASE. It steers current into SUM only during the short PHASE window; otherwise the current goes to the dummy branch.</td></tr></tbody></table></div>
+  <p>Read EVENT once per qualified clock cycle. Two consecutive high cycles represent two replenishments even if EVENT has no intervening falling edge. One detector event can produce many such charge-quantum operations. EN supplies the short physical pulses; HELD preserves the decision while the dynamic comparator returns to precharge.</p>
+  <div class="equation">\[
+    \mathrm{EVENT}=(\mathrm{HELD}\lor\mathrm{FORCE})\land
+       \neg(\mathrm{INHIBIT}\lor\mathrm{RESET}),\qquad
+    \mathrm{EN}=\mathrm{EVENT}\land\mathrm{PHASE}.
+  \]</div>
+  <div class="table-wrap"><table><caption>Nominal source schedule at the selected 10 MHz point; physical buffers and gates add delay</caption><thead><tr><th>Time in a 100 ns cycle</th><th>Action</th></tr></thead><tbody><tr><td>25 ns</td><td>EVAL rise begins; regeneration starts</td></tr><tr><td>30–40.2 ns</td><td>CAPTURE opens, then closes the static decision latch</td></tr><tr><td>45 ns</td><td>Observer samples EVENT</td></tr><tr><td>45.1 ns</td><td>EVAL fall begins; dynamic nodes return to precharge</td></tr><tr><td>50–54.2 ns</td><td>PHASE rises, holds a 4 ns plateau and falls</td></tr><tr><td>100 ns</td><td>Operation interval commits with its original cycle tag</td></tr></tbody></table></div>
+  <p>The control block uses 41 MOS: 11 in its capture latch and 30 in seven inverters plus four NAND gates. Normal acquisition reduces logically to EVENT = HELD and EN = HELD ∧ PHASE. FORCE/INHIBIT support tests and calibration; RESET clears digital state and suppresses feedback. The combinational implementation can be optimized while retaining decision storage and phase ordering. Network backpressure must never halt the local feedback loop.</p>
+  <details><summary>Architecture comparison: why retain the continuous reference?</summary><p>The late dynamic path passes five of six 10 MHz nominal load/temperature cases. Continuous-comparator comparisons at 250 and 500 nA seeds pass two of twelve. The 250 nA continuous path consumes less power but fails the charge/state screens; its passing 500 nA, 0.3 pF points draw about 21.83/22.25 µW versus 21.13/21.49 µW for the dynamic path at that load. The continuous reference is much quieter under clocked quiet operation. This is a measured tradeoff, not a claim that dynamic comparison is universally quieter.</p><div id="architecture-comparison" class="plot" data-plot-title="Comparator charge and power tradeoff"></div></details>
+</section>
+
+
+<section id="clock">
+  <div class="section-number">03 / PHYSICAL SINGLE-CLOCK TIMING</div><h2>One clock, six adjustable edges</h2>
+  <p>The chip-facing derivative accepts one master CLK. A rising-edge detector launches a static SR latch, and six non-inverting RC sections generate the EVAL rise, CAPTURE rise/fall, EVAL fall and PHASE rise/fall. The final tap ends the sequence and discharges the <em>timing capacitors</em>. This discharge has no connection to the sensor SUM node or CSA feedback capacitor.</p>
+  <p>Each section has two physical resistor-bypass controls and eight binary-weighted switched capacitors. Disabled capacitors are isolated and parked at VSS. Schmitt restoration and tapered CMOS drivers separate slowly changing RC nodes from the following load. Six ten-bit words are internal static register-output nets; the bench voltage sources emulate those registers. A serial/network register loader remains future work.</p>
+  <div class="equation">\[
+    (t_A,t_B,t_C,t_D,t_E,t_F)_{10\,\mathrm{MHz}}
+       \simeq (2,7,17,22,27,31)\,\mathrm{ns},\qquad
+    W_{\mathrm{PHASE}}=t_F-t_E\simeq4\,\mathrm{ns}.
+  \]</div>
+  <p>Times above are measured from the master clock's 50% rising edge. The earlier ideal-source benchmark uses a different clock origin and a 4 ns <em>plateau</em>, equivalent to 4.1 ns between 50% crossings with its finite ramps. Physical words and charge calibration travel together; a width change does not automatically preserve the replenishment quantum.</p>
+  <figure class="schematic-main"><a href="figures/clock_phase_trimmed.svg" target="_blank" rel="noopener"><img src="figures/clock_phase_trimmed.svg" alt="Single-clock physical phase generator with rising-edge launch, six RC delay sections and qualified pulse windows" loading="lazy"></a><figcaption><span class="figure-number">CLOCK A</span> Current editable generator. Direct signal paths, conventional logic/buffer symbols and correctly oriented I/O pins. Click for the full vector drawing.</figcaption></figure>
+  <div class="schematic-gallery" id="clock-gallery"></div>
+  <div class="controls"><label>Model temperature<select id="clock-temp"><option value="77">77 K · exploratory</option><option value="298.15">298.15 K · factory</option></select></label><label>Master clock<select id="clock-rate"><option value="10">10 MHz</option><option value="1">1 MHz</option><option value="5">5 MHz</option><option value="20">20 MHz</option><option value="50">50 MHz</option></select></label><label>Assumed chip channels<select id="clock-channels"><option>16</option><option>32</option><option>64</option><option selected>128</option><option>256</option></select></label><button id="clock-reset" type="button">Reset clock zoom</button></div>
+  <div id="clock-scorecard" class="scorecard" aria-live="polite"></div>
+  <figure><div id="clock-detail" class="plot logic-scope" data-plot-title="Actual master clock, generated phases and channel control"></div><figcaption><span class="figure-number">CLOCK B</span> Full transistor transient with the real channel receiver attached, including the test current, CSA/VTH and all recorded logic rows. Select the model and rate, then zoom anywhere from initialization through recovery. Every native logic-transition bracket is retained. Hover reports actual voltage; vertically separated rows share one time axis.</figcaption></figure>
+  <figure><div id="clock-heat" class="plot" data-plot-title="Raw shared clock power and assumed per-channel allocation"></div><figcaption><span class="figure-number">CLOCK C</span> Raw generator and one-bank source totals are separate from the channel allocation. Changing channel count is arithmetic at the fixed measured fanout; it does not simulate another chip size or qualify physical routing.</figcaption></figure>
+  <div id="clock-table" class="table-wrap"></div>
+  <p id="clock-evidence" class="source-note"></p>
+  <details><summary>Width controls, calibration words and safe mode changes</summary><div id="clock-width-table" class="table-wrap"></div><div id="clock-mode-table" class="table-wrap"></div><p>At 10 MHz, independent 3 ns and 5 ns settings pass at both temperatures. Stop RUN, let the sequence drain, change and settle all words, then rearm on a complete clock cycle; mark that interval invalid and select the matching charge calibration. RUN is accepted while CLK is low. Emergency RESET may truncate a pulse. Network backpressure must not stop normal replenishment.</p></details>
+  <p class="scope-note">All ten loaded nominal timing points pass the 500 ps edge, 150 ps width and positive-guard targets. Twenty-four fixed-code duty/supply/fanout trials retain valid sequences and logic levels; seven shifted cases require retuning to meet the tighter nominal edge targets. Ramped power-up and stopped-acquisition restart pass at both temperatures. Numerical refinements and the centered cold 5 MHz code remain in the evidence. Ideal timing passives, inherited cold CV/noise, physical layout/supply coupling and new generator device-noise qualification remain explicit limits.</p>
+</section>
+
+<section id="frequency">
+  <div class="section-number">04 / 1–50 MHz</div><h2>The clock-rate envelope</h2>
+  <p>The hardware DAC seed is calibrated once per temperature at 1 MHz and then held across loads and rates: 127.548 nA at 298.15 K and 142.662 nA at 77 K. The pulse width stays 4 ns. These seeds identify reference branches; they are not the total channel bias or an assumed delivered charge.</p>
+  <figure><div id="envelope-plot" class="plot" data-plot-title="Thirty-point nominal rate and load matrix"></div><figcaption><span class="figure-number">FIG. 2</span> All 30 nominal points, with a 2 fC / 200 ns input and noise off. Green denotes the retained nominal screens plus ≤24 µW including positive boundary work; red retains failures. Blue borders mark the 16-point envelope common to both temperatures. Click a point to inspect its actual waveforms below.</figcaption></figure>
+  <figure><div id="rate-power-plot" class="plot" data-plot-title="Source power versus clock frequency"></div><figcaption><span class="figure-number">FIG. 3</span> Whole-cycle source draw plus positive reference/clock interface work. All five implemented supply domains, local drivers and control are included. This older five-domain comparison excludes the newly implemented shared phase generator; its measured allocation is shown separately above. Backend/reference generation remains additional.</figcaption></figure>
+  <div class="notice emphasis"><strong>Above the selected rate.</strong> At 3 pF, both 20 MHz cases produce five operations for the 2 fC pulse and fail final quiet recovery. At 50 MHz the warm case produces seven operations. The cold case produces four and recovers, but draws about 31.7 µW including positive interface work. A correct count in one event does not establish an acceptable operating point.</div>
+  <h3>Inspect one measured point</h3>
+  <div class="controls" aria-label="Nominal case selectors">
+    <label>Model temperature<select id="case-temp"><option value="77">77 K · exploratory</option><option value="298.15">298.15 K · factory</option></select></label>
+    <label>Detector capacitance<select id="case-cap"><option value="3">3 pF</option><option value="0.3">0.3 pF</option><option value="6">6 pF</option></select></label>
+    <label>Clock<select id="case-rate"><option value="10">10 MHz · selected</option><option value="1">1 MHz</option><option value="5">5 MHz</option><option value="20">20 MHz</option><option value="50">50 MHz</option></select></label>
+    <button id="case-reset" type="button">Reset plot zoom</button>
+  </div>
+  <div id="case-scorecard" class="scorecard" aria-live="polite"></div>
+  <figure><div id="case-overview" class="plot large" data-plot-title="CSA response to the nominal charge pulse"></div><figcaption><span class="figure-number">FIG. 4</span> Actual transient: CSA output, summing-node motion and detector input. Display reduction retains per-bin extrema from every plotted vector; measurements and decisions use the original records. Hover identifies units; use the legend to isolate a trace.</figcaption></figure>
+  <figure><div id="case-detail" class="plot logic-scope" data-plot-title="Full nominal test: input, CSA and logic signals"></div><figcaption><span class="figure-number">FIG. 5</span> Full recorded test duration, aligned with Figure 4: input current and CSA/VTH above separate CLK, RESET, EVAL, CAPTURE, comparator, HELD, EVENT, PHASE and EN rows. Every native 50% transition bracket is retained, including narrow pulses; interpolated logic voltages differ by at most 4 mV from the native trace. Drag horizontally to inspect any cycles. Zoom and reset are linked with Figures 4 and 9.</figcaption></figure>
+  <div id="case-evidence" class="source-note"></div>
+</section>
+
+
+<section id="detector">
+  <div class="section-number">05 / HISTORICAL DETECTOR-CURRENT REPLAY</div><h2>Follow one charge event through the loop</h2>
+  <p>This is the preserved <code>InCurrent_Mod.txt</code> waveform used in the earlier qpix_sim analog/SIPO test: <strong>38.24787721 fC over 120 µs, peaking at 3.90696 nA</strong>. Its seconds/amperes samples are replayed without time compression or amplitude scaling. The May 2025 analog journal links the ancestor file to a simulated charge event; the December journal reports about 38.24 fC and 75/74 operations at room/−40 °C. Those are historical results, not a present 77 K qualification or a detector-transport generator record.</p>
+  <p>The new runs use the physical single-clock channel at <strong>10 MHz, 3 pF detector capacitance and 50 fF Cf</strong>, at both model temperatures. An independent 2 nA / 20 µs known-current plateau sets one decoder gain per temperature. Hardware bias/DAC trims stay fixed. A finite calibration has an endpoint residual and count quantization; its raw quiet-state result is retained in the table rather than assumed to pass. EVENT bits, the clock and that calibration reconstruct charge; actual SPICE feedback current appears only as a separate physical diagnostic.</p>
+  <div class="equation">\[
+    Q_{\mathrm{cal}}=\frac{\int I_{\mathrm{cal}}(t)\,dt}{N_{\mathrm{cal}}},\quad
+    \widehat Q_n=Q_{\mathrm{cal}}\sum_{j\le n} b_j,\quad
+    \widehat I_{k,\mathrm{RTD}}=\frac{Q_{\mathrm{cal}}}{t_k-t_{k-1}}.
+  \]</div>
+  <div class="controls"><label>Model temperature<select id="detector-temp"><option value="77">77 K · exploratory</option><option value="298.15">298.15 K · factory</option></select></label><button id="detector-reset" type="button">Reset event zoom</button></div>
+  <div id="detector-scorecard" class="scorecard" aria-live="polite"></div>
+  <figure><div id="detector-current" class="plot large" data-plot-title="Historical detector current and independently calibrated waveform reconstruction"></div><figcaption><span class="figure-number">EVENT A</span> Original current and causal two-stage, 1 µs-per-stage reconstruction. The dotted reference applies exactly the same filter to the input bins. The discrete filter has 0.9 µs group delay at 10 MHz; neither gain nor time shift is fitted to this event. Short-time RMS includes sigma-delta quantization, settling and deterministic interference.</figcaption></figure>
+  <figure><div id="detector-detail" class="plot logic-scope" data-plot-title="Full detector event: input, CSA and logic signals"></div><figcaption><span class="figure-number">EVENT B</span> The complete 0–120 µs replay: input current and CSA/VTH, followed by separate clock, reset, comparison phases, held decision, event bit, replenishment phase and enable rows. All native logic-transition brackets remain available for zooming, with ≤4 mV voltage interpolation error. The physical-clock recording does not include CMP_OUT. Time zoom is linked with the current, charge, analog-state and interval plots.</figcaption></figure>
+  <figure><div id="detector-charge" class="plot large" data-plot-title="Charge integration tracking, stored residual and physical conservation"></div><figcaption><span class="figure-number">EVENT C</span> Input charge, calibrated count staircase and independently integrated physical feedback. The lower panel retains stored residual, gate/displacement charge and ledger closure. The backend cannot read the SPICE feedback or storage probes; they are diagnostic checks, not decoder information.</figcaption></figure>
+  <figure><div id="detector-state" class="plot large" data-plot-title="CSA state and summing-node motion during the historical event"></div><figcaption><span class="figure-number">EVENT D</span> Native CSA output and SUM motion throughout the replay. The feedback probe includes the replenishment current and much larger, short, opposite-sign switching/displacement spikes. These are deterministic interference; net delivered charge is integrated across the full cycle. Display extrema are retained; plotted decimation does not determine numerical metrics.</figcaption></figure>
+  <figure><div id="detector-rtd" class="plot" data-plot-title="Reset-time-interval current reconstruction"></div><figcaption><span class="figure-number">EVENT E</span> One quantum divided by successive operation-aperture intervals. Each estimate summarizes its preceding interval and becomes available at the right endpoint, plus readout latency. This offline interval display does not imply instantaneous knowledge within that interval. The comparison uses input averaged over those same intervals.</figcaption></figure>
+  <div id="detector-table" class="table-wrap"></div>
+  <p id="detector-evidence" class="source-note"></p>
+  <details><summary>Event and late-idle source energy</summary><div id="detector-power" class="table-wrap"></div><p>Raw power includes all seven upstream supplies and positive interface work. The per-channel column applies the same illustrative eight-by-sixteen sharing assumption. Energy per operation includes baseline consumption over the entire stated window; reservoir changes remain in source draw. A quiet interval with no operations has no energy-per-operation value.</p></details>
+  <details><summary>Event lineage, initialization, noise and power boundary</summary><p>The original main-branch op-amp source uses microsecond timestamps and one duplicate initial zero. Removing that duplicate and converting only time reproduces the preserved unmodified qpix_sim file, with identical currents. The selected modified file is pinned at 16c6090; it is not silently exchanged for the earlier 100 µs version. All ten historical channel copies contain this same event. Its first nonzero sample at 20 µs interpolates from the initial t=0 zero, producing a tiny precursor ramp; that ramp is preserved. Charge tracking states the complete-cycle acquisition window separately from the 0–120 µs declared input integral.</p><p>The analog state starts from the retained known-state fixture; this does not repeat background-assisted startup qualification. These runs have transient noise off. Clock-correlated ripple is deterministic interference. The earlier 102-MOS noise inventory does not include the new generator. All seven upstream sources, decoupling changes and positive boundary work are retained; shared heat uses the explicit illustrative channel allocation. RTL/backend, physical routing and silicon cryogenic validation remain separate work.</p></details>
+  <figure class="schematic-main"><a href="figures/channel_detector_event_tb.svg" target="_blank" rel="noopener"><img src="figures/channel_detector_event_tb.svg" alt="Readable physical single-clock channel bench driven by the preserved historical current file" loading="lazy"></a><figcaption><span class="figure-number">EVENT F</span> Editable event bench. The source reads the preserved SI table; separate calibration runs explicitly override that test source. The transistor hierarchy is unchanged from the selected single-clock channel.</figcaption></figure>
+</section>
+
+<section id="waveform">
+  <div class="section-number">06 / CHARGE–TIME INFORMATION</div><h2>Analytic waveform: compare sampling rates</h2>
+  <p>A clock increase changes nominal bin widths from 1000 ns at 1 MHz to 20 ns at 50 MHz. It also changes feedback cadence, switching interference and heat. The signal path must settle, and noise must support the desired detail. This earlier analytic-pulse comparison uses the ideal-phase reference and holds detector load, Cf, hardware trims and an independent decoder calibration fixed across all five rates. It is distinct from the unscaled historical event above.</p>
+  <div class="controls"><label>Model temperature<select id="wave-temp"><option value="77">77 K · exploratory</option><option value="298.15">298.15 K · factory</option></select></label><fieldset id="wave-rates"><legend>Overlay measured clocks</legend><label><input type="checkbox" value="1">1 MHz</label><label><input type="checkbox" value="5">5 MHz</label><label><input type="checkbox" value="10" checked>10 MHz</label><label><input type="checkbox" value="20" checked>20 MHz</label><label><input type="checkbox" value="50" checked>50 MHz</label></fieldset></div>
+  <figure><div id="wave-current" class="plot large" data-plot-title="Reconstructed structured event at all five clock rates"></div><figcaption><span class="figure-number">FIG. 6</span> A 6.82 fC structured event, peak current 1.8 nA, at 3 pF. Both the detector reference and count reconstruction receive the recorded two-stage causal 1 µs filter, with an integer number of cycles per stage. No per-event gain or lag is fitted. At 1 MHz the nominal 0.5 nA service capacity is below the input peak.</figcaption></figure>
+  <figure><div id="wave-charge" class="plot" data-plot-title="Integrated charge and replenishment times across rates"></div><figcaption><span class="figure-number">FIG. 7</span> Count reconstruction with the same fixed decoder gains. Horizontal timing and final count differences remain visible; the final stored fraction is not accessible to a count-only decoder.</figcaption></figure>
+  <div class="controls"><label>Clock for logic inspection<select id="wave-logic-rate"><option value="10">10 MHz</option><option value="1">1 MHz</option><option value="5">5 MHz</option><option value="20">20 MHz</option><option value="50">50 MHz</option></select></label><button id="wave-reset" type="button">Reset waveform zoom</button></div>
+  <figure><div id="wave-logic" class="plot logic-scope" data-plot-title="Full structured waveform: input, CSA and logic"></div><figcaption><span class="figure-number">FIG. 7a</span> Full 22 µs native test for one selected clock and the temperature above. Input and CSA/VTH sit over the complete logical sequence, from initialization through all input features and recovery. Zoom is linked with Figures 6 and 7. Overlay checkboxes compare reconstruction rates independently; this selector chooses the circuit trace to inspect.</figcaption></figure>
+  <p id="wave-logic-evidence" class="source-note"></p>
+  <figure><div id="wave-metrics" class="plot" data-plot-title="Waveform error and bin charge error versus sampling clock"></div><figcaption><span class="figure-number">FIG. 8</span> Reported errors from all ten retained deterministic waveform cases. Filter discretization and group delay are recorded separately. A higher sampling frequency can improve time binning while leaving finite-loop and state-dependent error.</figcaption></figure>
+  <div id="wave-table" class="table-wrap"></div>
+  <p class="scope-note">This all-rate comparison is deterministic. The complete selected-channel noise study below covers 10 MHz / 3 pF; an original-reference noise check covers 1 MHz / 6 pF. Noise-on results at 20 and 50 MHz are not inferred from those points.</p>
+</section>
+
+<section id="charge">
+  <div class="section-number">07 / ACCOUNTING</div><h2>Separate calibration from conservation</h2>
+  <p>A repeatable integrated scale error is removed by an independent long-event calibration. A separate 40.0002 fC input gives 78 counts warm and 80 cold, fixing the decoder at 0.5128231 and 0.5000025 fC per operation. The hardware DAC trim and the analysis gain serve different roles; neither is fitted separately to a displayed event.</p>
+  <div class="equation">\[
+     q_{\mathrm{cal}}=\frac{Q_{\mathrm{cal,in}}}{N_{\mathrm{cal}}},
+     \qquad \widehat Q_n=q_{\mathrm{cal}}\sum_{k\le n} b_k,\quad b_k\in\{0,1\}.
+  \]</div>
+  <p>The physical charge ledger uses the recorded probe sign convention. Positive input-probe current represents the magnitude of collected negative detector charge. Gate/displacement current, optional test-noise current, delivered feedback and changes in explicit capacitor storage remain separate terms.</p>
+  <div class="equation">\[
+  \epsilon_Q=Q_{\mathrm{in}}+Q_{\mathrm{noise}}+Q_{\mathrm{gate}}
+       -Q_{\mathrm{fb}}-\Delta Q_{\mathrm{store}},
+       \qquad |\epsilon_Q|\le 0.1\,\mathrm{fC},
+  \]</div>
+  <div class="equation">\[
+  \Delta Q_{\mathrm{store}}
+  =C_f\Delta(V_{\mathrm{out}}-V_{\mathrm{SUM}})
+   -C_{\mathrm{in}}\Delta V_{\mathrm{SUM}}
+   -C_{\mathrm{clk}}\Delta(V_{\mathrm{SUM}}-V_{\mathrm{CLK}}).
+  \]</div>
+  <figure><div id="case-ledger" class="plot large" data-plot-title="Physical charge ledger and independently calibrated count reconstruction"></div><figcaption><span class="figure-number">FIG. 9</span> Follows the selected nominal test, with time zoom linked to Figures 4 and 5. Actual feedback charge is a diagnostic from the current probe; the decoder uses only its fixed gain and bitstream. The physical ledger can close even when the circuit has over-replenished and left an unsuitable residual.</figcaption></figure>
+  <p>The short-time error is assessed in individual bins and declared windows. In the noisy structured study, warm quanta reach roughly 0.534 fC and retain the raw 0.5 fC ±5% failure. Relative to the independent frozen charge scale, every observed operation is within 4.09%. These are descriptive results from a small number of operations, not a population precision claim.</p>
+</section>
+
+<section id="noise">
+  <div class="section-number">08 / STOCHASTIC AND DETERMINISTIC</div><h2>Noise and switching interference</h2>
+  <p>The frequency-domain design work precedes explicit transient-noise injection. A deterministic SPICE transient does not acquire transistor noise just by including a noise-model section. The selected trials inject correlated terminal-current equivalents derived from native spectra; the other 65 MOS use conservative stationary covariance envelopes. Ten external feed resistors are held at 298.15 K in both chip-temperature studies; on-chip compensation-resistor noise follows chip temperature.</p>
+  <div class="two-plots"><figure><div id="gain-plot" class="plot" data-plot-title="Continuous-path charge response"></div><figcaption><span class="figure-number">FIG. 10a</span> Matched continuous-path response with the regenerative core in precharge. Approximate −3 dB crossings: 3.16/4.64 MHz. This is signal-path bandwidth, independent of sampling clock.</figcaption></figure><figure><div id="spectrum-plot" class="plot" data-plot-title="Native output noise amplitude spectrum"></div><figcaption><span class="figure-number">FIG. 10b</span> Native differential output ASD over the retained 100 Hz–248.79 MHz sweep. The 1 TΩ DC helper belongs only to this AC fixture. Cold noise/CV assumptions are unmeasured.</figcaption></figure></div>
+  <div id="spectrum-table" class="table-wrap"></div>
+  <p class="scope-note">The charge-equivalent column uses \(C_f v_{n,\mathrm{out,rms}}/A_{\mathrm{LF}}\). It is an unshaped, finite-band continuous-path estimate with a declared DC fixture, not a clocked input ENC measurement. The transient bitstream error below evaluates the switched loop separately.</p>
+  <p>Within that bounded AC sweep, only 0.0434%/0.0652% of continuous-path variance lies above 50 MHz. This does not bound every regenerative or switching-noise mechanism. A 50-versus-200 MHz <em>noise-carrier</em> comparison keeps the circuit clock fixed at 10 MHz: counts remain unchanged, but two cold operations move by one cycle and filtered event-window RMS changes from 23.68% to 24.30%.</p>
+  <div class="controls"><label>Model temperature<select id="noise-temp"><option value="77">77 K · exploratory</option><option value="298.15">298.15 K · factory</option></select></label></div>
+  <figure><div id="noise-charge" class="plot" data-plot-title="Matched noise-source charge reconstructions"></div><figcaption><span class="figure-number">FIG. 11</span> Matched noise-off, analog-only and analog + digital-envelope + feed-resistor fields at 10 MHz / 3 pF. One realization per source setting. The warm noisy fields include an additional operation at 21.0 µs; it stays visible and does not establish a trigger rate.</figcaption></figure>
+  <figure><div id="noise-current" class="plot" data-plot-title="Matched noise-source reconstructed currents"></div><figcaption><span class="figure-number">FIG. 12</span> Same causal filter for input and decoded current, fixed calibration, no fitted lag. The predeclared 4.5–18 µs event/recovery window and the full record are distinct scoring scopes.</figcaption></figure>
+  <figure><div id="noise-pulses" class="plot" data-plot-title="Per-operation physical charge and raw quantum limits"></div><figcaption><span class="figure-number">FIG. 13</span> Actual pulse charge at each recorded operation. The raw ±5% interval and independent calibration scale are shown together. Calibration removes repeatable scale error; it does not remove state-dependent variation or stochastic excursions.</figcaption></figure>
+  <div id="noise-table" class="table-wrap"></div>
+  <h3>Clocked quiet behavior is a separate measurement</h3>
+  <figure><div id="interference-plot" class="plot" data-plot-title="Continuous and dynamic clock interference comparison"></div><figcaption><span class="figure-number">FIG. 14</span> Five quiet cycles with no stochastic injection or commanded feedback. Matched 250 nA comparator seed. Dynamic sensor-node ripple is 28.75/39.44 µV; the continuous reference gives 0.166/0.175 µV. These are whole-channel clock disturbances, including capture and local drivers.</figcaption></figure>
+  <p>The input-gate positive charge lobe in the dynamic channel averages 0.00854/0.01361 fC per quiet cycle. Signed, positive and negative charge lobes are retained separately: opposite-sign glitches can give a small net integral while still disturbing the front end.</p>
+  <details><summary>Source-model sensitivity and remaining assumptions</summary><p>144 actual-bias witnesses show dominant input-pair, mirror, reference and feedback spectra close to their frozen-source representation. Some regenerative-device spectra change substantially. Refreshing all eleven core devices with 1452 native spectra changes their factors while preserving the other 198 ports and Gaussian draws; both matched bitstreams stay identical. The digital envelopes dominate sampled stationary covariance matrices, but this does not prove a nonlinear, nonstationary output bound. The finite carrier band, source history approximation and unmeasured cold-device physics remain explicit limitations.</p><div id="sensitivity-table" class="table-wrap"></div><a class="text-link" href="figures/noise-reference.svg" target="_blank" rel="noopener">Open the full native-vector noise comparison, including CSA output ↗</a></details>
+</section>
+
+<section id="power">
+  <div class="section-number">09 / HEAT</div><h2>Account for energy drawn from the sources</h2>
+  <p>Each of five supply domains has a 10 Ω feed and a declared 100 pF decoupling capacitor. Average power is measured over complete clock cycles at the source terminals. Local clock buffers, comparator, physical control, feedback drivers and implemented bias mirrors remain included.</p>
+  <div class="equation">\[
+   \overline P_{\mathrm{supply}}
+    =\frac{1}{N T_s}\sum_j
+      \int_{t_0}^{t_0+NT_s} -V_j(t)I_{j,\mathrm{SPICE}}(t)\,dt,
+   \qquad
+   \Delta E_{\mathrm{dec}}=\sum_j\frac{C_j}{2}
+      \left(V_{j,\mathrm{end}}^2-V_{j,\mathrm{start}}^2\right).
+  \]</div>
+  <p>Reservoir charging is reported without subtraction from supply draw. Positive clock/reference interface work is additionally shown. Work supplied by mathematical noise sources receives no power-optimization credit.</p>
+  <figure><div id="power-domains" class="plot" data-plot-title="Implemented supply-domain power for the selected case"></div><figcaption><span class="figure-number">FIG. 15</span> Follows the selected nominal case. “Driver” includes the shared local digital supply loads in this single-channel fixture; it is not a separately isolated measurement of only the feedback transistor gates.</figcaption></figure>
+  <figure><div id="energy-plot" class="plot" data-plot-title="Idle, active and incremental replenishment energy"></div><figcaption><span class="figure-number">FIG. 16</span> Matched idle/repeated-event windows at 10 MHz / 3 pF. Total energy per operation includes idle bias accumulated over the entire window. Incremental energy subtracts the matched idle window as a separate diagnostic; the reported total source power remains unadjusted.</figcaption></figure>
+  <div id="energy-table" class="table-wrap"></div>
+  <p>The <a href="https://arxiv.org/pdf/1808.02969#page=12" target="_blank" rel="noopener">LArPix comparison budget</a> is 62 µW/channel total: 24 analog, 18 digital core and 20 I/O in its reported low-power 128-channel, 5 MHz configuration (section 3.5, Table 3). It is a design benchmark rather than a measured Q-Pix digital allocation. That paper also reports higher consumption under heavy traffic. The new shared phase-generator measurement is divided by an explicit assumed channel count in this report. Physical shared reference generation, timestamping, buffering, links and backend traffic remain to be implemented and measured against the actual ASIC channel count.</p>
+  <p class="scope-note">Higher-power candidates remain available for architecture exploration. The 24 µW line marks the current integration allocation; the plotted high-rate candidates retain their measured behavior and energy cost.</p>
+  <div class="equation">\[
+      P_{\mathrm{channel,chip}}
+      =P_{\mathrm{analog,channel}}
+      +\frac{P_{\mathrm{shared\ analog}}+P_{\mathrm{digital}}+P_{\mathrm{I/O}}}
+             {N_{\mathrm{channels}}}.
+  \]</div>
+</section>
+
+<section id="startup">
+  <div class="section-number">10 / INITIALIZATION AND STRESS</div><h2>Recovery is part of the operating contract</h2>
+  <p>The accepted startup condition includes continuing negative detector charge. A unipolar replenisher cannot recover every arbitrary initial condition with zero detector input. The normal circuit has no analog reset across Cf; explicit supply/bias ramps and an initially uncharged sensor test background-assisted entry into the working range.</p>
+  <figure><div id="startup-plot" class="plot" data-plot-title="Background-assisted uncharged startup readiness"></div><figcaption><span class="figure-number">FIG. 17</span> At an accelerated 1 nA background, 100-cycle readiness confirmation occurs at 323.445/243.445 µs, before the detector events. The cold 500 ps repeat preserves readiness and training/later counts. This test does not predict real Ar-39 startup time.</figcaption></figure>
+  <p>Startup counts are training, not calibrated detector quanta. Readiness is an offline analog-state criterion; the prototype has no hardware READY output. An eventual controller must mark validity and retain loss/overflow accounting without stopping replenishment.</p>
+  <details><summary>Inspect complete startup trajectories</summary><a href="figures/startup.svg" target="_blank" rel="noopener"><img class="full-vector" loading="lazy" src="figures/startup.svg" alt="Uncharged startup trajectories and readiness analysis at both model temperatures"></a></details>
+  <figure><div id="stress-plot" class="plot" data-plot-title="Phase, shape, offset, coupling and overload stress results"></div><figcaption><span class="figure-number">FIG. 18</span> All 46 deterministic stress cases at 10 MHz / 3 pF. The original cold 100 aF coupling ledger failure remains marked. A matched 20 ps refinement gives 0.00680/0.00897 fC closure with identical bits and unchanged physical settings and charge tolerance.</figcaption></figure>
+  <figure><div id="current-plot" class="plot" data-plot-title="Current service and finite-pulse recovery"></div><figcaption><span class="figure-number">FIG. 19</span> At 10 MHz, nominal service capacity is 5 nA. The tested 2/4 nA plateaus have bounded active inventory; 6 nA does not. Warm final quiet recovery fails in the 2/6 nA finite-pulse cases. Active service and subsequent recovery have separate criteria.</figcaption></figure>
+  <details><summary>Comparator timing margins</summary><p>The selected gain-stage fixture captures tested ±1 mV transitions with 40 ns lead before EVAL at both model temperatures and the tested capture closings. Shorter-lead failures are retained. This is a discrete nominal-model margin, not a universal setup/hold or metastability specification.</p><div id="timing-plot" class="plot" data-plot-title="Measured input setup and capture sensitivity"></div></details>
+</section>
+
+<section id="limits">
+  <div class="section-number">11 / INTERPRETATION</div><h2>What remains to be established</h2>
+  <div class="limit-grid">
+    <article><h3>Cold-device physics</h3><p>The 77 K card is an exploratory DC fit with inherited noise/CV and other unmeasured behavior. A local correction rebases the inherited junction TAT reference after a traced nominal-temperature failure. It is numerical consistency work, not physical junction qualification. Room-pass/cold-fail cases require matched model and numerical validation.</p></article>
+    <article><h3>Noise and sampling</h3><p>Limited source fields support architecture development. They establish neither a rare-trigger probability nor full-band regenerative noise. Noise at 20/50 MHz, process/mismatch variation, physical substrate coupling and layout extraction require their own studies.</p></article>
+    <article><h3>Clock and heat integration</h3><p>The programmable phase-generator prototype is implemented and measured. Physical passive/reference implementation, clock/supply routing and the complete shared chip circuitry remain to be built. Logic minimization must preserve capture, charge consistency, interference isolation and the tight pulse timing. Their heat cannot be inferred from ideal timing sources.</p></article>
+    <article><h3>Digital/network integration</h3><p>The next stage observes EVENT once per cycle, including consecutive ones. It preserves cycle identity and commits after feedback. RTL replay, bounded stateful analog advancement and NNG/MPI qualification remain separate implementation work.</p></article>
+  </div>
+  <details><summary>Why the local 77 K junction correction exists</summary><p>The originally pinned isothermal DC fit changes core MOS TNOM to 77 K while retaining factory gate-edge trap-assisted tunneling parameters. BSIM4 uses the product of NJTSSWG and the nominal thermal voltage in the reverse-junction exponent. A retained PMOS junction fixture predicted approximately 145 µA with the original cold card, versus 0.14 pA with the room reference, despite only about 0.12 pA channel current.</p><div class="equation">\[
+     \mathrm{NJTSSWG}_{\mathrm{local}}
+      =\mathrm{NJTSSWG}_{\mathrm{upstream}}\frac{298.15}{77}.
+  \]</div><p>The local recipe rebases this product with 64 explicit substitutions per card, retaining nonzero TAT prefactors and voltage dependence. Undoing only those substitutions reconstructs the upstream cards byte for byte. The corrected fixture intentionally reproduces the room-reference voltage law; this is an exploratory junction assumption. It does not establish real cold leakage or authorize discarding a room-pass/cold-fail candidate.</p><p>The external provider subsequently advanced to b34305a with its own junction correction. These experiments retain the original reviewed local output digests; <code>make doctor</code> flags the changed upstream metadata. Adopting and comparing the new provider card is a separate validation step. The provider remains untouched. See <a href="../../../docs/local-model.md">the model recipe and drift record</a>.</p><p id="model-evidence" class="source-note"></p></details>
+  <p>The architecture selected here is a starting point for that work. Higher-rate and higher-power candidates stay available for continued optimization. The report retains their actual conditions and failures, rather than treating every measured point as qualified.</p>
+</section>
+
+<section id="evidence">
+  <div class="section-number">12 / REPRODUCIBILITY</div><h2>Trace every figure to its evidence</h2>
+  <p>This report reads retained JSON, CSV, native transient and AC/noise records. It launches no circuit simulations. Current vector schematics have explicit drawing hashes. Native hierarchy/port comparisons connect the original core, single-clock derivative and file-driven event bench to their numerical sources; the event-source samples are checked against the preserved input bytes. The current probe symbols retain the original zero-volt branch source names and polarity.</p>
+  <div id="build-meta" class="metadata"></div>
+  <div class="download-row"><a href="data/provenance.json" download>Download source provenance</a><a href="data/summary.json" download>Download numerical summary</a><a href="figures/selected-schematics.pdf" download>Download core schematic PDF</a></div>
+  <details><summary>Source registry, file hashes and original evidence links</summary><div id="source-registry" class="table-wrap"></div></details>
+  <details><summary>Rebuild and design reproduction</summary><pre><code>cd reports/qpix-tsmc180
+"$HOME/Applications/appvenv/bin/python3" build_report.py
+# Then open site/index.html directly in your browser.
+
+# From the repository root, to run fresh circuit studies separately:
+make channel-matrix CHANNEL_MATRIX_CONFIG=config/channel_preamplified_reference_late.toml
+make clock-check
+make detector-event
+# Reanalyze completed native runs without resimulating:
+make detector-event-report DETECTOR_EVENT_RUN=build/clock-detector-event-3m6rg5sy
+make xschem BENCH=channel_detector_event</code></pre><p>The report package contains its own small source template, styles, JavaScript, TOML registry and extractor. Plotly and MathJax use pinned CDN versions. The data and SVG assets are local. After moving this project within the repository, rebuild to regenerate evidence links; outside the repository, pass <code>--repo /path/to/checkout</code>.</p></details>
+  <p class="scope-note">The report sources and generated site are versioned together. Local caches, validation evidence and raw simulation archives remain ignored; original-evidence links require those archives. The site includes no proprietary model payloads. Model identifiers and digests provide provenance; the external provider, installed tools and Python environment are unchanged.</p>
+</section>
+<footer><div>Q-Pix / TSMC180</div><p>Charge is conserved. Calibration is explicit. Heat is counted.</p><span id="runtime-status">Loading interactive figures and equation typesetting…</span></footer>
+</main>
+<noscript><p class="noscript">Enable JavaScript for interactive figures and equation typesetting. The narrative and linked vector schematics remain readable.</p></noscript>
+</body>
+</html>
