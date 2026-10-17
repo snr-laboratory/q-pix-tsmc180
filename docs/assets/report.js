@@ -471,6 +471,92 @@
     $('clock-gallery').innerHTML=names.map(name=>`<a class="schematic-card" href="figures/${name}.svg" target="_blank" rel="noopener"><img src="figures/${name}.svg" alt="${esc(name.replaceAll('_',' '))}" loading="lazy"><span>${esc(name.replaceAll('_',' '))} ↗</span></a>`).join('');
   }
 
+  async function nativeClocks() {
+    const study = D.native_clock, select = $('native-clock-case');
+    if (!select.options.length) {
+      study.cases.forEach(r => select.add(new Option(`${r.title} / ${tempName(r.temperature_k)} / ${r.frequency_mhz} MHz`, r.id)));
+      select.value = study.cases.at(-1).id;
+    }
+    const row = study.cases.find(r => r.id === select.value), a = row.assessment, e = a.energy;
+    const names = Object.keys(row.scope), gap = 2.6;
+    const colors = [C.ink,C.gray,C.red,C.cold,C.teal,C.warm];
+    const signals = names.map((name,i) => {
+      const s = row.scope[name], offset = (names.length-1-i)*gap;
+      return line(s.time_us, s.value.map(v=>v+offset), name, colors[i], {
+        showlegend:false, customdata:s.value, line:{color:colors[i],width:1.5,simplify:false},
+        hovertemplate:`${name} %{customdata:.5f} V<br>%{x:.9f} µs<extra></extra>`});
+    });
+    $('native-clock-logic').style.height = '570px';
+    const powerWindow = [e.start_s*1e6,e.stop_s*1e6];
+    const shade = {type:'rect',xref:'x',x0:powerWindow[0],x1:powerWindow[1],yref:'paper',y0:0,y1:1,
+      fillcolor:'#147d8210',line:{width:0},layer:'below'};
+    const cycles = a.cycles.filter(r=>r.edges_ns), mean = [], minus = [], plus = [];
+    for (let i=0;i<6;i++) {
+      if (!cycles.length) {mean.push(null); minus.push(0); plus.push(0); continue;}
+      const values = cycles.map(r=>r.edge_errors_ns[i]), m = values.reduce((a,b)=>a+b,0)/values.length;
+      mean.push(m); minus.push(m-Math.min(...values)); plus.push(Math.max(...values)-m);
+    }
+    const labels = ['EVAL ↑','CAPTURE ↑','CAPTURE ↓','EVAL ↓','PHASE ↑','PHASE ↓'];
+    await Promise.all([
+      plot('native-clock-logic',signals,{
+        xaxis:{...axis('Time (µs) · drag horizontally to zoom'),range:row.window_us},
+        yaxis:{...axis(''),fixedrange:true,tickmode:'array',showgrid:false,zeroline:false,
+          tickvals:names.map((_,i)=>(names.length-1-i)*gap+row.vdd_v/2),ticktext:names,
+          range:[-.15,(names.length-1)*gap+row.vdd_v+.2]},
+        margin:{l:90,r:25,t:25,b:55},shapes:[shade]}),
+      plot('native-clock-energy',[
+        line(row.supply.time_us,row.supply.power_uw,'VDD source power',C.warm),
+        line(row.supply.time_us,row.supply.cumulative_energy_pj,'Cumulative VDD work',C.teal,{xaxis:'x2',yaxis:'y2'})],{
+        xaxis:{...axis(''),range:row.window_us,showticklabels:false,anchor:'y'},
+        xaxis2:{...axis('Time (µs)'),range:row.window_us,matches:'x',anchor:'y2'},
+        yaxis:{...axis('Source power (µW)'),domain:[.56,1]},
+        yaxis2:{...axis('Energy (pJ)'),domain:[0,.38],anchor:'x2'},shapes:[shade],margin:{l:85,r:25,t:55,b:55}}),
+      plot('native-clock-errors',[{type:'scatter',mode:'markers',x:labels,y:mean,marker:{color:C.teal,size:9},
+        error_y:{type:'data',symmetric:false,array:plus,arrayminus:minus,color:C.teal},showlegend:false,
+        hovertemplate:'%{x}<br>Mean error %{y:.5f} ns<extra></extra>'}],{
+        xaxis:axis('Measured edge'),yaxis:axis('Target error (ns)'),shapes:[-1,1].map(sign=>({type:'line',
+          xref:'paper',x0:0,x1:1,y0:sign*row.edge_tolerance_ns,y1:sign*row.edge_tolerance_ns,
+          line:{color:C.red,width:1,dash:'dash'}}))})
+    ]);
+    await linkTime('native-clock',['native-clock-logic','native-clock-energy'],row.window_us,row.id);
+    $('native-clock-scorecard').innerHTML = [
+      ['Native timing screen',row.passed?'Pass':'Retained miss',`${fmt(a.maximum_edge_error_ns,3)} ns maximum edge error`,row.passed],
+      ['PHASE width error',`${fmt(a.maximum_width_error_ns,3)} ns`,`Target ${fmt(row.requested_phase_width_ns,1)} ns`,a.maximum_width_error_ns<=row.width_tolerance_ns],
+      ['Complete generator supply',`${fmt(e.supply_average_uw,2)} µW`,`${e.complete_cycles} complete cycles; reservoir retained`,true],
+      ['External positive work',`${fmt(e.positive_input_boundary_average_uw,3)} µW`,`${fmt(e.energy_per_clock_pj,3)} pJ/clock including boundary work`,true]
+    ].map(([label,value,note,ok])=>`<div class="score"><span>${esc(label)}</span><strong class="${ok?'pass':'fail'}">${esc(value)}</strong><small>${esc(note)}</small></div>`).join('');
+    table('native-clock-table',['Completed case','Model','MHz','Solver','Words A–F','Edge error','Final PHASE width','VDD','Positive controls','Total work','Timing'],
+      study.cases.map(r=>[esc(r.title),tempName(r.temperature_k),r.frequency_mhz,`${esc(r.execution.mode)} (${r.execution.threads} requested)`,`<code>${r.trim_words.join(' / ')}</code>`,
+        `${fmt(r.assessment.maximum_edge_error_ns,3)} ns`,`${fmt(r.assessment.cycles.filter(c=>c.phase_width_ns!==undefined).at(-1)?.phase_width_ns,3)} ns`,
+        `${fmt(r.assessment.energy.supply_average_uw,2)} µW`,`${fmt(r.assessment.energy.positive_input_boundary_average_uw,3)} µW`,
+        `${fmt(r.assessment.energy.supply_plus_positive_boundary_average_uw,2)} µW`,r.passed?'Pass':'Retained miss']));
+    table('native-physical-table',['Native cell','Ports','LVS instances','Property errors','Raw DRC findings','Extraction'],
+      study.physical.map(r=>[`<code>${esc(r.cell)}</code>`,r.matched_ports,r.matched_instances,0,r.drc_raw_results,'3 stages complete']));
+    $('native-clock-gallery').innerHTML = study.figures.filter(n=>!n.includes('-phase.')).map(name=>`<a class="schematic-card" href="figures/${esc(name)}" target="_blank" rel="noopener"><img src="figures/${esc(name)}" alt="${esc(name.replace('.svg','').replaceAll('-',' '))}" loading="lazy"><span>${esc(name.replace('native-clock-','').replace('.svg',''))} ↗</span></a>`).join('');
+    $('native-clock-evidence').innerHTML = `<a href="${esc(row.result_href)}" target="_blank" rel="noopener">Verified native assessment and full source ledger ↗</a> · Input <code>${esc(row.input_sha256)}</code>.<br>Raw one-generator budget; channel count and complete-chip digital overhead are not allocated here. Native samples: ${row.native_points.toLocaleString()}. Informational solver notices: ${esc(row.notices.join(' '))}`;
+    status.nativeClockReady = row.id;
+  }
+
+  async function nativeMom() {
+    const rows=D.native_clock.mom,q=D.native_clock.mom_qualification;
+    const names=['Factory schematic','Original PEX · duplicated device C','Corrected PEX · device C once'];
+    const colors=[C.teal,C.red,C.blue],traces=[];
+    rows.forEach((r,i)=>{
+      traces.push(line(r.time_ns,r.current_ua,names[i],colors[i],{legendgroup:String(i)}));
+      traces.push(line(r.time_ns,r.charge,names[i],colors[i],{xaxis:'x2',yaxis:'y2',legendgroup:String(i),showlegend:false}));
+    });
+    await plot('native-mom-charge',traces,{
+      xaxis:{...axis(''),range:[0,6],showticklabels:false,anchor:'y'},
+      xaxis2:{...axis('Time (ns)'),range:[0,6],matches:'x',anchor:'y2'},
+      yaxis:{...axis('PLUS current (µA)'),domain:[.56,1]},
+      yaxis2:{...axis('Delivered charge (fC)'),domain:[0,.38],anchor:'x2'},
+      shapes:[{type:'rect',xref:'x',x0:.5,x1:3,yref:'paper',y0:0,y1:1,fillcolor:'#147d8210',line:{width:0},layer:'below'}],
+      margin:{l:85,r:25,t:75,b:55}});
+    table('native-mom-table',['Representation','Charge / 0.9 V step','Effective capacitance'],rows.map((r,i)=>[
+      esc(names[i]),`${fmt(r.charge_fc,6)} fC`,`${fmt(r.capacitance_ff,6)} fF`]));
+    $('native-mom-coupling').textContent=`Unchanged two-unit layout: A–B coupling ${fmt(q.coupling.external_coupling_before_ff,6)} fF before and ${fmt(q.coupling.external_coupling_after_ff,6)} fF after correction. Compact model plus remaining external geometry reproduces the corrected unit charge within 0.0001 fF. The standalone unit's unbound VSS extractor reference is treated as floating in that matrix comparison; the paired control and full generator have explicit VSS.`;
+  }
+
   async function math() {
     if (!window.MathJax?.startup?.promise) throw new Error("MathJax CDN did not load");
     await MathJax.startup.promise;
@@ -495,6 +581,8 @@
     $("noise-temp").addEventListener("change", () => noise().catch(e => fail(e, "noise-charge")));
     for (const id of ['clock-temp','clock-rate','clock-channels']) $(id).addEventListener('change',()=>clocks().catch(e=>fail(e,'clock-detail')));
     $('clock-reset').addEventListener('click',()=>resetTime('clock'));
+    $('native-clock-case').addEventListener('change',()=>nativeClocks().catch(e=>fail(e,'native-clock-logic')));
+    $('native-clock-reset').addEventListener('click',()=>resetTime('native-clock'));
     $('detector-temp').addEventListener('change',()=>detector().catch(e=>fail(e,'detector-current')));
     $('detector-reset').addEventListener('click',()=>resetTime('detector'));
     let resizing;
@@ -513,7 +601,7 @@
     latestGallery();
     if (!window.Plotly) throw new Error("Plotly CDN did not load. Internet access is needed for interactive plots; narrative and local vector schematics remain available.");
     navigation();
-    const jobs = [["envelope-plot", envelope], ["case-overview", updateCase], ["architecture-comparison", architectures], ["wave-current", waveforms], ["wave-metrics", waveMetrics], ["gain-plot", spectra], ["noise-charge", noise], ["interference-plot", interference], ["energy-plot", energy], ["startup-plot", recovery], ["clock-detail", clocks], ["detector-current", detector], ["equation typesetting", math]];
+    const jobs = [["envelope-plot", envelope], ["case-overview", updateCase], ["architecture-comparison", architectures], ["wave-current", waveforms], ["wave-metrics", waveMetrics], ["gain-plot", spectra], ["noise-charge", noise], ["interference-plot", interference], ["energy-plot", energy], ["startup-plot", recovery], ["clock-detail", clocks], ["native-clock-logic", nativeClocks], ["native-mom-charge", nativeMom], ["detector-current", detector], ["equation typesetting", math]];
     await Promise.all(jobs.map(async ([name, fn]) => {try {await fn();} catch (error) {fail(error, name);}}));
     status.ready = true;
     $("runtime-status").textContent = status.errors.length ? `Loaded with ${status.errors.length} issue(s): ${status.errors.join("; ")}` : `${plots.size} interactive SVG figures · MathJax vector equations · local measurement data · Plotly ${Plotly.version}`;

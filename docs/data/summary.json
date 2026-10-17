@@ -1,10 +1,10 @@
 {
   "meta": {
     "title": "Q-Pix in TSMC180: charge, timing and heat",
-    "date": "2026-10-15",
-    "built_utc": "2026-10-16T02:50:13.020912+00:00",
+    "date": "2026-10-16",
+    "built_utc": "2026-10-17T02:56:52.474356+00:00",
     "branch": "qpix_tsmc180",
-    "head": "716b2af4e5f0a689ffe7669e422aa31e501956a6",
+    "head": "65558ed265f99a0e62e8ddbff409ba0e40cc6e74",
     "source_state": "working-tree design and experiment sources; exact hashes in provenance",
     "selected_rate_hz": 10000000,
     "selected_input_f": 3e-12
@@ -1519,6 +1519,2008 @@
       "reservoir_delta_fj": -4.91092278e-05,
       "positive_shared_port_uw": 0.04113931371,
       "whole_fixture_plus_ports_uw": 199.2399954
+    }
+  ],
+  "native_clock": [
+    {
+      "id": "02fd0dfe7a48e67c99eda21854b5cac0",
+      "representation": "schematic",
+      "passed": false,
+      "temperature_k": 298.15,
+      "frequency_mhz": 10,
+      "trim_words": [
+        769,
+        816,
+        897,
+        816,
+        816,
+        804
+      ],
+      "assessment": {
+        "frequency_mhz": 10,
+        "trim_words": [
+          769,
+          816,
+          897,
+          816,
+          816,
+          804
+        ],
+        "cycles": [
+          {
+            "cycle": 0,
+            "accepted": true,
+            "counts": [
+              1,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            "edges_ns": [
+              2.034056789,
+              6.773191046,
+              16.66311629,
+              21.38300599,
+              26.11488069,
+              29.88581747
+            ],
+            "edge_errors_ns": [
+              0.0340567893,
+              -0.2268089536,
+              -0.3368837148,
+              -0.6169940113,
+              -0.885119309,
+              -1.114182534
+            ],
+            "phase_width_ns": 3.770936775,
+            "phase_width_error_ns": -0.2290632246,
+            "minimum_guard_ns": 3.770936775,
+            "recovery_margin_ns": 70.11418253,
+            "high_samples_v": {
+              "EVAL": 1.799999977,
+              "CAPTURE": 1.799999972,
+              "PHASE": 1.799999924
+            }
+          },
+          {
+            "cycle": 1,
+            "accepted": true,
+            "counts": [
+              1,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            "edges_ns": [
+              2.033014859,
+              6.771308221,
+              16.66054729,
+              21.37962883,
+              26.11071761,
+              29.88088751
+            ],
+            "edge_errors_ns": [
+              0.03301485922,
+              -0.2286917789,
+              -0.3394527073,
+              -0.6203711701,
+              -0.8892823937,
+              -1.119112485
+            ],
+            "phase_width_ns": 3.770169908,
+            "phase_width_error_ns": -0.2298300917,
+            "minimum_guard_ns": 3.770169908,
+            "recovery_margin_ns": 70.11911249,
+            "high_samples_v": {
+              "EVAL": 1.799999977,
+              "CAPTURE": 1.799999972,
+              "PHASE": 1.799999924
+            }
+          },
+          {
+            "cycle": 2,
+            "accepted": true,
+            "counts": [
+              1,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            "edges_ns": [
+              2.033015189,
+              6.771308747,
+              16.66054799,
+              21.37962956,
+              26.11071835,
+              29.88088827
+            ],
+            "edge_errors_ns": [
+              0.03301518867,
+              -0.2286912526,
+              -0.339452015,
+              -0.6203704425,
+              -0.8892816533,
+              -1.119111729
+            ],
+            "phase_width_ns": 3.770169924,
+            "phase_width_error_ns": -0.2298300758,
+            "minimum_guard_ns": 3.770169924,
+            "recovery_margin_ns": 70.11911173,
+            "high_samples_v": {
+              "EVAL": 1.799999977,
+              "CAPTURE": 1.799999972,
+              "PHASE": 1.799999924
+            }
+          },
+          {
+            "cycle": 3,
+            "accepted": true,
+            "counts": [
+              1,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            "edges_ns": [
+              2.033011031,
+              6.771318478,
+              16.6605484,
+              21.37962954,
+              26.11071834,
+              29.88088815
+            ],
+            "edge_errors_ns": [
+              0.03301103111,
+              -0.2286815217,
+              -0.3394515965,
+              -0.6203704643,
+              -0.8892816625,
+              -1.119111847
+            ],
+            "phase_width_ns": 3.770169815,
+            "phase_width_error_ns": -0.2298301847,
+            "minimum_guard_ns": 3.770169815,
+            "recovery_margin_ns": 70.11911185,
+            "high_samples_v": {
+              "EVAL": 1.799999977,
+              "CAPTURE": 1.799999972,
+              "PHASE": 1.799999924
+            }
+          },
+          {
+            "cycle": 4,
+            "accepted": true,
+            "counts": [
+              1,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            "edges_ns": [
+              2.033010145,
+              6.771317019,
+              16.66055609,
+              21.37964112,
+              26.11072714,
+              29.8808976
+            ],
+            "edge_errors_ns": [
+              0.03301014477,
+              -0.2286829809,
+              -0.3394439145,
+              -0.6203588835,
+              -0.8892728607,
+              -1.119102403
+            ],
+            "phase_width_ns": 3.770170457,
+            "phase_width_error_ns": -0.2298295428,
+            "minimum_guard_ns": 3.770170457,
+            "recovery_margin_ns": 70.1191024,
+            "high_samples_v": {
+              "EVAL": 1.799999977,
+              "CAPTURE": 1.799999972,
+              "PHASE": 1.799999924
+            }
+          },
+          {
+            "cycle": 5,
+            "accepted": true,
+            "counts": [
+              1,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            "edges_ns": [
+              2.033009826,
+              6.771316627,
+              16.66055559,
+              21.3796371,
+              26.11072589,
+              29.88089579
+            ],
+            "edge_errors_ns": [
+              0.03300982601,
+              -0.2286833728,
+              -0.3394444145,
+              -0.620362898,
+              -0.8892741052,
+              -1.119104211
+            ],
+            "phase_width_ns": 3.770169894,
+            "phase_width_error_ns": -0.2298301063,
+            "minimum_guard_ns": 3.770169894,
+            "recovery_margin_ns": 70.11910421,
+            "high_samples_v": {
+              "EVAL": 1.799999977,
+              "CAPTURE": 1.799999972,
+              "PHASE": 1.799999924
+            }
+          }
+        ],
+        "maximum_edge_error_ns": 1.119112485,
+        "maximum_width_error_ns": 0.2298301847,
+        "timing_targets_met": false,
+        "energy": {
+          "start_s": 3e-07,
+          "stop_s": 7e-07,
+          "complete_cycles": 4.0,
+          "sources": [
+            {
+              "port": "VDD",
+              "net_j": 8.733621794e-11,
+              "positive_j": 8.734620079e-11
+            },
+            {
+              "port": "CLK_IN",
+              "net_j": 1.092667678e-14,
+              "positive_j": 3.284812221e-14
+            },
+            {
+              "port": "RUN",
+              "net_j": 2.740464518e-20,
+              "positive_j": 1.987681687e-17
+            },
+            {
+              "port": "RESET",
+              "net_j": 0.0,
+              "positive_j": 0.0
+            },
+            {
+              "port": "TRIM_A_9",
+              "net_j": 5.656136982e-18,
+              "positive_j": 3.422902834e-14
+            },
+            {
+              "port": "TRIM_A_7",
+              "net_j": 0.0,
+              "positive_j": 0.0
+            },
+            {
+              "port": "TRIM_A_6",
+              "net_j": 0.0,
+              "positive_j": 0.0
+            },
+            {
+              "port": "TRIM_A_5",
+              "net_j": 0.0,
+              "positive_j": 0.0
+            },
+            {
+              "port": "TRIM_A_4",
+              "net_j": 0.0,
+              "positive_j": 0.0
+            },
+            {
+              "port": "TRIM_A_3",
+              "net_j": 0.0,
+              "positive_j": 0.0
+            },
+            {
+              "port": "TRIM_A_2",
+              "net_j": 0.0,
+              "positive_j": 0.0
+            },
+            {
+              "port": "TRIM_A_1",
+              "net_j": 0.0,
+              "positive_j": 0.0
+            },
+            {
+              "port": "TRIM_A_0",
+              "net_j": 2.235492299e-18,
+              "positive_j": 1.809645601e-14
+            },
+            {
+              "port": "TRIM_B_9",
+              "net_j": 8.667677509e-19,
+              "positive_j": 3.409307153e-14
+            },
+            {
+              "port": "TRIM_B_7",
+              "net_j": 0.0,
+              "positive_j": 0.0
+            },
+            {
+              "port": "TRIM_B_6",
+              "net_j": 0.0,
+              "positive_j": 0.0
+            },
+            {
+              "port": "TRIM_B_5",
+              "net_j": -4.169608712e-18,
+              "positive_j": 1.789243267e-14
+            },
+            {
+              "port": "TRIM_B_4",
+              "net_j": -2.12221038e-18,
+              "positive_j": 1.790805008e-14
+            },
+            {
+              "port": "TRIM_B_3",
+              "net_j": 0.0,
+              "positive_j": 0.0
+            },
+            {
+              "port": "TRIM_B_2",
+              "net_j": 0.0,
+              "positive_j": 0.0
+            },
+            {
+              "port": "TRIM_B_1",
+              "net_j": 0.0,
+              "positive_j": 0.0
+            },
+            {
+              "port": "TRIM_B_0",
+              "net_j": 0.0,
+              "positive_j": 0.0
+            },
+            {
+              "port": "TRIM_C_9",
+              "net_j": -2.390647366e-18,
+              "positive_j": 2.961142158e-14
+            },
+            {
+              "port": "TRIM_C_7",
+              "net_j": 2.348754615e-19,
+              "positive_j": 1.569967926e-14
+            },
+            {
+              "port": "TRIM_C_6",
+              "net_j": 0.0,
+              "positive_j": 0.0
+            },
+            {
+              "port": "TRIM_C_5",
+              "net_j": 0.0,
+              "positive_j": 0.0
+            }
+          ],
+          "supply_average_uw": 218.3405448,
+          "positive_input_boundary_average_uw": 0.5009953463,
+          "supply_plus_positive_boundary_average_uw": 218.8415402,
+          "energy_per_clock_pj": 21.88415402,
+          "external_output_capacitor_energy_change_j": 2.21062929e-38,
+          "decoupling_cell": "CLK_MOM_ARRAY_128_V1",
+          "decoupling_policy": "Real recognized MOM array is retained in source and PEX. Source energy includes its charging; no reservoir subtraction.",
+          "reservoir_energy_change_j": null,
+          "reservoir_limitation": "Port-only archive does not independently resolve the internal extracted decoupler plate voltages.",
+          "allocation": "Raw one-generator/one-80-fF-bank budget; no actual chip channel-count allocation"
+        }
+      }
+    },
+    {
+      "id": "d8f88e515132467fb9af4207eee2c0b6",
+      "representation": "schematic",
+      "passed": true,
+      "temperature_k": 298.15,
+      "frequency_mhz": 10,
+      "trim_words": [
+        769,
+        819,
+        898,
+        819,
+        819,
+        807
+      ],
+      "assessment": {
+        "frequency_mhz": 10,
+        "trim_words": [
+          769,
+          819,
+          898,
+          819,
+          819,
+          807
+        ],
+        "cycles": [
+          {
+            "cycle": 0,
+            "accepted": true,
+            "counts": [
+              1,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            "edges_ns": [
+              2.034104155,
+              7.113231383,
+              17.08706222,
+              22.14637892,
+              27.21760826,
+              31.33395543
+            ],
+            "edge_errors_ns": [
+              0.03410415537,
+              0.1132313835,
+              0.08706222318,
+              0.1463789205,
+              0.2176082593,
+              0.3339554288
+            ],
+            "phase_width_ns": 4.11634717,
+            "phase_width_error_ns": 0.1163471695,
+            "minimum_guard_ns": 4.11634717,
+            "recovery_margin_ns": 68.66604457,
+            "high_samples_v": {
+              "EVAL": 1.799999977,
+              "CAPTURE": 1.799999972,
+              "PHASE": 1.799999932
+            }
+          },
+          {
+            "cycle": 1,
+            "accepted": true,
+            "counts": [
+              1,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            "edges_ns": [
+              2.033051517,
+              7.111344178,
+              17.08445973,
+              22.14297002,
+              27.21340544,
+              31.32897716
+            ],
+            "edge_errors_ns": [
+              0.03305151673,
+              0.1113441779,
+              0.08445972746,
+              0.1429700242,
+              0.2134054376,
+              0.3289771603
+            ],
+            "phase_width_ns": 4.115571723,
+            "phase_width_error_ns": 0.1155717227,
+            "minimum_guard_ns": 4.115571723,
+            "recovery_margin_ns": 68.67102284,
+            "high_samples_v": {
+              "EVAL": 1.799999977,
+              "CAPTURE": 1.799999972,
+              "PHASE": 1.799999932
+            }
+          },
+          {
+            "cycle": 2,
+            "accepted": true,
+            "counts": [
+              1,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            "edges_ns": [
+              2.033051835,
+              7.111344677,
+              17.08446037,
+              22.14297072,
+              27.21340615,
+              31.32897788
+            ],
+            "edge_errors_ns": [
+              0.03305183468,
+              0.1113446773,
+              0.08446036631,
+              0.142970724,
+              0.2134061525,
+              0.3289778843
+            ],
+            "phase_width_ns": 4.115571732,
+            "phase_width_error_ns": 0.1155717318,
+            "minimum_guard_ns": 4.115571732,
+            "recovery_margin_ns": 68.67102212,
+            "high_samples_v": {
+              "EVAL": 1.799999977,
+              "CAPTURE": 1.799999972,
+              "PHASE": 1.799999932
+            }
+          },
+          {
+            "cycle": 3,
+            "accepted": true,
+            "counts": [
+              1,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            "edges_ns": [
+              2.033051849,
+              7.111344696,
+              17.08446039,
+              22.14297075,
+              27.21340617,
+              31.32897791
+            ],
+            "edge_errors_ns": [
+              0.03305184902,
+              0.1113446956,
+              0.08446038748,
+              0.1429707457,
+              0.2134061743,
+              0.3289779061
+            ],
+            "phase_width_ns": 4.115571732,
+            "phase_width_error_ns": 0.1155717318,
+            "minimum_guard_ns": 4.115571732,
+            "recovery_margin_ns": 68.67102209,
+            "high_samples_v": {
+              "EVAL": 1.799999977,
+              "CAPTURE": 1.799999972,
+              "PHASE": 1.799999932
+            }
+          },
+          {
+            "cycle": 4,
+            "accepted": true,
+            "counts": [
+              1,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            "edges_ns": [
+              2.033051863,
+              7.111344714,
+              17.08446041,
+              22.14297077,
+              27.2134062,
+              31.32897793
+            ],
+            "edge_errors_ns": [
+              0.03305186329,
+              0.1113447142,
+              0.08446040934,
+              0.142970768,
+              0.2134061966,
+              0.3289779284
+            ],
+            "phase_width_ns": 4.115571732,
+            "phase_width_error_ns": 0.1155717318,
+            "minimum_guard_ns": 4.115571732,
+            "recovery_margin_ns": 68.67102207,
+            "high_samples_v": {
+              "EVAL": 1.799999977,
+              "CAPTURE": 1.799999972,
+              "PHASE": 1.799999932
+            }
+          },
+          {
+            "cycle": 5,
+            "accepted": true,
+            "counts": [
+              1,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            "edges_ns": [
+              2.033051873,
+              7.111344727,
+              17.08446042,
+              22.14297078,
+              27.21340621,
+              31.32897794
+            ],
+            "edge_errors_ns": [
+              0.03305187331,
+              0.111344727,
+              0.08446042418,
+              0.1429707831,
+              0.2134062117,
+              0.3289779436
+            ],
+            "phase_width_ns": 4.115571732,
+            "phase_width_error_ns": 0.1155717318,
+            "minimum_guard_ns": 4.115571732,
+            "recovery_margin_ns": 68.67102206,
+            "high_samples_v": {
+              "EVAL": 1.799999977,
+              "CAPTURE": 1.799999972,
+              "PHASE": 1.799999932
+            }
+          }
+        ],
+        "maximum_edge_error_ns": 0.3339554288,
+        "maximum_width_error_ns": 0.1163471695,
+        "timing_targets_met": true,
+        "energy": {
+          "start_s": 3e-07,
+          "stop_s": 7e-07,
+          "complete_cycles": 4.0,
+          "sources": [
+            {
+              "port": "VDD",
+              "net_j": 9.100515779e-11,
+              "positive_j": 9.101514056e-11
+            },
+            {
+              "port": "CLK_IN",
+              "net_j": 1.092667793e-14,
+              "positive_j": 3.284812172e-14
+            },
+            {
+              "port": "RUN",
+              "net_j": 2.740498557e-20,
+              "positive_j": 1.987681525e-17
+            },
+            {
+              "port": "RESET",
+              "net_j": 0.0,
+              "positive_j": 0.0
+            },
+            {
+              "port": "TRIM_A_9",
+              "net_j": 5.692744586e-18,
+              "positive_j": 3.422878999e-14
+            },
+            {
+              "port": "TRIM_A_7",
+              "net_j": 0.0,
+              "positive_j": 0.0
+            },
+            {
+              "port": "TRIM_A_6",
+              "net_j": 0.0,
+              "positive_j": 0.0
+            },
+            {
+              "port": "TRIM_A_5",
+              "net_j": 0.0,
+              "positive_j": 0.0
+            },
+            {
+              "port": "TRIM_A_4",
+              "net_j": 0.0,
+              "positive_j": 0.0
+            },
+            {
+              "port": "TRIM_A_3",
+              "net_j": 0.0,
+              "positive_j": 0.0
+            },
+            {
+              "port": "TRIM_A_2",
+              "net_j": 0.0,
+              "positive_j": 0.0
+            },
+            {
+              "port": "TRIM_A_1",
+              "net_j": 0.0,
+              "positive_j": 0.0
+            },
+            {
+              "port": "TRIM_A_0",
+              "net_j": 2.840830565e-18,
+              "positive_j": 1.809695163e-14
+            },
+            {
+              "port": "TRIM_B_9",
+              "net_j": -3.097573635e-19,
+              "positive_j": 3.405352453e-14
+            },
+            {
+              "port": "TRIM_B_7",
+              "net_j": 0.0,
+              "positive_j": 0.0
+            },
+            {
+              "port": "TRIM_B_6",
+              "net_j": 0.0,
+              "positive_j": 0.0
+            },
+            {
+              "port": "TRIM_B_5",
+              "net_j": -3.809892941e-18,
+              "positive_j": 1.787464268e-14
+            },
+            {
+              "port": "TRIM_B_4",
+              "net_j": -1.993032311e-18,
+              "positive_j": 1.788895723e-14
+            },
+            {
+              "port": "TRIM_B_3",
+              "net_j": 0.0,
+              "positive_j": 0.0
+            },
+            {
+              "port": "TRIM_B_2",
+              "net_j": 0.0,
+              "positive_j": 0.0
+            },
+            {
+              "port": "TRIM_B_1",
+              "net_j": -8.62300722e-19,
+              "positive_j": 1.793175299e-14
+            },
+            {
+              "port": "TRIM_B_0",
+              "net_j": -4.423806392e-19,
+              "positive_j": 1.793912531e-14
+            },
+            {
+              "port": "TRIM_C_9",
+              "net_j": -4.287765426e-18,
+              "positive_j": 2.984069541e-14
+            },
+            {
+              "port": "TRIM_C_7",
+              "net_j": 4.40826515e-20,
+              "positive_j": 1.583536597e-14
+            },
+            {
+              "port": "TRIM_C_6",
+              "net_j": 0.0,
+              "positive_j": 0.0
+            },
+            {
+              "port": "TRIM_C_5",
+              "net_j": 0.0,
+              "positive_j": 0.0
+            }
+          ],
+          "supply_average_uw": 227.5128945,
+          "positive_input_boundary_average_uw": 0.5913945107,
+          "supply_plus_positive_boundary_average_uw": 228.104289,
+          "energy_per_clock_pj": 22.8104289,
+          "external_output_capacitor_energy_change_j": 1.238210671e-38,
+          "decoupling_cell": "CLK_MOM_ARRAY_128_V1",
+          "decoupling_policy": "Real recognized MOM array is retained in source and PEX. Source energy includes its charging; no reservoir subtraction.",
+          "reservoir_energy_change_j": null,
+          "reservoir_limitation": "Port-only archive does not independently resolve the internal extracted decoupler plate voltages.",
+          "allocation": "Raw one-generator/one-80-fF-bank budget; no actual chip channel-count allocation"
+        }
+      }
+    },
+    {
+      "id": "465bb961600b38ea3ddcfde89c77c5af",
+      "representation": "schematic",
+      "passed": true,
+      "temperature_k": 298.15,
+      "frequency_mhz": 10,
+      "trim_words": [
+        769,
+        819,
+        898,
+        819,
+        819,
+        807
+      ],
+      "assessment": {
+        "frequency_mhz": 10,
+        "trim_words": [
+          769,
+          819,
+          898,
+          819,
+          819,
+          807
+        ],
+        "cycles": [
+          {
+            "cycle": 0,
+            "accepted": true,
+            "counts": [
+              1,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            "edges_ns": [
+              2.03371806,
+              7.107448306,
+              17.0653825,
+              22.11924693,
+              27.18505247,
+              31.29693446
+            ],
+            "edge_errors_ns": [
+              0.0337180604,
+              0.107448306,
+              0.06538250199,
+              0.1192469285,
+              0.1850524724,
+              0.2969344567
+            ],
+            "phase_width_ns": 4.111881984,
+            "phase_width_error_ns": 0.1118819843,
+            "minimum_guard_ns": 4.111881984,
+            "recovery_margin_ns": 68.70306554,
+            "high_samples_v": {
+              "EVAL": 1.799999977,
+              "CAPTURE": 1.799999972,
+              "PHASE": 1.799999932
+            }
+          },
+          {
+            "cycle": 1,
+            "accepted": true,
+            "counts": [
+              1,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            "edges_ns": [
+              2.03267016,
+              7.105569424,
+              17.06278283,
+              22.11584623,
+              27.18086419,
+              31.2919645
+            ],
+            "edge_errors_ns": [
+              0.03267015994,
+              0.1055694242,
+              0.06278282914,
+              0.1158462275,
+              0.1808641922,
+              0.2919644987
+            ],
+            "phase_width_ns": 4.111100306,
+            "phase_width_error_ns": 0.1111003065,
+            "minimum_guard_ns": 4.111100306,
+            "recovery_margin_ns": 68.7080355,
+            "high_samples_v": {
+              "EVAL": 1.799999977,
+              "CAPTURE": 1.799999972,
+              "PHASE": 1.799999932
+            }
+          },
+          {
+            "cycle": 2,
+            "accepted": true,
+            "counts": [
+              1,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            "edges_ns": [
+              2.032670267,
+              7.105569551,
+              17.0627832,
+              22.11584611,
+              27.18086399,
+              31.29196434
+            ],
+            "edge_errors_ns": [
+              0.03267026685,
+              0.1055695507,
+              0.06278319886,
+              0.1158461135,
+              0.1808639922,
+              0.291964341
+            ],
+            "phase_width_ns": 4.111100349,
+            "phase_width_error_ns": 0.1111003487,
+            "minimum_guard_ns": 4.111100349,
+            "recovery_margin_ns": 68.70803566,
+            "high_samples_v": {
+              "EVAL": 1.799999977,
+              "CAPTURE": 1.799999972,
+              "PHASE": 1.799999932
+            }
+          },
+          {
+            "cycle": 3,
+            "accepted": true,
+            "counts": [
+              1,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            "edges_ns": [
+              2.032670157,
+              7.105569438,
+              17.06278307,
+              22.11584598,
+              27.18086386,
+              31.2919642
+            ],
+            "edge_errors_ns": [
+              0.03267015724,
+              0.1055694377,
+              0.06278307215,
+              0.1158459782,
+              0.1808638551,
+              0.2919642043
+            ],
+            "phase_width_ns": 4.111100349,
+            "phase_width_error_ns": 0.1111003492,
+            "minimum_guard_ns": 4.111100349,
+            "recovery_margin_ns": 68.7080358,
+            "high_samples_v": {
+              "EVAL": 1.799999977,
+              "CAPTURE": 1.799999972,
+              "PHASE": 1.799999932
+            }
+          },
+          {
+            "cycle": 4,
+            "accepted": true,
+            "counts": [
+              1,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            "edges_ns": [
+              2.032663424,
+              7.105560226,
+              17.06277194,
+              22.11583656,
+              27.18085538,
+              31.29195545
+            ],
+            "edge_errors_ns": [
+              0.0326634239,
+              0.1055602258,
+              0.0627719403,
+              0.1158365571,
+              0.180855377,
+              0.2919554513
+            ],
+            "phase_width_ns": 4.111100074,
+            "phase_width_error_ns": 0.1111000743,
+            "minimum_guard_ns": 4.111100074,
+            "recovery_margin_ns": 68.70804455,
+            "high_samples_v": {
+              "EVAL": 1.799999977,
+              "CAPTURE": 1.799999972,
+              "PHASE": 1.799999932
+            }
+          },
+          {
+            "cycle": 5,
+            "accepted": true,
+            "counts": [
+              1,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            "edges_ns": [
+              2.032663362,
+              7.105560176,
+              17.06277166,
+              22.11583625,
+              27.18085536,
+              31.29195532
+            ],
+            "edge_errors_ns": [
+              0.03266336161,
+              0.1055601757,
+              0.06277166481,
+              0.1158362501,
+              0.1808553612,
+              0.2919553193
+            ],
+            "phase_width_ns": 4.111099958,
+            "phase_width_error_ns": 0.1110999581,
+            "minimum_guard_ns": 4.111099958,
+            "recovery_margin_ns": 68.70804468,
+            "high_samples_v": {
+              "EVAL": 1.799999977,
+              "CAPTURE": 1.799999972,
+              "PHASE": 1.799999932
+            }
+          }
+        ],
+        "maximum_edge_error_ns": 0.2969344567,
+        "maximum_width_error_ns": 0.1118819843,
+        "timing_targets_met": true,
+        "energy": {
+          "start_s": 3e-07,
+          "stop_s": 7e-07,
+          "complete_cycles": 4.0,
+          "sources": [
+            {
+              "port": "VDD",
+              "net_j": 9.09899904e-11,
+              "positive_j": 9.099995362e-11
+            },
+            {
+              "port": "CLK_IN",
+              "net_j": 1.040433151e-14,
+              "positive_j": 3.264202086e-14
+            },
+            {
+              "port": "RUN",
+              "net_j": 3.879064904e-20,
+              "positive_j": 1.802177624e-17
+            },
+            {
+              "port": "RESET",
+              "net_j": 0.0,
+              "positive_j": 0.0
+            },
+            {
+              "port": "TRIM_A_9",
+              "net_j": 5.810128667e-18,
+              "positive_j": 3.422613709e-14
+            },
+            {
+              "port": "TRIM_A_7",
+              "net_j": 0.0,
+              "positive_j": 0.0
+            },
+            {
+              "port": "TRIM_A_6",
+              "net_j": 0.0,
+              "positive_j": 0.0
+            },
+            {
+              "port": "TRIM_A_5",
+              "net_j": 0.0,
+              "positive_j": 0.0
+            },
+            {
+              "port": "TRIM_A_4",
+              "net_j": 0.0,
+              "positive_j": 0.0
+            },
+            {
+              "port": "TRIM_A_3",
+              "net_j": 0.0,
+              "positive_j": 0.0
+            },
+            {
+              "port": "TRIM_A_2",
+              "net_j": 0.0,
+              "positive_j": 0.0
+            },
+            {
+              "port": "TRIM_A_1",
+              "net_j": 0.0,
+              "positive_j": 0.0
+            },
+            {
+              "port": "TRIM_A_0",
+              "net_j": 3.232182591e-18,
+              "positive_j": 1.809579919e-14
+            },
+            {
+              "port": "TRIM_B_9",
+              "net_j": -7.332586094e-19,
+              "positive_j": 3.405129508e-14
+            },
+            {
+              "port": "TRIM_B_7",
+              "net_j": 0.0,
+              "positive_j": 0.0
+            },
+            {
+              "port": "TRIM_B_6",
+              "net_j": 0.0,
+              "positive_j": 0.0
+            },
+            {
+              "port": "TRIM_B_5",
+              "net_j": -3.217678378e-18,
+              "positive_j": 1.787472553e-14
+            },
+            {
+              "port": "TRIM_B_4",
+              "net_j": -1.638055713e-18,
+              "positive_j": 1.788889496e-14
+            },
+            {
+              "port": "TRIM_B_3",
+              "net_j": 0.0,
+              "positive_j": 0.0
+            },
+            {
+              "port": "TRIM_B_2",
+              "net_j": 0.0,
+              "positive_j": 0.0
+            },
+            {
+              "port": "TRIM_B_1",
+              "net_j": -7.019084279e-19,
+              "positive_j": 1.79312208e-14
+            },
+            {
+              "port": "TRIM_B_0",
+              "net_j": -3.057762639e-19,
+              "positive_j": 1.793840017e-14
+            },
+            {
+              "port": "TRIM_C_9",
+              "net_j": -3.696225805e-18,
+              "positive_j": 2.983641759e-14
+            },
+            {
+              "port": "TRIM_C_7",
+              "net_j": 4.677098273e-19,
+              "positive_j": 1.583463939e-14
+            },
+            {
+              "port": "TRIM_C_6",
+              "net_j": 0.0,
+              "positive_j": 0.0
+            },
+            {
+              "port": "TRIM_C_5",
+              "net_j": 0.0,
+              "positive_j": 0.0
+            }
+          ],
+          "supply_average_uw": 227.474976,
+          "positive_input_boundary_average_uw": 0.5908439311,
+          "supply_plus_positive_boundary_average_uw": 228.0658199,
+          "energy_per_clock_pj": 22.80658199,
+          "external_output_capacitor_energy_change_j": -4.597237437e-37,
+          "decoupling_cell": "CLK_MOM_ARRAY_128_V1",
+          "decoupling_policy": "Real recognized MOM array is retained in source and PEX. Source energy includes its charging; no reservoir subtraction.",
+          "reservoir_energy_change_j": null,
+          "reservoir_limitation": "Port-only archive does not independently resolve the internal extracted decoupler plate voltages.",
+          "allocation": "Raw one-generator/one-80-fF-bank budget; no actual chip channel-count allocation"
+        }
+      }
+    },
+    {
+      "id": "e057d485ab60c6a662f40bccf92d4968",
+      "representation": "pex",
+      "passed": false,
+      "temperature_k": 298.15,
+      "frequency_mhz": 10,
+      "trim_words": [
+        769,
+        819,
+        898,
+        819,
+        819,
+        807
+      ],
+      "assessment": {
+        "frequency_mhz": 10,
+        "trim_words": [
+          769,
+          819,
+          898,
+          819,
+          819,
+          807
+        ],
+        "cycles": [
+          {
+            "cycle": 0,
+            "accepted": true,
+            "counts": [
+              1,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            "edges_ns": [
+              8.379491118,
+              22.28629038,
+              47.22283362,
+              60.90973227,
+              74.66391212,
+              86.05149949
+            ],
+            "edge_errors_ns": [
+              6.379491118,
+              15.28629038,
+              30.22283362,
+              38.90973227,
+              47.66391212,
+              55.05149949
+            ],
+            "phase_width_ns": 11.38758737,
+            "phase_width_error_ns": 7.387587372,
+            "minimum_guard_ns": 11.38758737,
+            "recovery_margin_ns": 13.94850051,
+            "high_samples_v": {
+              "EVAL": 1.800001385,
+              "CAPTURE": 1.800001357,
+              "PHASE": 1.800003244
+            }
+          },
+          {
+            "cycle": 1,
+            "accepted": true,
+            "counts": [
+              1,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            "edges_ns": [
+              8.371778276,
+              22.26810765,
+              46.79415326,
+              60.47595059,
+              74.22508024,
+              85.60784551
+            ],
+            "edge_errors_ns": [
+              6.371778276,
+              15.26810765,
+              29.79415326,
+              38.47595059,
+              47.22508024,
+              54.60784551
+            ],
+            "phase_width_ns": 11.38276526,
+            "phase_width_error_ns": 7.382765262,
+            "minimum_guard_ns": 11.38276526,
+            "recovery_margin_ns": 14.39215449,
+            "high_samples_v": {
+              "EVAL": 1.800001428,
+              "CAPTURE": 1.8000014,
+              "PHASE": 1.800003241
+            }
+          },
+          {
+            "cycle": 2,
+            "accepted": true,
+            "counts": [
+              1,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            "edges_ns": [
+              8.37180366,
+              22.26865536,
+              46.8503439,
+              60.53214088,
+              74.28129094,
+              85.66405113
+            ],
+            "edge_errors_ns": [
+              6.37180366,
+              15.26865536,
+              29.8503439,
+              38.53214088,
+              47.28129094,
+              54.66405113
+            ],
+            "phase_width_ns": 11.38276019,
+            "phase_width_error_ns": 7.38276019,
+            "minimum_guard_ns": 11.38276019,
+            "recovery_margin_ns": 14.33594887,
+            "high_samples_v": {
+              "EVAL": 1.800001422,
+              "CAPTURE": 1.800001394,
+              "PHASE": 1.800003241
+            }
+          },
+          {
+            "cycle": 3,
+            "accepted": true,
+            "counts": [
+              1,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            "edges_ns": [
+              8.37180027,
+              22.26858982,
+              46.84369646,
+              60.52549292,
+              74.27464205,
+              85.65740229
+            ],
+            "edge_errors_ns": [
+              6.37180027,
+              15.26858982,
+              29.84369646,
+              38.52549292,
+              47.27464205,
+              54.65740229
+            ],
+            "phase_width_ns": 11.38276024,
+            "phase_width_error_ns": 7.382760241,
+            "minimum_guard_ns": 11.38276024,
+            "recovery_margin_ns": 14.34259771,
+            "high_samples_v": {
+              "EVAL": 1.800001422,
+              "CAPTURE": 1.800001394,
+              "PHASE": 1.800003241
+            }
+          },
+          {
+            "cycle": 4,
+            "accepted": true,
+            "counts": [
+              1,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            "edges_ns": [
+              8.371800636,
+              22.26859763,
+              46.8444924,
+              60.52628887,
+              74.27543813,
+              85.65819835
+            ],
+            "edge_errors_ns": [
+              6.371800636,
+              15.26859763,
+              29.8444924,
+              38.52628887,
+              47.27543813,
+              54.65819835
+            ],
+            "phase_width_ns": 11.38276022,
+            "phase_width_error_ns": 7.382760223,
+            "minimum_guard_ns": 11.38276022,
+            "recovery_margin_ns": 14.34180165,
+            "high_samples_v": {
+              "EVAL": 1.800001422,
+              "CAPTURE": 1.800001394,
+              "PHASE": 1.800003241
+            }
+          },
+          {
+            "cycle": 5,
+            "accepted": true,
+            "counts": [
+              1,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            "edges_ns": [
+              8.371796602,
+              22.26859816,
+              46.84439873,
+              60.52619518,
+              74.27534442,
+              85.65810464
+            ],
+            "edge_errors_ns": [
+              6.371796602,
+              15.26859816,
+              29.84439873,
+              38.52619518,
+              47.27534442,
+              54.65810464
+            ],
+            "phase_width_ns": 11.38276022,
+            "phase_width_error_ns": 7.382760223,
+            "minimum_guard_ns": 11.38276022,
+            "recovery_margin_ns": 14.34189536,
+            "high_samples_v": {
+              "EVAL": 1.800001422,
+              "CAPTURE": 1.800001394,
+              "PHASE": 1.800003241
+            }
+          }
+        ],
+        "maximum_edge_error_ns": 55.05149949,
+        "maximum_width_error_ns": 7.387587372,
+        "timing_targets_met": false,
+        "energy": {
+          "start_s": 3e-07,
+          "stop_s": 7e-07,
+          "complete_cycles": 4.0,
+          "sources": [
+            {
+              "port": "VDD",
+              "net_j": 2.747581877e-10,
+              "positive_j": 2.747806607e-10
+            },
+            {
+              "port": "CLK_IN",
+              "net_j": 3.076535708e-14,
+              "positive_j": 2.941414692e-13
+            },
+            {
+              "port": "RUN",
+              "net_j": -1.30979501e-18,
+              "positive_j": 6.065200517e-15
+            },
+            {
+              "port": "RESET",
+              "net_j": 0.0,
+              "positive_j": 0.0
+            },
+            {
+              "port": "TRIM_A_9",
+              "net_j": -9.667806987e-17,
+              "positive_j": 1.997208033e-13
+            },
+            {
+              "port": "TRIM_A_7",
+              "net_j": 0.0,
+              "positive_j": 0.0
+            },
+            {
+              "port": "TRIM_A_6",
+              "net_j": 0.0,
+              "positive_j": 0.0
+            },
+            {
+              "port": "TRIM_A_5",
+              "net_j": 0.0,
+              "positive_j": 0.0
+            },
+            {
+              "port": "TRIM_A_4",
+              "net_j": 0.0,
+              "positive_j": 0.0
+            },
+            {
+              "port": "TRIM_A_3",
+              "net_j": 0.0,
+              "positive_j": 0.0
+            },
+            {
+              "port": "TRIM_A_2",
+              "net_j": 0.0,
+              "positive_j": 0.0
+            },
+            {
+              "port": "TRIM_A_1",
+              "net_j": 0.0,
+              "positive_j": 0.0
+            },
+            {
+              "port": "TRIM_A_0",
+              "net_j": -1.130109288e-17,
+              "positive_j": 9.757046504e-14
+            },
+            {
+              "port": "TRIM_B_9",
+              "net_j": -7.518038145e-17,
+              "positive_j": 1.892362565e-13
+            },
+            {
+              "port": "TRIM_B_7",
+              "net_j": 0.0,
+              "positive_j": 0.0
+            },
+            {
+              "port": "TRIM_B_6",
+              "net_j": 0.0,
+              "positive_j": 0.0
+            },
+            {
+              "port": "TRIM_B_5",
+              "net_j": -4.242118791e-17,
+              "positive_j": 1.165022427e-13
+            },
+            {
+              "port": "TRIM_B_4",
+              "net_j": -3.465762949e-17,
+              "positive_j": 1.164383902e-13
+            },
+            {
+              "port": "TRIM_B_3",
+              "net_j": 0.0,
+              "positive_j": 0.0
+            },
+            {
+              "port": "TRIM_B_2",
+              "net_j": 0.0,
+              "positive_j": 0.0
+            },
+            {
+              "port": "TRIM_B_1",
+              "net_j": -1.60377205e-17,
+              "positive_j": 8.20764136e-14
+            },
+            {
+              "port": "TRIM_B_0",
+              "net_j": -1.7805654e-17,
+              "positive_j": 9.606438416e-14
+            },
+            {
+              "port": "TRIM_C_9",
+              "net_j": -6.93771228e-17,
+              "positive_j": 1.773747316e-13
+            },
+            {
+              "port": "TRIM_C_7",
+              "net_j": -3.69204546e-17,
+              "positive_j": 1.317422424e-13
+            },
+            {
+              "port": "TRIM_C_6",
+              "net_j": 0.0,
+              "positive_j": 0.0
+            },
+            {
+              "port": "TRIM_C_5",
+              "net_j": 0.0,
+              "positive_j": 0.0
+            }
+          ],
+          "supply_average_uw": 686.8954694,
+          "positive_input_boundary_average_uw": 3.767331498,
+          "supply_plus_positive_boundary_average_uw": 690.6628009,
+          "energy_per_clock_pj": 69.06628009,
+          "external_output_capacitor_energy_change_j": 3.509448505e-22,
+          "decoupling_cell": "CLK_MOM_ARRAY_128_V1",
+          "decoupling_policy": "Real recognized MOM array is retained in source and PEX. Source energy includes its charging; no reservoir subtraction.",
+          "reservoir_energy_change_j": null,
+          "reservoir_limitation": "Port-only archive does not independently resolve the internal extracted decoupler plate voltages.",
+          "allocation": "Raw one-generator/one-80-fF-bank budget; no actual chip channel-count allocation"
+        }
+      }
+    },
+    {
+      "id": "ae2f662a4af0fdf3d53c432240d5d5d1",
+      "representation": "pex",
+      "passed": false,
+      "temperature_k": 298.15,
+      "frequency_mhz": 10,
+      "trim_words": [
+        769,
+        819,
+        898,
+        819,
+        819,
+        807
+      ],
+      "assessment": {
+        "frequency_mhz": 10,
+        "trim_words": [
+          769,
+          819,
+          898,
+          819,
+          819,
+          807
+        ],
+        "cycles": [
+          {
+            "cycle": 0,
+            "accepted": true,
+            "counts": [
+              1,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            "edges_ns": [
+              8.093750219,
+              17.62244525,
+              32.65923555,
+              41.95397624,
+              51.33238593,
+              59.35474099
+            ],
+            "edge_errors_ns": [
+              6.093750219,
+              10.62244525,
+              15.65923555,
+              19.95397624,
+              24.33238593,
+              28.35474099
+            ],
+            "phase_width_ns": 8.022355056,
+            "phase_width_error_ns": 4.022355056,
+            "minimum_guard_ns": 8.022355056,
+            "recovery_margin_ns": 40.64525901,
+            "high_samples_v": {
+              "EVAL": 1.800002994,
+              "CAPTURE": 1.800002967,
+              "PHASE": 1.800005854
+            }
+          },
+          {
+            "cycle": 1,
+            "accepted": true,
+            "counts": [
+              1,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            "edges_ns": [
+              8.087474858,
+              17.61037194,
+              32.64239733,
+              41.93192755,
+              51.30519497,
+              59.32265141
+            ],
+            "edge_errors_ns": [
+              6.087474858,
+              10.61037194,
+              15.64239733,
+              19.93192755,
+              24.30519497,
+              28.32265141
+            ],
+            "phase_width_ns": 8.017456441,
+            "phase_width_error_ns": 4.017456441,
+            "minimum_guard_ns": 8.017456441,
+            "recovery_margin_ns": 40.67734859,
+            "high_samples_v": {
+              "EVAL": 1.800002995,
+              "CAPTURE": 1.800002968,
+              "PHASE": 1.800005827
+            }
+          },
+          {
+            "cycle": 2,
+            "accepted": true,
+            "counts": [
+              1,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            "edges_ns": [
+              8.087475851,
+              17.61037355,
+              32.64239977,
+              41.93193058,
+              51.30519837,
+              59.32265526
+            ],
+            "edge_errors_ns": [
+              6.087475851,
+              10.61037355,
+              15.64239977,
+              19.93193058,
+              24.30519837,
+              28.32265526
+            ],
+            "phase_width_ns": 8.017456885,
+            "phase_width_error_ns": 4.017456885,
+            "minimum_guard_ns": 8.017456885,
+            "recovery_margin_ns": 40.67734474,
+            "high_samples_v": {
+              "EVAL": 1.800002995,
+              "CAPTURE": 1.800002968,
+              "PHASE": 1.800005827
+            }
+          },
+          {
+            "cycle": 3,
+            "accepted": true,
+            "counts": [
+              1,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            "edges_ns": [
+              8.087475832,
+              17.61037352,
+              32.64239973,
+              41.93193054,
+              51.30519826,
+              59.32265512
+            ],
+            "edge_errors_ns": [
+              6.087475832,
+              10.61037352,
+              15.64239973,
+              19.93193054,
+              24.30519826,
+              28.32265512
+            ],
+            "phase_width_ns": 8.017456868,
+            "phase_width_error_ns": 4.017456868,
+            "minimum_guard_ns": 8.017456868,
+            "recovery_margin_ns": 40.67734488,
+            "high_samples_v": {
+              "EVAL": 1.800002995,
+              "CAPTURE": 1.800002968,
+              "PHASE": 1.800005827
+            }
+          },
+          {
+            "cycle": 4,
+            "accepted": true,
+            "counts": [
+              1,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            "edges_ns": [
+              8.087475819,
+              17.61037351,
+              32.64239971,
+              41.93193051,
+              51.30519818,
+              59.32265503
+            ],
+            "edge_errors_ns": [
+              6.087475819,
+              10.61037351,
+              15.64239971,
+              19.93193051,
+              24.30519818,
+              28.32265503
+            ],
+            "phase_width_ns": 8.017456848,
+            "phase_width_error_ns": 4.017456848,
+            "minimum_guard_ns": 8.017456848,
+            "recovery_margin_ns": 40.67734497,
+            "high_samples_v": {
+              "EVAL": 1.800002995,
+              "CAPTURE": 1.800002968,
+              "PHASE": 1.800005827
+            }
+          },
+          {
+            "cycle": 5,
+            "accepted": true,
+            "counts": [
+              1,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            "edges_ns": [
+              8.087475811,
+              17.6103735,
+              32.64239969,
+              41.93193049,
+              51.30519812,
+              59.32265495
+            ],
+            "edge_errors_ns": [
+              6.087475811,
+              10.6103735,
+              15.64239969,
+              19.93193049,
+              24.30519812,
+              28.32265495
+            ],
+            "phase_width_ns": 8.017456832,
+            "phase_width_error_ns": 4.017456832,
+            "minimum_guard_ns": 8.017456832,
+            "recovery_margin_ns": 40.67734505,
+            "high_samples_v": {
+              "EVAL": 1.800002995,
+              "CAPTURE": 1.800002968,
+              "PHASE": 1.800005827
+            }
+          }
+        ],
+        "maximum_edge_error_ns": 28.35474099,
+        "maximum_width_error_ns": 4.022355056,
+        "timing_targets_met": false,
+        "energy": {
+          "start_s": 3e-07,
+          "stop_s": 7e-07,
+          "complete_cycles": 4.0,
+          "sources": [
+            {
+              "port": "VDD",
+              "net_j": 2.122504766e-10,
+              "positive_j": 2.122760741e-10
+            },
+            {
+              "port": "CLK_IN",
+              "net_j": 3.071279222e-14,
+              "positive_j": 2.945327612e-13
+            },
+            {
+              "port": "RUN",
+              "net_j": -9.948547436e-19,
+              "positive_j": 6.381367753e-15
+            },
+            {
+              "port": "RESET",
+              "net_j": 0.0,
+              "positive_j": 0.0
+            },
+            {
+              "port": "TRIM_A_9",
+              "net_j": -1.014259977e-16,
+              "positive_j": 2.057352596e-13
+            },
+            {
+              "port": "TRIM_A_7",
+              "net_j": 0.0,
+              "positive_j": 0.0
+            },
+            {
+              "port": "TRIM_A_6",
+              "net_j": 0.0,
+              "positive_j": 0.0
+            },
+            {
+              "port": "TRIM_A_5",
+              "net_j": 0.0,
+              "positive_j": 0.0
+            },
+            {
+              "port": "TRIM_A_4",
+              "net_j": 0.0,
+              "positive_j": 0.0
+            },
+            {
+              "port": "TRIM_A_3",
+              "net_j": 0.0,
+              "positive_j": 0.0
+            },
+            {
+              "port": "TRIM_A_2",
+              "net_j": 0.0,
+              "positive_j": 0.0
+            },
+            {
+              "port": "TRIM_A_1",
+              "net_j": 0.0,
+              "positive_j": 0.0
+            },
+            {
+              "port": "TRIM_A_0",
+              "net_j": -2.072942542e-17,
+              "positive_j": 9.853935544e-14
+            },
+            {
+              "port": "TRIM_B_9",
+              "net_j": -8.364969721e-17,
+              "positive_j": 1.954199903e-13
+            },
+            {
+              "port": "TRIM_B_7",
+              "net_j": 0.0,
+              "positive_j": 0.0
+            },
+            {
+              "port": "TRIM_B_6",
+              "net_j": 0.0,
+              "positive_j": 0.0
+            },
+            {
+              "port": "TRIM_B_5",
+              "net_j": -3.328055731e-17,
+              "positive_j": 1.182922423e-13
+            },
+            {
+              "port": "TRIM_B_4",
+              "net_j": -2.135845257e-17,
+              "positive_j": 1.181748503e-13
+            },
+            {
+              "port": "TRIM_B_3",
+              "net_j": 0.0,
+              "positive_j": 0.0
+            },
+            {
+              "port": "TRIM_B_2",
+              "net_j": 0.0,
+              "positive_j": 0.0
+            },
+            {
+              "port": "TRIM_B_1",
+              "net_j": -1.669549777e-17,
+              "positive_j": 8.338048199e-14
+            },
+            {
+              "port": "TRIM_B_0",
+              "net_j": -1.779178157e-17,
+              "positive_j": 9.742908637e-14
+            },
+            {
+              "port": "TRIM_C_9",
+              "net_j": -7.984265045e-17,
+              "positive_j": 1.86400987e-13
+            },
+            {
+              "port": "TRIM_C_7",
+              "net_j": -5.94849746e-17,
+              "positive_j": 1.450194058e-13
+            },
+            {
+              "port": "TRIM_C_6",
+              "net_j": 0.0,
+              "positive_j": 0.0
+            },
+            {
+              "port": "TRIM_C_5",
+              "net_j": 0.0,
+              "positive_j": 0.0
+            }
+          ],
+          "supply_average_uw": 530.6261916,
+          "positive_input_boundary_average_uw": 3.87326447,
+          "supply_plus_positive_boundary_average_uw": 534.4994561,
+          "energy_per_clock_pj": 53.44994561,
+          "external_output_capacitor_energy_change_j": -1.203334543e-27,
+          "decoupling_cell": "CLK_MOM_ARRAY_128_V1",
+          "decoupling_policy": "Real recognized MOM array is retained in source and PEX. Source energy includes its charging; no reservoir subtraction.",
+          "reservoir_energy_change_j": null,
+          "reservoir_limitation": "Port-only archive does not independently resolve the internal extracted decoupler plate voltages.",
+          "allocation": "Raw one-generator/one-80-fF-bank budget; no actual chip channel-count allocation"
+        }
+      }
     }
   ]
 }

@@ -16,11 +16,12 @@
 <a class="skip-link" href="#report">Skip to the report</a>
 <aside class="sidebar">
   <a class="brand" href="#overview"><span class="brand-mark">Q</span><span>Q-Pix<span class="brand-sub">TSMC180 / design report</span></span></a>
-  <div class="sidebar-meta">15 October 2026<br>298.15 K &amp; 77 K</div>
+  <div class="sidebar-meta">16 October 2026<br>298.15 K &amp; 77 K</div>
   <nav aria-label="Report contents">
     <a href="#overview">01 <span>Findings</span></a>
     <a href="#architecture">02 <span>Architecture &amp; timing</span></a>
     <a href="#clock">03 <span>Single-clock generator</span></a>
+    <a href="#native-clock">03b <span>Cadence implementation</span></a>
     <a href="#frequency">04 <span>Clock-rate envelope</span></a>
     <a href="#detector">05 <span>Historical detector event</span></a>
     <a href="#waveform">06 <span>Analytic waveform study</span></a>
@@ -35,7 +36,7 @@
 </aside>
 <main id="report">
 <header class="hero" id="overview">
-  <div class="eyebrow">ANALOG DESIGN NOTE <span>QP180 / 2026-10-15</span></div>
+  <div class="eyebrow">ANALOG DESIGN NOTE <span>QP180 / 2026-10-16</span></div>
   <h1>Charge, timing<br>and heat.</h1>
   <p class="hero-deck">A Q-Pix replenishment front end in TSMC180, evaluated from 1 to 50 MHz at room temperature and 77 K.</p>
   <div class="hero-grid">
@@ -53,7 +54,7 @@
     <div><strong>10</strong><span>physical single-clock timing points<br>2 temperatures × 5 rates</span></div>
     <div><strong>38.2479 fC</strong><span>unscaled historical detector event<br>physical replay at both temperatures</span></div>
   </div>
-  <div class="notice"><strong>Scope.</strong> These are reproducible circuit-model calculations in declared TT cards. Cryogenic noise/CV, silicon behavior, layout/PEX, PVT/mismatch and a complete chip remain outside this qualification. A passing nominal point does not imply that every noise, startup or overload condition has passed there.</div>
+  <div class="notice"><strong>Scope.</strong> These are reproducible circuit-model calculations in declared TT cards. The channel/event studies use schematics. The separate Cadence clock section records native layout, LVS/PEX and its current simulation coverage. Cryogenic noise/CV, silicon behavior, PVT/mismatch and a complete chip remain outside this qualification. A passing nominal point does not imply that every noise, startup or overload condition has passed there.</div>
 </header>
 
 <section id="architecture">
@@ -109,6 +110,39 @@
   <p id="clock-evidence" class="source-note"></p>
   <details><summary>Width controls, calibration words and safe mode changes</summary><div id="clock-width-table" class="table-wrap"></div><div id="clock-mode-table" class="table-wrap"></div><p>At 10 MHz, independent 3 ns and 5 ns settings pass at both temperatures. Stop RUN, let the sequence drain, change and settle all words, then rearm on a complete clock cycle; mark that interval invalid and select the matching charge calibration. RUN is accepted while CLK is low. Emergency RESET may truncate a pulse. Network backpressure must not stop normal replenishment.</p></details>
   <p class="scope-note">All ten loaded nominal timing points pass the 500 ps edge, 150 ps width and positive-guard targets. Twenty-four fixed-code duty/supply/fanout trials retain valid sequences and logic levels; seven shifted cases require retuning to meet the tighter nominal edge targets. Ramped power-up and stopped-acquisition restart pass at both temperatures. Numerical refinements and the centered cold 5 MHz code remain in the evidence. Ideal timing passives, inherited cold CV/noise, physical layout/supply coupling and new generator device-noise qualification remain explicit limits.</p>
+</section>
+
+<section id="native-clock">
+  <div class="section-number">03b / NATIVE CADENCE CLOCK</div><h2>From editable circuits to extracted layout</h2>
+  <p>The complete native <code>CLK_PHASE_U_V5</code> has schematic, symbol and layout views in <code>Modules</code>, with matching human-readable xschem sources. One CLK_IN launches a six-section delay sequence. The circuit needs no additional bias-current input. Its six static ten-bit words control capacitor weight and resistor bypasses; a future register loader must stop, drain, configure, settle and restart acquisition.</p>
+  <p>The native implementation uses recognized MOM capacitors, distributed poly resistors, isolated and parked bypass ranges, Schmitt restoration, real RUN/SR storage and buffered clock, discharge and valid paths. DISCHARGE clears timing capacitors only. It has no connection to detector SUM or CSA feedback capacitance.</p>
+  <figure class="schematic-main"><a href="figures/native-clock-phase.svg" target="_blank" rel="noopener"><img src="figures/native-clock-phase.svg" alt="Complete native clock hierarchy with six directly wired delay sections and buffered decoded output windows" loading="lazy"></a><figcaption><span class="figure-number">NATIVE A</span> Actual maintained xschem counterpart of the native hierarchy. Click for a vector view and zoom into individual blocks. Compound blocks retain explicit ports; transistor and logic drawings use conventional symbols.</figcaption></figure>
+  <div class="schematic-gallery" id="native-clock-gallery"></div>
+  <div id="native-physical-table" class="table-wrap"></div>
+  <p class="scope-note">Strict LVS has zero property errors and no unmatched objects; all three extraction stages complete. The raw DRC reports each retain nine density/manual findings for full-chip review. Cell-scope assessment has no local blockers; full-chip DRC and signoff remain open. LVS warnings about ambiguity resolution and property resolution are preserved in the evidence. The initial composed floorplan is approximately 1.03 × 7.56 mm and needs physical optimization.</p>
+  <div class="controls"><label>Completed native trial<select id="native-clock-case"></select></label><button id="native-clock-reset" type="button">Reset native clock zoom</button></div>
+  <div id="native-clock-scorecard" class="scorecard" aria-live="polite"></div>
+  <figure><div id="native-clock-logic" class="plot logic-scope" data-plot-title="Complete native Spectre clock and phase sequence"></div><figcaption><span class="figure-number">NATIVE B</span> Full retained transient, including reset and six clock cycles. Every logic-transition bracket is preserved with a 4 mV display error bound. The physical fixture straps the six slow-range bypass bits to VDD and exposes the other 54 static controls. Each output carries 80 fF, representing a declared sixteen-input bank at 5 fF/input.</figcaption></figure>
+  <figure><div id="native-clock-energy" class="plot large" data-plot-title="Native supply work with a real VDD to VSS decoupling capacitor"></div><figcaption><span class="figure-number">NATIVE C</span> Actual upstream supply work with a recognized 128-unit MOM reservoir between VDD and VSS. The shaded interval contains four complete clock cycles. Supply power retains signed returned energy; positive work from every separately driven clock/control source is added separately. Reservoir charging remains in supply draw; its internal extracted plate-energy change is not independently resolved by this port archive.</figcaption></figure>
+  <div class="equation">\[
+    P_{\mathrm{VDD}}=-\frac{1}{N T}\int_{t_0}^{t_0+N T} V_{\mathrm{DD}}(t)I_{\mathrm{source}}(t)\,dt,
+    \qquad E_{\mathrm{clock}}=\frac{E_{\mathrm{VDD}}+E_{\mathrm{positive\ controls}}}{N}.
+  \]</div>
+  <figure><div id="native-clock-errors" class="plot" data-plot-title="Native phase edge errors across all accepted cycles"></div><figcaption><span class="figure-number">NATIVE D</span> Mean and full cycle-to-cycle range of 50% edge errors. The recorded limits are ±0.5 ns per edge and ±0.15 ns for PHASE width. All six trims are adjusted coherently; an isolated delay lookup supplies starting values.</figcaption></figure>
+  <div id="native-clock-table" class="table-wrap"></div>
+  <p id="native-clock-evidence" class="source-note"></p>
+  <p class="notice emphasis"><strong>Immediate milestone reached; layout improvement deferred.</strong> The owner closed this native implementation-and-comparison milestone on 2026-10-16 and stopped further trials pending guided layout work. At room temperature and 10 MHz, the matched APS schematic passes with a 4.111 ns PHASE width and 228.066 µW total source-plus-positive-control work. Corrected MOM PEX completes six ordered sequences with valid levels, but PHASE is 8.017 ns for the 4 ns target and total work is 534.499 µW. EVAL starts at 8.087 ns versus the 2 ns target. This initial layout requires substantial improvement; extracted timing acceptance has not been achieved.</p>
+  <h3>Resolve device capacitance before interpreting PEX</h3>
+  <p>The original extracted view counted the factory CRTMOM model and its intrinsic finger capacitance together. The original 11.383 ns / 690.663 µW clock result remains diagnostic evidence. A project-local device-scoped extraction correction removes intrinsic geometric capacitance already represented by the compact model and preserves external coupling. Factory tools, PDK and model cards remain untouched. Strict LVS alone did not establish a consistent simulation view.</p>
+  <div class="schematic-gallery">
+    <a class="schematic-card" href="figures/native-mom-metrology.svg" target="_blank" rel="noopener"><img src="figures/native-mom-metrology.svg" alt="Recognized MOM charge-step testbench with explicit current probes and ground" loading="lazy"><span>Single-unit charge measurement ↗</span></a>
+    <a class="schematic-card" href="figures/native-mom-coupling.svg" target="_blank" rel="noopener"><img src="figures/native-mom-coupling.svg" alt="Two separate MOM units with independent driven terminals and common ground" loading="lazy"><span>Preserved external coupling control ↗</span></a>
+  </div>
+  <figure><div id="native-mom-charge" class="plot large" data-plot-title="Native MOM device capacitance and retained external geometry"></div><figcaption><span class="figure-number">NATIVE E</span> Actual factory room-temperature native terminal current and integrated charge for a 0-to-0.9 V step. The 0.5–3 ns shaded charge window gives effective capacitance Q/ΔV. Original and corrected PEX use unchanged unit geometry. This is model/extraction correspondence, not measured device capacitance.</figcaption></figure>
+  <div id="native-mom-table" class="table-wrap"></div>
+  <p id="native-mom-coupling" class="scope-note"></p>
+  <p class="scope-note">The matched classic/APS schematic control agrees within 37.023 ps in edge placement and 0.016865% in source work. Independent native getData inspection exactly matches the separate PSF reader at 162 saved indices across seven signals. Large PEX transients use eight actual threads and complete in approximately five minutes; Spectre automatically serializes the small schematic. The former file and logical-statement admission restrictions are resolved. The configured factory extraction excludes distributed/lumped VDD while VSS is distributed, so these runs do not qualify the complete supply network.</p>
+  <p class="notice"><strong>Deferred coverage.</strong> The complete native 1/5/10/20/50 MHz × room/77 K matrix, 3/5 ns controls, duty/RUN/reset, power-up, idle-power and fanout trials are deferred until layout improvement. A wider-supply-trunk variant has construction/checking receipts but no transient evidence or established performance benefit. The native generator has not been connected to the channel/event study above. Transient noise is off; physical cryogenic passive/CV/noise validation, backend/network execution and chip signoff remain later work. <a href="../../../docs/native-clock-milestone.md">Detailed closeout and retained evidence ↗</a></p>
 </section>
 
 <section id="frequency">
