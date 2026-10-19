@@ -2,9 +2,9 @@
   "meta": {
     "title": "Q-Pix in TSMC180: charge, timing and heat",
     "date": "2026-10-16",
-    "built_utc": "2026-10-17T02:56:52.474356+00:00",
+    "built_utc": "2026-10-18T23:37:37.222485+00:00",
     "branch": "qpix_tsmc180",
-    "head": "65558ed265f99a0e62e8ddbff409ba0e40cc6e74",
+    "head": "402764da9d3cee96452b7ec9596371be12c311b3",
     "source_state": "working-tree design and experiment sources; exact hashes in provenance",
     "selected_rate_hz": 10000000,
     "selected_input_f": 3e-12

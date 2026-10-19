@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Q-Pix physical CSA V4 · bandwidth, charge and heat</title>
+<style>
+:root{color-scheme:light;--ink:#192f3e;--blue:#176785;--line:#d4dfe5}*{box-sizing:border-box}body{font:16px/1.6 system-ui,sans-serif;color:var(--ink);margin:0;background:#f5f8fa}main{max-width:1300px;margin:auto;padding:2rem}h1{font-size:clamp(2rem,5vw,3.4rem);line-height:1.1}h2{margin-top:3rem}a{color:var(--blue)}.date{letter-spacing:.12em;font-size:.8rem}.notice{border-left:4px solid #b36921;background:#fff4e9;padding:1rem 1.4rem}figure{margin:1.4rem 0;background:white;padding:1rem;border:1px solid var(--line)}figure img{width:100%;max-height:700px;object-fit:contain}figcaption{font-size:.9rem}table{border-collapse:collapse;background:white;width:100%;font-size:.9rem}th,td{text-align:left;border-bottom:1px solid var(--line);padding:.55rem .75rem}th{background:#e8f0f4}select{font:inherit;padding:.25rem .5rem;margin-right:1rem}label{display:inline-block;margin:.5rem 0}.plot{height:460px;background:white;border:1px solid var(--line)}.grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem}.cards{display:flex;gap:1rem;flex-wrap:wrap}.cards p{flex:1;min-width:160px;padding:1rem;background:white;border:1px solid var(--line)}.cards strong{display:block;font-size:1.6rem}.equation{overflow:auto;padding:.5rem;background:white}#channel-scope{height:1500px}pre{white-space:pre-wrap;font:12px/1.5 ui-monospace,monospace}details{margin:1rem 0}button{font:inherit} @media(max-width:800px){main{padding:1rem}.grid{grid-template-columns:1fr}.plot{height:400px}table{display:block;overflow:auto}}
+</style>
+<style>select,label{max-width:100%}code{overflow-wrap:anywhere}</style>
+<script>window.QPIX_CSA_ERRORS=[];addEventListener('error',e=>window.QPIX_CSA_ERRORS.push(String(e.message)));addEventListener('unhandledrejection',e=>window.QPIX_CSA_ERRORS.push(String(e.reason)));</script>
+<script>window.MathJax={tex:{inlineMath:[['\\(','\\)']],displayMath:[['\\[','\\]']]},svg:{fontCache:'global'}};</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-svg.js"></script><script defer src="https://cdn.plot.ly/plotly-4.1.1.min.js"></script>
+<script defer src="data/csa-v4.js"></script><script defer src="assets/csa-v4.js"></script></head>
+<body><main><a href="index.html">← Earlier channel, clock and detector-event report</a>
+<p class="date">PHYSICAL CSA FOLLOW-UP · 18 OCTOBER 2026</p>
+<h1>A compact 10-MHz CSA<br>layout candidate.</h1>
+<p>The amplifier, physical compensation and feedback capacitor form one flat 84 × 68 µm module.
+Its standalone and one/four-channel sharing tests have native schematic/PEX evidence at 298.15 K and exploratory 77 K.
+The owner accepted this module candidate on 18 October 2026. Physical implementation now moves to the preamplified comparator, then the replenisher.
+Each module gets a bounded comparison against its architecture-stage metrics. Substantial chain validation resumes when enough blocks have real layouts;
+the retained exploratory channel records below do not hold CSA candidate acceptance open.</p>
+<div class="cards"><p><strong>144 MOS</strong>segmented, matched arrays and explicit dummies</p><p><strong>4 MOM</strong>compensation and replaceable feedback; no MIM add-on required</p><p><strong>2371 vias</strong>one compact physical module</p></div>
+<div class="notice"><strong>Scope matters.</strong> Local geometry DRC and strict LVS/PEX pass for the CSA unit. Metal density and manual DRM obligations remain at their declared scope.
+The warm foundry card is the reference; the cold DC-fit model inherits unvalidated noise/CV and other laws.
+Comparator, replenisher, references and shared clock do not yet have complete-channel layout/PEX qualification.
+The current module-by-module implementation sequence is recorded in <a href="../../../PLAN.md#current-physical-implementation-sequence--2026-10-18">the project plan</a>.</div>
+
+<h2>One coherent physical unit</h2>
+<p>Input and mirror devices use segmented shared diffusion, matched interleaving and dummies, with common guards and dense vias.
+The feedback MOM can be replaced for loop experiments; the complete extraction retains its actual routes and mutual coupling.
+The shared reference remains outside the per-channel unit. A single layout has zero hierarchical instances.</p>
+<div class="grid"><figure><a id="layout-link"><img id="layout-image" alt="Verified native flat V4 CSA layout"></a><figcaption>Verified native masks. Click for the full vector drawing.</figcaption></figure>
+<figure><a id="unit-link"><img id="unit-image" alt="CSA amplifier and internal physical feedback MOM"></a><figcaption>The whole-unit source retains feedback once. The amplifier triangle opens to its transistor schematic.</figcaption></figure></div>
+<p>Strict comparison retains MOS-reduction and identical-parallel-MOM identity warnings; it does not waive property errors.
+Warm raw-amplifier gain is about 82 dB, but unity-buffer margin is inadequate; cold unity feedback is unstable.
+Those diagnostics do not replace the measured capacitive-feedback CSA loop. This is a CSA, not a qualified general-purpose unity buffer.</p>
+
+<h2>Bandwidth, loop margin and finite settling</h2>
+<p>The 24-point matrix spans 0.3/3/6 pF detector capacitance and 20/100 fF external output load.
+The nominal complete-unit PEX reaches 10.03–10.17 MHz warm and 10.75–11.09 MHz cold, with Cf-branch margin above 65°.
+Warm reserve is small. At 6 pF the bandwidth is about 4.6–5.1 MHz; compensation has a separate LIGHT mode for 0.3 pF.</p>
+<div id="bandwidth" class="plot"></div><details><summary>All measured frequency points</summary><div id="frequency-table"></div></details>
+<p>Independent 0.25-fC calibration precedes the ±20/50-mV holdouts. Repeatable gain is removed, while short-time settling errors remain.
+PEX 1% settling takes roughly 113–141 ns. A 50-MHz sampling interval is only 20 ns; a fast edge can move charge between several samples even when its settled total is accurate.</p>
+<label>Detector <select id="sample-load"><option value="3">3 pF</option><option value="0.3">0.3 pF</option><option value="6">6 pF</option></select></label>
+<label>Output load <select id="sample-cl"><option value="100">100 fF</option><option value="20">20 fF</option></select></label>
+<label>Excursion <select id="sample-amplitude"><option value="0.02">±20 mV</option><option value="0.05">±50 mV</option></select></label>
+<div id="sampling" class="plot"></div>
+<p>Each line retains one of four arrival phases at 5, 10, 20 and 50 MHz. These are sharp-edge, noise-off settling stresses, not predictions for every physical detector waveform.</p>
+
+<h2>Noise and reset-free recovery</h2>
+<div id="noise" class="plot"></div>
+<p>Frequency noise is integrated over 10 kHz–50 MHz. Two short native transient-noise seeds follow frequency optimization and retain the frozen noise-off calibration.
+The 25.2-µs transient records request those noise parameters but Spectre reports noisefmin ≈39.68 kHz and noisefmax =50 MHz; the original raw logs are audited separately.
+Below noisefmin the generated source PSD is held flat: this parameter is the lower end of colored-noise modeling, not a hard high-pass cutoff.
+At nominal 3 pF the full PEX records give about 0.152–0.162 fC warm and 0.091–0.097 fC cold. These finite records are not an ensemble PSD estimate or measured cryogenic noise qualification.</p>
+<p>Declared negative-background-assisted entry has twelve matched training-disabled controls. Entry from the prebiased 0.85-V output requires about 1.25–1.30 fC of negative charge.
+Twelve overload/returned-charge trials recover and accept a following small event. The positive return current is an external diagnostic; supply-ramp startup and recovery using the actual replenisher remain to be qualified.</p>
+
+<h2>Sharing the reference without hiding heat</h2>
+<p>The original warm four-channel bias bus misses the predeclared 1% coupling screen. Its measured impedance motivates two shared 64-square MOM bypasses across the reference's VSG.
+They add about 1.36 pF of modeled bypass and no extra bias current. This is a small one/four-channel demonstration; ideal common buses do not substitute for a placement extraction.</p>
+<div class="grid"><div id="bias-coupling" class="plot"></div><div id="bias-power" class="plot"></div></div>
+<p>Four-channel PEX pulse coupling is 0.687% warm / 0.492% cold. Total upstream group power divided by four is about 37.86 / 21.30 µW,
+including the one shared reference. Warm group bandwidth is 9.85 MHz. Extra exploratory power is allowed; the 24-µW analog reference allocation is a target, not a candidate cutoff.</p>
+<div class="equation">\[\overline P_N=\frac{1}{N(t_1-t_0)}\int_{t_0}^{t_1}\sum_k V_{\mathrm{source},k}(t)I_{\mathrm{draw},k}(t)\,dt,\qquad
+\Delta E_C=\tfrac12 C\big[V_C(t_1)^2-V_C(t_0)^2\big].\]</div>
+<p>Reservoir capacitors are present during measurement. Their energy change is reported and never subtracted from upstream draw.
+Complete-chip power must also include implemented clock, reference, register, backend and I/O overhead divided by the actual channel count.</p>
+
+<h2>Actual comparator, replenishment and single-clock interface</h2>
+<figure><a id="channel-link"><img id="channel-image" alt="Readable V4 single-clock channel with explicit power domains"></a><figcaption>V4 replaces the old OTA and external Cf. Current probes, shared bias, actual phase generation and power domains remain explicit.</figcaption></figure>
+<p>The native bridge captures 478 source / 2347 PEX initial entries at each temperature and checks all public first samples.
+This is an explicit prebiased capacitor contract, not a claim of automatic zero-charge power-up. Digital RESET never shorts Cf.</p>
+<div class="notice" id="channel-status"></div>
+<label>Completed channel record <select id="channel-case"></select></label><div id="channel-scope" class="plot"></div>
+<div id="channel-table"></div>
+<p>HELD/EVENT may remain high across consecutive clocks. EN supplies one short replenishment pulse on each active PHASE, so EVENT rising edges are not the operation count.
+The warm-source independent calibration is complete. Further independent calibrations, the full 5/10/20/50-MHz channel matrix,
+supply/bias-ramp startup and unscaled historical detector replay are deferred to later chain integration.
+The previously completed bounded 10-MHz clocked noise follows below.</p>
+<div class="equation">\[Q_{\rm sig}+Q_{\rm CSA}+Q_{\rm noise}-Q_{\rm repl}+(C_D+C_{\rm min})\Delta V_\Sigma=0.\]</div>
+<p>The physical charge ledger integrates actual terminal-current probes. The CSA term includes its internal feedback and extracted parasitics;
+the small numerical capacitor is included explicitly when present. This conservation check is separate from decoder gain calibration.</p>
+<h3>Noise interacting with actual switching</h3>
+<p>Eight matched records add intrinsic noise to the same transistor clock/comparator/replenishment channel: two finite seeds,
+source and whole-CSA extraction, both model temperatures. Timing trims, current seeds, capacitor state and all physical inputs remain unchanged.
+The 10-µs native records request noisefmin =10 kHz and noisefmax =50 MHz; Spectre reports 100 kHz and 50 MHz respectively, with flat source PSD below noisefmin.
+The finite record cannot qualify low-frequency noise or rare-trigger rates. See <a href="https://community.cadence.com/cadence_technology_forums/f/custom-ic-design/34456/transient-analyses/1343724">Cadence's parameter explanation</a>.</p>
+<p>Every row retains its numerical review. A clock LTE-relaxation warning keeps a record diagnostic even when native execution completes and the charge ledger closes.
+An extra count and a numerical warning are separate findings; neither establishes a cryogenic circuit failure.</p>
+<p>Dotted vertical lines mark timed native numerical warnings in the affected records; they do not mark physical charge or logic events.</p>
+<div id="clocked-noise-table"></div>
+<p>The actual digitizer comparison below uses fifty whole noise-off clock bins at fixed physical times.
+Counts remain in operations for every variant; the independent warm-source gain also permits an fC conversion for that variant.
+The other variants retain pending calibration rather than borrowing its gain.</p>
+<div id="clocked-count-table"></div>
+<label>Noise difference record <select id="clocked-noise-case"></select></label><div id="clocked-noise-scope" class="plot" style="height:1050px"></div>
+<div class="equation">\[\Delta Q_{\rm diagnostic}(t)=\Delta Q_{\rm FB}(t)+\frac{V_{\rm OUT,on}(t)-V_{\rm OUT,off}(t)}{G_Q}.\]</div>
+<p>The raw voltage difference includes changed comparator decisions and replenishment history. The third trace compensates that history
+using native physical feedback integrals and a separately frozen standalone charge gain; it is a diagnostic, not an implemented decoder or amplifier ENC.
+Markers use fifty fixed noise-off CAPTURE-closing apertures from 4 to 9 µs; the fourth row shows the actual cumulative operation-count difference at complete clock boundaries.
+RMS includes the mean; no per-seed gain, offset or edge-time fit is applied.
+Occasional extra counts stay visible and do not automatically reject a candidate. Use the completed-channel selector above to inspect every noisy logic trace over the full record.</p>
+<h3>Strict LTE validation of the cold warning records</h3>
+<p>Original clock-warning records stay selectable as diagnostics. The new controls keep the circuit, models, initial state, trim words, noise settings
+and every numerical error tolerance unchanged. Setting <code>ltethstep=0</code> prevents the ordinary LTE criterion from being relaxed at positive steps;
+this is different from ignoring LTE with <code>lteminstep</code>, which is not changed.</p>
+<div id="noise-lte-table"></div>
+<p>An exact seed-17 replay reproduces the native time points and selected traces, including its original warning. Two strict noise-off controls
+check that the accepted deterministic channel is retained. All three strict noisy controls must pass every original full-record voltage,
+phase/count, capture-charge and supply-work agreement bound, plus native initial-state and warning review. No gain, offset or time alignment is fitted.
+The diagnostic prefixes stop before each original warning and do not substitute for full-record acceptance.</p>
+<p>Select “Strict LTE controls” in the channel scope to inspect the three complete noisy traces. The replay and quiet controls are summarized
+without duplicating their portable waveform views. This numerical validation leaves measured cryogenic noise/CV qualification and the full detector replay separate.</p>
+<h3>Entry from a below-threshold capacitor state</h3>
+<p>The complete extracted channel starts near 0.85 V, with its supplies and references biased. One fixture adds a 4-fC negative-charge packet
+to 1-pA background; the paired control has background only. No analog reset is added. These tests use the actual clock/comparator/replenisher,
+with identical complete initial states within each temperature pair.</p>
+<div id="entry-table"></div>
+<p>Select the “Below-threshold entry” records in the full channel scope above to inspect input, integration, logic and replenishment together.
+Incoming charge at the first operation includes recovery from the 0.85-V precharge; it is distinct from the normal operating threshold or replenishment quantum.
+The captured 2,386-entry state is independently reproduced by repeating the seed DC setup, using the original numerical guess and forcing targets.
+Its initial capacitor state, biased supplies and negative-charge condition are explicit.
+The <a href="../../../analog/tsmc180/Testbench/channel_csa_v4_entry_packet_tb.sch">packet schematic</a> and
+<a href="../../../analog/tsmc180/Testbench/channel_csa_v4_entry_background_tb.sch">background-only schematic</a> retain the same physical channel.</p>
+<p>The background source is constant at 1 pA. Its displayed input probe also measures the numerical 1-aF cmin displacement at the ideal source node;
+the small spikes on that pA trace are not detector noise. An independent charge-balance audit reproduces this probe/source difference.
+Native input-charge scorecards retain the original probe integral and its negligible displacement term.</p>
+<h3>Direct charge and supply-energy measurements</h3>
+<p>Independent analytic pulse tests validate scaled native integrators: charge agrees to numerical roundoff, and energy to 1.22 ppm.
+The observers read existing probes and supply sources without adding a physical chip load or bias. Reservoir changes remain explicit and are never subtracted.</p>
+<div class="equation">\[Q_k(t)=\int_0^t i_k(\tau)\,d\tau,\qquad \overline P_j=\frac{E_j(t_1)-E_j(t_0)}{t_1-t_0}.\]</div>
+<div id="metrology-table"></div>
+<p>The cold direct-integral ledger closes to about 2.7 × 10<sup>−9</sup> fC, while trapezoidal integration of the saved currents leaves about 0.005 fC residual.
+This is numerical conservation evidence, not a claim of physical charge precision or validated cryogenic models. The raw quadrature remains visible alongside direct native integrals.</p>
+<p>Both matched instrumented runs retain the physical circuit, complete initial state and every clock/enable count. Numerical comparison uses the original limits at actual capture-closing apertures.
+Instantaneous injection spikes remain visible; they are separate from delivered charge per operation, sampled error and stochastic noise.</p>
+<details><summary>Numerical controls and evidence</summary><p>The short zero/1/10-aF numerical-capacitance controls have identical transistor/passive geometry. All three are warning-free and pass their declared edge, charge and source-work comparisons.
+This mathematical cmin does not create a fabricated capacitor. The following 1-aF warm full record also completes with zero warnings and the same eight commands;
+the original full record's clock tolerance warnings remain visible in its selectable diagnostic trace. Warm PEX and cold-source follow-ups also track charge but retain clock warnings.
+One aF is therefore not a generally qualified remedy; the next bounded check uses an explicit numerical voltage/current error budget. PEX/cold sensitivity and the remaining channel matrix still require their own checks.</p><div id="numerics-table"></div>
+<p>All sixty static trim-source currents are included in the short control's positive external work. The first pilot omitted those currents; its seven-domain supply figure is not complete boundary work.</p></details>
+<h2>Complete-channel upstream energy</h2>
+<p>The native audit counts complete EN pulses in the same whole-clock windows as the native source-energy integrals.
+Every supply, reference, clock, bank, driver and positive external-port contribution remains included; reservoir changes are never subtracted.
+Shared GEN/BANK totals are unallocated, so these are total fixture costs. No chip channel count is assumed.</p>
+<label>Record group <select id="energy-group"><option value="nominal">Nominal 10-MHz channel</option><option value="noise">Bounded intrinsic noise</option><option value="entry">Below-threshold entry/control</option><option value="calibration">Independent warm calibration</option></select></label>
+<label>Window <select id="energy-window"><option value="event_recovery">Signal and recovery</option><option value="idle">Idle</option></select></label>
+<div id="energy-domains" class="plot" style="height:560px"></div><div id="energy-table"></div>
+<div class="equation">\[E_{\rm upstream}=\sum_{k=1}^{7}E_{{\rm source},k}+E_{\rm positive\ ports},\qquad
+E_{\rm operation}=\frac{E_{\rm upstream}}{N_{\rm complete\ EN}},\qquad E_{\rm clock}=\frac{E_{\rm upstream}}{N_{\rm clock}}.\]</div>
+<p>With zero operations, energy per operation is undefined; power and energy per clock remain nonzero.
+This energy per operation depends on activity and window duration, and each EN pulse need not represent identical calibrated charge across variants.
+The long calibration and short event therefore have different costs per operation even at similar average draw. Numerical-warning records retain their diagnostic status.</p>
+<h2>Reproduction and remaining limits</h2><p><a href="data/csa-v4-provenance.json">Exact presentation inputs and digests</a> ·
+<a href="../../../docs/csa-coupled-v4.md">Physical CSA record</a> ·
+<a href="../../../docs/csa-coupled-shared-bias-v4.md">Shared-reference record</a> ·
+<a href="../../../docs/csa-channel-v4.md">Channel record</a></p>
+<p>The new <a href="../../../analog/tsmc180/Testbench/channel_csa_v4_calibration_tb.sch">independent calibration</a> and
+<a href="../../../analog/tsmc180/Testbench/channel_csa_v4_event_tb.sch">unscaled historical-event schematic</a> are prepared and their full sources parse/reproduce the initial state.
+The warm source 32-µs calibration now completes without numerical warnings; its gain is frozen below. Other calibration cases and the full 120-µs event remain unperformed
+and are deferred while subsequent modules are laid out. The retained preparation encountered VIGIL's ten-minute per-job limit;
+long replay execution can be addressed at the later integration stage. It is not a blocker to accepting this CSA candidate or laying out the next module.
+No lower-rate or time-scaled event substitutes for the eventual unscaled replay.</p>
+<div id="calibration-table"></div>
+<p>Gain is independently known input charge divided by clocked operation count. The actual feedback-current integral is not decoder information.
+The finite calibration endpoint remainder stays visible; no gain or lag is fitted to the detector event.</p>
+<p>Build with <code>python3 reports/qpix-tsmc180/csa_v4.py</code> using the project appvenv, or rebuild the complete report.
+The builder checks pinned application measurements and their exact input-manifest bindings; the upstream application analyzers perform native artifact and scientific acceptance checks.
+This page needs only its local data/vectors and the pinned Plotly/MathJax CDNs. No simulator models or raw native waveforms are copied into the site.</p>
+</main></body></html>

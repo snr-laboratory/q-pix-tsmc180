@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Q-Pix · physical comparator V1</title>
+<script defer src="https://cdn.plot.ly/plotly-4.1.1.min.js"></script>
+<script>window.MathJax={tex:{inlineMath:[['\\(','\\)']]},svg:{fontCache:'global'}};</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-svg.js"></script>
+<script defer src="data/comparator-v1.js"></script>
+<script defer src="assets/comparator-v1.js"></script>
+<style>
+:root{color-scheme:light;font:16px/1.65 system-ui,sans-serif;color:#203e4c;background:#f5f7f5}
+*{box-sizing:border-box}mjx-container[display="true"]{display:block;max-width:100%;overflow-x:auto;overflow-y:hidden;padding-bottom:6px}
+body{max-width:1240px;margin:auto;padding:30px}a{color:#196e78}header,section{padding:26px 0;border-bottom:1px solid #cedbdc}
+h1,h2{font-family:Georgia,serif;font-weight:normal;line-height:1.2}h1{font-size:46px}h2{font-size:30px}
+.deck{font-size:21px;max-width:950px}.notice{padding:16px 22px;background:#e6eeee;border-left:4px solid #37828a}
+.plot{background:white;margin:20px 0;min-width:0;width:100%;overflow:hidden}.vectors{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:20px}.vectors figure{min-width:0;margin:0}.vectors img{width:100%;background:white}
+table{border-collapse:collapse;width:100%;font-variant-numeric:tabular-nums;font-size:14px}th,td{text-align:right;border-bottom:1px solid #d3dfdf;padding:9px}th:first-child,td:first-child{text-align:left}
+.scroll{overflow:auto}select{padding:9px;font:inherit;max-width:100%}details{margin:18px 0}pre{white-space:pre-wrap;overflow-wrap:anywhere;font-size:12px}
+@media(max-width:700px){body{padding:18px}.vectors{grid-template-columns:1fr}h1{font-size:34px}}
+</style>
+</head>
+<body>
+<header><a href="index.html">Q-Pix design report</a> · <a href="csa-v4.html">Accepted CSA candidate</a>
+<h1>The next physical module: comparator</h1>
+<p class="deck">One 48 × 64 µm cell combines the continuous preamplifier, StrongARM latch and balanced two-stage buffers. This page records its local physical checks, sensitivity, timing, loading and heat.</p>
+<p class="notice" id="status">Loading measured module acceptance…</p>
+<p>96 physical MOS units include 40 tied dummies. Eleven matched pairs have coincident centroids; six recognized M1–M3 MOMs implement the filters and latch loads. Shared bias generation remains outside the channel. The native cell is <strong>Modules/CMP_PREAMP_V1</strong>.</p>
+</header>
+<section><h2>Interface and layout</h2>
+<p>INP and INN feed a continuously biased preamplifier. NBIAS comes from the separate reference converter. EVAL low precharges the latch; OUT and BAL become valid complementary decisions during EVAL high, after regeneration. RAW is an unbuffered diagnostic node. There are no new control bits. The ideal external EVAL fixture does not qualify the separate clock generator.</p>
+<div class="vectors"><figure><a href="figures/comparator-v1-circuit.svg"><img src="figures/comparator-v1-circuit.svg" alt="Transistor schematic of continuous gain, regenerative comparator, buffers and explicit capacitors"></a><figcaption>Inspectable source; tied dummies appear below the active circuit.</figcaption></figure>
+<figure><a href="figures/comparator-v1-layout.svg"><img src="figures/comparator-v1-layout.svg" alt="Verified native device and routing masks"></a><figcaption>Selected native masks: shared diffusion, matched arrays, common guards and 2,064 via cuts.</figcaption></figure></div>
+<p id="physical"></p>
+</section>
+<section><h2>Switching level and independent sensitivity</h2>
+<p>A fixed switching offset shifts the reset-free CSA operating band. Independent 10 MHz scans hold each level for two clocks and sample the second. Their midpoints are frozen before all ±1 mV and ±2 mV holdouts, including the other clock rates. INN remains physically at 0.9 V. No threshold is fitted to the holdout decisions.</p>
+<div class="plot" id="threshold"></div>
+<p>The original uncentered ±1 mV PEX control resolved only one polarity. It is retained as a diagnostic, as is the symmetric-clock routing trial that worsened the offset. A fixture review also found a wire bypassing the signal-side 50 fF capacitor; all final source, PEX, threshold and loading results here use the corrected exported connection. Earlier controls retain their original fixtures.</p>
+<p>Each decision comparison retains the established 40 ns input lead. At 50 MHz, only ten of sixteen capture samples satisfy it. The other six samples remain visible; they do not establish a shorter settling specification. These short deterministic tests establish neither mismatch yield nor intrinsic noise.</p>
+<div class="scroll"><table><thead><tr><th>Case</th><th>Valid / errors</th><th>Delay ns</th><th>Total µW</th><th>fJ / clock</th><th>Input +lobe fC</th></tr></thead><tbody id="results"></tbody></table></div>
+<p>Schematic rows retain the original ±1 mV benchmark about 0.9 V. Main PEX rows show the separate ±2 mV margin study about the frozen switching level. These are different input excursions and operating levels. The original ±1 mV PEX controls remain in the diagnostics and waveform selector.</p>
+<details><summary>Retained ±1 mV PEX failures</summary><p>Repeatable noise-off switching interference causes wrong decisions in several records after centering. A fixed offset alone does not explain these failures. Increasing the tested input margin changes the demonstrated operating envelope; it does not repair or hide the 1 mV result.</p><pre id="one-mv"></pre></details>
+<div class="plot" id="power"></div>
+</section>
+<section><h2>Inspect the complete local waveform</h2>
+<label for="case">Measured record </label><select id="case"></select><p id="case-note"></p>
+<div class="plot" id="scope"></div>
+<p>All rows share the complete time axis and linked zoom. Clock-synchronous current lobes are deterministic interface interference. They are measured at the comparator input, driven by the CSA output; they are not detector-SUM charge errors or intrinsic noise. The switching offset is shown on the differential-input row.</p>
+</section>
+<section><h2>Loading and source energy</h2>
+<div class="plot" id="loading"></div>
+<p>Input capacitance is the effective precharge-state admittance through 50 MHz. The explicit 50 fF source capacitor sits upstream of the current probe and is excluded from the measured module load. EVAL is held low; this is not a complete clocked two-port characterization.</p>
+<p>Power includes the upstream 1.8 V source, explicit master/reference converter and positive work delivered by external clock, signal and reference sources. A 100 pF supply capacitor is present. The average covers twelve complete clock cycles. Its stored-energy change is retained and never subtracted:</p>
+<p>\[P=\frac{1}{12T}\int_{t_0}^{t_0+12T}\left[-V_{DD}I_{supply}+\sum_k\max(-v_ki_k,0)\right]dt,\qquad\Delta E_C=\tfrac12 C\left[V^2(t_1)-V^2(t_0)\right].\]</p>
+<p>The fixture charges the full reference adapter to this single comparator; no fictional channel count amortizes it. PEX power and positive input-charge lobes exceed the initial 30%/50% engineering comparison brackets. Those brackets were diagnostics, not owner-imposed hard power cutoffs. Actual heat, sensitivity, timing, interference and operating limits remain visible.</p>
+<p>Room-temperature results use the factory model. The 77 K card remains an exploratory DC fit with inherited noise/CV and unmeasured transient/interconnect temperature behavior. Cold simulation agreement is not measured cryogenic qualification.</p>
+<details><summary>Testbench, provenance and native execution settings</summary>
+<a href="figures/comparator-v1-fixture.svg">Open vector testbench</a>
+<p>Requested engine: APS, eight threads. Native thread use, elapsed time, warnings, per-cycle source energy, input-charge lobes and exact job/input identities are retained below.</p><pre id="provenance"></pre></details>
+</section>
+<footer><p>Module-by-module acceptance. Full-chain reconstruction, substantial noise statistics and event replay wait for enough accepted physical modules. Next planned module: paired-dummy current replenishment.</p></footer>
+</body></html>

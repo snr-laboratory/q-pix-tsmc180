@@ -1,0 +1,262 @@
+[
+  {
+    "path": "T018/build/comparator-physical-v1-20261018-v1/qualification-v1/physical.json",
+    "sha256": "2ef78166e3bd3599c1f7d710a0883baf6c866b943faafa49920701ac7f1c1a1f",
+    "bytes": 16115
+  },
+  {
+    "path": "T018/build/comparator-physical-v1-20261018-v1/frozen-threshold-v2.json",
+    "sha256": "b2b331e066705e7656dcc3f07fc5dcd5c7788dd57e99203cc38d510547a479a5",
+    "bytes": 1135
+  },
+  {
+    "path": "T018/build/comparator-physical-v1-20261018-v1/frozen-balanced-threshold-v1.json",
+    "sha256": "928312105eab63fd78044282aa6457fec7438023a2ec52bb8320664293f26030",
+    "bytes": 1138
+  },
+  {
+    "path": "T018/build/comparator-physical-v1-20261018-v1/pex-balanced-holdout-10m-analysis-v1/measurements.json",
+    "sha256": "8c4e76eac21b92a54b45e7e6705a95532edeb3b404c0abce65aa132704fc7774",
+    "bytes": 49767
+  },
+  {
+    "path": "T018/build/comparator-physical-v1-20261018-v1/pex-balanced-holdout-10m-v1/intent.json",
+    "sha256": "f138676f78a212cd2c8c5b30e49216ad60648234a13f85cb047d3688e03241f3",
+    "bytes": 7619
+  },
+  {
+    "path": "T018/build/comparator-physical-v1-20261018-v1/threshold-qualified-warm-analysis-v1/measurements.json",
+    "sha256": "5be748f10c09c311e702f782a8b500ec8138860bdd76335ffaaacd3dc5fb8250",
+    "bytes": 1789
+  },
+  {
+    "path": "T018/build/comparator-physical-v1-20261018-v1/threshold-qualified-warm-v1/intent.json",
+    "sha256": "3bc693255463908ba4bdffb2623a9fabcabf0d66ead6a2b103c41704f18b3fdb",
+    "bytes": 4790
+  },
+  {
+    "path": "T018/build/comparator-physical-v1-20261018-v1/threshold-qualified-cold-analysis-v1/measurements.json",
+    "sha256": "019af8db64ddddaf8c59450a80dcb92309cfb6ca7d35005f42844b8f8908028c",
+    "bytes": 2794
+  },
+  {
+    "path": "T018/build/comparator-physical-v1-20261018-v1/threshold-qualified-cold-v1/intent.json",
+    "sha256": "c8174bd9f3b0bb42ed9166555da25bf907dd30799fe7100a1dd99a9129d3aff4",
+    "bytes": 4788
+  },
+  {
+    "path": "T018/build/comparator-physical-v1-20261018-v1/source-qualified-loading-analysis-v1/measurements.json",
+    "sha256": "59302ef0e34e6569065e6c9ff412fa9d712e2188a7a2766351b71e90e954d07d",
+    "bytes": 31237
+  },
+  {
+    "path": "T018/build/comparator-physical-v1-20261018-v1/source-qualified-loading-v1/intent.json",
+    "sha256": "201662c2dc7e0a384ae1885a753e7fab8ca4a7c198be9b334f4f0d233cbfcac3",
+    "bytes": 5158
+  },
+  {
+    "path": "T018/build/comparator-physical-v1-20261018-v1/pex-qualified-loading-analysis-v1/measurements.json",
+    "sha256": "6c53533c4bffc776798973cf6b1de314d2c86ed7b414bef9725138440a7dafc3",
+    "bytes": 31167
+  },
+  {
+    "path": "T018/build/comparator-physical-v1-20261018-v1/pex-qualified-loading-v1/intent.json",
+    "sha256": "06ea42e5e396b378cf653ccfa626600cca567711f70db892736f25fde335e04f",
+    "bytes": 6141
+  },
+  {
+    "path": "T018/build/comparator-physical-v1-20261018-v1/source-qualified-5m-analysis-v1/measurements.json",
+    "sha256": "3f339c961b4ea9f18702e5690dc68627b281a09f37776b59aef040e47c9abb70",
+    "bytes": 49271
+  },
+  {
+    "path": "T018/build/comparator-physical-v1-20261018-v1/source-qualified-5m-v1/intent.json",
+    "sha256": "323d395660eceb6dcbee3dab3dcbb1c13fc58ed877d2bf4263249082819034e1",
+    "bytes": 5024
+  },
+  {
+    "path": "T018/build/comparator-physical-v1-20261018-v1/pex-margin2-5m-analysis-v1/measurements.json",
+    "sha256": "c136d41eb1a066e25b493b3bebbe09a260ce4b0dbb14d47614ed26206f523290",
+    "bytes": 50009
+  },
+  {
+    "path": "T018/build/comparator-physical-v1-20261018-v1/pex-margin2-5m-v1/intent.json",
+    "sha256": "594b467b13ac60b1498d920c12a123ba3758acea132ebe1546cca12875ca4e7c",
+    "bytes": 7589
+  },
+  {
+    "path": "T018/build/comparator-physical-v1-20261018-v1/pex-holdout-5m-analysis-v1/measurements.json",
+    "sha256": "26b6549c0c1a75233a42d796dfe96c3f3f67064ae2ddb4f196829fd1f4826944",
+    "bytes": 49851
+  },
+  {
+    "path": "T018/build/comparator-physical-v1-20261018-v1/pex-holdout-5m-v1/intent.json",
+    "sha256": "3439a822be09c389242c1b5eb177ef55936efcf1fe9157c9a6ba3249268acfba",
+    "bytes": 7313
+  },
+  {
+    "path": "T018/build/comparator-physical-v1-20261018-v1/source-qualified-10m-analysis-v1/measurements.json",
+    "sha256": "1581f91140c9aacd40887bc2e30e60310627e821091dee2b1cd272a6a03ffd15",
+    "bytes": 49326
+  },
+  {
+    "path": "T018/build/comparator-physical-v1-20261018-v1/source-qualified-10m-v1/intent.json",
+    "sha256": "4b8d9433e43c2c924de9528419cfae679e95b7c9e8744095a84add29a5024c7b",
+    "bytes": 5146
+  },
+  {
+    "path": "T018/build/comparator-physical-v1-20261018-v1/pex-margin2-10m-analysis-v1/measurements.json",
+    "sha256": "46364e8628576f67f59ae269dcab5dc23b33ff72efc0a7f4a1fe031c81d3f218",
+    "bytes": 49962
+  },
+  {
+    "path": "T018/build/comparator-physical-v1-20261018-v1/pex-margin2-10m-v1/intent.json",
+    "sha256": "59a3fdf24ffb91dfae8819a43e43dc1c85b4c1c4e89b2bd2d060ca0585b7227f",
+    "bytes": 7720
+  },
+  {
+    "path": "T018/build/comparator-physical-v1-20261018-v1/pex-holdout-10m-analysis-v1/measurements.json",
+    "sha256": "9fa066d380f5d6efb905b0c12386f4e40ea435e61648cedb961083a81ab68081",
+    "bytes": 49845
+  },
+  {
+    "path": "T018/build/comparator-physical-v1-20261018-v1/pex-holdout-10m-v1/intent.json",
+    "sha256": "8b36e6a46557f43a95ddb38d0e856a3e2f110c0d019040467df8a918a73af1c0",
+    "bytes": 7444
+  },
+  {
+    "path": "T018/build/comparator-physical-v1-20261018-v1/source-qualified-20m-analysis-v1/measurements.json",
+    "sha256": "04bbea4f7ce43c2de01abc39f3c4c7289ef437f088c01959302003fe12df07f9",
+    "bytes": 44866
+  },
+  {
+    "path": "T018/build/comparator-physical-v1-20261018-v1/source-qualified-20m-v1/intent.json",
+    "sha256": "f66ce542efd5ce1068ded50489ff67b77b92c173ac44719fb692b556446dc815",
+    "bytes": 5066
+  },
+  {
+    "path": "T018/build/comparator-physical-v1-20261018-v1/pex-margin2-20m-analysis-v1/measurements.json",
+    "sha256": "deaea75cbced91d48248c9b0a625fda2d675983ef99fff28e4f61ac455308801",
+    "bytes": 45559
+  },
+  {
+    "path": "T018/build/comparator-physical-v1-20261018-v1/pex-margin2-20m-v1/intent.json",
+    "sha256": "bc14a0f4282b0c5aadd1635f4e311c47b7aec81fd5a4b184d5586c849d65d393",
+    "bytes": 7640
+  },
+  {
+    "path": "T018/build/comparator-physical-v1-20261018-v1/pex-holdout-20m-analysis-v1/measurements.json",
+    "sha256": "b1ab4cc147da74bc6859cf27653cb2fe224384ac1e723604acabbfe1ab8d5213",
+    "bytes": 45444
+  },
+  {
+    "path": "T018/build/comparator-physical-v1-20261018-v1/pex-holdout-20m-v1/intent.json",
+    "sha256": "b9b130b7456fcbc2d3d4109c5b6163ba099c38e90e8bd67b30a74477c293080d",
+    "bytes": 7364
+  },
+  {
+    "path": "T018/build/comparator-physical-v1-20261018-v1/source-qualified-50m-analysis-v1/measurements.json",
+    "sha256": "17b1b2aa2054964ec39934817f980bfaf99ef892a8e5224c377f4c8b305ca106",
+    "bytes": 40459
+  },
+  {
+    "path": "T018/build/comparator-physical-v1-20261018-v1/source-qualified-50m-v1/intent.json",
+    "sha256": "e012cc00e1fc1b5353337bda3d75a2d877a4fae13fe7a49b05c27f37c5fd1e5b",
+    "bytes": 5016
+  },
+  {
+    "path": "T018/build/comparator-physical-v1-20261018-v1/pex-margin2-50m-analysis-v1/measurements.json",
+    "sha256": "851c68b79ceb6aa370ebef6f78d68a7dfee66d682ffd84ab37740368faf3c8b6",
+    "bytes": 41223
+  },
+  {
+    "path": "T018/build/comparator-physical-v1-20261018-v1/pex-margin2-50m-v1/intent.json",
+    "sha256": "ffb58da605845faed0ee62ca96ce6b40292f26c5184f6b28a4755e2551c99f78",
+    "bytes": 7590
+  },
+  {
+    "path": "T018/build/comparator-physical-v1-20261018-v1/pex-holdout-50m-analysis-v1/measurements.json",
+    "sha256": "fda55541fb77d1e5c3501f5493168af454937c84138c25965567d2834acf99cd",
+    "bytes": 41179
+  },
+  {
+    "path": "T018/build/comparator-physical-v1-20261018-v1/pex-holdout-50m-v1/intent.json",
+    "sha256": "e334c819abe84934d44a0933d6640d1c8907c975059aa82a97c74487c112dc08",
+    "bytes": 7314
+  },
+  {
+    "path": "T018/build/comparator-physical-v1-20261018-v1/source-qualified-5m-analysis-v1/scope-data.json",
+    "sha256": "53029fd9dd54f9f6a8d0967b97bc667fc57c1b27bc5754f2f74ae4bdb62a016a",
+    "bytes": 1321947
+  },
+  {
+    "path": "T018/build/comparator-physical-v1-20261018-v1/pex-margin2-5m-analysis-v1/scope-data.json",
+    "sha256": "0e52030b49eedb5d636ebbdac265939e0e86c8a0ffd02d2d7eab51d9f8963136",
+    "bytes": 1910986
+  },
+  {
+    "path": "T018/build/comparator-physical-v1-20261018-v1/pex-holdout-5m-analysis-v1/scope-data.json",
+    "sha256": "84e64703c29b7920fde4937dbc205165f10254b9a498e6f4e7a16de42ce5fca2",
+    "bytes": 1921087
+  },
+  {
+    "path": "T018/build/comparator-physical-v1-20261018-v1/source-qualified-10m-analysis-v1/scope-data.json",
+    "sha256": "46a8f8dd7ce6d86b35dd821bfc2f939434edd9eaa2dbd3a0602dc23398b48501",
+    "bytes": 1303885
+  },
+  {
+    "path": "T018/build/comparator-physical-v1-20261018-v1/pex-margin2-10m-analysis-v1/scope-data.json",
+    "sha256": "9e05a23a52d41e7433c8c06e720ca65516961ff3b94e45c46540565fcb2da86b",
+    "bytes": 1868187
+  },
+  {
+    "path": "T018/build/comparator-physical-v1-20261018-v1/pex-holdout-10m-analysis-v1/scope-data.json",
+    "sha256": "e1b920af77c227dbad5325e73156c80b23f8585ea7b4e524d884a4d4f75fd310",
+    "bytes": 1885094
+  },
+  {
+    "path": "T018/build/comparator-physical-v1-20261018-v1/source-qualified-20m-analysis-v1/scope-data.json",
+    "sha256": "7571de750e24aa5224255cbae653845ff8a6aa3a863f5f67f7bdad06e3b0fde8",
+    "bytes": 1271544
+  },
+  {
+    "path": "T018/build/comparator-physical-v1-20261018-v1/pex-margin2-20m-analysis-v1/scope-data.json",
+    "sha256": "85234df572df019b30035ec612695ec1666fb6c9a3b1b327a28a974ef895e3d8",
+    "bytes": 1806285
+  },
+  {
+    "path": "T018/build/comparator-physical-v1-20261018-v1/pex-holdout-20m-analysis-v1/scope-data.json",
+    "sha256": "b603f26ba66b06f1a10afb261b5ae942aee8d7c47e8b30f4f125a2a9d8dc9e43",
+    "bytes": 1830286
+  },
+  {
+    "path": "T018/build/comparator-physical-v1-20261018-v1/source-qualified-50m-analysis-v1/scope-data.json",
+    "sha256": "b06f26d5453609e6bff4930cacb27054ac55b798031860e7632f181d62c8dd01",
+    "bytes": 1285188
+  },
+  {
+    "path": "T018/build/comparator-physical-v1-20261018-v1/pex-margin2-50m-analysis-v1/scope-data.json",
+    "sha256": "1924b85ee21709b4542c3b0bda9a347b7d578be21e2d3bf795a6dd186d067c35",
+    "bytes": 1788252
+  },
+  {
+    "path": "T018/build/comparator-physical-v1-20261018-v1/pex-holdout-50m-analysis-v1/scope-data.json",
+    "sha256": "578fb106dbc3d3aa4ed7fb374996e3981dc99fda7e85e545bdd1580ddf871a5c",
+    "bytes": 1804816
+  },
+  {
+    "path": "T018/build/comparator-physical-v1-20261018-v1/placement-source-v8/source-export/schematic.svg",
+    "sha256": "df9a83b936b6947bbc926c3c1e68a7ffd87a4d5690659ec123f029783592f633",
+    "bytes": 104527
+  },
+  {
+    "path": "T018/build/comparator-physical-v1-20261018-v1/native-mask-proof-selected-v1/layout-native.svg",
+    "sha256": "6a7b71d5b4d7161074e1bf426e45734f0beac3407d63a6fdb1734ad5e13a3032",
+    "bytes": 2496210
+  },
+  {
+    "path": "T018/build/comparator-physical-v1-20261018-v1/presentation-v1/human-export/schematic.svg",
+    "sha256": "c59210cfb6502d26f4f086b6da0bae95362f86f2f58ab841be52e7ffcaca2a32",
+    "bytes": 35077
+  }
+]

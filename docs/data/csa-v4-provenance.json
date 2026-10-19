@@ -1,0 +1,415 @@
+{
+  "schema": 1,
+  "sources": [
+    {
+      "path": "T018/build/csa-physical-v4-20261018-v1/assembly-physical-audit-v1/physical-correspondence.json",
+      "sha256": "6b9a46a380c51ed6c4a2c02549ef2f495fa514750c1d5ffe651167a42a590020",
+      "bytes": 7850
+    },
+    {
+      "path": "T018/build/csa-physical-v4-20261018-v1/coupled-loads-analysis-v2/measurements.json",
+      "sha256": "00313098bf2be996fade50c92090eab2548a2dc0f5251ef29654c404e4579e3e",
+      "bytes": 45923
+    },
+    {
+      "path": "T018/build/csa-physical-v4-20261018-v1/coupled-loads-v4/intent.json",
+      "sha256": "2be2807bd58f96a225eaba8c1e49118df2160840ef590e6d7822994b30a912a7",
+      "bytes": 32708
+    },
+    {
+      "path": "T018/build/csa-physical-v4-20261018-v1/coupled-response-analysis-v1/measurements.json",
+      "sha256": "d7682f4daeb223a772e88d8f711905b1403dfa146115e2f18d4cf454d3f8e291",
+      "bytes": 407767
+    },
+    {
+      "path": "T018/build/csa-physical-v4-20261018-v1/coupled-response-v2/intent.json",
+      "sha256": "07a6fba5c62e60c32ff53f53340c957e571a137c662337398d63138b4b9a749e",
+      "bytes": 143662
+    },
+    {
+      "path": "T018/build/csa-physical-v4-20261018-v1/coupled-noise-analysis-v1/measurements.json",
+      "sha256": "1e192b1203d82e01601852f0c42de674870a8774fee7fa6f87603affef80ce87",
+      "bytes": 110688
+    },
+    {
+      "path": "T018/build/csa-physical-v4-20261018-v1/coupled-noise-v1/intent.json",
+      "sha256": "9acee1ee3c5e854771db5fb4f52d3bc8e707607448e8b1bf74d377e92ed4ab0c",
+      "bytes": 80879
+    },
+    {
+      "path": "T018/build/csa-physical-v4-20261018-v1/bias-frequency-analysis-v1/measurements.json",
+      "sha256": "49918a2f325e7daaee8fe9918e0dc4a62befab2df9edaeba28b6b8137d9839ba",
+      "bytes": 32415
+    },
+    {
+      "path": "T018/build/csa-physical-v4-20261018-v1/bias-frequency-v2/intent.json",
+      "sha256": "41627287adeea33eed6bb78cca77ce37b80636935fcb52e1e75e9a0d3ffcb926",
+      "bytes": 28489
+    },
+    {
+      "path": "T018/build/csa-physical-v4-20261018-v1/bias-decoupled-frequency-analysis-v1/measurements.json",
+      "sha256": "5272199b2118b1c40425632688e5779eda3a41e20eb4ac69c28f79b5d4569629",
+      "bytes": 32725
+    },
+    {
+      "path": "T018/build/csa-physical-v4-20261018-v1/bias-decoupled-frequency-v1/intent.json",
+      "sha256": "c05be67e715c2f76021b9c00c2291c7bf13be2ae1dc9d8f15990e6978edad756",
+      "bytes": 29470
+    },
+    {
+      "path": "T018/build/csa-physical-v4-20261018-v1/bias-response-analysis-v1/measurements.json",
+      "sha256": "848a221a08e2d8e7d1bb83b0ba09eab9dc19b66c7a6e627314b397c03e6abe11",
+      "bytes": 20293
+    },
+    {
+      "path": "T018/build/csa-physical-v4-20261018-v1/bias-response-v1/intent.json",
+      "sha256": "a2ba9668ec344732e5668bcd4a2856663c27472798c8323e656084a163514686",
+      "bytes": 22254
+    },
+    {
+      "path": "T018/build/csa-physical-v4-20261018-v1/channel-response-analysis-v2/measurements.json",
+      "sha256": "b0ce59b4af1654dc5be09714d45f851fe086de888d0ea3aaa21103b273988cc0",
+      "bytes": 7714
+    },
+    {
+      "path": "T018/build/csa-physical-v4-20261018-v1/channel-response-v1/intent.json",
+      "sha256": "3b9430f5c559389e2a9fbedc99c3b387ff7da5da594c1d972cf5d20e2c599534",
+      "bytes": 6131
+    },
+    {
+      "path": "T018/build/csa-physical-v4-20261018-v1/channel-numerics-analysis-v1/measurements.json",
+      "sha256": "208fa2bf01a0eaa18f63781fe82be5ec582528ab0a6670841ade964555cba2fa",
+      "bytes": 7444
+    },
+    {
+      "path": "T018/build/csa-physical-v4-20261018-v1/channel-numerics-v1/intent.json",
+      "sha256": "0b40c7527a053fed681c02217a86560c52793e10c3431d31cdafc595eeea9813",
+      "bytes": 5014
+    },
+    {
+      "path": "T018/build/csa-physical-v4-20261018-v1/channel-response-regularized-analysis-v4/measurements.json",
+      "sha256": "4b0f452a424286e59e4242aeca7106e6228a97459b2111f8f2c791fd855e6983",
+      "bytes": 20208
+    },
+    {
+      "path": "T018/build/csa-physical-v4-20261018-v1/channel-response-v2/intent.json",
+      "sha256": "13860c07d0bfc01466cef6ce53ce15cb580ea5eefb83f4000d127c9bab30b244",
+      "bytes": 7848
+    },
+    {
+      "path": "T018/build/csa-physical-v4-20261018-v1/channel-observed-analysis-v4/measurements.json",
+      "sha256": "ad65792070e6ca0630c7ea29ef2fd684758f6c8245cc6b5ad05a59154a576372",
+      "bytes": 43213
+    },
+    {
+      "path": "T018/build/csa-physical-v4-20261018-v1/channel-observed-response-v2/intent.json",
+      "sha256": "85a2c17ddff167f49acb270e4ce6f8ac317fcd22c36cf11612857c8825e86c59",
+      "bytes": 24552
+    },
+    {
+      "path": "T018/build/csa-physical-v4-20261018-v1/channel-observed-agreement-v2/measurements.json",
+      "sha256": "98fecd530de1cb68283a33bc4b2d4e5527ce4a0d28d60a5f8234658b9fe5ff41",
+      "bytes": 5465
+    },
+    {
+      "path": "T018/build/csa-physical-v4-20261018-v1/channel-calibration-decoder-v1/measurements.json",
+      "sha256": "68fbd6b7180da72c8699a7632051e063f7649aa9ee8ae57adccf198c49a5281a",
+      "bytes": 5229
+    },
+    {
+      "path": "T018/build/csa-physical-v4-20261018-v1/channel-event-preparation-v4/intent.json",
+      "sha256": "013159be5d18bf57de6e40771cb181d10bcaf52b6fd2af5b570469bf6b2de507",
+      "bytes": 48249
+    },
+    {
+      "path": "T018/build/csa-physical-v4-20261018-v1/native-noise-band-audit-v1/measurements.json",
+      "sha256": "f23a10238a80ed59e01e40493524f3a52100b9f6db6d2356f5a9ae8098a7843f",
+      "bytes": 10979
+    },
+    {
+      "path": "T018/build/csa-physical-v4-20261018-v1/channel-clocked-noise-analysis-all-v1/measurements.json",
+      "sha256": "b3bbf6dafc37ef955a4cd12f321012ade1d78bd92ff84524b2c424bd3ac94a04",
+      "bytes": 94646
+    },
+    {
+      "path": "T018/build/csa-physical-v4-20261018-v1/channel-clocked-noise-v1/intent.json",
+      "sha256": "efcaedb7dc28205e25a34c41fb149135a44d406cbeab582c91c4cf216bb8efa2",
+      "bytes": 47814
+    },
+    {
+      "path": "T018/build/csa-physical-v4-20261018-v1/channel-clocked-noise-comparison-all-v1/measurements.json",
+      "sha256": "d7cd6ffdc84fb44eaaa0966e05d9748588256a20f9c53e737d546250cbfa5668",
+      "bytes": 63589
+    },
+    {
+      "path": "T018/build/csa-physical-v4-20261018-v1/channel-clocked-noise-v1/intent.json",
+      "sha256": "efcaedb7dc28205e25a34c41fb149135a44d406cbeab582c91c4cf216bb8efa2",
+      "bytes": 47814
+    },
+    {
+      "path": "T018/build/csa-physical-v4-20261018-v1/channel-entry-analysis-all-v1/measurements.json",
+      "sha256": "7c7a6aaa88460217d76d9884798caa0ec22a8da62109974457e75b5a21d12f41",
+      "bytes": 49825
+    },
+    {
+      "path": "T018/build/csa-physical-v4-20261018-v1/channel-entry-response-v3/intent.json",
+      "sha256": "2cf4579e75bb449afa918cdfe9cc4e9025a6ff7bae5f9a132213e34a13c89024",
+      "bytes": 26669
+    },
+    {
+      "path": "T018/build/csa-physical-v4-20261018-v1/channel-energy-all-v1/measurements.json",
+      "sha256": "393b2e7d947f75e0b00c7accaba9131a3023c1bc54d1c7a89ba5ebd074fce4d5",
+      "bytes": 115126
+    },
+    {
+      "path": "T018/build/csa-physical-v4-20261018-v1/channel-noise-numerics-qualified-v1/measurements.json",
+      "sha256": "681f76747861b163b5df6a8e7de5c9a52ad361e94d5f6802553304f47e188980",
+      "bytes": 107337
+    },
+    {
+      "path": "T018/build/csa-physical-v4-20261018-v1/channel-clocked-noise-comparison-all-v1/scope-data.json",
+      "sha256": "ea0ad2972ff66b4fef8f27db14fe8bcdb6a033bbd469173e7920723e764a14ac",
+      "bytes": 5222897
+    },
+    {
+      "path": "T018/build/csa-physical-v4-20261018-v1/channel-observed-analysis-v4/measurements.json",
+      "sha256": "ad65792070e6ca0630c7ea29ef2fd684758f6c8245cc6b5ad05a59154a576372",
+      "bytes": 43213
+    },
+    {
+      "path": "T018/build/csa-physical-v4-20261018-v1/channel-observed-response-v2/intent.json",
+      "sha256": "85a2c17ddff167f49acb270e4ce6f8ac317fcd22c36cf11612857c8825e86c59",
+      "bytes": 24552
+    },
+    {
+      "path": "T018/build/csa-physical-v4-20261018-v1/channel-clocked-noise-analysis-all-v1/measurements.json",
+      "sha256": "b3bbf6dafc37ef955a4cd12f321012ade1d78bd92ff84524b2c424bd3ac94a04",
+      "bytes": 94646
+    },
+    {
+      "path": "T018/build/csa-physical-v4-20261018-v1/channel-clocked-noise-v1/intent.json",
+      "sha256": "efcaedb7dc28205e25a34c41fb149135a44d406cbeab582c91c4cf216bb8efa2",
+      "bytes": 47814
+    },
+    {
+      "path": "T018/build/csa-physical-v4-20261018-v1/channel-entry-analysis-all-v1/measurements.json",
+      "sha256": "7c7a6aaa88460217d76d9884798caa0ec22a8da62109974457e75b5a21d12f41",
+      "bytes": 49825
+    },
+    {
+      "path": "T018/build/csa-physical-v4-20261018-v1/channel-entry-response-v3/intent.json",
+      "sha256": "2cf4579e75bb449afa918cdfe9cc4e9025a6ff7bae5f9a132213e34a13c89024",
+      "bytes": 26669
+    },
+    {
+      "path": "T018/build/csa-physical-v4-20261018-v1/channel-calibration-analysis-v1/measurements.json",
+      "sha256": "2df43b83d9d5e6265b600ac02e8f97c72566891dbf7c05f890efa94971a5cb12",
+      "bytes": 11286
+    },
+    {
+      "path": "T018/build/csa-physical-v4-20261018-v1/channel-event-preparation-v4/intent.json",
+      "sha256": "013159be5d18bf57de6e40771cb181d10bcaf52b6fd2af5b570469bf6b2de507",
+      "bytes": 48249
+    },
+    {
+      "path": "config/csa_channel_energy_v4.toml",
+      "sha256": "ca0f11acd980b2c3512f909efe6b004a23d2c3987700973c1156d72f0f994ae5",
+      "bytes": 1410
+    },
+    {
+      "path": "T018/build/csa-physical-v4-20261018-v1/channel-noise-numerics-v1/intent.json",
+      "sha256": "51d3abc4e81ea2ffe8e92fe035320aa9ddf82291f4693688783bd7b5a49f54c7",
+      "bytes": 23583
+    },
+    {
+      "path": "T018/build/csa-physical-v4-20261018-v1/channel-noise-numerics-repeat-analysis-v1/measurements.json",
+      "sha256": "f2a76aec77c290b9dd7de54775e64651010ede91cf28c669c021fffc6ee4e409",
+      "bytes": 12595
+    },
+    {
+      "path": "T018/build/csa-physical-v4-20261018-v1/channel-noise-repeat-comparison-v1/measurements.json",
+      "sha256": "1a74e63110918232f973dd004a9917d0bae5f35c27a96e0d33cb3ea198ce7be7",
+      "bytes": 5853
+    },
+    {
+      "path": "T018/build/csa-physical-v4-20261018-v1/channel-noise-numerics-repeat-analysis-v1/scope-data.json",
+      "sha256": "0f09a04685077d22b5461138c50a304a7c286faa99d37fc1050c5269e8ceefc3",
+      "bytes": 11733533
+    },
+    {
+      "path": "T018/build/csa-physical-v4-20261018-v1/channel-noise-numerics-v1/intent.json",
+      "sha256": "51d3abc4e81ea2ffe8e92fe035320aa9ddf82291f4693688783bd7b5a49f54c7",
+      "bytes": 23583
+    },
+    {
+      "path": "T018/build/csa-physical-v4-20261018-v1/channel-noise-numerics-strict-analysis-v1/measurements.json",
+      "sha256": "0e81602c7a2220ca2270279365e24c3c9d13b4ac6de3cddbdb9f2e7e3d5936d7",
+      "bytes": 12676
+    },
+    {
+      "path": "T018/build/csa-physical-v4-20261018-v1/channel-noise-strict-comparison-v1/measurements.json",
+      "sha256": "7e3cd96caa44561486637d725cb625b94bf6ce6a5b8fc3728e2a520acd3d9b31",
+      "bytes": 6179
+    },
+    {
+      "path": "T018/build/csa-physical-v4-20261018-v1/channel-noise-numerics-strict-analysis-v1/scope-data.json",
+      "sha256": "b1127361bc35ad4fff8fa827050f8caa554813e461ed5c610b729fd1e08b9807",
+      "bytes": 11739931
+    },
+    {
+      "path": "T018/build/csa-physical-v4-20261018-v1/channel-noise-numerics-v1/intent.json",
+      "sha256": "51d3abc4e81ea2ffe8e92fe035320aa9ddf82291f4693688783bd7b5a49f54c7",
+      "bytes": 23583
+    },
+    {
+      "path": "T018/build/csa-physical-v4-20261018-v1/channel-noise-numerics-quiet-analysis-v1/measurements.json",
+      "sha256": "79b1369f04036a3d61ee9fa21ae2321af963abad6c00bf5f0348ee317b787e8a",
+      "bytes": 12282
+    },
+    {
+      "path": "T018/build/csa-physical-v4-20261018-v1/channel-noise-strict-quiet-comparison-v1/measurements.json",
+      "sha256": "882f2c4d7cf07b86df0f4d14ac13d7b51d2ee97335fd301e4eee7f9c7303b20d",
+      "bytes": 5527
+    },
+    {
+      "path": "T018/build/csa-physical-v4-20261018-v1/channel-noise-numerics-quiet-analysis-v1/scope-data.json",
+      "sha256": "97077ff11acdac6c0b9db66dbde1d00134d884d9a0b89c5d1f31227a632a6f8e",
+      "bytes": 11191419
+    },
+    {
+      "path": "T018/build/csa-physical-v4-20261018-v1/channel-noise-numerics-followup-v1/intent.json",
+      "sha256": "b7a7f371c26eb2ee0abd3388bc7d1db9e0c4a8a212b5cca90286eae71ae5776f",
+      "bytes": 24085
+    },
+    {
+      "path": "T018/build/csa-physical-v4-20261018-v1/channel-noise-numerics-sc91-analysis-v1/measurements.json",
+      "sha256": "1a3be30a471a21c32ec412b4a6a94a840470a301e0f7de35c7caf7fa4d38dd49",
+      "bytes": 12652
+    },
+    {
+      "path": "T018/build/csa-physical-v4-20261018-v1/channel-noise-strict-sc91-comparison-v1/measurements.json",
+      "sha256": "cbc3b91c33cbfcd4501c731869e5003b18feb72ac7b464885adf8762189a004f",
+      "bytes": 6159
+    },
+    {
+      "path": "T018/build/csa-physical-v4-20261018-v1/channel-noise-numerics-sc91-analysis-v1/scope-data.json",
+      "sha256": "ffae170d3345950e17fdf070c6c30052bd40e75e787fd6d684eb200d1441b6b3",
+      "bytes": 11687603
+    },
+    {
+      "path": "T018/build/csa-physical-v4-20261018-v1/channel-noise-numerics-followup-v1/intent.json",
+      "sha256": "b7a7f371c26eb2ee0abd3388bc7d1db9e0c4a8a212b5cca90286eae71ae5776f",
+      "bytes": 24085
+    },
+    {
+      "path": "T018/build/csa-physical-v4-20261018-v1/channel-noise-numerics-px91-analysis-v1/measurements.json",
+      "sha256": "8bd3758760b684b31201a1afcffd0e233c0c620f4bfba114712db98422767078",
+      "bytes": 12679
+    },
+    {
+      "path": "T018/build/csa-physical-v4-20261018-v1/channel-noise-strict-px91-comparison-v1/measurements.json",
+      "sha256": "cabb25e5e8db17a01ec5d94f3c54915a3a1a0b2eb4aec163d0ce0d4fb47baa01",
+      "bytes": 6204
+    },
+    {
+      "path": "T018/build/csa-physical-v4-20261018-v1/channel-noise-numerics-px91-analysis-v1/scope-data.json",
+      "sha256": "f7377c69e699caa4d23bf5a8c8a5352cd46518f182956e71031a87831df42261",
+      "bytes": 11605492
+    },
+    {
+      "path": "T018/build/csa-physical-v4-20261018-v1/channel-noise-numerics-followup-v1/intent.json",
+      "sha256": "b7a7f371c26eb2ee0abd3388bc7d1db9e0c4a8a212b5cca90286eae71ae5776f",
+      "bytes": 24085
+    },
+    {
+      "path": "T018/build/csa-physical-v4-20261018-v1/channel-noise-numerics-pxquiet-analysis-v1/measurements.json",
+      "sha256": "b559151dbb142a6a17d07e27a2dc49fd42fb7da1c26ddc3bcdc95233a077b0a9",
+      "bytes": 12322
+    },
+    {
+      "path": "T018/build/csa-physical-v4-20261018-v1/channel-noise-strict-pxquiet-comparison-v1/measurements.json",
+      "sha256": "f2cb3c5a95f150bc13110b0844a0c22c9b19598871740ce2c74a9694d3411e76",
+      "bytes": 5511
+    },
+    {
+      "path": "T018/build/csa-physical-v4-20261018-v1/channel-noise-numerics-pxquiet-analysis-v1/scope-data.json",
+      "sha256": "63f28ea7341796e4362e1b7a08ffeadd6991eb37b9dd55a282334e3e413c7dd6",
+      "bytes": 11124282
+    },
+    {
+      "path": "config/csa_channel_noise_numerics_summary_v4.toml",
+      "sha256": "5702d29f5b96ed4bc864597f809c07a6f8436a4053cccb556dae907f988ffb48",
+      "bytes": 2019
+    },
+    {
+      "path": "config/csa_channel_numerical_agreement_v4.toml",
+      "sha256": "09e803a1ac6cf2bd581464e2339f69660e767d36d3561702658638f9a052cf33",
+      "bytes": 473
+    },
+    {
+      "path": "T018/build/csa-physical-v4-20261018-v1/assembly-mask-proof-v1/layout-native.svg",
+      "sha256": "02eac7956ad8707c18f28d11789004dfe60438b1285c5f8b03d0b8f642078bba",
+      "bytes": 1525951
+    },
+    {
+      "path": "T018/build/csa-physical-v4-20261018-v1/channel-source-v3/csa-export/schematic.svg",
+      "sha256": "d939729242ce87ceaafe64333e869d9c843077d4aabbb6281023d5505a13fec7",
+      "bytes": 11331
+    },
+    {
+      "path": "T018/build/csa-physical-v4-20261018-v1/channel-source-v3/channel-export/schematic.svg",
+      "sha256": "4046198ee713342b8050443c86185e2e49b934d92158925419a205de3c44df1d",
+      "bytes": 139183
+    },
+    {
+      "path": "T018/build/csa-physical-v4-20261018-v1/channel-observed-analysis-v4/scope-data.json",
+      "sha256": "1c51f032e8dde0f28898c87dfdb6157cd78c66dcff19df175e5adbfaf8f78868",
+      "bytes": 40755902
+    },
+    {
+      "path": "T018/build/csa-physical-v4-20261018-v1/channel-response-regularized-analysis-v4/scope-data.json",
+      "sha256": "f5f9fa6326b972585c9ba849d92d106875d337846b8c893963b52497fa80664e",
+      "bytes": 33598214
+    },
+    {
+      "path": "T018/build/csa-physical-v4-20261018-v1/channel-response-analysis-v2/scope-data.json",
+      "sha256": "263ca369e2ca3c8647146680c3da422b36ef12836195039f355882ef0d70bce9",
+      "bytes": 10491429
+    },
+    {
+      "path": "T018/build/csa-physical-v4-20261018-v1/channel-clocked-noise-analysis-all-v1/scope-data.json",
+      "sha256": "b0e21095670ad40bbe9d3d0ee3ce93c4a587df6afa6ea450373ddf3a575a68bd",
+      "bytes": 85889835
+    },
+    {
+      "path": "T018/build/csa-physical-v4-20261018-v1/channel-entry-analysis-all-v1/scope-data.json",
+      "sha256": "6d2e4277948dd632b40ea6ad0ea03c4078a012344648a3ca9c337bf4633f0eb9",
+      "bytes": 39451603
+    },
+    {
+      "path": "T018/build/csa-physical-v4-20261018-v1/channel-noise-numerics-qualified-v1/scope-data.json",
+      "sha256": "3f5c1070994021f3cbde3bccd34b765ea4b09c9e5669b7c41bbfcb8b9f0f1083",
+      "bytes": 69082250
+    }
+  ],
+  "report_sources": [
+    {
+      "path": "reports/qpix-tsmc180/csa_v4.py",
+      "sha256": "fff4eddf07c735088f121dd3c4028ce371b1385aed28cbe3c321905db47b3931"
+    },
+    {
+      "path": "reports/qpix-tsmc180/csa_v4.toml",
+      "sha256": "3c4f4979084a6e3142a8079afea396dc71cac598790cc5909d90e3a29ba2e18a"
+    },
+    {
+      "path": "reports/qpix-tsmc180/src/csa-v4.html",
+      "sha256": "701505dd8896f99a516e60e80d8cf03de1d0703cecf90adf344ccb81e4375c9c"
+    },
+    {
+      "path": "reports/qpix-tsmc180/src/csa-v4.js",
+      "sha256": "6de83e8b02b0d1bf4a9a61aaedafe2de95cec9f43aed5167b7b6087440a46a0f"
+    }
+  ],
+  "scope": "Digest-pinned application measurement receipts and exact input-manifest bindings. The application analyzers perform native artifact/state/acceptance checks; this presentation build does not rerun EDA or requalify circuits. Model payloads and raw PSF remain outside the site.",
+  "portable_display": "Full-duration logic and charge traces are retained. Noisy-channel charge traces use validated native integrals. Raw saved-current quadrature for those noise cases and raw instantaneous power remain in the original local inspectors; cycle-window source energy/power is retained in scorecards. Local data use lossless gzip/base64 and the browser decoder; no library bundle is copied."
+}

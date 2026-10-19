@@ -2,9 +2,9 @@
   "report": {
     "title": "Q-Pix in TSMC180: charge, timing and heat",
     "date": "2026-10-16",
-    "built_utc": "2026-10-17T02:56:52.474356+00:00",
+    "built_utc": "2026-10-18T23:37:37.222485+00:00",
     "branch": "qpix_tsmc180",
-    "head": "65558ed265f99a0e62e8ddbff409ba0e40cc6e74",
+    "head": "402764da9d3cee96452b7ec9596371be12c311b3",
     "source_state": "working-tree design and experiment sources; exact hashes in provenance",
     "selected_rate_hz": 10000000,
     "selected_input_f": 3e-12
@@ -16,7 +16,7 @@
   "report_sources": [
     {
       "path": "build_report.py",
-      "sha256": "42f2c6c780d11c4c78de5a22ed4135a0e0d9bd1a1282065f3df6ebd54d5ede3f"
+      "sha256": "f4e7fd27a5dbb1ab161c7be397dd966aff335e51d40b7e53a684be9deb729c66"
     },
     {
       "path": "latest.py",
@@ -31,12 +31,28 @@
       "sha256": "f35be947ce9eca5c90baf067adb766eead809a12ed3d350909be0d8dc7cbd220"
     },
     {
+      "path": "csa_v4.py",
+      "sha256": "fff4eddf07c735088f121dd3c4028ce371b1385aed28cbe3c321905db47b3931"
+    },
+    {
+      "path": "csa_v4.toml",
+      "sha256": "3c4f4979084a6e3142a8079afea396dc71cac598790cc5909d90e3a29ba2e18a"
+    },
+    {
+      "path": "comparator_v1.py",
+      "sha256": "b1dde317d6f0483ba436e416e7b16e0825b08e250f288112d101bdaf8fb4a3aa"
+    },
+    {
+      "path": "comparator_v1.toml",
+      "sha256": "6a8e1318edd493d9664077b2446311dfead0f63cd2d7a467349b3fb258da59ab"
+    },
+    {
       "path": "report.toml",
       "sha256": "1ca6b5905c3a604565e9eda373bcc93a37cb17de6387daa1757cdaf1560230a0"
     },
     {
       "path": "src/index.html",
-      "sha256": "cefa0a39d401cac3eeb1b78ad55e92acfa9422e8671699fb513b463108b382fa"
+      "sha256": "c693036bd6f5fbc10a1de89129ab312424189fe8cdb1c0eefb9756b066b17881"
     },
     {
       "path": "src/report.css",
@@ -45,6 +61,22 @@
     {
       "path": "src/report.js",
       "sha256": "2f5396197688e65605f9ff80c37938f35e4451fea7a22e7dfe224576a5e673dc"
+    },
+    {
+      "path": "src/csa-v4.html",
+      "sha256": "701505dd8896f99a516e60e80d8cf03de1d0703cecf90adf344ccb81e4375c9c"
+    },
+    {
+      "path": "src/csa-v4.js",
+      "sha256": "6de83e8b02b0d1bf4a9a61aaedafe2de95cec9f43aed5167b7b6087440a46a0f"
+    },
+    {
+      "path": "src/comparator-v1.html",
+      "sha256": "432ecfb0c1203dea54f39dfad6306ad179f38f613309c4571855d1c0d85321bc"
+    },
+    {
+      "path": "src/comparator-v1.js",
+      "sha256": "1c2baf038de686a3ce07af110a53587bcde4c5632cbbaea29cb1dc2af117d0a8"
     }
   ],
   "files": [
