@@ -2,9 +2,9 @@
   "report": {
     "title": "Q-Pix in TSMC180: charge, timing and heat",
     "date": "2026-10-16",
-    "built_utc": "2026-10-18T23:37:37.222485+00:00",
+    "built_utc": "2026-10-20T10:37:08.791413+00:00",
     "branch": "qpix_tsmc180",
-    "head": "402764da9d3cee96452b7ec9596371be12c311b3",
+    "head": "6981a0b48e1fb270969cf4a073eacdc77530dfa4",
     "source_state": "working-tree design and experiment sources; exact hashes in provenance",
     "selected_rate_hz": 10000000,
     "selected_input_f": 3e-12
@@ -16,7 +16,7 @@
   "report_sources": [
     {
       "path": "build_report.py",
-      "sha256": "f4e7fd27a5dbb1ab161c7be397dd966aff335e51d40b7e53a684be9deb729c66"
+      "sha256": "8a6f2cf396e2bb4ffdce7282c7d4b9ffe50f26fa4ed266fe65ccca4928529608"
     },
     {
       "path": "latest.py",
@@ -47,12 +47,44 @@
       "sha256": "6a8e1318edd493d9664077b2446311dfead0f63cd2d7a467349b3fb258da59ab"
     },
     {
+      "path": "replenisher_v1.py",
+      "sha256": "35e46dc10f758f8048cd4556d358dbf9bc042760b271102ac01cee4aa1e3d50e"
+    },
+    {
+      "path": "replenisher_v1.toml",
+      "sha256": "01e08d682807fb5372587ba446421edc6899f634d24c47b84b3a2fb8605d8994"
+    },
+    {
+      "path": "src/replenisher-v1.html",
+      "sha256": "9d816baedf98141813c720c1ea6afcda047c782b09ea3a987bb3e43c471cfbc9"
+    },
+    {
+      "path": "src/replenisher-v1.js",
+      "sha256": "518d4a81a2714e524621dfb6d16b5f60ebcf5fd4ff6eb1cfb5cff2349e47c173"
+    },
+    {
+      "path": "clock_flat_v1.py",
+      "sha256": "f6b12c7afa381889617764686674ba032600df6f95f99c6ed82886c35c290654"
+    },
+    {
+      "path": "clock_flat_v1.toml",
+      "sha256": "71ff07410cda2697f7b0e639a4c3564e9d52666e386e5dd260815ecb2662523f"
+    },
+    {
+      "path": "src/clock-flat-v1.html",
+      "sha256": "a4a9f3d5d235f6cce8f865697f6ac4fa7e65dbc0d9de9f851860433470155a33"
+    },
+    {
+      "path": "src/clock-flat-v1.js",
+      "sha256": "f503827ff6a58dc0d0ac81f3464f9a4a54122ec1109a6d7bfeac7ebaeadd702a"
+    },
+    {
       "path": "report.toml",
       "sha256": "1ca6b5905c3a604565e9eda373bcc93a37cb17de6387daa1757cdaf1560230a0"
     },
     {
       "path": "src/index.html",
-      "sha256": "c693036bd6f5fbc10a1de89129ab312424189fe8cdb1c0eefb9756b066b17881"
+      "sha256": "ebd393f1d7e35bcad003bc343ffa907954f3db1c5c48292c6a611062c2699776"
     },
     {
       "path": "src/report.css",
@@ -64,7 +96,7 @@
     },
     {
       "path": "src/csa-v4.html",
-      "sha256": "701505dd8896f99a516e60e80d8cf03de1d0703cecf90adf344ccb81e4375c9c"
+      "sha256": "58256d30b9bdca2cb656e33815d2abd1ac3f61b3fcb312826f466ffdbcf69532"
     },
     {
       "path": "src/csa-v4.js",
@@ -77,6 +109,38 @@
     {
       "path": "src/comparator-v1.js",
       "sha256": "1c2baf038de686a3ce07af110a53587bcde4c5632cbbaea29cb1dc2af117d0a8"
+    },
+    {
+      "path": "clock_flat_v3.py",
+      "sha256": "5d280de1c6ce37e20dec9cc28b8e8cc7dcf80d8927ed3b30ab7dcf3e9281cc48"
+    },
+    {
+      "path": "clock_flat_v3.toml",
+      "sha256": "7523ba4e592752f59fc6b915fc266e783fc23a647623d416399ae2f9653a202b"
+    },
+    {
+      "path": "src/clock-flat-v3.html",
+      "sha256": "ce8a80c0553f23797cdb9c23e5269c003ab697edfac852e02e99c5d1df3b50b3"
+    },
+    {
+      "path": "src/clock-flat-v3.js",
+      "sha256": "c99d70185f10c16266f929e40ab0e104daf440a53b894e6490c7f701462f708d"
+    },
+    {
+      "path": "capture_control_v1.py",
+      "sha256": "135cd48b69c5c0bb7075b81a7f63d56e6cc64318754d936141503a42c35348ff"
+    },
+    {
+      "path": "capture_control_v1.toml",
+      "sha256": "b15fb4574af96d63883e1110ab60f33a1b6afe059d9bac239cfa65ef535c1425"
+    },
+    {
+      "path": "src/capture-control-v1.html",
+      "sha256": "f0e256b7a8cb089b0a7597f5ffa09e90e94b2b3d4177af29ff5939db62196752"
+    },
+    {
+      "path": "src/capture-control-v1.js",
+      "sha256": "d3f72ead185571fdccf5941d8c64aeaa7ade0e7f25dc5d794ae2e838743f1d8f"
     }
   ],
   "files": [
@@ -3974,15 +4038,15 @@
     },
     {
       "path": "docs/local-model.md",
-      "sha256": "2123950dd40c03c888e1a45d1e6964768f1599c7c275d70cde56d00860bf9d1e",
-      "bytes": 4839,
+      "sha256": "577abee926ec1ef339f37676d95a2630d5d73fc1c3d879be551e42864d747e5d",
+      "bytes": 3827,
       "role": "local model correction recipe and interpretation",
       "href": "../../../docs/local-model.md"
     },
     {
       "path": "docs/model-validation.md",
-      "sha256": "e139c6568a12ed18f7a975fa0be74c4ae5f9caecf960bc8ae62f4560fa7fb3e1",
-      "bytes": 5278,
+      "sha256": "59d756cfcfaf945abd07cc5c62338fa15d0471d3c2c34ecb7768c2440701f514",
+      "bytes": 2859,
       "role": "local model correction recipe and interpretation",
       "href": "../../../docs/model-validation.md"
     },
@@ -4660,15 +4724,15 @@
     },
     {
       "path": "docs/trimmed-clock.md",
-      "sha256": "9aae77af40915d3968ea768037e991a6120b3b233a79a07ea3af088b2f5e301c",
-      "bytes": 28590,
+      "sha256": "1b452ea62e521702af766f954d29b7742bd848b00d6485775f5d0bbe45f16d4b",
+      "bytes": 11993,
       "role": "current clock/event design and experiment sources",
       "href": "../../../docs/trimmed-clock.md"
     },
     {
       "path": "docs/detector-event.md",
-      "sha256": "5f421edbe26d121ea6b5aba97cbf1406278a0788eeecfdc79695f8601ee49f1a",
-      "bytes": 9473,
+      "sha256": "e1cfcccc1d4d4fd2457ed1b9c04dab7c55eecde543bbebe85653bd2c8d10c854",
+      "bytes": 7776,
       "role": "current clock/event design and experiment sources",
       "href": "../../../docs/detector-event.md"
     },

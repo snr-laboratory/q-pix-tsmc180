@@ -1,0 +1,42 @@
+[
+  {
+    "path": "T018/build/capture-control-std-v1-20261020/qualification-v1/physical.json",
+    "sha256": "8b43939aad1be62cd1365a8901d8c09bc298042d0c4eebc364877d6ba138a266",
+    "bytes": 586992
+  },
+  {
+    "path": "T018/build/capture-control-std-v1-20261020/loaded-5m-analysis-v2/scope-data.json",
+    "sha256": "9d98d141c7cf0e7b0135ff5f9ac1c35f7465d247e2759d5c24b8bccf4e879fdb",
+    "bytes": 2797327
+  },
+  {
+    "path": "T018/build/capture-control-std-v1-20261020/loaded-10m-analysis-v2/scope-data.json",
+    "sha256": "656813618dd4019f0718e235e4a7af39e311124766722af2f6b62ea10e0bb387",
+    "bytes": 2798045
+  },
+  {
+    "path": "T018/build/capture-control-std-v1-20261020/loaded-20m-analysis-v2/scope-data.json",
+    "sha256": "10ef2314c596eaf7b9301725bdf156e22fbc026b8a6cbc0ac22e8fc39bb4acb5",
+    "bytes": 2800289
+  },
+  {
+    "path": "T018/build/capture-control-std-v1-20261020/loaded-50m-analysis-v2/scope-data.json",
+    "sha256": "15262b0319690b891665d86c5938cddb18b3bede509bf31d04ded48edd344d7d",
+    "bytes": 2794087
+  },
+  {
+    "path": "T018/build/capture-control-std-v1-20261020/report-figures-v1/circuit/fixture.svg",
+    "sha256": "003b966d88e1c179b50378b74dcd25e6d799f21f43c545232a1f88891103abcb",
+    "bytes": 25237
+  },
+  {
+    "path": "T018/build/capture-control-std-v1-20261020/layout-route-v2/layout-intent.svg",
+    "sha256": "fd7ca55068362e5bbbeaf524ae7a0ce0e298ccb8ed5fcdb6be0fbe8c210e3159",
+    "bytes": 155499
+  },
+  {
+    "path": "T018/build/capture-control-std-v1-20261020/loaded-50m-v3/298.15K/human-export/fixture.svg",
+    "sha256": "870cebe9544ed8bdc6c56ec0dc0c51fb39c98ec0af4be2f11e696ddf2c69502e",
+    "bytes": 55449
+  }
+]

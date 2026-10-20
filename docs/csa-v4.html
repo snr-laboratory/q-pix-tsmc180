@@ -21,7 +21,7 @@ the retained exploratory channel records below do not hold CSA candidate accepta
 <div class="notice"><strong>Scope matters.</strong> Local geometry DRC and strict LVS/PEX pass for the CSA unit. Metal density and manual DRM obligations remain at their declared scope.
 The warm foundry card is the reference; the cold DC-fit model inherits unvalidated noise/CV and other laws.
 Comparator, replenisher, references and shared clock do not yet have complete-channel layout/PEX qualification.
-The current module-by-module implementation sequence is recorded in <a href="../../../PLAN.md#current-physical-implementation-sequence--2026-10-18">the project plan</a>.</div>
+The current module-by-module implementation sequence is recorded in <a href="../../../PLAN.md">the project plan</a>.</div>
 
 <h2>One coherent physical unit</h2>
 <p>Input and mirror devices use segmented shared diffusion, matched interleaving and dummies, with common guards and dense vias.
@@ -152,9 +152,9 @@ E_{\rm operation}=\frac{E_{\rm upstream}}{N_{\rm complete\ EN}},\qquad E_{\rm cl
 This energy per operation depends on activity and window duration, and each EN pulse need not represent identical calibrated charge across variants.
 The long calibration and short event therefore have different costs per operation even at similar average draw. Numerical-warning records retain their diagnostic status.</p>
 <h2>Reproduction and remaining limits</h2><p><a href="data/csa-v4-provenance.json">Exact presentation inputs and digests</a> ·
-<a href="../../../docs/csa-coupled-v4.md">Physical CSA record</a> ·
-<a href="../../../docs/csa-coupled-shared-bias-v4.md">Shared-reference record</a> ·
-<a href="../../../docs/csa-channel-v4.md">Channel record</a></p>
+<a href="../../../docs/csa-qualification.md">Physical CSA record</a> ·
+<a href="../../../docs/csa-qualification.md">Shared-reference record</a> ·
+<a href="../../../docs/csa-qualification.md">Channel record</a></p>
 <p>The new <a href="../../../analog/tsmc180/Testbench/channel_csa_v4_calibration_tb.sch">independent calibration</a> and
 <a href="../../../analog/tsmc180/Testbench/channel_csa_v4_event_tb.sch">unscaled historical-event schematic</a> are prepared and their full sources parse/reproduce the initial state.
 The warm source 32-µs calibration now completes without numerical warnings; its gain is frozen below. Other calibration cases and the full 120-µs event remain unperformed

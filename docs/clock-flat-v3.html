@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Q-Pix physical single-clock generator V3</title>
+<script>window.MathJax={tex:{inlineMath:[['\\(','\\)']]}};</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-svg.js"></script><script defer src="https://cdn.plot.ly/plotly-4.1.1.min.js"></script>
+<script defer src="data/clock-flat-v3.js"></script><script defer src="assets/clock-flat-v3.js"></script>
+<style>
+*{box-sizing:border-box}:root{font-family:system-ui,sans-serif;color:#203e4c;background:#edf2f3}body{margin:0}main{max-width:1250px;margin:auto;padding:2rem 1rem 5rem}header,section{background:#fff;border:1px solid #d5e0e2;border-radius:12px;padding:1.4rem;margin:1rem 0}a{color:#126e7b}h1{font-size:2rem}h2{font-size:1.25rem;margin-top:0}p{line-height:1.55}.notice{border-left:5px solid #b66537;background:#fff6e9;padding:.8rem 1rem}.grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem}.plot{min-width:0}.scroll,.equation{overflow:auto;max-width:100%}.equation{text-align:center;margin:1.5rem 0}figure{margin:1rem 0}img{width:100%;height:auto;border:1px solid #dce4e6}figcaption{font-size:.9rem;color:#516972;margin-top:.5rem}table{border-collapse:collapse;width:100%;font-size:.9rem}th,td{text-align:left;padding:.6rem;border-bottom:1px solid #dce4e6}select,button,input{font:inherit;max-width:100%;padding:.45rem}input{width:7rem}code,pre{overflow-wrap:anywhere}pre{white-space:pre-wrap;font-size:.8rem}.pending{color:#9c4e25}#scope{min-height:1100px}@media(max-width:750px){.grid{grid-template-columns:1fr}main{padding:.5rem}header,section{padding:1rem}h1{font-size:1.5rem}}
+</style></head><body><main>
+<header><p><a href="index.html">Architecture and event replay</a> · <a href="clock-flat-v1.html">V1 source and failed extracted comparison</a> · <a href="replenisher-v1.html">Physical replenisher</a></p>
+<h1>Physical single-clock generator · V3</h1><p id="status">Loading pinned evidence…</p>
+<p id="coverage" class="notice"></p>
+<p>One CLK_IN produces EVAL, CAPTURE and PHASE through six adjustable delay sections. Sixty static internal control bits tune two resistor bypasses and eight capacitor weights per section. Configuration registers and a full clock-distribution tree remain separate implementation work; this generator requires no continuous delay-bias current.</p>
+<p id="native-summary"></p></header>
+<section><h2>Native layout and source correspondence</h2>
+<p id="matching"></p><p id="warnings"></p>
+<figure><a href="figures/clock-flat-v3-layout.svg"><img src="figures/clock-flat-v3-layout.svg" alt="V3 native device placement and upper-metal routing"></a><figcaption>Full selected native layers: diffusion/poly above and M4/M5 below. All streamed masks and 68 port locations were compared against the intended layout. The circuit is one flat cell.</figcaption></figure>
+<p>Cell-local DRC errors are cleared. Seven density findings remain chip-assembly/fill obligations: M1–M5, top metal and diffusion. DRM.R.1 remains a manual-review reminder. These checks do not qualify a complete chip.</p></section>
+<section><h2>Timing and selected words</h2>
+<p>At 5–20 MHz the six edges follow CLK_IN at 2/7/17/22/27/31 ns. At 50 MHz the targets are 2/4.5/7/9.5/12/16 ns. EVAL rises at the comparator aperture; CAPTURE closes before EVAL ends; PHASE gates replenishment after the hold interval.</p>
+<div class="equation">\[t_i-t_{\rm CLK}=\sum_{j=A}^{i}d_j,\qquad W_{\rm PHASE}=t_F-t_E.\]</div>
+<p>The strict target screen checks settled cycles 2–6 against 500 ps edge limits, 200 ps minimum guards and a 4 ns PHASE window within 150 ps. All eight sequences must exist. Bounded candidate acceptance separately requires ordered complete sequences and a usable 3–5 ns replenishment window; programmable centering residuals remain visible. Control cases check the complete edge inventory and quiet cycles. Means in plots accompany the per-cycle checks.</p>
+<div class="grid"><div id="timing" class="plot"></div><div id="width" class="plot"></div></div>
+<div class="scroll"><table><thead><tr><th>Evidence</th><th>Model / MHz</th><th>Words A/B/C/D/E/F</th><th>PHASE ns</th><th>Worst checked edge ps</th></tr></thead><tbody id="modes"></tbody></table></div>
+<p>Source and extracted circuits have separately calibrated words. Matched source comparisons use the exact extracted-case stimuli and numerical wrapper; a source trace at extracted words need not meet the selected timing target. Original fixed-word misses and the tuning traces remain inspectable below.</p></section>
+<section><h2>Heat and complete-cycle supply work</h2>
+<p>Power is measured upstream of a 100 pF VDD reservoir and 10 Ω feed, with a 50 Ω clock feed and three 80 fF output loads. It includes the generator, drivers, passives, well supplements, and positive CLK/RUN/RESET/configuration-source work. The reservoir-energy change is retained without subtraction.</p>
+<div class="equation">\[\overline P={1\over NT}\int_{t_0}^{t_0+NT}\left[-V_S I_S+\sum_p\max(-V_p I_p,0)\right]dt,\qquad E_{\rm clk}=\overline PT.\]</div>
+<p>Nominal and idle power use four complete input cycles; stop/reconfigure cases use seven and include the configuration transition. Idle keeps CLK_IN running while RUN is low. Raw values are per generator fixture.</p>
+<div class="grid"><div id="power" class="plot"></div><div id="energy" class="plot"></div></div>
+<label>Assumed channels sharing one generator <input id="sharing" type="number" min="1" max="4096" value="1" step="1"></label>
+<p id="allocation"></p><div class="scroll"><table><thead><tr><th>MHz</th><th>Room active / idle µW</th><th>77 K model active / idle µW</th><th>Allocated active µW/channel, room / cold</th></tr></thead><tbody id="power-table"></tbody></table></div>
+<p>This assumed allocation excludes an implemented distribution tree and configuration-register bank. It is not a chip heat-budget qualification. Per-channel heat must include each channel's analog/digital consumption and its share of all common work.</p></section>
+<section><h2>Inspect full-duration logic traces</h2>
+<p>Each signal has its own aligned row. The default view spans all eight acquisition clocks; “Include startup” also reveals reset and settling. All time axes zoom together. Metrics use native data; reduction applies only to display points.</p>
+<label for="case">Simulation case </label><select id="case"></select> <button id="startup" type="button">Include startup</button>
+<p id="case-note"></p><div id="scope"></div></section>
+<section><h2>Calibration and numerical controls</h2>
+<p>Edge positions and PHASE width are programmable operating settings. An offset at provisional words is a calibration residual; it does not establish a tuning-range limit or timing resolution. Tune the six successive intervals coherently, then inspect an independent full-PEX run with the selected words. Noise is off, so these offsets make no jitter claim.</p>
+<p>The owner's 20 October closure direction uses bounded room/cold nominal full-PEX checks to accept a useful local candidate. The extended rate/control matrix remains visible as deferred work. Picosecond numerical-agreement screens assess solver choices and remain separate from programmable edge targets and module acceptance.</p>
+<p>Three deterministic points per range estimate the fine-code and enabled-switch contributions. These local timing fits make no global monotonicity or physical-capacitance claim. A matched full/reduced reference supplies an explicit timing-offset estimate for trim prediction; independent full-PEX holdouts establish acceptance.</p>
+<p>V3 strengthens the measured launch loads coherently and shortens only A's fixed resistor. The nominal B–F ranges and 68-port/60-bit interface remain intact. The retained first full-PEX pilot established eight events at 50 MHz before its short PHASE window was retuned.</p>
+<div class="scroll"><table><thead><tr><th>Control</th><th>Largest edge / width change ps</th><th>Power change %</th><th>Strict / candidate seconds</th></tr></thead><tbody id="numerics"></tbody></table></div>
+<p>The full-network numerical comparisons preserve the extracted DUT, models, loading, stimuli, integration method and step cap. They check every acquisition cycle, including startup. The geometry and mixed-signal architecture are not inferred from a reduced diagnostic.</p>
+<p>The separately labelled cold startup control uses the reduced network. Selecting the native <code>ptran</code> continuation method first cuts that control's DC solve from about 70 s to 4.3 s; its eight-cycle waveform agrees with the strict reference within 0.99 ps. No node voltages are forced. The selected cold full-network operating-mode check separately uses a 10 ns supply ramp, reset through 400 ns and first clock at 1 µs. Its unpowered DC solve takes 0.762 s without tolerance relaxation or forward-junction warnings; all eight 50 MHz sequences pass the retained strict timing screen. Mean PHASE is 3.891 ns and complete-cycle generator work is 3.235 mW. Two cold well-leakage extrapolation warnings remain. A full-network cold strict/candidate numerical comparison is deferred.</p></section>
+<section><h2>Inspect the circuits</h2>
+<figure><a href="figures/clock-flat-v3-circuit.svg"><img src="figures/clock-flat-v3-circuit.svg" alt="Complete transistor and passive V3 schematic"></a><figcaption>Inspectable xschem source, including unit multiplicities and literal dummies; native CDL correspondence is independently checked.</figcaption></figure>
+<figure><a href="figures/clock-flat-v3-fixture.svg"><img src="figures/clock-flat-v3-fixture.svg" alt="Clock fixture with reservoir, source controls and output loads"></a><figcaption>Executed warm 50 MHz physical-word fixture. Voltage sources supply test stimulus; numerical controls are recorded with the native input wrapper.</figcaption></figure></section>
+<section><h2>Evidence and limits</h2>
+<p>Room temperature uses factory models; 77 K uses exploratory DC fits with unmeasured passive, capacitance, noise and stress laws. Noise is off. These bounded module checks do not establish silicon matching, clock jitter, PVT/mismatch, full-channel noise/interference, complete distribution loading or measured cryogenic performance. The architecture and detector replay remain separate report sections.</p>
+<details><summary>Source, native jobs, models, solver controls and figures</summary><pre id="provenance"></pre></details></section>
+</main></body></html>

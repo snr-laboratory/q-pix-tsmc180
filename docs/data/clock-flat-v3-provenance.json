@@ -1,0 +1,637 @@
+[
+  {
+    "path": "T018/build/clock-flat-20261020-v3/source-v1/intent.json",
+    "sha256": "e8966fefa911e2a3ac96ab3ab4fb2c36b264787dea90adaf14159532c434e157",
+    "bytes": 669628
+  },
+  {
+    "path": "T018/build/clock-flat-20261020-v3/source-native-cdl-correspondence-v1.json",
+    "sha256": "3555e0d9f33128666e0572106b6d10db66ff7657409a00a40c7ef77c6dfdad11",
+    "bytes": 789
+  },
+  {
+    "path": "T018/build/clock-flat-20261020-v3/qualification-local-v1/native-summary.json",
+    "sha256": "920b062fda1153943bec5f4be4984e8829ef57fd6097224d6fc3cadf42e0fe16",
+    "bytes": 15857
+  },
+  {
+    "path": "T018/build/clock-flat-20261020-v3/qualification-local-v1/candidate.json",
+    "sha256": "28343eba9f3c9ef84c5ecb95027b4a3b1717073276adff78427ccdf0116ab4d8",
+    "bytes": 3145
+  },
+  {
+    "path": "T018/build/clock-flat-20261020-v3/native-mask-proof-v4/mask-comparison.json",
+    "sha256": "8b5fe11419724963468e2cf41df13ae5c7fd728e79e594e9aa3ef2f51d9d4735",
+    "bytes": 14776
+  },
+  {
+    "path": "T018/build/clock-flat-20261020-v3/numerical-qualification-pex-warm-v1.json",
+    "sha256": "a9e987d951e91941f2a4d045ac18f5ff38f58f74cdd02700c37321051941b360",
+    "bytes": 1878
+  },
+  {
+    "path": "T018/build/clock-flat-20261020-v3/numerical-qualification-source-warm-v1.json",
+    "sha256": "17421d96cad3e277f677cafe6b2c0fbb665b53702b29066d32bbb9a37b793072",
+    "bytes": 1889
+  },
+  {
+    "path": "T018/build/clock-flat-20261020-v3/cold-startup-numerical-agreement-v1.json",
+    "sha256": "3129d3c1a0892e58891a07d0b8335d49b4fedd8d31b261c1550a2c172822b5be",
+    "bytes": 1936
+  },
+  {
+    "path": "analog/tsmc180/Schematic/clock_phase_flat_v3.sch",
+    "sha256": "7d2847e2bcc5fa8f767a08b3435b728fd4a2a591c2bc3e9468dc790dc958d049",
+    "bytes": 433440
+  },
+  {
+    "path": "T018/build/clock-flat-20261020-v3/source-first-warm-analysis-v1/measurements.json",
+    "sha256": "5362181fe4a7c569b1ed5ee8c658dd45bf66b0c53db5da555d23f88aa8c9f48f",
+    "bytes": 9230
+  },
+  {
+    "path": "T018/build/clock-flat-20261020-v3/source-first-50m-v1/intent.json",
+    "sha256": "6b0989be51f60eb2ab338f23b00969bea2d3cc2fa9cde81c57c9ab0ff165f553",
+    "bytes": 6941
+  },
+  {
+    "path": "T018/build/clock-flat-20261020-v3/source-first-warm-analysis-v1/scope-data.json",
+    "sha256": "3c03e96e72af7af7732b2d79b4b3c1a6579260c3978d48a6344b003dd9b17777",
+    "bytes": 449377
+  },
+  {
+    "path": "T018/build/vigil/sessions/78f65514f9654bd1f75c7fb5c4359b59/jobs/9633a24c244b0d9cbce3835fe7b4ce1f/model-digests.sxp",
+    "sha256": "25d4ce52b4060260013512713b7b14ac213e7f57da53c7a47977dc85ba19d4b6",
+    "bytes": 152
+  },
+  {
+    "path": "T018/build/clock-flat-20261020-v3/source-first-50m-v1/schematic-298.15K-50MHz/inputs/bench.scs",
+    "sha256": "70db014600732e819a01fe162ca887dce19b5434898158ad45ab98a75d2de70a",
+    "bytes": 6108
+  },
+  {
+    "path": "T018/build/clock-flat-20261020-v3/source-first-50m-v1/schematic-298.15K-50MHz/inputs/circuit.sp",
+    "sha256": "8e068c4c7d073fafac06a42cee7149851fe7a97ed1aa749cd4197ccb4309fe98",
+    "bytes": 114568
+  },
+  {
+    "path": "T018/build/clock-flat-20261020-v3/source-first-cold-analysis-v1/measurements.json",
+    "sha256": "e38acc5cb34759d0980ed4dceb6b9a9a6de4d87ee1bae8027e60c73c703a8f07",
+    "bytes": 10280
+  },
+  {
+    "path": "T018/build/clock-flat-20261020-v3/source-first-cold-50m-v1/intent.json",
+    "sha256": "bf60058f9d459d2f9b383e72c1c9198a569ff2d35e8802d06998959ec53db8d3",
+    "bytes": 6951
+  },
+  {
+    "path": "T018/build/clock-flat-20261020-v3/source-first-cold-analysis-v1/scope-data.json",
+    "sha256": "06da5f91731fd052bc9c968156244dcb9ababcb94c8401161b46bcc72c69102e",
+    "bytes": 560458
+  },
+  {
+    "path": "T018/build/vigil/sessions/78f65514f9654bd1f75c7fb5c4359b59/jobs/9d2be98ec9942ef25dac72a649e3650f/model-digests.sxp",
+    "sha256": "25d4ce52b4060260013512713b7b14ac213e7f57da53c7a47977dc85ba19d4b6",
+    "bytes": 152
+  },
+  {
+    "path": "T018/build/clock-flat-20261020-v3/source-first-cold-50m-v1/schematic-77K-50MHz/inputs/bench.scs",
+    "sha256": "edcfd03255d1425d09ad6fa5ba532548787cbb059c0b784e3aa33900e2927292",
+    "bytes": 517456
+  },
+  {
+    "path": "T018/build/clock-flat-20261020-v3/source-first-cold-50m-v1/schematic-77K-50MHz/inputs/circuit.sp",
+    "sha256": "cb9bd97610241c1532db25aac28353feb8595d3ce153e1d9dc3a534fbbf568c9",
+    "bytes": 114576
+  },
+  {
+    "path": "T018/build/clock-flat-20261020-v3/source-selected-10m-warm-v3/analysis-selected-v1/measurements.json",
+    "sha256": "ca6a136cd75839d0189c9b6b3bbaf31e1511a766838b95e9c34be612c69b5f29",
+    "bytes": 9268
+  },
+  {
+    "path": "T018/build/clock-flat-20261020-v3/source-selected-10m-warm-v3/intent.json",
+    "sha256": "7b103d74984a97e72b3e0e5f6283fd75169aba3006a861b04eca81c582a37bfc",
+    "bytes": 7073
+  },
+  {
+    "path": "T018/build/clock-flat-20261020-v3/source-selected-10m-warm-v3/analysis-selected-v1/scope-data.json",
+    "sha256": "53a7fcc7ad6bc330a2a26c919259cee9bd12487bed6bd63db57b0f8206085bdf",
+    "bytes": 522094
+  },
+  {
+    "path": "T018/build/vigil/sessions/78f65514f9654bd1f75c7fb5c4359b59/jobs/993e73e7f357f0ff5a313b9e441d594a/model-digests.sxp",
+    "sha256": "25d4ce52b4060260013512713b7b14ac213e7f57da53c7a47977dc85ba19d4b6",
+    "bytes": 152
+  },
+  {
+    "path": "T018/build/clock-flat-20261020-v3/source-selected-10m-warm-v3/schematic-298.15K-10MHz/inputs/bench.scs",
+    "sha256": "7a40b3e62619fd34a47a07f049e720200abe219e9d9d831020f4e8f361bbf1a4",
+    "bytes": 6108
+  },
+  {
+    "path": "T018/build/clock-flat-20261020-v3/source-selected-10m-warm-v3/schematic-298.15K-10MHz/inputs/circuit.sp",
+    "sha256": "928a65785aedbf33c7f283a0dbb8a8e852acbeb9f7643f0fd45975f34b339273",
+    "bytes": 114627
+  },
+  {
+    "path": "T018/build/clock-flat-20261020-v3/source-selected-10m-cold-v1/analysis-selected-v1/measurements.json",
+    "sha256": "238c2216b9b719785a5fa5da8e0db1e10f781ff40a282dc112177dc52444bdf7",
+    "bytes": 10249
+  },
+  {
+    "path": "T018/build/clock-flat-20261020-v3/source-selected-10m-cold-v1/intent.json",
+    "sha256": "ee43b11018dec2129fbb01ae3ff4bbbaef2a7e5040afcdbe67f61edb444889ca",
+    "bytes": 6955
+  },
+  {
+    "path": "T018/build/clock-flat-20261020-v3/source-selected-10m-cold-v1/analysis-selected-v1/scope-data.json",
+    "sha256": "0ced9feae713cc3c1b72878b668021dece1e6afa771b7d53c9bd1155d3c1ea09",
+    "bytes": 625305
+  },
+  {
+    "path": "T018/build/vigil/sessions/78f65514f9654bd1f75c7fb5c4359b59/jobs/f1f390590c3eeb45110cf66203236b2a/model-digests.sxp",
+    "sha256": "25d4ce52b4060260013512713b7b14ac213e7f57da53c7a47977dc85ba19d4b6",
+    "bytes": 152
+  },
+  {
+    "path": "T018/build/clock-flat-20261020-v3/source-selected-10m-cold-v1/schematic-77K-10MHz/inputs/bench.scs",
+    "sha256": "1349b53a9bf46209dcb9e9565dd90870b02711ad4c022f9b65c4b38c690d38a6",
+    "bytes": 517456
+  },
+  {
+    "path": "T018/build/clock-flat-20261020-v3/source-selected-10m-cold-v1/schematic-77K-10MHz/inputs/circuit.sp",
+    "sha256": "6ee16e6eea315b0b81885e1e823144b694539968924de2d03adbf1dd0697b446",
+    "bytes": 114590
+  },
+  {
+    "path": "T018/build/clock-flat-20261020-v3/pex-target-warm-analysis-v1/measurements.json",
+    "sha256": "c8b3fab82832077af7bd2c9a1feb8648769e7902c5291ff94e9e2b58aaccae38",
+    "bytes": 9552
+  },
+  {
+    "path": "T018/build/clock-flat-20261020-v3/pex-target-warm-numerical-v1/intent.json",
+    "sha256": "d2c46a3c414779c0a93770c12a548d13bc3707eff5eea0fedb1a289da9c1d579",
+    "bytes": 7839
+  },
+  {
+    "path": "T018/build/clock-flat-20261020-v3/pex-target-warm-analysis-v1/scope-data.json",
+    "sha256": "ce592b2dadd7a56b22d33a3512b78ba19da471ada83bd605eee0262c20696b45",
+    "bytes": 464665
+  },
+  {
+    "path": "T018/build/vigil/sessions/78f65514f9654bd1f75c7fb5c4359b59/jobs/4a51ba4654b64f6fe072c0060eed2ca6/model-digests.sxp",
+    "sha256": "25d4ce52b4060260013512713b7b14ac213e7f57da53c7a47977dc85ba19d4b6",
+    "bytes": 152
+  },
+  {
+    "path": "T018/build/clock-flat-20261020-v3/pex-target-warm-numerical-v1/pex-298.15K-50MHz/inputs/bench.scs",
+    "sha256": "b46c5700fd00725988f3da30d3b9d81e46e2dc6e36734803765948ca286ff4de",
+    "bytes": 6108
+  },
+  {
+    "path": "T018/build/clock-flat-20261020-v3/pex-target-warm-numerical-v1/pex-298.15K-50MHz/inputs/circuit.sp",
+    "sha256": "20a6e98cef454361c734a2fb0df0f61b0baefdf386dab071c021a070f7d4b12e",
+    "bytes": 4830
+  },
+  {
+    "path": "T018/build/clock-flat-20261020-v3/pex-target-warm-numerical-v1/pex-298.15K-50MHz/inputs/extracted.sp",
+    "sha256": "b4276e93af0c5144f4ad270f454524b0e1caee6e4a3de29e780bab0955871ee5",
+    "bytes": 16914836
+  },
+  {
+    "path": "T018/build/clock-flat-20261020-v3/pex-close-cold-analysis-v1/measurements.json",
+    "sha256": "19d5ff48d339ddd725447e1b9baf8e2da6244046d5421227fe6413061e1dc452",
+    "bytes": 11013
+  },
+  {
+    "path": "T018/build/clock-flat-20261020-v3/pex-close-cold-v1/intent.json",
+    "sha256": "20d0e4f799daca08fa1dfb6ea9422dba9874790bf9c5acfce651a53ebca9dd4c",
+    "bytes": 8610
+  },
+  {
+    "path": "T018/build/clock-flat-20261020-v3/pex-close-cold-analysis-v1/scope-data.json",
+    "sha256": "8fbe2d3a2ddd82c638cbb94319464d61070e5b93f3ef06b5ddb471ab542fea83",
+    "bytes": 711114
+  },
+  {
+    "path": "T018/build/vigil/sessions/78f65514f9654bd1f75c7fb5c4359b59/jobs/bba521ac684a77d7da196072ba88e7da/model-digests.sxp",
+    "sha256": "25d4ce52b4060260013512713b7b14ac213e7f57da53c7a47977dc85ba19d4b6",
+    "bytes": 152
+  },
+  {
+    "path": "T018/build/clock-flat-20261020-v3/pex-close-cold-v1/pex-77K-50MHz/inputs/bench.scs",
+    "sha256": "3112d4104823a293185f454a134d9a3a1c1137ae174f7b88bc96851c0da71038",
+    "bytes": 517489
+  },
+  {
+    "path": "T018/build/clock-flat-20261020-v3/pex-close-cold-v1/pex-77K-50MHz/inputs/circuit.sp",
+    "sha256": "033b119130799a7b227668f03e4d2f985c607a0906052feea84bca65c4450a59",
+    "bytes": 4892
+  },
+  {
+    "path": "T018/build/clock-flat-20261020-v3/pex-close-cold-v1/pex-77K-50MHz/inputs/extracted.sp",
+    "sha256": "b4276e93af0c5144f4ad270f454524b0e1caee6e4a3de29e780bab0955871ee5",
+    "bytes": 16914836
+  },
+  {
+    "path": "T018/build/clock-flat-20261020-v3/pex-pilot-warm-analysis-v1/measurements.json",
+    "sha256": "0368098da5d21cf9a6e56fbd7b41a0c9a7e0c23b8d870adeee1a0469a9c49136",
+    "bytes": 9331
+  },
+  {
+    "path": "T018/build/clock-flat-20261020-v3/pex-pilot-warm-50m-v1/intent.json",
+    "sha256": "5b893e6355bf1ade3dc7e01d4b11ab7b251df47890d139b60fe30f516af96130",
+    "bytes": 7993
+  },
+  {
+    "path": "T018/build/clock-flat-20261020-v3/pex-pilot-warm-analysis-v1/scope-data.json",
+    "sha256": "483a5dcaac25ba29b82c71ca78ede16a80585f562925d746483f5e6723ea6fa1",
+    "bytes": 517361
+  },
+  {
+    "path": "T018/build/vigil/sessions/78f65514f9654bd1f75c7fb5c4359b59/jobs/b9070d43df4c578570d4f2bbfce57606/model-digests.sxp",
+    "sha256": "25d4ce52b4060260013512713b7b14ac213e7f57da53c7a47977dc85ba19d4b6",
+    "bytes": 152
+  },
+  {
+    "path": "T018/build/clock-flat-20261020-v3/pex-pilot-warm-50m-v1/pex-298.15K-50MHz/inputs/bench.scs",
+    "sha256": "70db014600732e819a01fe162ca887dce19b5434898158ad45ab98a75d2de70a",
+    "bytes": 6108
+  },
+  {
+    "path": "T018/build/clock-flat-20261020-v3/pex-pilot-warm-50m-v1/pex-298.15K-50MHz/inputs/circuit.sp",
+    "sha256": "b1d999624147245f56ba91f587aa1eb9727b93fa41758ce5c4f742bade641213",
+    "bytes": 4782
+  },
+  {
+    "path": "T018/build/clock-flat-20261020-v3/pex-pilot-warm-50m-v1/pex-298.15K-50MHz/inputs/extracted.sp",
+    "sha256": "b4276e93af0c5144f4ad270f454524b0e1caee6e4a3de29e780bab0955871ee5",
+    "bytes": 16914836
+  },
+  {
+    "path": "T018/build/clock-flat-20261020-v3/source-selected-10m-warm-v1/analysis-selected-v1/measurements.json",
+    "sha256": "86bafadf5cc2dfe308dfe1c1f670cb560c3caaaf5e4b2b30257ad54432f52ec1",
+    "bytes": 9281
+  },
+  {
+    "path": "T018/build/clock-flat-20261020-v3/source-selected-10m-warm-v1/intent.json",
+    "sha256": "00e5473763a17d11178d6f5bde07541c05947cf6a779243dff8943f29f3a0d21",
+    "bytes": 6955
+  },
+  {
+    "path": "T018/build/clock-flat-20261020-v3/source-selected-10m-warm-v1/analysis-selected-v1/scope-data.json",
+    "sha256": "2a776a2f3f5017892dbd334ce791078962a9928a480d1203a8fd48f10913076a",
+    "bytes": 529310
+  },
+  {
+    "path": "T018/build/vigil/sessions/78f65514f9654bd1f75c7fb5c4359b59/jobs/084b4bf223d20cc7d3ec973b029c3669/model-digests.sxp",
+    "sha256": "25d4ce52b4060260013512713b7b14ac213e7f57da53c7a47977dc85ba19d4b6",
+    "bytes": 152
+  },
+  {
+    "path": "T018/build/clock-flat-20261020-v3/source-selected-10m-warm-v1/schematic-298.15K-10MHz/inputs/bench.scs",
+    "sha256": "7a40b3e62619fd34a47a07f049e720200abe219e9d9d831020f4e8f361bbf1a4",
+    "bytes": 6108
+  },
+  {
+    "path": "T018/build/clock-flat-20261020-v3/source-selected-10m-warm-v1/schematic-298.15K-10MHz/inputs/circuit.sp",
+    "sha256": "bb2ed22587193b139bcad114d208060bf592df952e2e906f194c8505f2a1bfa9",
+    "bytes": 114592
+  },
+  {
+    "path": "T018/build/clock-flat-20261020-v3/physical-cal-analysis-v1/high_rate/base-warm/measurements.json",
+    "sha256": "a6d03f7bf1dfa0fb2bfaa4fee32f87069e57dfb90554105782c7e739991ac033",
+    "bytes": 9340
+  },
+  {
+    "path": "T018/build/clock-flat-20261020-v3/lumped-cal-matrix-v1/intent.json",
+    "sha256": "d2e0bfdf9e81c577ae200c61ca17af2f36ca3641d51ddc4321eacf19ef69dfc5",
+    "bytes": 2072035
+  },
+  {
+    "path": "T018/build/clock-flat-20261020-v3/physical-cal-analysis-v1/high_rate/base-warm/scope-data.json",
+    "sha256": "8943f81cf697b0cec31f5609a73efe5eb0e47fff25d4d1d5cff88b315728d68c",
+    "bytes": 537201
+  },
+  {
+    "path": "T018/build/vigil/sessions/78f65514f9654bd1f75c7fb5c4359b59/jobs/a8a33aefd231b7c0303fcdeee08cf15e/model-digests.sxp",
+    "sha256": "25d4ce52b4060260013512713b7b14ac213e7f57da53c7a47977dc85ba19d4b6",
+    "bytes": 152
+  },
+  {
+    "path": "T018/build/clock-flat-20261020-v3/lumped-cal-matrix-v1/pex-298.15K-10MHz-cal-high_rate-base/inputs/bench.scs",
+    "sha256": "7a40b3e62619fd34a47a07f049e720200abe219e9d9d831020f4e8f361bbf1a4",
+    "bytes": 6108
+  },
+  {
+    "path": "T018/build/clock-flat-20261020-v3/lumped-cal-matrix-v1/pex-298.15K-10MHz-cal-high_rate-base/inputs/circuit.sp",
+    "sha256": "320a48d315a70759154924ac610da1c6f2cbdf6bebf191798209de2682d927e2",
+    "bytes": 4800
+  },
+  {
+    "path": "T018/build/clock-flat-20261020-v3/lumped-cal-matrix-v1/pex-298.15K-10MHz-cal-high_rate-base/inputs/extracted.sp",
+    "sha256": "7bdbab6819328bfac11fe6d71413c1d4512e872bb4ed07b4b6c6d749314dd162",
+    "bytes": 879180
+  },
+  {
+    "path": "T018/build/clock-flat-20261020-v3/physical-cal-analysis-v1/high_rate/base-cold/measurements.json",
+    "sha256": "065cb9add25f9bb1970b44e6c210990b47bc7795e2a97ef27c272a016d7dcd1a",
+    "bytes": 10332
+  },
+  {
+    "path": "T018/build/clock-flat-20261020-v3/physical-cal-analysis-v1/high_rate/base-cold/scope-data.json",
+    "sha256": "c32e90bba9047c21f117479f4e1fb016e806944a8cfaea26a49cfea35266fb09",
+    "bytes": 660696
+  },
+  {
+    "path": "T018/build/vigil/sessions/78f65514f9654bd1f75c7fb5c4359b59/jobs/14b400ff8a5da22cbb547c7e55c52749/model-digests.sxp",
+    "sha256": "25d4ce52b4060260013512713b7b14ac213e7f57da53c7a47977dc85ba19d4b6",
+    "bytes": 152
+  },
+  {
+    "path": "T018/build/clock-flat-20261020-v3/lumped-cal-matrix-v1/pex-77K-10MHz-cal-high_rate-base/inputs/bench.scs",
+    "sha256": "1349b53a9bf46209dcb9e9565dd90870b02711ad4c022f9b65c4b38c690d38a6",
+    "bytes": 517456
+  },
+  {
+    "path": "T018/build/clock-flat-20261020-v3/lumped-cal-matrix-v1/pex-77K-10MHz-cal-high_rate-base/inputs/circuit.sp",
+    "sha256": "320a48d315a70759154924ac610da1c6f2cbdf6bebf191798209de2682d927e2",
+    "bytes": 4800
+  },
+  {
+    "path": "T018/build/clock-flat-20261020-v3/lumped-cal-matrix-v1/pex-77K-10MHz-cal-high_rate-base/inputs/extracted.sp",
+    "sha256": "7bdbab6819328bfac11fe6d71413c1d4512e872bb4ed07b4b6c6d749314dd162",
+    "bytes": 879180
+  },
+  {
+    "path": "T018/build/clock-flat-20261020-v3/physical-cal-analysis-v1/high_rate/shift-warm/measurements.json",
+    "sha256": "a482d9bfcf6b13f03a679c4f35c599e823f795564fb118287e060bdef6cd98bd",
+    "bytes": 9387
+  },
+  {
+    "path": "T018/build/clock-flat-20261020-v3/physical-cal-analysis-v1/high_rate/shift-warm/scope-data.json",
+    "sha256": "b6743202ca00f1c27d453ed8fea605e8beb5cb010445c3ab37c1ef9e269db7a0",
+    "bytes": 542091
+  },
+  {
+    "path": "T018/build/vigil/sessions/78f65514f9654bd1f75c7fb5c4359b59/jobs/d30247c7d89179028859e838f26ca3f9/model-digests.sxp",
+    "sha256": "25d4ce52b4060260013512713b7b14ac213e7f57da53c7a47977dc85ba19d4b6",
+    "bytes": 152
+  },
+  {
+    "path": "T018/build/clock-flat-20261020-v3/lumped-cal-matrix-v1/pex-298.15K-10MHz-cal-high_rate-shift/inputs/bench.scs",
+    "sha256": "7a40b3e62619fd34a47a07f049e720200abe219e9d9d831020f4e8f361bbf1a4",
+    "bytes": 6108
+  },
+  {
+    "path": "T018/build/clock-flat-20261020-v3/lumped-cal-matrix-v1/pex-298.15K-10MHz-cal-high_rate-shift/inputs/circuit.sp",
+    "sha256": "f2269f22dd3ebe1668c65a138a91a00f39e6a727c8ae88a5acd4f29cfe47a7c2",
+    "bytes": 4806
+  },
+  {
+    "path": "T018/build/clock-flat-20261020-v3/lumped-cal-matrix-v1/pex-298.15K-10MHz-cal-high_rate-shift/inputs/extracted.sp",
+    "sha256": "7bdbab6819328bfac11fe6d71413c1d4512e872bb4ed07b4b6c6d749314dd162",
+    "bytes": 879180
+  },
+  {
+    "path": "T018/build/clock-flat-20261020-v3/physical-cal-analysis-v1/high_rate/shift-cold/measurements.json",
+    "sha256": "55c82f01353370220206bff60b12b26931364ed1e09ce12343dd14aa634becb8",
+    "bytes": 10381
+  },
+  {
+    "path": "T018/build/clock-flat-20261020-v3/physical-cal-analysis-v1/high_rate/shift-cold/scope-data.json",
+    "sha256": "e1f6a466e0ab5f3b9b5de28b907c6c8b950a8f2222b3fa54ec4dda992f69d2a0",
+    "bytes": 681458
+  },
+  {
+    "path": "T018/build/vigil/sessions/78f65514f9654bd1f75c7fb5c4359b59/jobs/74e844e6d689e175b8b3bbdb8b6177ba/model-digests.sxp",
+    "sha256": "25d4ce52b4060260013512713b7b14ac213e7f57da53c7a47977dc85ba19d4b6",
+    "bytes": 152
+  },
+  {
+    "path": "T018/build/clock-flat-20261020-v3/lumped-cal-matrix-v1/pex-77K-10MHz-cal-high_rate-shift/inputs/bench.scs",
+    "sha256": "1349b53a9bf46209dcb9e9565dd90870b02711ad4c022f9b65c4b38c690d38a6",
+    "bytes": 517456
+  },
+  {
+    "path": "T018/build/clock-flat-20261020-v3/lumped-cal-matrix-v1/pex-77K-10MHz-cal-high_rate-shift/inputs/circuit.sp",
+    "sha256": "f2269f22dd3ebe1668c65a138a91a00f39e6a727c8ae88a5acd4f29cfe47a7c2",
+    "bytes": 4806
+  },
+  {
+    "path": "T018/build/clock-flat-20261020-v3/lumped-cal-matrix-v1/pex-77K-10MHz-cal-high_rate-shift/inputs/extracted.sp",
+    "sha256": "7bdbab6819328bfac11fe6d71413c1d4512e872bb4ed07b4b6c6d749314dd162",
+    "bytes": 879180
+  },
+  {
+    "path": "T018/build/clock-flat-20261020-v3/physical-cal-analysis-v1/high_rate/anchor-warm/measurements.json",
+    "sha256": "13d2671256034f9a47556f56debc68bc207095a694f314619f1cc94bca9406ef",
+    "bytes": 9426
+  },
+  {
+    "path": "T018/build/clock-flat-20261020-v3/physical-cal-analysis-v1/high_rate/anchor-warm/scope-data.json",
+    "sha256": "56861ddde53965b06724af37816895ce782c644242c7069df11d863f65bd1a6d",
+    "bytes": 553156
+  },
+  {
+    "path": "T018/build/vigil/sessions/78f65514f9654bd1f75c7fb5c4359b59/jobs/47a0367818f6ec223abbef030eefc5dc/model-digests.sxp",
+    "sha256": "25d4ce52b4060260013512713b7b14ac213e7f57da53c7a47977dc85ba19d4b6",
+    "bytes": 152
+  },
+  {
+    "path": "T018/build/clock-flat-20261020-v3/lumped-cal-matrix-v1/pex-298.15K-10MHz-cal-high_rate-anchor/inputs/bench.scs",
+    "sha256": "7a40b3e62619fd34a47a07f049e720200abe219e9d9d831020f4e8f361bbf1a4",
+    "bytes": 6108
+  },
+  {
+    "path": "T018/build/clock-flat-20261020-v3/lumped-cal-matrix-v1/pex-298.15K-10MHz-cal-high_rate-anchor/inputs/circuit.sp",
+    "sha256": "a4a36ce376fd5a7c82f598443a5dabbec8f264d0976e371048c391c800a5876d",
+    "bytes": 4810
+  },
+  {
+    "path": "T018/build/clock-flat-20261020-v3/lumped-cal-matrix-v1/pex-298.15K-10MHz-cal-high_rate-anchor/inputs/extracted.sp",
+    "sha256": "7bdbab6819328bfac11fe6d71413c1d4512e872bb4ed07b4b6c6d749314dd162",
+    "bytes": 879180
+  },
+  {
+    "path": "T018/build/clock-flat-20261020-v3/physical-cal-analysis-v1/high_rate/anchor-cold/measurements.json",
+    "sha256": "bc8f21cc1f5849be1b61282970bec5adc3111987697cc833b36b992b792a9bad",
+    "bytes": 10418
+  },
+  {
+    "path": "T018/build/clock-flat-20261020-v3/physical-cal-analysis-v1/high_rate/anchor-cold/scope-data.json",
+    "sha256": "b15d6a1bf84ae05a6beb6da6fdae45b04fbd262204e8aedd826db038531f589e",
+    "bytes": 696493
+  },
+  {
+    "path": "T018/build/vigil/sessions/78f65514f9654bd1f75c7fb5c4359b59/jobs/2374d2e19a13d8da11b856c285db1fdd/model-digests.sxp",
+    "sha256": "25d4ce52b4060260013512713b7b14ac213e7f57da53c7a47977dc85ba19d4b6",
+    "bytes": 152
+  },
+  {
+    "path": "T018/build/clock-flat-20261020-v3/lumped-cal-matrix-v1/pex-77K-10MHz-cal-high_rate-anchor/inputs/bench.scs",
+    "sha256": "1349b53a9bf46209dcb9e9565dd90870b02711ad4c022f9b65c4b38c690d38a6",
+    "bytes": 517456
+  },
+  {
+    "path": "T018/build/clock-flat-20261020-v3/lumped-cal-matrix-v1/pex-77K-10MHz-cal-high_rate-anchor/inputs/circuit.sp",
+    "sha256": "a4a36ce376fd5a7c82f598443a5dabbec8f264d0976e371048c391c800a5876d",
+    "bytes": 4810
+  },
+  {
+    "path": "T018/build/clock-flat-20261020-v3/lumped-cal-matrix-v1/pex-77K-10MHz-cal-high_rate-anchor/inputs/extracted.sp",
+    "sha256": "7bdbab6819328bfac11fe6d71413c1d4512e872bb4ed07b4b6c6d749314dd162",
+    "bytes": 879180
+  },
+  {
+    "path": "T018/build/clock-flat-20261020-v3/pex-pilot-warm-numerical-analysis-v1/measurements.json",
+    "sha256": "623837590b692cc56f481e62f3250a32919298d4f933ca318c221b3517f55174",
+    "bytes": 9520
+  },
+  {
+    "path": "T018/build/clock-flat-20261020-v3/pex-pilot-warm-numerical-v1/intent.json",
+    "sha256": "87cb478842c497eb4bda5e46bbe7443be515d60b797c84e07d3301f1384516ed",
+    "bytes": 7227
+  },
+  {
+    "path": "T018/build/clock-flat-20261020-v3/pex-pilot-warm-numerical-analysis-v1/scope-data.json",
+    "sha256": "ffc8f50119f18c4c16402e66439017327b0736e40272d14129f1a83b54fdcb34",
+    "bytes": 364340
+  },
+  {
+    "path": "T018/build/vigil/sessions/78f65514f9654bd1f75c7fb5c4359b59/jobs/c07a068edb755e844fac3d88fc0166dc/model-digests.sxp",
+    "sha256": "25d4ce52b4060260013512713b7b14ac213e7f57da53c7a47977dc85ba19d4b6",
+    "bytes": 152
+  },
+  {
+    "path": "T018/build/clock-flat-20261020-v3/pex-pilot-warm-numerical-v1/pex-298.15K-50MHz/inputs/bench.scs",
+    "sha256": "8a7d5acf363cbf2c3905b4dc40fead731be49c1f433da9af3c1db15a3c690cfb",
+    "bytes": 6109
+  },
+  {
+    "path": "T018/build/clock-flat-20261020-v3/pex-pilot-warm-numerical-v1/pex-298.15K-50MHz/inputs/circuit.sp",
+    "sha256": "b1d999624147245f56ba91f587aa1eb9727b93fa41758ce5c4f742bade641213",
+    "bytes": 4782
+  },
+  {
+    "path": "T018/build/clock-flat-20261020-v3/pex-pilot-warm-numerical-v1/pex-298.15K-50MHz/inputs/extracted.sp",
+    "sha256": "b4276e93af0c5144f4ad270f454524b0e1caee6e4a3de29e780bab0955871ee5",
+    "bytes": 16914836
+  },
+  {
+    "path": "T018/build/clock-flat-20261020-v3/pex-pilot-warm-numerical-analysis-v2/measurements.json",
+    "sha256": "dae42e9b246c4ea804f5057d862e6a883fdb074a9322331b23203c0f884f8fe4",
+    "bytes": 9518
+  },
+  {
+    "path": "T018/build/clock-flat-20261020-v3/pex-pilot-warm-numerical-v2/intent.json",
+    "sha256": "6928c70a0ef9862a7db93659da7b9337f2c565ca4a35719a692cb49e4a9b8262",
+    "bytes": 7225
+  },
+  {
+    "path": "T018/build/clock-flat-20261020-v3/pex-pilot-warm-numerical-analysis-v2/scope-data.json",
+    "sha256": "ac69fd2400ea938173eb421bd83585bf6411ec61b7c577fd976e8c7b2bcd20b1",
+    "bytes": 461300
+  },
+  {
+    "path": "T018/build/vigil/sessions/78f65514f9654bd1f75c7fb5c4359b59/jobs/f75a1420db110c56b368a1222fad3ae8/model-digests.sxp",
+    "sha256": "25d4ce52b4060260013512713b7b14ac213e7f57da53c7a47977dc85ba19d4b6",
+    "bytes": 152
+  },
+  {
+    "path": "T018/build/clock-flat-20261020-v3/pex-pilot-warm-numerical-v2/pex-298.15K-50MHz/inputs/bench.scs",
+    "sha256": "b46c5700fd00725988f3da30d3b9d81e46e2dc6e36734803765948ca286ff4de",
+    "bytes": 6108
+  },
+  {
+    "path": "T018/build/clock-flat-20261020-v3/pex-pilot-warm-numerical-v2/pex-298.15K-50MHz/inputs/circuit.sp",
+    "sha256": "b1d999624147245f56ba91f587aa1eb9727b93fa41758ce5c4f742bade641213",
+    "bytes": 4782
+  },
+  {
+    "path": "T018/build/clock-flat-20261020-v3/pex-pilot-warm-numerical-v2/pex-298.15K-50MHz/inputs/extracted.sp",
+    "sha256": "b4276e93af0c5144f4ad270f454524b0e1caee6e4a3de29e780bab0955871ee5",
+    "bytes": 16914836
+  },
+  {
+    "path": "T018/build/clock-flat-20261020-v3/source-first-warm-numerical-analysis-v2/measurements.json",
+    "sha256": "7f057da9269c2be8f1e6f74ce6c8fac0942894aa3ee09f6260894f8199356572",
+    "bytes": 9422
+  },
+  {
+    "path": "T018/build/clock-flat-20261020-v3/source-first-warm-numerical-v2/intent.json",
+    "sha256": "1244c9f00c82356da3c82dd2e52971435812185331dcf954a30fe7972d15857e",
+    "bytes": 6416
+  },
+  {
+    "path": "T018/build/clock-flat-20261020-v3/source-first-warm-numerical-analysis-v2/scope-data.json",
+    "sha256": "97870e095d2c7c0fee8b274a9f1497f057c79d4038f8918538b646b71d9cb5e2",
+    "bytes": 420846
+  },
+  {
+    "path": "T018/build/vigil/sessions/78f65514f9654bd1f75c7fb5c4359b59/jobs/ef0eb1cb37cc905c55d9658676aa73cb/model-digests.sxp",
+    "sha256": "25d4ce52b4060260013512713b7b14ac213e7f57da53c7a47977dc85ba19d4b6",
+    "bytes": 152
+  },
+  {
+    "path": "T018/build/clock-flat-20261020-v3/source-first-warm-numerical-v2/schematic-298.15K-50MHz/inputs/bench.scs",
+    "sha256": "b46c5700fd00725988f3da30d3b9d81e46e2dc6e36734803765948ca286ff4de",
+    "bytes": 6108
+  },
+  {
+    "path": "T018/build/clock-flat-20261020-v3/source-first-warm-numerical-v2/schematic-298.15K-50MHz/inputs/circuit.sp",
+    "sha256": "8e068c4c7d073fafac06a42cee7149851fe7a97ed1aa749cd4197ccb4309fe98",
+    "bytes": 114568
+  },
+  {
+    "path": "T018/build/clock-flat-20261020-v3/cold-startup-control-analysis-v1/measurements.json",
+    "sha256": "75eaf067c5650e19ca4c1731ab21c5aa793b50dc1cffc8b541a45093c2960b94",
+    "bytes": 10823
+  },
+  {
+    "path": "T018/build/clock-flat-20261020-v3/lumped-cal-base-cold-ptran-v1/intent.json",
+    "sha256": "f13fcbf7710e0b7f0d4c7bc8cd6501943e98e24cbbd9e9d8cd99d6e4deb96c17",
+    "bytes": 2054285
+  },
+  {
+    "path": "T018/build/clock-flat-20261020-v3/cold-startup-control-analysis-v1/scope-data.json",
+    "sha256": "179f8f8980244f929223f3e3a68642eca2b79332467ab3dce8a984f1a842c431",
+    "bytes": 641949
+  },
+  {
+    "path": "T018/build/vigil/sessions/78f65514f9654bd1f75c7fb5c4359b59/jobs/5497dbced502aca785c1f1711fc7e7bc/model-digests.sxp",
+    "sha256": "25d4ce52b4060260013512713b7b14ac213e7f57da53c7a47977dc85ba19d4b6",
+    "bytes": 152
+  },
+  {
+    "path": "T018/build/clock-flat-20261020-v3/lumped-cal-base-cold-ptran-v1/pex-77K-10MHz-cal-high_rate-base/inputs/bench.scs",
+    "sha256": "9a2b95dd1b57ca5d4e8f710c72ad2d8dcd8729875f9dba269bb86f9fe4479fb9",
+    "bytes": 517471
+  },
+  {
+    "path": "T018/build/clock-flat-20261020-v3/lumped-cal-base-cold-ptran-v1/pex-77K-10MHz-cal-high_rate-base/inputs/circuit.sp",
+    "sha256": "320a48d315a70759154924ac610da1c6f2cbdf6bebf191798209de2682d927e2",
+    "bytes": 4800
+  },
+  {
+    "path": "T018/build/clock-flat-20261020-v3/lumped-cal-base-cold-ptran-v1/pex-77K-10MHz-cal-high_rate-base/inputs/extracted.sp",
+    "sha256": "7bdbab6819328bfac11fe6d71413c1d4512e872bb4ed07b4b6c6d749314dd162",
+    "bytes": 879180
+  },
+  {
+    "path": "T018/build/clock-flat-20261020-v3/native-figure-v1/native-layout.svg",
+    "sha256": "16154c707a2e5f21fd0090fb0bd9e507dbffbd585bee957b921e23638d7d4fb5",
+    "bytes": 3154340
+  },
+  {
+    "path": "T018/build/clock-flat-20261020-v3/source-v1/source-export/schematic.svg",
+    "sha256": "39be0f9916f6b8a440513e89a3df85b0cc16c9f3c40959bedaa7ba686273d1b8",
+    "bytes": 1982779
+  },
+  {
+    "path": "T018/build/clock-flat-20261020-v3/source-physical-target-warm-50m-v1/human-export/schematic.svg",
+    "sha256": "a7525ef564b96be6a875022b3fb0fd223a1f9f491b5bb2cb8899e9f6e9087e7d",
+    "bytes": 71479
+  }
+]
