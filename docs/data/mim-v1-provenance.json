@@ -1,0 +1,657 @@
+[
+  {
+    "path": "T018/build/mim-relayout-v1-20261021/clock-formal-native-v1.json",
+    "sha256": "ba6c4305654f7aad75e25d012e9a84199338d6670e311fd38dfcb1be6c931d88",
+    "bytes": 3422
+  },
+  {
+    "path": "T018/build/mim-relayout-v1-20261021/bias-formal-native-v1.json",
+    "sha256": "6e6ff0f8235123a02412f4e7558ad42d61368259e51648b1553894ee6252f992",
+    "bytes": 3049
+  },
+  {
+    "path": "T018/build/mim-relayout-v1-20261021/sources-v3/clock/intent.json",
+    "sha256": "aa8c2e064cd4847db7cb52f406eead3b841f5aaa8fcfba442ce330845e02feda",
+    "bytes": 334378
+  },
+  {
+    "path": "T018/build/mim-relayout-v1-20261021/sources-v4/bias/intent.json",
+    "sha256": "ca11ee3a795d84b9d6d7d0a21dbc6ffc1be5e91e3a89ca0832b6c96a000159d4",
+    "bytes": 13534
+  },
+  {
+    "path": "T018/build/mim-relayout-v1-20261021/clock-mask-proof-v3/mask-comparison.json",
+    "sha256": "6e7577ab04e8b67290127f3bb09155156ffb2cd95794fd560be2b160d1964c30",
+    "bytes": 15148
+  },
+  {
+    "path": "T018/build/mim-relayout-v1-20261021/bias-mask-proof-v4/mask-comparison.json",
+    "sha256": "c1bee2ac774e21b2b1e0dfdd3ce4720bf2115521f16f0563f0ea5947c7e301cb",
+    "bytes": 5413
+  },
+  {
+    "path": "T018/build/mim-relayout-v1-20261021/pilot-electrical-v2/measurements.json",
+    "sha256": "f101295c29057710b073cea1ead1bedee6727d965ca22d573bbea91a01297ff4",
+    "bytes": 72353
+  },
+  {
+    "path": "T018/build/mim-relayout-v1-20261021/bias-opac-analysis-v2/measurements.json",
+    "sha256": "c2aca6f6aa70be6a4bc5e6ad4c696b08949d81ce026ae8efd5af53005897d2cd",
+    "bytes": 71439
+  },
+  {
+    "path": "T018/build/mim-relayout-v1-20261021/bias-opac-analysis-v2/curves.json",
+    "sha256": "3277e296ef5b849a30f25b14f74d670f80d66a1db8050eb9d7330746b7ec3986",
+    "bytes": 790766
+  },
+  {
+    "path": "T018/build/mim-relayout-v1-20261021/bias-startup-analysis-v2/measurements.json",
+    "sha256": "d99c543f290d7cc45a962ededc6bc092249f0e63ab2d1f9d580a970388475e56",
+    "bytes": 10788
+  },
+  {
+    "path": "T018/build/mim-relayout-v1-20261021/bias-power-analysis-v4/measurements.json",
+    "sha256": "d37ef0baa0063ca7b7b2b257239b0744b07780e807023a13036c82fdd6672b26",
+    "bytes": 9868
+  },
+  {
+    "path": "T018/build/mim-relayout-v1-20261021/bias-power-analysis-v3/measurements.json",
+    "sha256": "f6097111b627988217cd21c156b7756db51eed87f4f8ddf3ce4797929c36cca6",
+    "bytes": 9776
+  },
+  {
+    "path": "T018/build/mim-relayout-v1-20261021/bias-startup-analysis-v2/scope-data.json",
+    "sha256": "929a19f82d1604210a9ea960b0a353efbab68cb3cf7d8a858f05cd45bd43dc7d",
+    "bytes": 136754
+  },
+  {
+    "path": "T018/build/mim-relayout-v1-20261021/bias-power-analysis-v4/scope-data.json",
+    "sha256": "2e2c241883d9ce25360adc7560a26e0cba8b51c07b2faaaf66564abd5ae4d518",
+    "bytes": 129093
+  },
+  {
+    "path": "T018/build/mim-relayout-v1-20261021/bias-power-analysis-v3/scope-data.json",
+    "sha256": "eb2a377a664e5e6d6b7e7520d2b817ab94c63152157804be6c2493f45f2a0cc7",
+    "bytes": 128475
+  },
+  {
+    "path": "T018/build/mim-relayout-v1-20261021/formal-bias-v1/formal.json",
+    "sha256": "ed1a65aded2c7106bade27505e7224006069e23c9de0fc3d0d9dad2b98eb916c",
+    "bytes": 5477
+  },
+  {
+    "path": "T018/build/mim-relayout-v1-20261021/clock-cold-default-dc-failure-v1.json",
+    "sha256": "93a6e8d9489366b771a2c411c07a4f7309301b0f5e486800c5dffed44e530d42",
+    "bytes": 1099
+  },
+  {
+    "path": "T018/build/mim-relayout-v1-20261021/formal-clock-v1/formal.json",
+    "sha256": "cd5d133e14f901b87c39d511b66b5872ef1287ea68136b67890dca96b87a8db8",
+    "bytes": 6290
+  },
+  {
+    "path": "T018/build/mim-relayout-v1-20261021/clock-cold-dc-controls-v1.json",
+    "sha256": "101e300d3db54a2d2c29478ff9bd97360691ae8abc9b14918c4ccf1df5aad2a6",
+    "bytes": 3636
+  },
+  {
+    "path": "T018/build/channel-mim4-v1-20261021/native-proof-v3/native.json",
+    "sha256": "8580d85eca136d689d374d34eea8d2e078416ae65d5e29704e49f21a46cc78ef",
+    "bytes": 7858
+  },
+  {
+    "path": "T018/build/channel-mim4-v1-20261021/floorplan-v3/intent.json",
+    "sha256": "c0cabf7bdf473ed929ecc58931b4fcd5502c323caf0a28fb562bef9ccf0fcd60",
+    "bytes": 97334
+  },
+  {
+    "path": "T018/build/channel-mim4-v1-20261021/inventory-v3/inventory.json",
+    "sha256": "60bf4043704cc5eaf194ce5b7112048da4e10f028ba45448a5afe5d74b545d37",
+    "bytes": 4236
+  },
+  {
+    "path": "T018/build/channel-mim4-v1-20261021/routing-v4/intent.json",
+    "sha256": "5069a04d1e84cd0b522aa2b2ba588954a7f7eceaef9d51022dca8e10a224e5be",
+    "bytes": 3183459
+  },
+  {
+    "path": "T018/build/channel-mim4-v1-20261021/formal-v1/mask-proof/mask-comparison.json",
+    "sha256": "d1492463474c72799cd610d3f13bd3296637191668fe9119a8fe2fb2b0df7322",
+    "bytes": 11625
+  },
+  {
+    "path": "T018/build/channel-mim4-v1-20261021/formal-proof-v1/formal.json",
+    "sha256": "3bc32f41d9604a468d72961c98c331b5dc9e5e0d983898a1629ced9de343beae",
+    "bytes": 9917
+  },
+  {
+    "path": "T018/build/channel-mim4-v1-20261021/extraction-v3/intent.json",
+    "sha256": "cef43b42fa38840f51844ee92d1d30920c5de7e334d23ff086d0de5ed1c9db55",
+    "bytes": 1830131
+  },
+  {
+    "path": "T018/build/channel-mim4-v1-20261021/warm-50m-seed-analysis-v1/measurements.json",
+    "sha256": "265cba9f6c2583590456ce6f02e5245e8d7595499d2f2e44349eb2035ee24d7a",
+    "bytes": 6059
+  },
+  {
+    "path": "T018/build/channel-mim4-v1-20261021/cold-50m-seed-analysis-v1/measurements.json",
+    "sha256": "d441a0a86c2250998b67115e9699484ad37dedc7d444fbb7ac5886559c3513d1",
+    "bytes": 6603
+  },
+  {
+    "path": "T018/build/channel-mim4-v1-20261021/warm-50m-quiet-comparison-v2/measurements.json",
+    "sha256": "e5bf0240010461755849f4aa1d22e3c9820eb76eee3034c08502e036c8cc0c8d",
+    "bytes": 18445
+  },
+  {
+    "path": "T018/build/channel-mim4-v1-20261021/warm-50m-quiet-comparison-v2/scope-data.json",
+    "sha256": "35476be7405b61afc9d0b3ab71a54af1f6cd2ef74ac69a9209329f4c9e410bf4",
+    "bytes": 2108944
+  },
+  {
+    "path": "T018/build/channel-mim4-v1-20261021/physical-ground-v3/native.json",
+    "sha256": "855f5511ff9de350602eed3a6abe91f49f0decba4120272761b5c8fd7efec246",
+    "bytes": 7087
+  },
+  {
+    "path": "T018/build/channel-mim4-v1-20261021/mask-ground-v3/mask-comparison.json",
+    "sha256": "2036ea941182f88a87a69f20a8efc46350d9e6f72e69df4d9bb6771432c2b535",
+    "bytes": 11625
+  },
+  {
+    "path": "T018/build/channel-mim4-v1-20261021/routing-ground-v3/intent.json",
+    "sha256": "12b5ec04779433f62a08dbde6ea2b871da986f7fd3250871b84d3cf0bc741196",
+    "bytes": 4010468
+  },
+  {
+    "path": "T018/build/channel-mim4-v1-20261021/extraction-ground-v3/intent.json",
+    "sha256": "427c1bf56b6977386d19844409258c687771610f72d54650dcd86cf026311db7",
+    "bytes": 1830131
+  },
+  {
+    "path": "T018/build/channel-mim4-v1-20261021/ground-resistance-v4/measurements.json",
+    "sha256": "9893df5ff31fa0c194ef623c31cf9bd68538a60098a9e9e471731d83ba7e461d",
+    "bytes": 11437
+  },
+  {
+    "path": "T018/build/channel-mim4-v1-20261021/ground-resistance-v2/measurements.json",
+    "sha256": "d7154fee7c0ba7825e9106e9a3105042c0af54eca57977db0621c3776156a2fe",
+    "bytes": 11428
+  },
+  {
+    "path": "T018/build/channel-mim4-v1-20261021/star-v3-warm50-hpa-comparison-v1/comparison.json",
+    "sha256": "fe925108203c43aa8ebabb44c9994058505ae0705f225429bb4a46186a2e72aa",
+    "bytes": 65114
+  },
+  {
+    "path": "T018/build/channel-mim4-v1-20261021/star-v3-warm50-calibration-hpa-v1/intent.json",
+    "sha256": "584fc567954f5dc2a6f29c2c973ca76a77905004a7401115f3232eef2b7eacd5",
+    "bytes": 97738
+  },
+  {
+    "path": "T018/build/channel-mim4-v1-20261021/star-v3-warm50-calibration-hpa-analysis-v1/measurements.json",
+    "sha256": "2555245a690d669dc0074a6953ae717cdbed870c7a13676ae7ff98a7e011fad6",
+    "bytes": 212649
+  },
+  {
+    "path": "T018/build/channel-mim4-v1-20261021/star-v3-warm50-calibration-hpa-analysis-v1/scope-data.json",
+    "sha256": "a451a09baeca8db70cb3676f56f9731a349dc1f4e3ebabd496f40e95f8f4ac16",
+    "bytes": 100555194
+  },
+  {
+    "path": "T018/build/channel-mim4-v1-20261021/star-v3-cold50-short-hpa-comparison-v1/comparison.json",
+    "sha256": "dca8a4a5f38b5c6dcee5ce11b5cdf16ae3e76e7cfe56cde368ab8a312c597c3a",
+    "bytes": 49445
+  },
+  {
+    "path": "T018/build/channel-mim4-v1-20261021/star-v3-cold50-short-hpa-v1/intent.json",
+    "sha256": "ae039a3dc732e1e0ec4f21341a20e453170b97f5e90e272b61d499125fb713cd",
+    "bytes": 75614
+  },
+  {
+    "path": "T018/build/channel-mim4-v1-20261021/star-v3-warm50-automatic-simultaneous-v2/intent.json",
+    "sha256": "0aacb565be20a13af9ee647036ca5eef5d5a238fc9fe5cca5e78cf958757f196",
+    "bytes": 76934
+  },
+  {
+    "path": "T018/build/channel-mim4-v1-20261021/star-v3-warm50-automatic-simultaneous-analysis-v2/measurements.json",
+    "sha256": "200aa0937e28e9b5536696fbb9487a4050423c0e2fb2be9d109d210d85ea39e1",
+    "bytes": 470358
+  },
+  {
+    "path": "T018/build/channel-mim4-v1-20261021/star-v3-warm50-automatic-simultaneous-analysis-v2/scope-data.json",
+    "sha256": "15ab1816c8c35027f71ef42c08196855d2b4b8831f37ebecc2f3870f9ad94724",
+    "bytes": 99032620
+  },
+  {
+    "path": "Modules/QPIX_ANALOG_CORE_MIM4_V1/schematic/data.dm",
+    "sha256": "7192c599a0beec4b3eb4c685feb65408f4dd21c5d82f0d19a9a24a4bc702cc99",
+    "bytes": 3372
+  },
+  {
+    "path": "Modules/QPIX_ANALOG_CORE_MIM4_V1/schematic/master.tag",
+    "sha256": "754d948d84456304dc9c92190e19089b4156a194ac7f002aad93b7d91a110099",
+    "bytes": 35
+  },
+  {
+    "path": "Modules/QPIX_ANALOG_CORE_MIM4_V1/schematic/sch.oa",
+    "sha256": "1801f823e80d747c0458e2bc755d11ae9006c1d6a657b45266cd33919395def4",
+    "bytes": 67620
+  },
+  {
+    "path": "Modules/QPIX_ANALOG_CORE_MIM4_V1/symbol/master.tag",
+    "sha256": "14f73fc67b1fd48a1d040157c35b5361471e38eaed0e71114fdc831cf4150da7",
+    "bytes": 38
+  },
+  {
+    "path": "Modules/QPIX_ANALOG_CORE_MIM4_V1/symbol/symbol.oa",
+    "sha256": "9e07054eb6e3ef28195b4ec15a5341996e29404f4f16df2f95fa69cd065ef407",
+    "bytes": 34484
+  },
+  {
+    "path": "Modules/QPIX_ANALOG_CORE_MIM4_V1/layout/layout.oa",
+    "sha256": "7046d2a7939ec63045c81f61a22d590ee2dc655694fa4c423052dc6957244069",
+    "bytes": 318236
+  },
+  {
+    "path": "Modules/QPIX_ANALOG_CORE_MIM4_V1/layout/master.tag",
+    "sha256": "0547da475c6495aab98e43894e8e330ed09303a205699e8413c35388b6906a05",
+    "bytes": 38
+  },
+  {
+    "path": "T018/build/channel-mim4-v1-20261021/extraction-ground-v3/extracted.sp",
+    "sha256": "7daecadb3ad351db5c0faeb76c8540168a3ae20e7d30728dbd85bf09a1d3601f",
+    "bytes": 11919519
+  },
+  {
+    "path": "analog/tsmc180/Schematic/clock_phase_mim_v1.sch",
+    "sha256": "2fd5b34ba7456847562ec2ac190af838b1d40fefd3843ef8613f58328221c664",
+    "bytes": 436195
+  },
+  {
+    "path": "T018/build/mim-relayout-v1-20261021/clock-repaired-v2/intent.json",
+    "sha256": "7baecfdaffcacedba2ca18636ab98323392dece7fa620f8dbe0312005a73b3dd",
+    "bytes": 15362875
+  },
+  {
+    "path": "analog/tsmc180/Schematic/shared_bias_mim_v1.sch",
+    "sha256": "93b06a50cd4acd32a0ecb7abe2ef87103325777be5d23851d7c4f887fbdb13b0",
+    "bytes": 23594
+  },
+  {
+    "path": "T018/build/mim-relayout-v1-20261021/bias-routing-v7/intent.json",
+    "sha256": "5cd5302af1f6831fb477b741af1ac68116f07c4d1f27e30b264377d5cae4572d",
+    "bytes": 5339132
+  },
+  {
+    "path": "T018/build/mim-relayout-v1-20261021/clock-warm-50m-pilot-v1/intent.json",
+    "sha256": "82475c2d878a3cc09476f88751a458cfa379a2aed8f60e90c069237f14bdb7a8",
+    "bytes": 6081
+  },
+  {
+    "path": "T018/build/mim-relayout-v1-20261021/clock-warm-50m-pilot-analysis-v1/measurements.json",
+    "sha256": "c79cba7069e39b366520f6bbe31d77d3fa175504120d24682f89cbc7f9a6d8ff",
+    "bytes": 9424
+  },
+  {
+    "path": "T018/build/mim-relayout-v1-20261021/clock-warm-50m-pilot-analysis-v1/scope-data.json",
+    "sha256": "6608869cd9f7886b2554ea0f67be84ef7f999f046884f3338b25d96b2179e177",
+    "bytes": 518024
+  },
+  {
+    "path": "T018/build/mim-relayout-v1-20261021/clock-warm-50m-pilot-v1/pex-298.15K-50MHz/inputs/bench.scs",
+    "sha256": "3ca77d00b7b5f0660fa203a64ab774181825ab9610530cb9051f4bcbad51fd6c",
+    "bytes": 6107
+  },
+  {
+    "path": "T018/build/mim-relayout-v1-20261021/clock-warm-50m-pilot-v1/pex-298.15K-50MHz/inputs/circuit.sp",
+    "sha256": "ce38bfb446232b5e8d132b41d8152576667d4fa2cf0506b77d8c34112af28d93",
+    "bytes": 4815
+  },
+  {
+    "path": "T018/build/mim-relayout-v1-20261021/clock-warm-50m-pilot-v1/pex-298.15K-50MHz/inputs/extracted.sp",
+    "sha256": "7a08fffffb625d4bfbcd0c43fe9e99f1f10bc67b9632d1725c6621d4f1872c45",
+    "bytes": 7227607
+  },
+  {
+    "path": "T018/build/mim-relayout-v1-20261021/clock-warm-50m-holdout-v1/intent.json",
+    "sha256": "ab3483d3ac069522fed24854a947ea8356c56a5ab3c00e03ea98de8b4513a5cd",
+    "bytes": 6087
+  },
+  {
+    "path": "T018/build/mim-relayout-v1-20261021/clock-warm-50m-holdout-analysis-v1/measurements.json",
+    "sha256": "24bc664842db3c77db3f0c9123700828d7ccb307ef32b932c8c34f2038a0abe3",
+    "bytes": 9551
+  },
+  {
+    "path": "T018/build/mim-relayout-v1-20261021/clock-warm-50m-holdout-analysis-v1/scope-data.json",
+    "sha256": "018dcc430309a5a11a87d727cf82ad71f7b0f9b4097ac60eb1af3e178b1b3c44",
+    "bytes": 521302
+  },
+  {
+    "path": "T018/build/mim-relayout-v1-20261021/clock-warm-50m-holdout-v1/pex-298.15K-50MHz/inputs/bench.scs",
+    "sha256": "3ca77d00b7b5f0660fa203a64ab774181825ab9610530cb9051f4bcbad51fd6c",
+    "bytes": 6107
+  },
+  {
+    "path": "T018/build/mim-relayout-v1-20261021/clock-warm-50m-holdout-v1/pex-298.15K-50MHz/inputs/circuit.sp",
+    "sha256": "ce6d4fa7f4fcfdaac3212c1ab1c80b0cf49a42ee70867c41e756934debfd1844",
+    "bytes": 4833
+  },
+  {
+    "path": "T018/build/mim-relayout-v1-20261021/clock-warm-50m-holdout-v1/pex-298.15K-50MHz/inputs/extracted.sp",
+    "sha256": "7a08fffffb625d4bfbcd0c43fe9e99f1f10bc67b9632d1725c6621d4f1872c45",
+    "bytes": 7227607
+  },
+  {
+    "path": "T018/build/mim-relayout-v1-20261021/clock-cold-50m-ptran-base-v1/intent.json",
+    "sha256": "68d5bf2a6949d678c7059040cde91c238746c2dab601bf4438b1c1634aa4d572",
+    "bytes": 8283
+  },
+  {
+    "path": "T018/build/mim-relayout-v1-20261021/clock-cold-50m-ptran-base-diagnostic-analysis-v1/measurements.json",
+    "sha256": "1febf61a423afae9e6cd9bfc3a95a0bcbe9f225f9327bb098dc668c358424576",
+    "bytes": 11769
+  },
+  {
+    "path": "T018/build/mim-relayout-v1-20261021/clock-cold-50m-ptran-base-diagnostic-analysis-v1/scope-data.json",
+    "sha256": "4fe000eb9d19fbd1fc4f404380588845798e2a4e8ae89970a08cf539da6963e1",
+    "bytes": 690118
+  },
+  {
+    "path": "T018/build/mim-relayout-v1-20261021/clock-cold-50m-ptran-base-v1/pex-77K-50MHz/inputs/bench.scs",
+    "sha256": "83a8b24d6c00bd75c4b830379d109d9701e5fa01c5d7cddd851c57abd63c6e27",
+    "bytes": 517470
+  },
+  {
+    "path": "T018/build/mim-relayout-v1-20261021/clock-cold-50m-ptran-base-v1/pex-77K-50MHz/inputs/circuit.sp",
+    "sha256": "478bb182a6a8bef669460b617156a504fdb12735d895a3288b8b52a7d070fb6a",
+    "bytes": 4833
+  },
+  {
+    "path": "T018/build/mim-relayout-v1-20261021/clock-cold-50m-ptran-base-v1/pex-77K-50MHz/inputs/extracted.sp",
+    "sha256": "7a08fffffb625d4bfbcd0c43fe9e99f1f10bc67b9632d1725c6621d4f1872c45",
+    "bytes": 7227607
+  },
+  {
+    "path": "T018/build/channel-mim4-v1-20261021/warm-50m-response-v1/intent.json",
+    "sha256": "af38ac55cdbe07316786fddfff2337170fcb3d7508c2a5e257a1d5c2878ac188",
+    "bytes": 39290
+  },
+  {
+    "path": "T018/build/channel-mim4-v1-20261021/warm-50m-response-analysis-v1/measurements.json",
+    "sha256": "f92e5e2e2788cde92b1a822fe81f848ba743f1ce6d2135b3358d43251ffa3225",
+    "bytes": 157380
+  },
+  {
+    "path": "T018/build/channel-mim4-v1-20261021/warm-50m-response-analysis-v1/scope-data.json",
+    "sha256": "dec87829cf2f037150b157b694c72a9c2ef13075a3b7da998767bb72505aad30",
+    "bytes": 23270939
+  },
+  {
+    "path": "T018/build/channel-mim4-v1-20261021/warm-50m-response-v1/pex-298.15K-50MHz/inputs/bench.scs",
+    "sha256": "29a60239127ec747845b5aa2aaa6ddbd8a62a96d47e4d1a764ff16143d71aca1",
+    "bytes": 7121
+  },
+  {
+    "path": "T018/build/channel-mim4-v1-20261021/warm-50m-response-v1/pex-298.15K-50MHz/inputs/circuit.sp",
+    "sha256": "abf3c812c57a64b1ed6120eefd0feb2ef4fa9fdfcbb8bb3ce9253de88c9a5bef",
+    "bytes": 6982
+  },
+  {
+    "path": "T018/build/channel-mim4-v1-20261021/warm-50m-response-v1/pex-298.15K-50MHz/inputs/core-extracted.sp",
+    "sha256": "f4550bc029dfe2378e7bb033cc09c54c960ed541f41846c7657696f5a8204770",
+    "bytes": 11881288
+  },
+  {
+    "path": "T018/build/channel-mim4-v1-20261021/warm-50m-response-v1/pex-298.15K-50MHz/inputs/initial-state.ns",
+    "sha256": "1e3d85a1c52d7afd2425e76c0edb049113f4b48c9585f697742ac51c102afff7",
+    "bytes": 4660909
+  },
+  {
+    "path": "T018/build/channel-mim4-v1-20261021/warm-50m-quiet-v3/intent.json",
+    "sha256": "380e0a56782e2a99c0f79c5a05ddd3ee1a400e8714fde47cfea8bb2f75eaaa20",
+    "bytes": 47772
+  },
+  {
+    "path": "T018/build/channel-mim4-v1-20261021/warm-50m-quiet-analysis-v1/measurements.json",
+    "sha256": "570db3036f83de190a9778bcdce54e6e13e8588bd41203da8095ff912489f9e6",
+    "bytes": 157189
+  },
+  {
+    "path": "T018/build/channel-mim4-v1-20261021/warm-50m-quiet-analysis-v1/scope-data.json",
+    "sha256": "3a304249f4b47dccb40f0c0dc2fc592b0659580138f10ea4fa4f6a85745f0259",
+    "bytes": 29084519
+  },
+  {
+    "path": "T018/build/channel-mim4-v1-20261021/warm-50m-quiet-v3/pex-298.15K-50MHz/inputs/bench.scs",
+    "sha256": "3864f5007b9f450cfcb33323157a6baeb806a4650e9771bc618592da481aae02",
+    "bytes": 7353
+  },
+  {
+    "path": "T018/build/channel-mim4-v1-20261021/warm-50m-quiet-v3/pex-298.15K-50MHz/inputs/circuit.sp",
+    "sha256": "43fce54275eb9c3fe2e91f164838da47b4bce7a78d72f1683bdab8723e727bae",
+    "bytes": 6940
+  },
+  {
+    "path": "T018/build/channel-mim4-v1-20261021/warm-50m-quiet-v3/pex-298.15K-50MHz/inputs/core-extracted.sp",
+    "sha256": "f4550bc029dfe2378e7bb033cc09c54c960ed541f41846c7657696f5a8204770",
+    "bytes": 11881288
+  },
+  {
+    "path": "T018/build/channel-mim4-v1-20261021/warm-50m-quiet-v3/pex-298.15K-50MHz/inputs/initial-state.ns",
+    "sha256": "1e3d85a1c52d7afd2425e76c0edb049113f4b48c9585f697742ac51c102afff7",
+    "bytes": 4660909
+  },
+  {
+    "path": "T018/build/channel-mim4-v1-20261021/cold-50m-response-v1/intent.json",
+    "sha256": "f56624cf2d7867dc8251d469ffb4a6b6fc806d42c93304b7663586a338eaffb5",
+    "bytes": 47770
+  },
+  {
+    "path": "T018/build/channel-mim4-v1-20261021/cold-50m-response-analysis-v2/measurements.json",
+    "sha256": "88f436021f721630cb2b0adbb8a425dc9b46f70479bc49368caf282104b939f6",
+    "bytes": 159793
+  },
+  {
+    "path": "T018/build/channel-mim4-v1-20261021/cold-50m-response-analysis-v2/scope-data.json",
+    "sha256": "f5a0964aba83d8cd73d8899655fcb1659352f8be21b3b289b80c68a79b3cc0f8",
+    "bytes": 61910079
+  },
+  {
+    "path": "T018/build/channel-mim4-v1-20261021/cold-50m-response-v1/pex-77K-50MHz/inputs/bench.scs",
+    "sha256": "4b7482814bec7720135e0b95faf0689569033a5c64dc2cddba9d51d140598bc2",
+    "bytes": 518703
+  },
+  {
+    "path": "T018/build/channel-mim4-v1-20261021/cold-50m-response-v1/pex-77K-50MHz/inputs/circuit.sp",
+    "sha256": "967a95a6e1c7a42e965dc2b6e832d39c7a93f0fb25578d1e4d69ae0f67b5623d",
+    "bytes": 6980
+  },
+  {
+    "path": "T018/build/channel-mim4-v1-20261021/cold-50m-response-v1/pex-77K-50MHz/inputs/core-extracted.sp",
+    "sha256": "f4550bc029dfe2378e7bb033cc09c54c960ed541f41846c7657696f5a8204770",
+    "bytes": 11881288
+  },
+  {
+    "path": "T018/build/channel-mim4-v1-20261021/cold-50m-response-v1/pex-77K-50MHz/inputs/initial-state.ns",
+    "sha256": "e6bc0d8bc1b7cd29f34fe48e9fc2f1a493db5fc148806c96d0f197904da2f4ed",
+    "bytes": 4695046
+  },
+  {
+    "path": "T018/build/channel-mim4-v1-20261021/star-v3-warm50-response-v1/intent.json",
+    "sha256": "d1bfdeaefbcb251528ff8d248c4e5d72af5f21ff32e2506fe865c3b2f6899eb2",
+    "bytes": 47917
+  },
+  {
+    "path": "T018/build/channel-mim4-v1-20261021/star-v3-warm50-response-analysis-v1/measurements.json",
+    "sha256": "d58a9d60941f43349a5c6d7675af4d74c395ad7d5b565b4e7c8eecb1dc7a14e7",
+    "bytes": 157805
+  },
+  {
+    "path": "T018/build/channel-mim4-v1-20261021/star-v3-warm50-response-analysis-v1/scope-data.json",
+    "sha256": "00bf5634e61683c61df53805833bea763b140c230528bb382758f3d230208782",
+    "bytes": 24672675
+  },
+  {
+    "path": "T018/build/channel-mim4-v1-20261021/star-v3-warm50-response-v1/pex-298.15K-50MHz/inputs/bench.scs",
+    "sha256": "3864f5007b9f450cfcb33323157a6baeb806a4650e9771bc618592da481aae02",
+    "bytes": 7353
+  },
+  {
+    "path": "T018/build/channel-mim4-v1-20261021/star-v3-warm50-response-v1/pex-298.15K-50MHz/inputs/circuit.sp",
+    "sha256": "abf3c812c57a64b1ed6120eefd0feb2ef4fa9fdfcbb8bb3ce9253de88c9a5bef",
+    "bytes": 6982
+  },
+  {
+    "path": "T018/build/channel-mim4-v1-20261021/star-v3-warm50-response-v1/pex-298.15K-50MHz/inputs/core-extracted.sp",
+    "sha256": "7daecadb3ad351db5c0faeb76c8540168a3ae20e7d30728dbd85bf09a1d3601f",
+    "bytes": 11919519
+  },
+  {
+    "path": "T018/build/channel-mim4-v1-20261021/star-v3-warm50-response-v1/pex-298.15K-50MHz/inputs/initial-state.ns",
+    "sha256": "a196fcf25fbc1d172a5e7e1e9492ff54533abfb6dad0469b2de4954456dfe671",
+    "bytes": 4667221
+  },
+  {
+    "path": "T018/build/channel-mim4-v1-20261021/star-v3-cold50-short-response-v1/intent.json",
+    "sha256": "bec1bde3d5e1627d0e649456d9be65407118b13b89779cfcbfc7b10b632224e7",
+    "bytes": 47915
+  },
+  {
+    "path": "T018/build/channel-mim4-v1-20261021/star-v3-cold50-short-response-analysis-v1/measurements.json",
+    "sha256": "532a2bfd54d26a34b93a1bd3bc12d5c142323f80e12c1aa1300ec2327aa59605",
+    "bytes": 97749
+  },
+  {
+    "path": "T018/build/channel-mim4-v1-20261021/star-v3-cold50-short-response-analysis-v1/scope-data.json",
+    "sha256": "8b08f4ca000f41b8e0fb83ac11bd7d3b55adc2c615ba1c2f63d4ecc40790e621",
+    "bytes": 20928868
+  },
+  {
+    "path": "T018/build/channel-mim4-v1-20261021/star-v3-cold50-short-response-v1/pex-77K-50MHz/inputs/bench.scs",
+    "sha256": "f845c5d30d24ef0cb11ef06331d156799c1592c879e5882a7c39cf9bf9200a7f",
+    "bytes": 518703
+  },
+  {
+    "path": "T018/build/channel-mim4-v1-20261021/star-v3-cold50-short-response-v1/pex-77K-50MHz/inputs/circuit.sp",
+    "sha256": "3bd09639f6e0d56e496cf84a72f339b7c281444dca7ea70e5c7e22871e0d633f",
+    "bytes": 5796
+  },
+  {
+    "path": "T018/build/channel-mim4-v1-20261021/star-v3-cold50-short-response-v1/pex-77K-50MHz/inputs/core-extracted.sp",
+    "sha256": "7daecadb3ad351db5c0faeb76c8540168a3ae20e7d30728dbd85bf09a1d3601f",
+    "bytes": 11919519
+  },
+  {
+    "path": "T018/build/channel-mim4-v1-20261021/star-v3-cold50-short-response-v1/pex-77K-50MHz/inputs/initial-state.ns",
+    "sha256": "1f54dd89f122547a128dc039bdd823cbeefd1d63e558af5e6150a118e1ca719e",
+    "bytes": 4660751
+  },
+  {
+    "path": "T018/build/channel-mim4-v1-20261021/star-v3-cold50-short-hpa-v1/pex-77K-50MHz/inputs/bench.scs",
+    "sha256": "7715009af362718d38f36cc6396496e21df9b24a5112a6880c80ebcea9b1f426",
+    "bytes": 539464
+  },
+  {
+    "path": "T018/build/channel-mim4-v1-20261021/star-v3-cold50-short-hpa-v1/pex-77K-50MHz/inputs/circuit.sp",
+    "sha256": "3bd09639f6e0d56e496cf84a72f339b7c281444dca7ea70e5c7e22871e0d633f",
+    "bytes": 5796
+  },
+  {
+    "path": "T018/build/channel-mim4-v1-20261021/star-v3-cold50-short-hpa-v1/pex-77K-50MHz/inputs/core-extracted.sp",
+    "sha256": "7daecadb3ad351db5c0faeb76c8540168a3ae20e7d30728dbd85bf09a1d3601f",
+    "bytes": 11919519
+  },
+  {
+    "path": "T018/build/channel-mim4-v1-20261021/star-v3-cold50-short-hpa-v1/pex-77K-50MHz/inputs/initial-state.ns",
+    "sha256": "1f54dd89f122547a128dc039bdd823cbeefd1d63e558af5e6150a118e1ca719e",
+    "bytes": 4660751
+  },
+  {
+    "path": "T018/build/channel-mim4-v1-20261021/star-v3-warm50-calibration-hpa-v1/pex-298.15K-50MHz/inputs/bench.scs",
+    "sha256": "b8101da4718787dd1863b09263a9c3c8fa401f97a4a5f21081575479be2a226c",
+    "bytes": 28117
+  },
+  {
+    "path": "T018/build/channel-mim4-v1-20261021/star-v3-warm50-calibration-hpa-v1/pex-298.15K-50MHz/inputs/circuit.sp",
+    "sha256": "148c51e80bad5089f7f25916f328f149858a5718fa9124bae894117ba659e8dc",
+    "bytes": 13635
+  },
+  {
+    "path": "T018/build/channel-mim4-v1-20261021/star-v3-warm50-calibration-hpa-v1/pex-298.15K-50MHz/inputs/core-extracted.sp",
+    "sha256": "7daecadb3ad351db5c0faeb76c8540168a3ae20e7d30728dbd85bf09a1d3601f",
+    "bytes": 11919519
+  },
+  {
+    "path": "T018/build/channel-mim4-v1-20261021/star-v3-warm50-calibration-hpa-v1/pex-298.15K-50MHz/inputs/initial-state.ns",
+    "sha256": "a196fcf25fbc1d172a5e7e1e9492ff54533abfb6dad0469b2de4954456dfe671",
+    "bytes": 4667221
+  },
+  {
+    "path": "T018/build/channel-mim4-v1-20261021/star-v3-warm50-automatic-simultaneous-v2/pex-298.15K-50MHz/inputs/circuit.sp",
+    "sha256": "d624f1da9a70004d0ce2a6bd5ff6235ca111d03ae5436440344e8f01befcf1da",
+    "bytes": 11194
+  },
+  {
+    "path": "T018/build/channel-mim4-v1-20261021/star-v3-warm50-automatic-simultaneous-v2/pex-298.15K-50MHz/inputs/bench.scs",
+    "sha256": "f4d1e5e3b8adbb83a09332969eba2e8439593d0edf7fc9da4571a24bd53fe803",
+    "bytes": 28115
+  },
+  {
+    "path": "T018/build/channel-mim4-v1-20261021/star-v3-warm50-automatic-simultaneous-v2/pex-298.15K-50MHz/inputs/core-extracted.sp",
+    "sha256": "7daecadb3ad351db5c0faeb76c8540168a3ae20e7d30728dbd85bf09a1d3601f",
+    "bytes": 11919519
+  },
+  {
+    "path": "T018/build/channel-mim4-v1-20261021/star-v3-warm50-automatic-simultaneous-v2/pex-298.15K-50MHz/inputs/initial-state.ns",
+    "sha256": "a196fcf25fbc1d172a5e7e1e9492ff54533abfb6dad0469b2de4954456dfe671",
+    "bytes": 4667221
+  },
+  {
+    "path": "T018/build/mim-relayout-v1-20261021/clock-render-v3/native-layout.svg",
+    "sha256": "30be9d4c83873ad5f53c073f7f787f9e231b26e85eed35297f52de18c084eacf",
+    "bytes": 2190227
+  },
+  {
+    "path": "T018/build/mim-relayout-v1-20261021/bias-render-v4/native-layout.svg",
+    "sha256": "51b4f15559972b2436725ac3d4ce8b3d6688b5e17c8a31c77ec3a6921f169740",
+    "bytes": 794239
+  },
+  {
+    "path": "T018/build/mim-relayout-v1-20261021/sources-v3/clock/source-export/schematic.svg",
+    "sha256": "3fe885a411676493a04133db07bced1a6eb5222859cbca24400e80f8ffa6be6f",
+    "bytes": 1991445
+  },
+  {
+    "path": "T018/build/mim-relayout-v1-20261021/sources-v4/bias/source-export/schematic.svg",
+    "sha256": "b431fe8d13e3a8165b60d9a584403fd12aba1bb7b73a1d34fa2b88b9a08f7671",
+    "bytes": 119660
+  },
+  {
+    "path": "T018/build/channel-mim4-v1-20261021/source-v4/export/schematic.svg",
+    "sha256": "145ce4f17eddf714fa2f61f6768dfc508ee3447db865e73d703cdd58cf23f1f8",
+    "bytes": 156480
+  },
+  {
+    "path": "T018/build/channel-mim4-v1-20261021/floorplan-v3/placement.svg",
+    "sha256": "77a1c1015886fe141bebf317bed4566485eebb4e777a6077f9d9f232d2cff191",
+    "bytes": 7591
+  },
+  {
+    "path": "T018/build/channel-mim4-v1-20261021/routing-v4/routing.svg",
+    "sha256": "c8f867ef0415a1ac055adc23e353b7c493d207e04be13ca1a370826b405876fa",
+    "bytes": 4684185
+  },
+  {
+    "path": "T018/build/channel-mim4-v1-20261021/warm-50m-response-v3/pex-298.15K-50MHz/human/export/schematic.svg",
+    "sha256": "760013d104ce2ed125bdc4599db38233ab53d67a2a4670b5a611465ca086b540",
+    "bytes": 205555
+  },
+  {
+    "path": "T018/build/channel-mim4-v1-20261021/routing-ground-v3/routing.svg",
+    "sha256": "ad90fdb7c205e9d3a9b7cbabb67260fa6834603127d4d5b0f8e3b815396ab8a1",
+    "bytes": 4844478
+  }
+]

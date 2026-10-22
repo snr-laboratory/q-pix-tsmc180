@@ -1,0 +1,217 @@
+[
+  {
+    "path": "T018/build/channel-physical-v1-20261020/core-native-checks-v1/native.json",
+    "sha256": "b85d79b6cb2b88cd83b2e84a0c085cc7bcb3a0acb79be68c88311a00fe407894",
+    "bytes": 7085
+  },
+  {
+    "path": "T018/build/channel-physical-v1-20261020/formal-core-v1/formal.json",
+    "sha256": "7978264a3da3ec38842fbef84a1d9235276629b48136c8600ecd694f6b0ff689",
+    "bytes": 4053
+  },
+  {
+    "path": "T018/build/channel-physical-v1-20261020/core-cold-settling-analysis-v5/measurements.json",
+    "sha256": "65701d0049cc6a89705a2adfff397614c694a0bdc7c83dc5af20c2aa9f5ec6b0",
+    "bytes": 3215
+  },
+  {
+    "path": "T018/build/channel-physical-v1-20261020/core-cold-settling-analysis-v5/scope-data.json",
+    "sha256": "3381d73f1076639abe69a4aba6300f1c25f6c17c4c70a4cb8661c4bc27d0225d",
+    "bytes": 220482
+  },
+  {
+    "path": "T018/build/channel-physical-v1-20261020/core-warm-calibration-hpa-analysis-v2/measurements.json",
+    "sha256": "4c7270e49952c7cc40433451c6326abe86c319f9f23de10f58e23fcf36c1ca65",
+    "bytes": 11871
+  },
+  {
+    "path": "T018/build/channel-physical-v1-20261020/core-warm-calibration-hpa-analysis-v1/measurements.json",
+    "sha256": "4f948687d086f97e87de82761fc76efbdb03be46896cd09c73584cff23fb072f",
+    "bytes": 10614
+  },
+  {
+    "path": "T018/build/channel-physical-v1-20261020/core-cold-calibration-hpa-analysis-v1/measurements.json",
+    "sha256": "d0a2d3979570ca3e1e2c595fed437116762b50079f76efff37e2c50be889695f",
+    "bytes": 12742
+  },
+  {
+    "path": "T018/build/channel-physical-v1-20261020/core-warm-calibration-hpa-analysis-v2/scope-data.json",
+    "sha256": "778fa3bcb7ad0dab07a1a6cb645f718f9d01ab41a066a7cb1c6f9154aa304850",
+    "bytes": 20278740
+  },
+  {
+    "path": "T018/build/channel-physical-v1-20261020/core-cold-calibration-hpa-analysis-v1/scope-data.json",
+    "sha256": "df234f477f30e563674c0ac9f374ce469dbb234f55a61c95e265292d85c50d46",
+    "bytes": 35651407
+  },
+  {
+    "path": "T018/build/channel-physical-v1-20261020/modes-v1/warm_10m-calibration-hpa-v1/intent.json",
+    "sha256": "e7061bb8c9d47841f057153f474d659c85964ead7b6a1f9c2a672665cdeefac9",
+    "bytes": 37865
+  },
+  {
+    "path": "T018/build/channel-physical-v1-20261020/modes-v1/warm_10m-calibration-hpa-analysis-v1/measurements.json",
+    "sha256": "3d8b14e689bbafac99d69d2fc47dec3c95d611403b28fc826bf6a100aea2135c",
+    "bytes": 12138
+  },
+  {
+    "path": "T018/build/channel-physical-v1-20261020/modes-v1/warm_10m-calibration-hpa-analysis-v1/scope-data.json",
+    "sha256": "66aa7157be50c6b5c1dd383449a3b808049562eba1d4327352a2696862ecef0d",
+    "bytes": 20939532
+  },
+  {
+    "path": "T018/build/channel-physical-v1-20261020/core-warm-automatic-analysis-v1/measurements.json",
+    "sha256": "ccc6496f7fead193b8bb30489db59d4a6a6df56afa748375e925015e557cf87b",
+    "bytes": 12950
+  },
+  {
+    "path": "T018/build/channel-physical-v1-20261020/core-warm-automatic-analysis-v1/bounded-control/scope-data.json",
+    "sha256": "b9beb51abc570d159bab1fe53eec85924d233a959571c6c176bab44af4c998e6",
+    "bytes": 11482487
+  },
+  {
+    "path": "T018/build/channel-physical-v1-20261020/core-cold-automatic-analysis-v1/measurements.json",
+    "sha256": "ad1786c07745b70230d218bc158d0b44526273c347e1bb369a946012a16df586",
+    "bytes": 13348
+  },
+  {
+    "path": "T018/build/channel-physical-v1-20261020/core-cold-automatic-analysis-v1/bounded-control/scope-data.json",
+    "sha256": "b6ccd9ea53c46253a5ff71b2bf64a53c4ddd98806968222ca74b4c156e5039f7",
+    "bytes": 19128296
+  },
+  {
+    "path": "T018/build/channel-physical-v1-20261020/modes-v1/warm_10m-automatic-analysis-v1/measurements.json",
+    "sha256": "9f4ec275b3af0788c7d608eb53d1b760a538db1b65c674e98d72a489eac7a48c",
+    "bytes": 13235
+  },
+  {
+    "path": "T018/build/channel-physical-v1-20261020/modes-v1/warm_10m-automatic-analysis-v1/bounded-control/scope-data.json",
+    "sha256": "e32da6d950959ce32c8981aa66335e88aacf6266dcc53c30620802e8d41db25e",
+    "bytes": 11734870
+  },
+  {
+    "path": "T018/build/channel-physical-v1-20261020/replenisher-calibration-warm-analysis-v2/measurements.json",
+    "sha256": "6983131a882f2db06c37229489beb01b3fabdb28989f9a33c9da08186b7a24d8",
+    "bytes": 23345
+  },
+  {
+    "path": "T018/build/channel-physical-v1-20261020/replenisher-calibration-cold-seeded-analysis-v2/measurements.json",
+    "sha256": "1665fab63336d696ff63da3e9281a8b3ce2ecc1eda7a9179713808febdf728a4",
+    "bytes": 24787
+  },
+  {
+    "path": "T018/build/channel-physical-v1-20261020/replenisher-warm-target-analysis-v1/measurements.json",
+    "sha256": "5826bddf8dbe45da644d091481e1065e2478c1896fd7f81a36b44a4b1f91efb0",
+    "bytes": 8104
+  },
+  {
+    "path": "T018/build/channel-physical-v1-20261020/replenisher-warm-target-analysis-v1/scope-data.json",
+    "sha256": "ac7aa0fd62e45998d433e12b2ab036c18a0e0484e868087dba6c815273dcd012",
+    "bytes": 745462
+  },
+  {
+    "path": "T018/build/channel-physical-v1-20261020/replenisher-cold-target-analysis-v1/measurements.json",
+    "sha256": "5600a27316c7491733ef99a7cadf5ccfa9cf000795e6f78b323adee8473f128a",
+    "bytes": 8572
+  },
+  {
+    "path": "T018/build/channel-physical-v1-20261020/replenisher-cold-target-analysis-v1/scope-data.json",
+    "sha256": "6e0c40be25b6543a9a330168078c2302a0a05327a4fee27237b0d674e0fda5ca",
+    "bytes": 899386
+  },
+  {
+    "path": "T018/build/channel-physical-v1-20261020/local-monitors-warm-hpa-analysis-v1/measurements.json",
+    "sha256": "2150080e30795e483fcd10692bc796fdc6476c8ff38c82a682c966da1a1bfad6",
+    "bytes": 41101
+  },
+  {
+    "path": "T018/build/channel-physical-v1-20261020/local-monitors-warm-hpa-analysis-v1/scope-data.json",
+    "sha256": "bc5a7c0e225a9e1a92e5676f56bf556bed27bad2f5d453bf96722f1ef0f610c8",
+    "bytes": 2251138
+  },
+  {
+    "path": "T018/build/channel-physical-v1-20261020/charge-trim-warm-hpa-analysis-v1/measurements.json",
+    "sha256": "4fe520402a8d38c2fdb3c5a93038077e9a13b2d1397763996948e7e48df08b8d",
+    "bytes": 40721
+  },
+  {
+    "path": "T018/build/channel-physical-v1-20261020/charge-trim-warm-hpa-analysis-v1/scope-data.json",
+    "sha256": "90c74851f1138811e44f6b8c57a6a6dfbafa7adc79a52945d0a6808420ad4ab2",
+    "bytes": 2205577
+  },
+  {
+    "path": "T018/build/channel-physical-v1-20261020/core-warm-reference-analysis-v1/measurements.json",
+    "sha256": "48eb3708b8a4016d5505fc0ba870cde6f7c566112650ed7353654ade226ff304",
+    "bytes": 43710
+  },
+  {
+    "path": "T018/build/channel-physical-v1-20261020/core-warm-reference-analysis-v1/scope-data.json",
+    "sha256": "068bfe6435a56ef61be1642d43e04fc77bfa5a8093fc77189131862a5fc09c99",
+    "bytes": 4673990
+  },
+  {
+    "path": "T018/build/channel-physical-v1-20261020/core-cold-reference-analysis-v1/measurements.json",
+    "sha256": "9f16dcab47d660346a398ee8d4305849d3f6768291221a1399d1733ba3e4540d",
+    "bytes": 44549
+  },
+  {
+    "path": "T018/build/channel-physical-v1-20261020/core-cold-reference-analysis-v1/scope-data.json",
+    "sha256": "8b18d973edcdd1372812df2ea149c65d9f5bf285e4b3079c52b6b73755723a0f",
+    "bytes": 7797748
+  },
+  {
+    "path": "T018/build/channel-physical-v1-20261020/modes-v1/warm_10m-response-analysis-v1/measurements.json",
+    "sha256": "b1a193942edc847b1ce272605d300e09aff67ee5fa9a5bc07f2ee83ab834b234",
+    "bytes": 29905
+  },
+  {
+    "path": "T018/build/channel-physical-v1-20261020/modes-v1/warm_10m-response-analysis-v1/scope-data.json",
+    "sha256": "a207d62f41e6e20d563a67e2ea11f469ae8892676df06dc968fdce68f17f11b4",
+    "bytes": 1964031
+  },
+  {
+    "path": "T018/build/channel-physical-v1-20261020/local-monitors-short-comparison-v1/comparison.json",
+    "sha256": "38b70f8ac60fc65e3deb5045a003d25b6976bab53ac3d1baf78a3bff063ead52",
+    "bytes": 9570
+  },
+  {
+    "path": "T018/build/channel-physical-v1-20261020/core-warm-hpa-comparison-v1/comparison.json",
+    "sha256": "ec10f7c202df6d05b402aad0e1eb9a3a3298f256eb0479a14497df4139992f05",
+    "bytes": 14005
+  },
+  {
+    "path": "T018/build/channel-physical-v1-20261020/core-warm-hpa-cap-comparison-v1/comparison.json",
+    "sha256": "3e6503f93e3e077a16ae1d11c7c7c56cbbb80185352cd4a201cf0dbf7879fe6b",
+    "bytes": 14044
+  },
+  {
+    "path": "T018/build/channel-physical-v1-20261020/core-cold-hpa-comparison-v1/comparison.json",
+    "sha256": "797375ed4393c8b8406b7785567e6def8c3fbe5edc0e18b01fbc19f3aed0aeec",
+    "bytes": 14154
+  },
+  {
+    "path": "T018/build/channel-physical-v1-20261020/local-monitors-short-cold-full-ic-comparison-v1/comparison.json",
+    "sha256": "f155a491aefd477b4b2ac352480022b419a9a1a7d00a5e68656aad1eb67eee5e",
+    "bytes": 9491
+  },
+  {
+    "path": "T018/build/channel-physical-v1-20261020/core-warm-hpa-cap-cover-comparison-v1/comparison.json",
+    "sha256": "f34931d50cb699f1297ea551e3c0fd30b34186aaafb853d7db4731e9ea69e82c",
+    "bytes": 14049
+  },
+  {
+    "path": "T018/build/channel-physical-v1-20261020/modes-v1/warm_10m-hpa-comparison-v1/comparison.json",
+    "sha256": "055a6484f61ad89b8c516e35c6348491daf0428f3375e087b7440528a4acc1eb",
+    "bytes": 10288
+  },
+  {
+    "path": "T018/build/channel-physical-v1-20261020/core-routing-v8/routing.svg",
+    "sha256": "74d4bbb77b2ee6c28f4d21d8b5ab9848465bd7b7d57f1359c80a4bb435d6de66",
+    "bytes": 14214
+  },
+  {
+    "path": "T018/build/channel-physical-v1-20261020/core-warm-response-v1/pex-298.15K-50MHz/human/export/schematic.svg",
+    "sha256": "e2bcbb5ba2102338d82a4c95e521066173ebad25ea7c27e42a540143ca6c112e",
+    "bytes": 79270
+  }
+]

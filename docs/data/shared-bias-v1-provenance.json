@@ -1,0 +1,67 @@
+[
+  {
+    "path": "T018/build/shared-bias-v1-20261020/qualification-v1/physical.json",
+    "sha256": "d6e05452f571298b10ffdafa2a817e723be74bfd17c0551aeeafa948ec863756",
+    "bytes": 290077
+  },
+  {
+    "path": "T018/build/shared-bias-v1-20261020/receiver-real-sharing-analysis-v1/scope-data.json",
+    "sha256": "c62ea5ac93d70d0d52a80e09873342929f5a67dd801e0c408626d08f6c7af8b8",
+    "bytes": 65321651
+  },
+  {
+    "path": "T018/build/shared-bias-v1-20261020/bank-startup-analysis-v2/scope-data.json",
+    "sha256": "f38f6939de5e368809f6833101e3ddff67bd3f48aa6578a5b78762914b086b59",
+    "bytes": 148275
+  },
+  {
+    "path": "T018/build/shared-bias-v1-20261020/native-opac-source-no_load-analysis-v2/curves.json",
+    "sha256": "92054f991b7304abbdbbaae4ec2388fab301105dc5cd98230f5cbac41b4e7c82",
+    "bytes": 77991
+  },
+  {
+    "path": "T018/build/shared-bias-v1-20261020/native-opac-source-idle_return-analysis-v2/curves.json",
+    "sha256": "9600c21bf07eda247a6b5492b234dfffb778eefc0a6edc8f6159874eecdcb2e1",
+    "bytes": 238855
+  },
+  {
+    "path": "T018/build/shared-bias-v1-20261020/native-opac-source-maximum_return-analysis-v2/curves.json",
+    "sha256": "6ee42ee3c7d284cb84dd748ffa506a37ad6e45e5919d0069d6836ae50c615056",
+    "bytes": 78100
+  },
+  {
+    "path": "T018/build/shared-bias-v1-20261020/native-opac-pex-no_load-analysis-v2/curves.json",
+    "sha256": "293537c23d9607aa7d10726920519fc699701bfb0263cf1c96e46710dd503101",
+    "bytes": 78026
+  },
+  {
+    "path": "T018/build/shared-bias-v1-20261020/native-opac-pex-idle_return-analysis-v2/curves.json",
+    "sha256": "7bd3b55b44c666e5fd1a1296d4b8d812b66db85c7ce796d0de1b46d9348c9fa6",
+    "bytes": 238846
+  },
+  {
+    "path": "T018/build/shared-bias-v1-20261020/native-opac-pex-maximum_return-analysis-v2/curves.json",
+    "sha256": "fc5be8b2170ee3bb80f2828ee068cf8f274a996a4dea07fd0ad971985f348f07",
+    "bytes": 78203
+  },
+  {
+    "path": "T018/build/shared-bias-v1-20261020/stationary-noise-analysis-v1/spectra.json",
+    "sha256": "6d69f3289a0860012e6501dca1b32dce25bcfdaf76ce44db2ac02d7978b3c095",
+    "bytes": 329497
+  },
+  {
+    "path": "T018/build/shared-bias-v1-20261020/report-figures-v1/circuit/fixture.svg",
+    "sha256": "3dbf275053a6799b0c06fa6e2acded3c8ae2b9d7b4bdb011b85d98543521079a",
+    "bytes": 119293
+  },
+  {
+    "path": "T018/build/shared-bias-v1-20261020/routing-selected-v1/layout-intent.svg",
+    "sha256": "2624138e456b42e617650f94735c3a93e18d17c217a830ae4c664b136404cd1f",
+    "bytes": 6283103
+  },
+  {
+    "path": "T018/build/shared-bias-v1-20261020/report-figures-v1/fixture/export/fixture.svg",
+    "sha256": "120504dffe6442603247181faebfc3c8799bbe5e0bb74dd591543c8ddbcad6e5",
+    "bytes": 127467
+  }
+]

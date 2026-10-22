@@ -2,9 +2,9 @@
   "report": {
     "title": "Q-Pix in TSMC180: charge, timing and heat",
     "date": "2026-10-16",
-    "built_utc": "2026-10-20T10:37:08.791413+00:00",
+    "built_utc": "2026-10-22T00:58:05.498304+00:00",
     "branch": "qpix_tsmc180",
-    "head": "6981a0b48e1fb270969cf4a073eacdc77530dfa4",
+    "head": "cb9b57241b1031eaff00babf88cfb147d3182b86",
     "source_state": "working-tree design and experiment sources; exact hashes in provenance",
     "selected_rate_hz": 10000000,
     "selected_input_f": 3e-12
@@ -16,7 +16,7 @@
   "report_sources": [
     {
       "path": "build_report.py",
-      "sha256": "8a6f2cf396e2bb4ffdce7282c7d4b9ffe50f26fa4ed266fe65ccca4928529608"
+      "sha256": "33152b0788122f27978e6e84d047717f2bf36cfbf3011bf7247e8aaf5ceed9ce"
     },
     {
       "path": "latest.py",
@@ -84,7 +84,7 @@
     },
     {
       "path": "src/index.html",
-      "sha256": "ebd393f1d7e35bcad003bc343ffa907954f3db1c5c48292c6a611062c2699776"
+      "sha256": "69bc90396a325fbdd256d099c96c67c312e54ac1f5b658ed99575f246c27a790"
     },
     {
       "path": "src/report.css",
@@ -141,6 +141,62 @@
     {
       "path": "src/capture-control-v1.js",
       "sha256": "d3f72ead185571fdccf5941d8c64aeaa7ade0e7f25dc5d794ae2e838743f1d8f"
+    },
+    {
+      "path": "shared_bias_v1.py",
+      "sha256": "7c56772f55ccdd99f8215ddc64db9e53951f858849cdd43cd7281c5645cc8ca0"
+    },
+    {
+      "path": "shared_bias_v1.toml",
+      "sha256": "636fe60b3dd8ca4fe1e254fceca8187e635c00f8f070d63040ff0bce14b2c45d"
+    },
+    {
+      "path": "src/shared-bias-v1.html",
+      "sha256": "9d89276e19c0aed591eebde3af8eb6b4fa8edd4b72184d1f7c0d03cf2dee9742"
+    },
+    {
+      "path": "src/shared-bias-v1.js",
+      "sha256": "fb57c1bcbc8ba42cd539d08df905e4450b40ae79dbfcf0c3182485ee4ed09a6d"
+    },
+    {
+      "path": "channel_v1.py",
+      "sha256": "95765f7ac357b43eb8add002302de6054e61d0b9ec48e534aae6d21b5c39cdc1"
+    },
+    {
+      "path": "channel_v1.toml",
+      "sha256": "8d88753f9b19e7282c7953732ced6b9b94815f23c10db7c7165dd4a577609c9d"
+    },
+    {
+      "path": "event_scope.py",
+      "sha256": "7ea30493476cf7f85271d406997aea0aff49cbe40b7942fed044384326b7ba50"
+    },
+    {
+      "path": "src/channel-v1.html",
+      "sha256": "94d7911dc26f8d2be3b0d0986dcb0cf499a22ab19d126e81995ab71ae83cff59"
+    },
+    {
+      "path": "src/channel-v1.js",
+      "sha256": "9e6361a6b65d3d2be971c9e9e0f15dce4c331a076605990839140e966c7807de"
+    },
+    {
+      "path": "src/channel-event.js",
+      "sha256": "54b0134ca87ce465de7456baa7a6eafbc2b8ccd37fb6615147515e2891a6256d"
+    },
+    {
+      "path": "mim_v1.py",
+      "sha256": "fa6cb34c02104174848fb444de0307f770c66e056f328ce1bf60a2d2bceec2f2"
+    },
+    {
+      "path": "mim_v1.toml",
+      "sha256": "6332c3b9ea98a79253434feb9b480fa235bc6bd07144bc4da69686498a8c390f"
+    },
+    {
+      "path": "src/mim-v1.html",
+      "sha256": "8e2615b7ec8082210ce11171f34eb938ccff71238fc8d8ead586a89281cd93fa"
+    },
+    {
+      "path": "src/mim-v1.js",
+      "sha256": "ae793e9857a42963fdbebb7ddfe53d0e6f133c561f99aeb8997813a9e2c54162"
     }
   ],
   "files": [

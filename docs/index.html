@@ -28,6 +28,9 @@
     <a href="clock-flat-v1.html">03f <span>Flat clock source checks</span></a>
     <a href="clock-flat-v3.html">03g <span>Physical clock V3</span></a>
     <a href="capture-control-v1.html">03h <span>Physical capture/replenishment control</span></a>
+    <a href="shared-bias-v1.html">03i <span>Shared analog bias and references</span></a>
+    <a href="channel-v1.html">03j <span>Physical channel integration and calibration</span></a>
+    <a href="mim-v1.html">03k <span>Compact MIM clock and shared bias</span></a>
     <a href="#frequency">04 <span>Clock-rate envelope</span></a>
     <a href="#detector">05 <span>Historical detector event</span></a>
     <a href="#waveform">06 <span>Analytic waveform study</span></a>
@@ -265,7 +268,7 @@
   <figure><div id="power-domains" class="plot" data-plot-title="Implemented supply-domain power for the selected case"></div><figcaption><span class="figure-number">FIG. 15</span> Follows the selected nominal case. “Driver” includes the shared local digital supply loads in this single-channel fixture; it is not a separately isolated measurement of only the feedback transistor gates.</figcaption></figure>
   <figure><div id="energy-plot" class="plot" data-plot-title="Idle, active and incremental replenishment energy"></div><figcaption><span class="figure-number">FIG. 16</span> Matched idle/repeated-event windows at 10 MHz / 3 pF. Total energy per operation includes idle bias accumulated over the entire window. Incremental energy subtracts the matched idle window as a separate diagnostic; the reported total source power remains unadjusted.</figcaption></figure>
   <div id="energy-table" class="table-wrap"></div>
-  <p>The <a href="https://arxiv.org/pdf/1808.02969#page=12" target="_blank" rel="noopener">LArPix comparison budget</a> is 62 µW/channel total: 24 analog, 18 digital core and 20 I/O in its reported low-power 128-channel, 5 MHz configuration (section 3.5, Table 3). It is a design benchmark rather than a measured Q-Pix digital allocation. That paper also reports higher consumption under heavy traffic. The new shared phase-generator measurement is divided by an explicit assumed channel count in this report. Physical shared reference generation, timestamping, buffering, links and backend traffic remain to be implemented and measured against the actual ASIC channel count.</p>
+  <p>The <a href="https://arxiv.org/pdf/1808.02969#page=12" target="_blank" rel="noopener">LArPix comparison budget</a> is 62 µW/channel total: 24 analog, 18 digital core and 20 I/O in its reported low-power 128-channel, 5 MHz configuration (section 3.5, Table 3). It is a design benchmark rather than a measured Q-Pix digital allocation. That paper also reports higher consumption under heavy traffic. The shared phase-generator measurement is divided by an explicit assumed channel count in this architecture study. The <a href="shared-bias-v1.html">physical shared-reference bank</a> is now qualified against its local envelope; the <a href="channel-v1.html">physical-channel chapter</a> reports actual complete-cycle fixture work without a hypothetical sharing division. Timestamping, backend buffering, links and traffic remain outside the current milestone.</p>
   <p class="scope-note">Higher-power candidates remain available for architecture exploration. The 24 µW line marks the current integration allocation; the plotted high-rate candidates retain their measured behavior and energy cost.</p>
   <div class="equation">\[
       P_{\mathrm{channel,chip}}
