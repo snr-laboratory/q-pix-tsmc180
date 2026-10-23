@@ -80,9 +80,7 @@ document.addEventListener('DOMContentLoaded', async()=>{
  noiseSelect.addEventListener('change',drawNoise);
  await drawNoise();
 
- const bytes=Uint8Array.from(atob(d.packed_scopes),v=>v.charCodeAt(0));
- const stream=new Blob([bytes]).stream().pipeThrough(new DecompressionStream('gzip'));
- const scopes=JSON.parse(await new Response(stream).text());
+ const scopes=await window.QPIX_PLOTS.loadAll(d.scopes);
  const views={};
  for(const group of ['startup','sharing']){
   const cases=scopes.filter(s=>s.group===group),select=document.getElementById(group+'-case');

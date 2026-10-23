@@ -18,9 +18,7 @@ document.addEventListener('DOMContentLoaded',async()=>{
  const sorted=[...rows].sort((a,b)=>a.kind.localeCompare(b.kind)||b.temperature_k-a.temperature_k||a.frequency_hz-b.frequency_hz);
  document.getElementById('results').innerHTML=sorted.map(r=>`<tr><td>${label(r)}</td><td>${r.active_pulse_width_range_s.map(v=>fmt(v*1e9,4)).join('–')}</td><td>${fmt(r.source_energy.upstream_supply_power_w.CTRL*1e6)}</td><td>${fmt(r.source_energy.total_fixture_power_w*1e6)}</td><td>${r.actual_threads} / ${r.requested_threads}</td><td>${r.cycles.filter(v=>v.passed).length} / ${r.cycles.length}</td></tr>`).join('');
  document.getElementById('provenance').textContent=JSON.stringify({candidate:c,provenance:d.provenance},null,2);
- const bytes=Uint8Array.from(atob(d.packed_scopes),v=>v.charCodeAt(0));
- const stream=new Blob([bytes]).stream().pipeThrough(new DecompressionStream('gzip'));
- const scopes=JSON.parse(await new Response(stream).text());
+ const scopes=await window.QPIX_PLOTS.loadAll(d.scopes);
  const select=document.getElementById('case');
  scopes.forEach((s,i)=>{const option=document.createElement('option');option.value=String(i);option.textContent=label(s.notes);select.appendChild(option)});
  async function draw(){

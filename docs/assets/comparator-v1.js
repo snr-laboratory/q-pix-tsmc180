@@ -23,8 +23,7 @@ document.addEventListener('DOMContentLoaded', async () => {
   Plotly.newPlot('power',power,{...style,height:350,xaxis:{title:{text:'EVAL rate (MHz)'},tickvals:rates},yaxis:{title:{text:'Total fixture power (µW)'}},legend:{orientation:'h'}},opts);
   const loading=['source_loading','pex_loading'].flatMap(key=>r[key].rows.map(row=>({x:row.frequency_hz.map(f=>f/1e6),y:row.capacitance_f.map(c=>c*1e15),mode:'lines',name:`${row.kind==='pex'?'PEX':'Schematic'} · ${row.temperature_k} K`,line:{color:colors[temps.indexOf(row.temperature_k)],dash:row.kind==='pex'?'solid':'dot'}})));
   Plotly.newPlot('loading',loading,{...style,height:350,xaxis:{title:{text:'Frequency (MHz)'},type:'log',range:[-2,Math.log10(50)]},yaxis:{title:{text:'Effective input C (fF)'}},legend:{orientation:'h'}},opts);
-  const bytes=Uint8Array.from(atob(data.packed_scopes),c=>c.charCodeAt(0));
-  const scopes=await new Response(new Blob([bytes]).stream().pipeThrough(new DecompressionStream('gzip'))).json();
+  const scopes=await window.QPIX_PLOTS.loadAll(data.scopes);
   const select=document.getElementById('case');
   for(let i=0;i<scopes.length;i++){const option=document.createElement('option');option.value=i;option.textContent=label(scopes[i].notes);select.appendChild(option);}
   async function draw(){

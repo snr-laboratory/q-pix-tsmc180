@@ -26,8 +26,7 @@ document.addEventListener('DOMContentLoaded',async()=>{
  document.getElementById('power-table').innerHTML=rates.map(rate=>{const values=temps.flatMap(temp=>['nominal','idle'].map(s=>rows.find(v=>v.temperature_k===temp&&v.frequency_hz===rate*1e6&&v.scenario===s).total_fixture_power_w*1e6));return`<tr><td>${rate}</td><td>${values[0].toFixed(2)} / ${values[1].toFixed(2)}</td><td>${values[2].toFixed(2)} / ${values[3].toFixed(2)}</td></tr>`;}).join('');
  Plotly.newPlot('reconfigure',controls.map(v=>({x:edgeNames,y:v.control_review.edge_shifts_s.map(x=>x*1e12),type:'bar',name:label(v),marker:{color:colors[v.temperature_k===77?1:0]}})),{...style,height:360,barmode:'group',title:{text:'Observed delay change after stopped A0 update'},yaxis:{title:{text:'After − before (ps)'}}},opts);
  document.getElementById('control-result').textContent='Both cases preserve five complete events, three quiet cycles, normal timing limits and an observed trim effect. No stochastic noise was injected.';
- const bytes=Uint8Array.from(atob(data.packed_scopes),c=>c.charCodeAt(0));
- const scopes=await new Response(new Blob([bytes]).stream().pipeThrough(new DecompressionStream('gzip'))).json();
+ const scopes=await window.QPIX_PLOTS.loadAll(data.scopes);
  const byJob=new Map(scopes.map(v=>[v.notes.run_job_id,v]));
  const worst=v=>{const notes=byJob.get(v.run_job_id).notes;return Math.max(...notes.cycles.slice(2,7).flatMap(c=>c.edge_delays_s.map((d,i)=>Math.abs(d*1e9-target(v.frequency_hz)[i])*1000)));};
  document.getElementById('modes').innerHTML=nominal.slice().sort((a,b)=>b.temperature_k-a.temperature_k||a.frequency_hz-b.frequency_hz).map(v=>`<tr><td>${label(v)}</td><td>${v.trim_words.join(', ')}</td><td>${((v.mean_edge_delays_s[5]-v.mean_edge_delays_s[4])*1e9).toFixed(4)}</td><td>${worst(v).toFixed(2)}</td></tr>`).join('');

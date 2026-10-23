@@ -2,7 +2,7 @@
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Q-Pix flat clock generator · source results and native checks</title>
 <script>window.MathJax={tex:{inlineMath:[['\\(','\\)']]}};</script>
-<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-svg.js"></script><script defer src="https://cdn.plot.ly/plotly-4.1.1.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-svg.js"></script><script defer src="https://cdn.plot.ly/plotly-4.1.1.min.js"></script><script defer src="assets/plot-data.js"></script>
 <script defer src="data/clock-flat-v1.js"></script><script defer src="assets/clock-flat-v1.js"></script>
 <style>
 *{box-sizing:border-box}
@@ -13,7 +13,7 @@
 <h1>Flat single-clock generator</h1><p class="lead" id="status">Loading pinned source evidence…</p>
 <p class="pending"><strong>Electrical charts below are source results.</strong> Native schematic, symbol and layout are saved and checked. The layout has zero cell-local DRC errors, matching LVS with zero property errors and completed three-stage PEX. Extracted timing/power acceptance and formal-library promotion remain pending.</p>
 <p><code>CLK_PHASE_FLAT_V1</code> contains launch/RUN logic, six trimmed delay sections and the three output windows in one flat circuit. Its native footprint is 1.0 × 0.5 mm. Folding, dummies, common guards and routing are implemented. Rectangle coalescing preserves the masks; subsequent native DRC repairs close same-net routing slots.</p>
-<p id="inventory"></p></header>
+<p id="inventory"></p><p class="plot-policy">Compact overview plots; zoom is disabled. Displayed samples preserve time-bin extrema. Numerical results use full native data retained locally.</p></header>
 <section id="native-layout"><h2>Native layout and verification</h2>
 <p id="physical-checks"></p><p id="physical-warnings"></p>
 <p id="extracted-pilot" class="pending"></p>
@@ -36,7 +36,7 @@
 <div id="reconfigure" class="plot"></div><p id="control-result"></p>
 <p>Control-test source work uses seven complete clock cycles and includes the configuration transition. The full logic viewer below keeps RUN, RESET and the changing trim bit aligned with all output phases.</p></section>
 <section><h2>Inspect complete traces</h2>
-<p>All 18 selected source cases, seven calibration traces and the additional numerical/extracted comparisons are retained. The default view shows all eight acquisition clocks. The complete saved duration, including reset/startup, remains available through “Include startup” or Plotly autoscale. Zooming one time axis updates every signal row. Metrics come from native data; trace reduction is for display.</p>
+<p>All 18 selected source cases, seven calibration traces and the additional numerical/extracted comparisons are retained. The default view shows all eight acquisition clocks. The saved duration, including reset/startup, is available through “Include startup”. Zoom is disabled. Metrics come from native data; trace reduction is for display.</p>
 <label for="case">Simulation case </label><select id="case"></select> <button id="startup" type="button">Include startup</button>
 <p id="case-note" class="scope-note"></p><div id="scope"></div></section>
 <section><h2>Calibration and retained target misses</h2>

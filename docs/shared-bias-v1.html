@@ -2,7 +2,7 @@
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Q-Pix shared analog bias and reference support</title>
 <script>window.MathJax={tex:{inlineMath:[['\\(','\\)']]}};</script>
-<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-svg.js"></script><script defer src="https://cdn.plot.ly/plotly-4.1.1.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-svg.js"></script><script defer src="https://cdn.plot.ly/plotly-4.1.1.min.js"></script><script defer src="assets/plot-data.js"></script>
 <script defer src="data/shared-bias-v1.js"></script><script defer src="assets/shared-bias-v1.js"></script>
 <style>
 :root{font-family:system-ui,sans-serif;color:#203e4c;background:#edf2f3}body{margin:0}main{max-width:1250px;margin:auto;padding:2rem 1rem 5rem}a{color:#126e7b}header,section{background:white;border:1px solid #d5e0e2;border-radius:12px;padding:1.4rem;margin:1rem 0}h1{font-size:2rem}h2{font-size:1.25rem;margin-top:0}p{line-height:1.55}.lead{font-size:1.1rem}.limit{border-left:5px solid #b66537;padding-left:1rem}.grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem}.plot{min-width:0}figure{margin:1rem 0;min-width:0}img{width:100%;height:auto;border:1px solid #dce4e6}figcaption{font-size:.9rem;color:#516972;margin-top:.5rem}select{font:inherit;max-width:100%;padding:.5rem}table{border-collapse:collapse;width:100%;font-size:.9rem}th,td{text-align:left;padding:.6rem;border-bottom:1px solid #dce4e6}.scroll{overflow:auto}pre{white-space:pre-wrap;overflow-wrap:anywhere;font-size:.8rem}.equation{text-align:center;margin:1.5rem 0;max-width:100%;overflow:auto}code{overflow-wrap:anywhere}@media(max-width:750px){.grid{grid-template-columns:1fr}main{padding:.5rem}header,section{padding:1rem}h1{font-size:1.5rem}}
@@ -11,7 +11,7 @@
 <header><p><a href="index.html">Architecture and detector replay</a> · <a href="csa-v4.html">CSA</a> · <a href="comparator-v1.html">Comparator</a> · <a href="capture-control-v1.html">Controller</a></p>
 <h1>Shared analog bias and reference support</h1><p class="lead" id="status">Loading pinned native evidence…</p>
 <p><code>Modules/SHARED_BIAS_V1</code> conditions external master references outside repeated channels. Three external current seeds set CSA, comparator and replenisher biases. Two external voltages set common mode and threshold. The comparator N-bias conversion, quiet filtering and compensated DUMMY-return buffer are on chip; the buffer reuses the CSA bias.</p>
-<p id="physical"></p></header>
+<p id="physical"></p><p class="plot-policy">Compact overview plots; zoom is disabled. Displayed samples preserve time-bin extrema. Numerical results use full native data retained locally.</p></header>
 <section><h2>Keep the quiet references separate from the switched return</h2>
 <p>Independent process-poly/MOM filters feed VCM_QUIET and VTH_QUIET. The replenisher's DUMMY return enters its own compensated two-stage buffer and reservoir. MOS nulling elements and the compensation bank are designed with that amplifier. Their cold conductance differs strongly from the room model, so the complete loop is checked at both temperatures.</p>
 <p>The external gm/Id tables provide device sizing and a finite-drain-bias starting estimate. Native operating points and loop measurements check the actual implemented devices. Each quiet resistor uses four series units. Matched MOS groups use interleaving, shared diffusion, weighted common centroids, explicit dummies and contacted guards.</p>
@@ -24,7 +24,7 @@
 <p>Reservoir-energy changes are recorded and never subtracted. This fixture excludes the shared clock generator and digital controller; their costs enter the complete-channel heat account.</p>
 <div class="plot" id="power"></div><div class="scroll"><table><thead><tr><th>Temperature / receivers</th><th>Bank idle / active (µW)</th><th>Active bank per receiver (µW)</th><th>Whole fixture per receiver (µW)</th><th>Net pulse (fC)</th><th>Calibrated holdout RMS (%)</th></tr></thead><tbody id="results"></tbody></table></div></section>
 <section><h2>Bank power-up from zero</h2>
-<p>These runs ramp supplies, voltage references and master currents from an unpowered state. Declared gate/reference capacitances and continuous return-current sources provide one/four-channel engineering loads. Inspect the entire record and zoom into the ramps or final settling interval.</p>
+<p>These runs ramp supplies, voltage references and master currents from an unpowered state. Declared gate/reference capacitances and continuous return-current sources provide one/four-channel engineering loads. The fixed overview shows the entire startup and settling record.</p>
 <p class="limit">This is bank power-up under declared load envelopes. The CSA has no reset across Cf and needs a defined charge state; its physical integrator startup is a separate question.</p>
 <label for="startup-case">Power-up case </label><select id="startup-case"></select><p id="startup-note"></p><div id="startup-scope"></div></section>
 <section><h2>Actual initialized receivers, synchronous switching</h2>

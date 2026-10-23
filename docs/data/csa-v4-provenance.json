@@ -395,7 +395,7 @@
   "report_sources": [
     {
       "path": "reports/qpix-tsmc180/csa_v4.py",
-      "sha256": "fff4eddf07c735088f121dd3c4028ce371b1385aed28cbe3c321905db47b3931"
+      "sha256": "2099aaab99295a45b744593158f4d3f39ff0ae68abed7b9a236cb2216cd40685"
     },
     {
       "path": "reports/qpix-tsmc180/csa_v4.toml",
@@ -411,5 +411,5 @@
     }
   ],
   "scope": "Digest-pinned application measurement receipts and exact input-manifest bindings. The application analyzers perform native artifact/state/acceptance checks; this presentation build does not rerun EDA or requalify circuits. Model payloads and raw PSF remain outside the site.",
-  "portable_display": "Full-duration logic and charge traces are retained. Noisy-channel charge traces use validated native integrals. Raw saved-current quadrature for those noise cases and raw instantaneous power remain in the original local inspectors; cycle-window source energy/power is retained in scorecards. Local data use lossless gzip/base64 and the browser decoder; no library bundle is copied."
+  "portable_display": "Compact fixed overview plots preserve time-bin extrema; full-resolution traces remain in local evidence. Noisy-channel charge traces use validated native integrals. Raw saved-current quadrature for those noise cases and raw instantaneous power remain in the original local inspectors; cycle-window source energy/power is retained in scorecards. Local data use lossless gzip/base64 and the browser decoder; no library bundle is copied."
 }

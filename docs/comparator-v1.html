@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Q-Pix · physical comparator V1</title>
-<script defer src="https://cdn.plot.ly/plotly-4.1.1.min.js"></script>
+<script defer src="https://cdn.plot.ly/plotly-4.1.1.min.js"></script><script defer src="assets/plot-data.js"></script>
 <script>window.MathJax={tex:{inlineMath:[['\\(','\\)']]},svg:{fontCache:'global'}};</script>
 <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-svg.js"></script>
 <script defer src="data/comparator-v1.js"></script>
@@ -26,7 +26,7 @@ table{border-collapse:collapse;width:100%;font-variant-numeric:tabular-nums;font
 <p class="deck">One 48 × 64 µm cell combines the continuous preamplifier, StrongARM latch and balanced two-stage buffers. This page records its local physical checks, sensitivity, timing, loading and heat.</p>
 <p class="notice" id="status">Loading measured module acceptance…</p>
 <p>96 physical MOS units include 40 tied dummies. Eleven matched pairs have coincident centroids; six recognized M1–M3 MOMs implement the filters and latch loads. Shared bias generation remains outside the channel. The native cell is <strong>Modules/CMP_PREAMP_V1</strong>.</p>
-</header>
+<p class="plot-policy">Compact overview plots; zoom is disabled. Displayed samples preserve time-bin extrema. Numerical results use full native data retained locally.</p></header>
 <section><h2>Interface and layout</h2>
 <p>INP and INN feed a continuously biased preamplifier. NBIAS comes from the separate reference converter. EVAL low precharges the latch; OUT and BAL become valid complementary decisions during EVAL high, after regeneration. RAW is an unbuffered diagnostic node. There are no new control bits. The ideal external EVAL fixture does not qualify the separate clock generator.</p>
 <div class="vectors"><figure><a href="figures/comparator-v1-circuit.svg"><img src="figures/comparator-v1-circuit.svg" alt="Transistor schematic of continuous gain, regenerative comparator, buffers and explicit capacitors"></a><figcaption>Inspectable source; tied dummies appear below the active circuit.</figcaption></figure>
@@ -46,7 +46,7 @@ table{border-collapse:collapse;width:100%;font-variant-numeric:tabular-nums;font
 <section><h2>Inspect the complete local waveform</h2>
 <label for="case">Measured record </label><select id="case"></select><p id="case-note"></p>
 <div class="plot" id="scope"></div>
-<p>All rows share the complete time axis and linked zoom. Clock-synchronous current lobes are deterministic interface interference. They are measured at the comparator input, driven by the CSA output; they are not detector-SUM charge errors or intrinsic noise. The switching offset is shown on the differential-input row.</p>
+<p>All fixed overview rows share the complete time range. Clock-synchronous current lobes are deterministic interface interference. They are measured at the comparator input, driven by the CSA output; they are not detector-SUM charge errors or intrinsic noise. The switching offset is shown on the differential-input row.</p>
 </section>
 <section><h2>Loading and source energy</h2>
 <div class="plot" id="loading"></div>

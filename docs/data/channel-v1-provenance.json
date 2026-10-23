@@ -213,5 +213,135 @@
     "path": "T018/build/channel-physical-v1-20261020/core-warm-response-v1/pex-298.15K-50MHz/human/export/schematic.svg",
     "sha256": "e2bcbb5ba2102338d82a4c95e521066173ebad25ea7c27e42a540143ca6c112e",
     "bytes": 79270
+  },
+  {
+    "path": "T018/build/channel-physical-v1-20261020/modes-v1/warm_10m-detector-v2/intent.json",
+    "sha256": "e65afca9a9793275660f6e5b87a98664dd806d58b7bc6917c6d592d2662d963c",
+    "bytes": 26524
+  },
+  {
+    "path": "T018/build/channel-physical-v1-20261020/modes-v1/warm_10m-detector-analysis-v1/measurements.json",
+    "sha256": "07bc2c4e7f2683d1a1bd62d6ccca544bed2a7a703b3d737c2311f7c4548062d2",
+    "bytes": 1214649
+  },
+  {
+    "path": "T018/build/channel-physical-v1-20261020/modes-v1/warm_10m-detector-analysis-v1/scope-data.json",
+    "sha256": "83e904c8438587f4a0313bb4bd90264202824f9bde31e1da290beebbc243a17c",
+    "bytes": 356500791
+  },
+  {
+    "path": "T018/build/channel-physical-v1-20261020/modes-v1/warm_10m-detector-v2/pex-298.15K-10MHz/inputs/bench.scs",
+    "sha256": "c47724642763e7f47eedb0628342e7c4b1113872cbcb2d8badd2bb916a0913e1",
+    "bytes": 12402
+  },
+  {
+    "path": "T018/build/channel-physical-v1-20261020/modes-v1/warm_10m-detector-v2/pex-298.15K-10MHz/inputs/circuit.sp",
+    "sha256": "8846543be8864c60888165879be3688e35b322043cde7c837504405012e0759e",
+    "bytes": 34579
+  },
+  {
+    "path": "T018/build/channel-physical-v1-20261020/modes-v1/warm_10m-detector-v2/pex-298.15K-10MHz/inputs/core-extracted.sp",
+    "sha256": "c1c88d31a0f333153e9b7da068f7e8ce360676aa525f332641f2f1c4548669b4",
+    "bytes": 20118632
+  },
+  {
+    "path": "T018/build/channel-physical-v1-20261020/modes-v1/warm_10m-detector-v2/pex-298.15K-10MHz/inputs/initial-state.ns",
+    "sha256": "df4e8f9ca0e29523e757d2de6155b57d7a1f08a37e51fac556756fc5d73d215e",
+    "bytes": 13453651
+  },
+  {
+    "path": "T018/build/channel-physical-v1-20261020/core-noise-warm-pilot-v2/intent.json",
+    "sha256": "be6d0283315023dfdff0d6c977fb49e394ce7c05e853daf80d5434f86b8c35b5",
+    "bytes": 62073
+  },
+  {
+    "path": "T018/build/channel-physical-v1-20261020/core-noise-warm-pilot-v2/complete-analysis-v2/measurements.json",
+    "sha256": "2e02ba6e9c1bd887e452e0e0eb51e833b3f3ae88dcd7c1c24f33723adbd0d560",
+    "bytes": 333808
+  },
+  {
+    "path": "T018/build/channel-physical-v1-20261020/core-noise-warm-pilot-v2/complete-analysis-v2/scope-data.json",
+    "sha256": "89261ad25f19223fb08f543a4634367202a6a6808e3420ac546aaf5b26ee0874",
+    "bytes": 18988885
+  },
+  {
+    "path": "T018/build/channel-physical-v1-20261020/core-noise-warm-pilot-v2/full-nearzero50/inputs/core-extracted.sp",
+    "sha256": "c1c88d31a0f333153e9b7da068f7e8ce360676aa525f332641f2f1c4548669b4",
+    "bytes": 20118632
+  },
+  {
+    "path": "T018/build/channel-physical-v1-20261020/core-noise-warm-pilot-v2/full-nearzero50/inputs/bench.scs",
+    "sha256": "fa81389dbda9351b3b74ac821d3d8ce0768af60220e3763d53154a8456ae3654",
+    "bytes": 5817
+  },
+  {
+    "path": "T018/build/channel-physical-v1-20261020/core-noise-warm-pilot-v2/full-nearzero50/inputs/initial-state.ns",
+    "sha256": "0b597f2c08b9323a6314c58bf401418e4ffabdff799522e87920912cc163233c",
+    "bytes": 13439908
+  },
+  {
+    "path": "T018/build/channel-physical-v1-20261020/core-noise-warm-pilot-v2/full-nearzero50/inputs/circuit.sp",
+    "sha256": "161e344de573d6b4213f072271b435ca3edefa9b7483c711c28ae1a914ee97c9",
+    "bytes": 4561
+  },
+  {
+    "path": "T018/build/channel-physical-v1-20261020/core-noise-warm-pilot-v2/hpa-nearzero50/inputs/core-extracted.sp",
+    "sha256": "c1c88d31a0f333153e9b7da068f7e8ce360676aa525f332641f2f1c4548669b4",
+    "bytes": 20118632
+  },
+  {
+    "path": "T018/build/channel-physical-v1-20261020/core-noise-warm-pilot-v2/hpa-nearzero50/inputs/circuit.sp",
+    "sha256": "161e344de573d6b4213f072271b435ca3edefa9b7483c711c28ae1a914ee97c9",
+    "bytes": 4561
+  },
+  {
+    "path": "T018/build/channel-physical-v1-20261020/core-noise-warm-pilot-v2/hpa-nearzero50/inputs/initial-state.ns",
+    "sha256": "0b597f2c08b9323a6314c58bf401418e4ffabdff799522e87920912cc163233c",
+    "bytes": 13439908
+  },
+  {
+    "path": "T018/build/channel-physical-v1-20261020/core-noise-warm-pilot-v2/hpa-nearzero50/inputs/bench.scs",
+    "sha256": "a65ece6b59411f8159a1d34db530d87c07f04dd7f1796eb688935df4d9d8af64",
+    "bytes": 12482
+  },
+  {
+    "path": "T018/build/channel-physical-v1-20261020/core-noise-warm-pilot-v2/full-noise50/inputs/circuit.sp",
+    "sha256": "161e344de573d6b4213f072271b435ca3edefa9b7483c711c28ae1a914ee97c9",
+    "bytes": 4561
+  },
+  {
+    "path": "T018/build/channel-physical-v1-20261020/core-noise-warm-pilot-v2/full-noise50/inputs/core-extracted.sp",
+    "sha256": "c1c88d31a0f333153e9b7da068f7e8ce360676aa525f332641f2f1c4548669b4",
+    "bytes": 20118632
+  },
+  {
+    "path": "T018/build/channel-physical-v1-20261020/core-noise-warm-pilot-v2/full-noise50/inputs/initial-state.ns",
+    "sha256": "0b597f2c08b9323a6314c58bf401418e4ffabdff799522e87920912cc163233c",
+    "bytes": 13439908
+  },
+  {
+    "path": "T018/build/channel-physical-v1-20261020/core-noise-warm-pilot-v2/full-noise50/inputs/bench.scs",
+    "sha256": "5da5206c09e7575d0c275c1245ec0f4e772a34128be801d659eeef434ed6b53f",
+    "bytes": 5813
+  },
+  {
+    "path": "T018/build/channel-physical-v1-20261020/core-noise-warm-pilot-v2/hpa-noise50/inputs/circuit.sp",
+    "sha256": "161e344de573d6b4213f072271b435ca3edefa9b7483c711c28ae1a914ee97c9",
+    "bytes": 4561
+  },
+  {
+    "path": "T018/build/channel-physical-v1-20261020/core-noise-warm-pilot-v2/hpa-noise50/inputs/bench.scs",
+    "sha256": "89060358fbb90bd134a7243ac5b4fb0aee3ed20f55b6ae0f09ae824aa2235c2b",
+    "bytes": 12478
+  },
+  {
+    "path": "T018/build/channel-physical-v1-20261020/core-noise-warm-pilot-v2/hpa-noise50/inputs/core-extracted.sp",
+    "sha256": "c1c88d31a0f333153e9b7da068f7e8ce360676aa525f332641f2f1c4548669b4",
+    "bytes": 20118632
+  },
+  {
+    "path": "T018/build/channel-physical-v1-20261020/core-noise-warm-pilot-v2/hpa-noise50/inputs/initial-state.ns",
+    "sha256": "0b597f2c08b9323a6314c58bf401418e4ffabdff799522e87920912cc163233c",
+    "bytes": 13439908
   }
 ]

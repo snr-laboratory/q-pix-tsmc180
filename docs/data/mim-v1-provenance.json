@@ -1,5 +1,15 @@
 [
   {
+    "path": "T018/build/channel-mim4-v1-20261021/formal-v2-proof-v1/formal.json",
+    "sha256": "c3c70c969ce03ed7ae9973b8e95e48674908f1da193024f797edb633e3b345cf",
+    "bytes": 10157
+  },
+  {
+    "path": "T018/build/channel-mim4-v1-20261021/formal-v2-preparation-v1/mask-proof/mask-comparison.json",
+    "sha256": "055fc122ac1339bef242f1ae398ef9927cdf8bed7fc42050f6e01c10ffdb7184",
+    "bytes": 11753
+  },
+  {
     "path": "T018/build/mim-relayout-v1-20261021/clock-formal-native-v1.json",
     "sha256": "ba6c4305654f7aad75e25d012e9a84199338d6670e311fd38dfcb1be6c931d88",
     "bytes": 3422
@@ -225,6 +235,81 @@
     "bytes": 99032620
   },
   {
+    "path": "T018/build/channel-mim4-v1-20261021/star-v3-cold50-calibration-full-v2/intent.json",
+    "sha256": "a48a2b262bf089d83a3f8ee95e868b87ea7b727a3d948e4de4e12540fa32ade7",
+    "bytes": 70417
+  },
+  {
+    "path": "T018/build/channel-mim4-v1-20261021/star-v3-cold50-calibration-full-analysis-v1/measurements.json",
+    "sha256": "ddc41d599d069dc6d4a25e3baa494704858d7b2ebc49795f83608680ba1b3c3e",
+    "bytes": 210988
+  },
+  {
+    "path": "T018/build/channel-mim4-v1-20261021/star-v3-cold50-calibration-full-analysis-v1/scope-data.json",
+    "sha256": "5a5f57fe3a5c4cc676c768c445eda53d7d8ac1e18ac6860373611ef7ca7ee767",
+    "bytes": 237118832
+  },
+  {
+    "path": "T018/build/channel-mim4-v1-20261021/star-v3-cold50-automatic-simultaneous-v1/intent.json",
+    "sha256": "c58e631078edf34be7b49e0228b73f27a807c36be5860a5a6dec1f1c16b85a86",
+    "bytes": 49755
+  },
+  {
+    "path": "T018/build/channel-mim4-v1-20261021/star-v3-cold50-automatic-simultaneous-analysis-v1/measurements.json",
+    "sha256": "1b45ed91f71c03bfab565492f8a0a4c2425bada29451debab846356c306c95fa",
+    "bytes": 469121
+  },
+  {
+    "path": "T018/build/channel-mim4-v1-20261021/star-v3-cold50-automatic-simultaneous-analysis-v1/scope-data.json",
+    "sha256": "8c6b63d058df0739464ef579524c7544c561a460de1306e8898963a93b8328db",
+    "bytes": 225789015
+  },
+  {
+    "path": "T018/build/channel-mim4-v1-20261021/modes-v2/warm_10m-calibration-full-v1/intent.json",
+    "sha256": "99ea521a92250920c763efc1291ab0bd8c4ea2f146f39ef52571422fd5747b58",
+    "bytes": 71156
+  },
+  {
+    "path": "T018/build/channel-mim4-v1-20261021/modes-v2/warm_10m-calibration-full-analysis-v1/measurements.json",
+    "sha256": "59c98e86773e23e543b1ee767a27215507f73c1ab63e5e20fc8d9dcd63df4d44",
+    "bytes": 210511
+  },
+  {
+    "path": "T018/build/channel-mim4-v1-20261021/modes-v2/warm_10m-calibration-full-analysis-v1/scope-data.json",
+    "sha256": "425550ad0eb93841d4a2bd9ae74b230d30e5c627f1ffdcf1fdc872059be0c089",
+    "bytes": 103129545
+  },
+  {
+    "path": "T018/build/channel-mim4-v1-20261021/modes-v2/warm_10m-automatic-simultaneous-v1/intent.json",
+    "sha256": "147b21555e46cc579d7913c82996c100e12ce7e1af2b298cd02b1fa36404749d",
+    "bytes": 49877
+  },
+  {
+    "path": "T018/build/channel-mim4-v1-20261021/modes-v2/warm_10m-automatic-simultaneous-analysis-v1/measurements.json",
+    "sha256": "f12b543f6142fce24f1dfba364652e753298b8c6636bf0033cdd736b86b8a086",
+    "bytes": 469451
+  },
+  {
+    "path": "T018/build/channel-mim4-v1-20261021/modes-v2/warm_10m-automatic-simultaneous-analysis-v1/scope-data.json",
+    "sha256": "4639df2bbcb26c747a99e4a8dcc1f977dc85144bddb22364703e6f87e4055650",
+    "bytes": 99424288
+  },
+  {
+    "path": "T018/build/channel-mim4-v1-20261021/modes-v2/warm_10m-normal-scale-staggered-8fc-v1/intent.json",
+    "sha256": "805a5df6846e2fc2302626821e2a3ffb03e6747c76e4be385a9fca7b5c7b303e",
+    "bytes": 52345
+  },
+  {
+    "path": "T018/build/channel-mim4-v1-20261021/modes-v2/warm_10m-normal-scale-staggered-8fc-analysis-v1/measurements.json",
+    "sha256": "cc1da4567e62ab0e8ac8e7e06b05a4204e64ae1b9cc87aa7ce6fd27ff2ae8946",
+    "bytes": 474527
+  },
+  {
+    "path": "T018/build/channel-mim4-v1-20261021/modes-v2/warm_10m-normal-scale-staggered-8fc-analysis-v1/scope-data.json",
+    "sha256": "f4569261c97069e9f42b891b11599363dd427175998225c5b7f018763f3bb071",
+    "bytes": 101677915
+  },
+  {
     "path": "Modules/QPIX_ANALOG_CORE_MIM4_V1/schematic/data.dm",
     "sha256": "7192c599a0beec4b3eb4c685feb65408f4dd21c5d82f0d19a9a24a4bc702cc99",
     "bytes": 3372
@@ -263,6 +348,41 @@
     "path": "T018/build/channel-mim4-v1-20261021/extraction-ground-v3/extracted.sp",
     "sha256": "7daecadb3ad351db5c0faeb76c8540168a3ae20e7d30728dbd85bf09a1d3601f",
     "bytes": 11919519
+  },
+  {
+    "path": "Modules/QPIX_ANALOG_CORE_MIM4_V2/schematic/data.dm",
+    "sha256": "c20e7d19bcb3bf296c3f58954e01984385bcd734fb8f98b1d1baf9c2e06a424f",
+    "bytes": 3372
+  },
+  {
+    "path": "Modules/QPIX_ANALOG_CORE_MIM4_V2/schematic/master.tag",
+    "sha256": "754d948d84456304dc9c92190e19089b4156a194ac7f002aad93b7d91a110099",
+    "bytes": 35
+  },
+  {
+    "path": "Modules/QPIX_ANALOG_CORE_MIM4_V2/schematic/sch.oa",
+    "sha256": "a64f36b8e33e0d568081cfdc5ed9f4d834faf79a8267e7d8012faefd8ba92245",
+    "bytes": 67644
+  },
+  {
+    "path": "Modules/QPIX_ANALOG_CORE_MIM4_V2/symbol/master.tag",
+    "sha256": "14f73fc67b1fd48a1d040157c35b5361471e38eaed0e71114fdc831cf4150da7",
+    "bytes": 38
+  },
+  {
+    "path": "Modules/QPIX_ANALOG_CORE_MIM4_V2/symbol/symbol.oa",
+    "sha256": "a6a5718698e508bc7b120b6421de7dd89fcf2e3d741fe4bebc418c8b5953a8f0",
+    "bytes": 34516
+  },
+  {
+    "path": "Modules/QPIX_ANALOG_CORE_MIM4_V2/layout/layout.oa",
+    "sha256": "77dfcfce158b20725c2db015779916a83c2d41271c2605a17ca550fc4b7fc841",
+    "bytes": 397084
+  },
+  {
+    "path": "Modules/QPIX_ANALOG_CORE_MIM4_V2/layout/master.tag",
+    "sha256": "0547da475c6495aab98e43894e8e330ed09303a205699e8413c35388b6906a05",
+    "bytes": 38
   },
   {
     "path": "analog/tsmc180/Schematic/clock_phase_mim_v1.sch",
@@ -550,6 +670,181 @@
     "bytes": 4660751
   },
   {
+    "path": "T018/build/channel-mim4-v1-20261021/modes-v2/warm_5m-response-v1/intent.json",
+    "sha256": "1df71aaec6216872546f6a1a9e9553c3ab395d3fb42977934cd5d6e22fe22963",
+    "bytes": 48295
+  },
+  {
+    "path": "T018/build/channel-mim4-v1-20261021/modes-v2/warm_5m-response-analysis-v1/measurements.json",
+    "sha256": "df6fb9f5c44a0990bd349cfa3c2bbc2f42509640e3941ed1697fcfd74348d33c",
+    "bytes": 96331
+  },
+  {
+    "path": "T018/build/channel-mim4-v1-20261021/modes-v2/warm_5m-response-analysis-v1/scope-data.json",
+    "sha256": "f501d019a5518c6c589cc28bdfd4387dbbcf900085394dd9a833cc2a684b3452",
+    "bytes": 10441756
+  },
+  {
+    "path": "T018/build/channel-mim4-v1-20261021/modes-v2/warm_5m-response-v1/pex-298.15K-5MHz/inputs/bench.scs",
+    "sha256": "5755339760ceefe790eb8e8bb63296f3f66243595b0ec549abfc25a05123298f",
+    "bytes": 7353
+  },
+  {
+    "path": "T018/build/channel-mim4-v1-20261021/modes-v2/warm_5m-response-v1/pex-298.15K-5MHz/inputs/circuit.sp",
+    "sha256": "fda11b77b75dd1f047a291a0886c35cc5be48930a60305f420240180f6950d9a",
+    "bytes": 5748
+  },
+  {
+    "path": "T018/build/channel-mim4-v1-20261021/modes-v2/warm_5m-response-v1/pex-298.15K-5MHz/inputs/core-extracted.sp",
+    "sha256": "7daecadb3ad351db5c0faeb76c8540168a3ae20e7d30728dbd85bf09a1d3601f",
+    "bytes": 11919519
+  },
+  {
+    "path": "T018/build/channel-mim4-v1-20261021/modes-v2/warm_5m-response-v1/pex-298.15K-5MHz/inputs/initial-state.ns",
+    "sha256": "350ce8941ddef5d885a591d87f14b03a329c427f0c06d6d94d49798bf5167252",
+    "bytes": 4678860
+  },
+  {
+    "path": "T018/build/channel-mim4-v1-20261021/modes-v2/warm_5m-mid-response-v1/intent.json",
+    "sha256": "d89f4f4e34772892f6ace97de8bf083b0f0ccfc74005e2823b43ae25263e61ff",
+    "bytes": 48578
+  },
+  {
+    "path": "T018/build/channel-mim4-v1-20261021/modes-v2/warm_5m-mid-response-analysis-v1/measurements.json",
+    "sha256": "3db5de5958d963e8b86a1606aea34d053d798f11d62493488fdb028e5c965747",
+    "bytes": 96517
+  },
+  {
+    "path": "T018/build/channel-mim4-v1-20261021/modes-v2/warm_5m-mid-response-analysis-v1/scope-data.json",
+    "sha256": "8f520d13d0e33de4240f3d97806398c5fa507e451c60d9a30547f747f9dce51a",
+    "bytes": 10464906
+  },
+  {
+    "path": "T018/build/channel-mim4-v1-20261021/modes-v2/warm_5m-mid-response-v1/pex-298.15K-5MHz/inputs/bench.scs",
+    "sha256": "5755339760ceefe790eb8e8bb63296f3f66243595b0ec549abfc25a05123298f",
+    "bytes": 7353
+  },
+  {
+    "path": "T018/build/channel-mim4-v1-20261021/modes-v2/warm_5m-mid-response-v1/pex-298.15K-5MHz/inputs/circuit.sp",
+    "sha256": "80014f0f99e91c509acdf35db06763714a5c19dc722277afbc6f277de95a0bee",
+    "bytes": 5750
+  },
+  {
+    "path": "T018/build/channel-mim4-v1-20261021/modes-v2/warm_5m-mid-response-v1/pex-298.15K-5MHz/inputs/core-extracted.sp",
+    "sha256": "7daecadb3ad351db5c0faeb76c8540168a3ae20e7d30728dbd85bf09a1d3601f",
+    "bytes": 11919519
+  },
+  {
+    "path": "T018/build/channel-mim4-v1-20261021/modes-v2/warm_5m-mid-response-v1/pex-298.15K-5MHz/inputs/initial-state.ns",
+    "sha256": "ea13a68bbdb303f46e6d8b7a5fb876ad7a49344a51be06124a89ef7a608bfebc",
+    "bytes": 4712320
+  },
+  {
+    "path": "T018/build/channel-mim4-v1-20261021/modes-v2/warm_10m-response-v1/intent.json",
+    "sha256": "2f8489f95ab466e92746f9accd5cb83f4bf9424af731afec01fe030cd254a704",
+    "bytes": 48292
+  },
+  {
+    "path": "T018/build/channel-mim4-v1-20261021/modes-v2/warm_10m-response-analysis-v1/measurements.json",
+    "sha256": "2883f37828254e300e4827188eab6e05520e4dfc8a2cc79147772097abaac5ac",
+    "bytes": 96434
+  },
+  {
+    "path": "T018/build/channel-mim4-v1-20261021/modes-v2/warm_10m-response-analysis-v1/scope-data.json",
+    "sha256": "90cb852aa3d73cb1e2701675cc8aa88d2e136158f8a7b76bf6097192cfbb384a",
+    "bytes": 10473270
+  },
+  {
+    "path": "T018/build/channel-mim4-v1-20261021/modes-v2/warm_10m-response-v1/pex-298.15K-10MHz/inputs/bench.scs",
+    "sha256": "b098d88b3320f5c5b3e1bdd6ac7f252807296c776196ba6408ce9036a85265a1",
+    "bytes": 7353
+  },
+  {
+    "path": "T018/build/channel-mim4-v1-20261021/modes-v2/warm_10m-response-v1/pex-298.15K-10MHz/inputs/circuit.sp",
+    "sha256": "a232852c58af6f66e245cc2ba2f250303dd4a6c387b7a1f2be67db539b49270c",
+    "bytes": 5800
+  },
+  {
+    "path": "T018/build/channel-mim4-v1-20261021/modes-v2/warm_10m-response-v1/pex-298.15K-10MHz/inputs/core-extracted.sp",
+    "sha256": "7daecadb3ad351db5c0faeb76c8540168a3ae20e7d30728dbd85bf09a1d3601f",
+    "bytes": 11919519
+  },
+  {
+    "path": "T018/build/channel-mim4-v1-20261021/modes-v2/warm_10m-response-v1/pex-298.15K-10MHz/inputs/initial-state.ns",
+    "sha256": "370f52dda6f607880bd03d2f5e5f61c3b6947a7ff4b8e55cfc869d55d6f22fc4",
+    "bytes": 4684904
+  },
+  {
+    "path": "T018/build/channel-mim4-v1-20261021/modes-v2/warm_20m-response-v1/intent.json",
+    "sha256": "3f678935f7f401fabde1147d668177e91ffce2562e4c6f9071e4e8e7d7907481",
+    "bytes": 48314
+  },
+  {
+    "path": "T018/build/channel-mim4-v1-20261021/modes-v2/warm_20m-response-analysis-v1/measurements.json",
+    "sha256": "6153d8eed13d6ff476d4560377bdfbf2f9e6b792f334e6fbda19d6a658da3d4b",
+    "bytes": 96428
+  },
+  {
+    "path": "T018/build/channel-mim4-v1-20261021/modes-v2/warm_20m-response-analysis-v1/scope-data.json",
+    "sha256": "3952b9b2802338944192133f8839c7c015e8c708599312714716c28363aa6933",
+    "bytes": 10356236
+  },
+  {
+    "path": "T018/build/channel-mim4-v1-20261021/modes-v2/warm_20m-response-v1/pex-298.15K-20MHz/inputs/bench.scs",
+    "sha256": "0f4470df538ce3783288c97401a2051ab82702ceedc0d007c041ce8921da7477",
+    "bytes": 7338
+  },
+  {
+    "path": "T018/build/channel-mim4-v1-20261021/modes-v2/warm_20m-response-v1/pex-298.15K-20MHz/inputs/circuit.sp",
+    "sha256": "cb084c52be847920fce11f294253c40011e17bb1a170a3a4a23211c7e3fef8b5",
+    "bytes": 5574
+  },
+  {
+    "path": "T018/build/channel-mim4-v1-20261021/modes-v2/warm_20m-response-v1/pex-298.15K-20MHz/inputs/core-extracted.sp",
+    "sha256": "7daecadb3ad351db5c0faeb76c8540168a3ae20e7d30728dbd85bf09a1d3601f",
+    "bytes": 11919519
+  },
+  {
+    "path": "T018/build/channel-mim4-v1-20261021/modes-v2/warm_20m-response-v1/pex-298.15K-20MHz/inputs/initial-state.ns",
+    "sha256": "2abf2c36efe3fafff6f2eeb2b61403caa8102b51693574ebf2f26cec1e52c75d",
+    "bytes": 4683046
+  },
+  {
+    "path": "T018/build/channel-mim4-v1-20261021/modes-v2/warm_5m-physical-response-v1/intent.json",
+    "sha256": "ed344b80458866ac25fa1f8d6aaced4349ae1a83641332fe39160bc44bd28673",
+    "bytes": 48376
+  },
+  {
+    "path": "T018/build/channel-mim4-v1-20261021/modes-v2/warm_5m-physical-response-analysis-v1/measurements.json",
+    "sha256": "45a1140310884c249aef643a1b14c06cda31e2d306fdf6aec1ec086201bfb176",
+    "bytes": 96445
+  },
+  {
+    "path": "T018/build/channel-mim4-v1-20261021/modes-v2/warm_5m-physical-response-analysis-v1/scope-data.json",
+    "sha256": "b92eea6f8cd08773f993ba401af0c2643b447b0e2385db68a74fe6cace3eb7e1",
+    "bytes": 10383234
+  },
+  {
+    "path": "T018/build/channel-mim4-v1-20261021/modes-v2/warm_5m-physical-response-v1/pex-298.15K-5MHz/inputs/bench.scs",
+    "sha256": "5755339760ceefe790eb8e8bb63296f3f66243595b0ec549abfc25a05123298f",
+    "bytes": 7353
+  },
+  {
+    "path": "T018/build/channel-mim4-v1-20261021/modes-v2/warm_5m-physical-response-v1/pex-298.15K-5MHz/inputs/circuit.sp",
+    "sha256": "0697b6d7d334c0cafe2e3967a00204cdcd9c346c55d14c2cc06fbe817cd4f425",
+    "bytes": 5749
+  },
+  {
+    "path": "T018/build/channel-mim4-v1-20261021/modes-v2/warm_5m-physical-response-v1/pex-298.15K-5MHz/inputs/core-extracted.sp",
+    "sha256": "7daecadb3ad351db5c0faeb76c8540168a3ae20e7d30728dbd85bf09a1d3601f",
+    "bytes": 11919519
+  },
+  {
+    "path": "T018/build/channel-mim4-v1-20261021/modes-v2/warm_5m-physical-response-v1/pex-298.15K-5MHz/inputs/initial-state.ns",
+    "sha256": "4a8c188053f7196994adea171f606261cd8668baa077d1301f49a8953b438397",
+    "bytes": 4677602
+  },
+  {
     "path": "T018/build/channel-mim4-v1-20261021/star-v3-cold50-short-hpa-v1/pex-77K-50MHz/inputs/bench.scs",
     "sha256": "7715009af362718d38f36cc6396496e21df9b24a5112a6880c80ebcea9b1f426",
     "bytes": 539464
@@ -590,6 +885,51 @@
     "bytes": 4667221
   },
   {
+    "path": "T018/build/channel-mim4-v1-20261021/star-v3-cold50-calibration-full-v2/pex-77K-50MHz/inputs/bench.scs",
+    "sha256": "49f8639fcb40a598e744de59e157c7a8c5146aa7a87e854837f8e4d724903e8c",
+    "bytes": 518706
+  },
+  {
+    "path": "T018/build/channel-mim4-v1-20261021/star-v3-cold50-calibration-full-v2/pex-77K-50MHz/inputs/initial-state.ns",
+    "sha256": "1f54dd89f122547a128dc039bdd823cbeefd1d63e558af5e6150a118e1ca719e",
+    "bytes": 4660751
+  },
+  {
+    "path": "T018/build/channel-mim4-v1-20261021/star-v3-cold50-calibration-full-v2/pex-77K-50MHz/inputs/circuit.sp",
+    "sha256": "a6c0d33ae4756901804eb4fe854447c121647eca8f8ff93527791e0c57938130",
+    "bytes": 13637
+  },
+  {
+    "path": "T018/build/channel-mim4-v1-20261021/star-v3-cold50-calibration-full-v2/pex-77K-50MHz/inputs/core-extracted.sp",
+    "sha256": "7daecadb3ad351db5c0faeb76c8540168a3ae20e7d30728dbd85bf09a1d3601f",
+    "bytes": 11919519
+  },
+  {
+    "path": "config/channel_mim4_calibration_cold_execution_v1.toml",
+    "sha256": "3f330dfafa71dd66f46588b11aa5f8893ff31818a572964725f18e6de6535337",
+    "bytes": 279
+  },
+  {
+    "path": "T018/build/channel-mim4-v1-20261021/modes-v2/warm_10m-calibration-full-v1/pex-298.15K-10MHz/inputs/core-extracted.sp",
+    "sha256": "7daecadb3ad351db5c0faeb76c8540168a3ae20e7d30728dbd85bf09a1d3601f",
+    "bytes": 11919519
+  },
+  {
+    "path": "T018/build/channel-mim4-v1-20261021/modes-v2/warm_10m-calibration-full-v1/pex-298.15K-10MHz/inputs/circuit.sp",
+    "sha256": "edac7b426d407612aef6ffc751e2f130c9bd687e841a60ca8417e9ea2b0ce16b",
+    "bytes": 13729
+  },
+  {
+    "path": "T018/build/channel-mim4-v1-20261021/modes-v2/warm_10m-calibration-full-v1/pex-298.15K-10MHz/inputs/initial-state.ns",
+    "sha256": "370f52dda6f607880bd03d2f5e5f61c3b6947a7ff4b8e55cfc869d55d6f22fc4",
+    "bytes": 4684904
+  },
+  {
+    "path": "T018/build/channel-mim4-v1-20261021/modes-v2/warm_10m-calibration-full-v1/pex-298.15K-10MHz/inputs/bench.scs",
+    "sha256": "16fcda45c4f4a28b238d65e71edefbdd4b743cc38d8f675c7700bcc02d4f9b4d",
+    "bytes": 7356
+  },
+  {
     "path": "T018/build/channel-mim4-v1-20261021/star-v3-warm50-automatic-simultaneous-v2/pex-298.15K-50MHz/inputs/circuit.sp",
     "sha256": "d624f1da9a70004d0ce2a6bd5ff6235ca111d03ae5436440344e8f01befcf1da",
     "bytes": 11194
@@ -608,6 +948,166 @@
     "path": "T018/build/channel-mim4-v1-20261021/star-v3-warm50-automatic-simultaneous-v2/pex-298.15K-50MHz/inputs/initial-state.ns",
     "sha256": "a196fcf25fbc1d172a5e7e1e9492ff54533abfb6dad0469b2de4954456dfe671",
     "bytes": 4667221
+  },
+  {
+    "path": "T018/build/channel-mim4-v1-20261021/star-v3-cold50-automatic-simultaneous-v1/pex-77K-50MHz/inputs/core-extracted.sp",
+    "sha256": "7daecadb3ad351db5c0faeb76c8540168a3ae20e7d30728dbd85bf09a1d3601f",
+    "bytes": 11919519
+  },
+  {
+    "path": "T018/build/channel-mim4-v1-20261021/star-v3-cold50-automatic-simultaneous-v1/pex-77K-50MHz/inputs/initial-state.ns",
+    "sha256": "1f54dd89f122547a128dc039bdd823cbeefd1d63e558af5e6150a118e1ca719e",
+    "bytes": 4660751
+  },
+  {
+    "path": "T018/build/channel-mim4-v1-20261021/star-v3-cold50-automatic-simultaneous-v1/pex-77K-50MHz/inputs/bench.scs",
+    "sha256": "04658a44cc54109daed461363afea65eb67145ff59221250323f5380bd82e7e9",
+    "bytes": 518704
+  },
+  {
+    "path": "T018/build/channel-mim4-v1-20261021/star-v3-cold50-automatic-simultaneous-v1/pex-77K-50MHz/inputs/circuit.sp",
+    "sha256": "fc9782cc17d747920f0a19a8fbda1812385f2b98fe7adebd8989d9c9de47ab8d",
+    "bytes": 11196
+  },
+  {
+    "path": "T018/build/channel-mim4-v1-20261021/modes-v2/warm_10m-automatic-simultaneous-v1/pex-298.15K-10MHz/inputs/circuit.sp",
+    "sha256": "bbab77c39210cc50085e2e7db14512234162b547d00b2e9309a06e6ab8a3cb64",
+    "bytes": 11247
+  },
+  {
+    "path": "T018/build/channel-mim4-v1-20261021/modes-v2/warm_10m-automatic-simultaneous-v1/pex-298.15K-10MHz/inputs/core-extracted.sp",
+    "sha256": "7daecadb3ad351db5c0faeb76c8540168a3ae20e7d30728dbd85bf09a1d3601f",
+    "bytes": 11919519
+  },
+  {
+    "path": "T018/build/channel-mim4-v1-20261021/modes-v2/warm_10m-automatic-simultaneous-v1/pex-298.15K-10MHz/inputs/bench.scs",
+    "sha256": "0cdbf0255ddb38ab81d97aa4747e67a8194b3fd44e57ab6ab00bb901656e5943",
+    "bytes": 7354
+  },
+  {
+    "path": "T018/build/channel-mim4-v1-20261021/modes-v2/warm_10m-automatic-simultaneous-v1/pex-298.15K-10MHz/inputs/initial-state.ns",
+    "sha256": "370f52dda6f607880bd03d2f5e5f61c3b6947a7ff4b8e55cfc869d55d6f22fc4",
+    "bytes": 4684904
+  },
+  {
+    "path": "T018/build/channel-mim4-v1-20261021/modes-v2/warm_10m-normal-scale-staggered-8fc-v1/pex-298.15K-10MHz/inputs/bench.scs",
+    "sha256": "0cdbf0255ddb38ab81d97aa4747e67a8194b3fd44e57ab6ab00bb901656e5943",
+    "bytes": 7354
+  },
+  {
+    "path": "T018/build/channel-mim4-v1-20261021/modes-v2/warm_10m-normal-scale-staggered-8fc-v1/pex-298.15K-10MHz/inputs/initial-state.ns",
+    "sha256": "370f52dda6f607880bd03d2f5e5f61c3b6947a7ff4b8e55cfc869d55d6f22fc4",
+    "bytes": 4684904
+  },
+  {
+    "path": "T018/build/channel-mim4-v1-20261021/modes-v2/warm_10m-normal-scale-staggered-8fc-v1/pex-298.15K-10MHz/inputs/core-extracted.sp",
+    "sha256": "7daecadb3ad351db5c0faeb76c8540168a3ae20e7d30728dbd85bf09a1d3601f",
+    "bytes": 11919519
+  },
+  {
+    "path": "T018/build/channel-mim4-v1-20261021/modes-v2/warm_10m-normal-scale-staggered-8fc-v1/pex-298.15K-10MHz/inputs/circuit.sp",
+    "sha256": "abf0d3319a5588aae75850d9fe52f798de290ff2de2fdbcfec267ab78216ed72",
+    "bytes": 11263
+  },
+  {
+    "path": "T018/build/channel-mim4-v1-20261021/modes-v2/warm_10m-detector-conditioned-v1/intent.json",
+    "sha256": "70c0a2bedb97a89a5fdede5ff01e561e200157665adbade8c47a1e28a2ad4cb6",
+    "bytes": 52325
+  },
+  {
+    "path": "T018/build/channel-mim4-v1-20261021/modes-v2/warm_10m-detector-conditioned-analysis-v3/measurements.json",
+    "sha256": "5ff412a221a0c7845cb1fe8c98cef69dd50c28e0ba78edb3c4422e74ccb577ea",
+    "bytes": 5828830
+  },
+  {
+    "path": "config/channel_mim4_detector_warm_10m_v1.toml",
+    "sha256": "9b70968b634b8356063b7058cefba4c960e66106d211f17bcb4d86e96139e48a",
+    "bytes": 1618
+  },
+  {
+    "path": "T018/build/channel-mim4-v1-20261021/modes-v2/warm_10m-detector-conditioned-v1/pex-298.15K-10MHz/inputs/initial-state.ns",
+    "sha256": "370f52dda6f607880bd03d2f5e5f61c3b6947a7ff4b8e55cfc869d55d6f22fc4",
+    "bytes": 4684904
+  },
+  {
+    "path": "T018/build/channel-mim4-v1-20261021/modes-v2/warm_10m-detector-conditioned-v1/pex-298.15K-10MHz/inputs/bench.scs",
+    "sha256": "2dbcc7dc7091afdc6d22f6f0c8847aa365933467dc4a787943de15867013f0ea",
+    "bytes": 7353
+  },
+  {
+    "path": "T018/build/channel-mim4-v1-20261021/modes-v2/warm_10m-detector-conditioned-v1/pex-298.15K-10MHz/inputs/core-extracted.sp",
+    "sha256": "7daecadb3ad351db5c0faeb76c8540168a3ae20e7d30728dbd85bf09a1d3601f",
+    "bytes": 11919519
+  },
+  {
+    "path": "T018/build/channel-mim4-v1-20261021/modes-v2/warm_10m-detector-conditioned-v1/pex-298.15K-10MHz/inputs/circuit.sp",
+    "sha256": "17b7cae531231ce2d04323595801ac9a28218151f19ca0fa1cd71fff23cdc8f9",
+    "bytes": 217833
+  },
+  {
+    "path": "T018/build/vigil/sessions/78f65514f9654bd1f75c7fb5c4359b59/jobs/7d4a7104454e726012f9a0c3e911bfac/run/inputs/initial-state.ns",
+    "sha256": "370f52dda6f607880bd03d2f5e5f61c3b6947a7ff4b8e55cfc869d55d6f22fc4",
+    "bytes": 4684904
+  },
+  {
+    "path": "T018/build/vigil/sessions/78f65514f9654bd1f75c7fb5c4359b59/jobs/7d4a7104454e726012f9a0c3e911bfac/run/inputs/bench.scs",
+    "sha256": "2dbcc7dc7091afdc6d22f6f0c8847aa365933467dc4a787943de15867013f0ea",
+    "bytes": 7353
+  },
+  {
+    "path": "T018/build/vigil/sessions/78f65514f9654bd1f75c7fb5c4359b59/jobs/7d4a7104454e726012f9a0c3e911bfac/run/inputs/core-extracted.sp",
+    "sha256": "7daecadb3ad351db5c0faeb76c8540168a3ae20e7d30728dbd85bf09a1d3601f",
+    "bytes": 11919519
+  },
+  {
+    "path": "T018/build/vigil/sessions/78f65514f9654bd1f75c7fb5c4359b59/jobs/7d4a7104454e726012f9a0c3e911bfac/run/inputs/circuit.sp",
+    "sha256": "17b7cae531231ce2d04323595801ac9a28218151f19ca0fa1cd71fff23cdc8f9",
+    "bytes": 217833
+  },
+  {
+    "path": "T018/build/vigil/sessions/78f65514f9654bd1f75c7fb5c4359b59/jobs/fce890adf1f5e17cb8f488a06d258a19/run/inputs/bench.scs",
+    "sha256": "0cdbf0255ddb38ab81d97aa4747e67a8194b3fd44e57ab6ab00bb901656e5943",
+    "bytes": 7354
+  },
+  {
+    "path": "T018/build/vigil/sessions/78f65514f9654bd1f75c7fb5c4359b59/jobs/fce890adf1f5e17cb8f488a06d258a19/run/inputs/initial-state.ns",
+    "sha256": "370f52dda6f607880bd03d2f5e5f61c3b6947a7ff4b8e55cfc869d55d6f22fc4",
+    "bytes": 4684904
+  },
+  {
+    "path": "T018/build/vigil/sessions/78f65514f9654bd1f75c7fb5c4359b59/jobs/fce890adf1f5e17cb8f488a06d258a19/run/inputs/core-extracted.sp",
+    "sha256": "7daecadb3ad351db5c0faeb76c8540168a3ae20e7d30728dbd85bf09a1d3601f",
+    "bytes": 11919519
+  },
+  {
+    "path": "T018/build/vigil/sessions/78f65514f9654bd1f75c7fb5c4359b59/jobs/fce890adf1f5e17cb8f488a06d258a19/run/inputs/circuit.sp",
+    "sha256": "abf0d3319a5588aae75850d9fe52f798de290ff2de2fdbcfec267ab78216ed72",
+    "bytes": 11263
+  },
+  {
+    "path": "reference/qpix_sim/QPix_Spice/InCurrent_Mod.txt",
+    "sha256": "7e9e9426397b3c9e22f0687ffd190828799a92d6dcdb34f98509749e292c1004",
+    "bytes": 33677
+  },
+  {
+    "path": "T018/build/channel-mim4-v1-20261021/modes-v2/warm_10m-detector-conditioned-analysis-v3/channel-0-scope.json",
+    "sha256": "614eb3501e9c8d86b8d3144580f49b9aee936de5630e4a0aca09a3a429365182",
+    "bytes": 1641690
+  },
+  {
+    "path": "T018/build/channel-mim4-v1-20261021/modes-v2/warm_10m-detector-conditioned-analysis-v3/channel-1-scope.json",
+    "sha256": "dc5641dd999bd7a1aaf9190b0dc1af20bf6f803f553ea6682c40b4f7a88009f8",
+    "bytes": 1639812
+  },
+  {
+    "path": "T018/build/channel-mim4-v1-20261021/modes-v2/warm_10m-detector-conditioned-analysis-v3/channel-2-scope.json",
+    "sha256": "767711c1d02db6692670bc50f29182eea54d45e634f372f6912eeeb51d7b61eb",
+    "bytes": 1643040
+  },
+  {
+    "path": "T018/build/channel-mim4-v1-20261021/modes-v2/warm_10m-detector-conditioned-analysis-v3/channel-3-scope.json",
+    "sha256": "80d04db7f50a14fe771e25c51a9dd5b0a8d1b38494b1a6ec3076bfb94b329c0b",
+    "bytes": 1641138
   },
   {
     "path": "T018/build/mim-relayout-v1-20261021/clock-render-v3/native-layout.svg",

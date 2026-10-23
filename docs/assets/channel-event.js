@@ -3,53 +3,13 @@ window.QPIX_EVENT_VIEWER=(()=>{
  const colors=['#247986','#c87536','#6b5b92','#71828b'];
  const style={paper_bgcolor:'white',plot_bgcolor:'#f8fbfc',font:{family:'system-ui',color:'#203e4c'},hovermode:'x unified'};
  const options={responsive:true,displaylogo:false,scrollZoom:true,toImageButtonOptions:{format:'svg'}};
- const cache=new Map();let generation=0;
+ let generation=0;
  const fmt=(v,n=4)=>Number(v).toFixed(n);
  function reportError(error){
   window.CHANNEL_ERRORS=window.CHANNEL_ERRORS||[];window.CHANNEL_ERRORS.push(String(error));
   document.getElementById('detector-view-note').textContent=String(error);
  }
- async function unpack(packed){
-  const bytes=Uint8Array.from(atob(packed),v=>v.charCodeAt(0));
-  return JSON.parse(await new Response(new Blob([bytes]).stream().pipeThrough(new DecompressionStream('gzip'))).text());
- }
- function load(asset){
-  if(!/^data\/channel-detector\/[A-Za-z0-9_-]+\/(overview|part-\d+)\.js$/.test(asset.file))throw new Error('Invalid local detector asset');
-  if(!/^[0-9a-f]{64}$/.test(asset.payload_sha256))throw new Error('Detector asset hash required');
-  const cacheKey=asset.file+':'+asset.payload_sha256;
-  if(!cache.has(cacheKey)){
-   const pending=new Promise((resolve,reject)=>{
-    const script=document.createElement('script');script.src=asset.file;
-    script.onload=async()=>{
-     try{
-      const packed=window.QPIX_EVENT_PARTS?.[asset.key];
-      if(typeof packed!=='string')throw new Error('Detector asset identity differs');
-      delete window.QPIX_EVENT_PARTS[asset.key];
-      const digest=await crypto.subtle.digest('SHA-256',new TextEncoder().encode(packed));
-      const actual=Array.from(new Uint8Array(digest),b=>b.toString(16).padStart(2,'0')).join('');
-      if(actual!==asset.payload_sha256)throw new Error('Detector asset hash differs from its report');
-      resolve(await unpack(packed));
-     }catch(error){reject(error)}finally{script.remove()}
-    };
-    script.onerror=()=>{script.remove();reject(new Error('Detector waveform file could not be opened'))};
-    document.head.appendChild(script);
-   });
-   cache.set(cacheKey,pending);
-   while(cache.size>24)cache.delete(cache.keys().next().value);
-  }
-  return cache.get(cacheKey);
- }
- function merge(parts,window){
-  const signals={};
-  for(const part of parts)for(const [name,trace] of Object.entries(part.signals)){
-   const out=signals[name]||(signals[name]={time_us:[],value:[]});
-   for(let i=0;i<trace.time_us.length;i++){
-    const at=trace.time_us[i];
-    if(!out.time_us.length||at>out.time_us[out.time_us.length-1]){out.time_us.push(at);out.value.push(trace.value[i])}
-   }
-  }
-  return {window_us:window,signals};
- }
+ const load=asset=>window.QPIX_PLOTS.load(asset);
  function layout(rows,window,height=105){
   const result={...style,height:rows.length*height+100,showlegend:false,margin:{l:170,r:25,t:45,b:55},grid:{rows:rows.length,columns:1,pattern:'independent'},annotations:[]};
   rows.forEach((row,i)=>{
@@ -70,12 +30,20 @@ window.QPIX_EVENT_VIEWER=(()=>{
    ...['CLK_IN','RUN','RESET','EVAL','CAPTURE','CMP_OUT','HELD','FORCE','INHIBIT','EVENT','PHASE','EN'].map(name=>({name,label:name+' (V)'})),
    {name:'AVDD',label:'Core AVDD shift (mV)',scale:1000,offset:offset('AVDD')},
    {name:'DVDD',label:'Core DVDD shift (mV)',scale:1000,offset:offset('DVDD')}];
-  return rows.filter(row=>s[row.name]);
+  return rows.filter(row=>s[row.name]).map(row=>overview.logic?.[row.name]
+   ? {...row,logic:true,label:row.name+' logic (0/1)'} : row);
  }
  function traces(scope,rows){
   const result=[];
   rows.forEach((row,i)=>{
    const axis=i?String(i+1):'',factor=row.scale??1,origin=row.offset??0;
+   if(row.logic){
+    const edge=scope.logic[row.name],events=[...edge.rising_us.map(t=>[t,1]),...edge.falling_us.map(t=>[t,0])].sort((a,b)=>a[0]-b[0]);
+    result.push({x:[scope.window_us[0],...events.map(e=>e[0]),scope.window_us[1]],
+     y:[Number(edge.initial_high),...events.map(e=>e[1]),events.length?events.at(-1)[1]:Number(edge.initial_high)],
+     type:'scatter',mode:'lines',name:row.label,xaxis:'x'+axis,yaxis:'y'+axis,line:{color:colors[i%3],width:1.4,shape:'hv'}});
+    return;
+   }
    for(const [name,dashed] of [[row.name,false],[row.overlay,true]]){
     if(!name)continue;const trace=scope.signals[name];if(!trace)throw new Error('Missing detector trace '+name);
     result.push({x:trace.time_us,y:trace.value.map(v=>(v-origin)*factor),type:'scatter',mode:'lines',name:dashed?name:row.label,
@@ -102,16 +70,6 @@ window.QPIX_EVENT_VIEWER=(()=>{
   const plot=layout(rows,record.scope.window_us,185);plot.margin.t=105;plot.height+=60;plot.showlegend=true;plot.legend={orientation:'h',y:1.12};
   return {data:result,layout:plot};
  }
- function eventRange(event,full){
-  if(Object.entries(event).some(([key,value])=>/^xaxis\d*\.autorange$/.test(key)&&value))return full;
-  const direct=Object.keys(event).find(key=>/^xaxis\d*\.range$/.test(key));
-  let range=direct?event[direct]:null;
-  const start=Object.keys(event).find(key=>/^xaxis\d*\.range\[0\]$/.test(key));
-  if(!range&&start)range=[event[start],event[start.replace('[0]','[1]')]];
-  if(!range)return null;
-  const left=Math.max(full[0],Number(range[0])),right=Math.min(full[1],Number(range[1]));
-  return Number.isFinite(left)&&Number.isFinite(right)&&left<right?[left,right]:null;
- }
  async function init(records){
   const myGeneration=++generation,select=document.getElementById('detector-case'),panel=document.getElementById('detector-results');
   select.replaceChildren();
@@ -132,49 +90,35 @@ window.QPIX_EVENT_VIEWER=(()=>{
    const failed=Object.entries(m.checks).filter(([,value])=>!value).map(([key])=>key.replaceAll('_',' '));
    document.getElementById('detector-note').textContent=`${entry.title}: ${m.accepted_detector_replay?'all declared bounded replay checks pass':'checks outside bounds: '+failed.join(', ')}. Frozen quantum ${fmt(metrics.quantum_c*1e15,6)} fC; ${metrics.operations} operations in the decoded acquisition. Gain and lag remain unfitted; analogue residual and short-record pedestal do not enter reconstruction. ${m.actual_threads} observed CPU threads. ${m.native_timing.join(' ')}`;
    if(m.operating_point){const p=m.operating_point;document.getElementById('detector-note').textContent+=` A–F words ${p.clock_words.join(', ')}; replenisher seed ${fmt(p.replenisher_seed_scale,6)}; detector ${fmt(p.detector_f*1e12,2)} pF; external VCM / VTH ${fmt(p.common_mode_v,6)} / ${fmt(p.threshold_v,6)} V.`}
-   const power=m.source_energy.whole_record_cycles;
+   const power=m.source_energy.whole_record_cycles||m.source_energy.whole_clock_record;
    const values=[['Decoded input charge',`${fmt(metrics.source_acquisition_charge_c*1e15,6)} fC`],['Count-only charge',`${fmt(metrics.count_only_charge_c*1e15,6)} fC`],
     ['Integrated count error',`${fmt(metrics.integrated_count_error_c*1e15,6)} fC`],['Per-clock error RMS',`${fmt(metrics.clock_bin_error_rms_c*1e15,6)} fC`],
     [`${fmt(metrics.short_window_s*1e6,3)}-µs window error RMS`,`${fmt(metrics.short_window_charge_error_rms_c*1e15,6)} fC`],
     ['Filtered-current relative RMS',`${fmt(metrics.relative_filtered_current_error_rms*100,3)}%`],['Preserved causal filter delay',`${fmt(metrics.filter_group_delay_s*1e6,4)} µs`],
     ['Complete-cycle fixture power',`${fmt(power.total_fixture_power_w*1e6,3)} µW over ${power.complete_clock_cycles} cycles`]];
+   if(power.actual_channel_count>1)values.push(['Fixture / actual channel count',`${fmt(power.total_per_actual_channel_power_w*1e6,3)} µW per receiver, including shared overhead / ${power.actual_channel_count}`]);
+   if(m.conditioning)document.getElementById('detector-note').textContent+=` A declared ${fmt(m.conditioning.charge_per_channel_c*1e15,3)}-fC previous-charge pulse precedes the event. Acquisition starts at ${fmt(m.conditioning.event_origin_s*1e6,4)} µs; conditioning returns are excluded from the event count. The raw input-integral trace includes that previous charge.`;
    document.getElementById('detector-metrics').innerHTML=values.map(([name,value])=>`<tr><td>${name}</td><td>${value}</td></tr>`).join('');
+   const powerPanel=document.getElementById('detector-power');
+   if(powerPanel){
+    const labels={clock_startup:'Clock startup',conditioning:'Previous charge',pre_event_settling:'Before event',event:'Event acquisition'};
+    powerPanel.innerHTML=Object.entries(m.source_energy.windows).map(([name,p])=>`<tr><td>${labels[name]||name}</td><td>${p.complete_clock_cycles}</td><td>${fmt(p.upstream_rail_power_w.AVDD*1e6,3)}</td><td>${fmt(p.upstream_rail_power_w.DVDD*1e6,3)}</td><td>${fmt(p.total_fixture_power_w*1e6,3)}</td><td>${fmt(p.total_per_actual_channel_power_w*1e6,3)}</td><td>${p.total_replenishments}</td></tr>`).join('');
+   }
    document.getElementById('detector-details').textContent=JSON.stringify({record:m,display:entry.scope},null,2);
    const plots=['detector-reconstruction','detector-scope'];
-   const reconstructed=reconstruction(entry,overview);
+   const reconstructed=reconstruction(entry.reconstruction?entry:{...entry,reconstruction:overview.reconstruction},overview);
    await Plotly.react(plots[0],reconstructed.data,reconstructed.layout,options);
    if(token!==version||myGeneration!==generation)return;
    await Plotly.react(plots[1],traces(overview,rows),layout(rows,full),options);
    if(token!==version||myGeneration!==generation)return;
-   let synchronizing=false,zoomVersion=0,latestRange=full.slice();
-   const detailWidth=Math.min(4,(full[1]-full[0])/8);
-   async function detail(range){
-    const revision=++zoomVersion;let scope=overview,kind='overview';
-    if(range[1]-range[0]<=detailWidth){
-     const parts=entry.scope.chunks.filter(p=>p.window_us[0]<=range[1]&&p.window_us[1]>=range[0]);
-     scope=merge(await Promise.all(parts.map(load)),range);kind='retained detail';
-    }
-    if(revision!==zoomVersion||token!==version||myGeneration!==generation)return;
-    synchronizing=true;
-    try{await Plotly.react(plots[1],traces(scope,rows),layout(rows,range),options)}finally{synchronizing=false}
-    document.getElementById('detector-view-note').textContent=`${kind}: ${range.map(v=>fmt(v,4)).join('–')} µs. Full-duration logic is retained; analogue overview bins preserve extrema. Zoom to ${fmt(detailWidth,2)} µs or less for all retained detail points. Numerical metrics use the complete native analysis.`;
-    window.CHANNEL_EVENT_STATUS={ready:true,pending:false,cases:records.length,dataset:entry.id,view:kind,window:range,rows:rows.length};
-   }
-   function link(from,event){
-    if(synchronizing)return;const range=eventRange(event,full);if(!range)return;
-    if(range.every((v,i)=>Math.abs(v-latestRange[i])<1e-10))return;
-    latestRange=range;
-    synchronizing=true;const other=plots.find(id=>id!==from);
-    Plotly.relayout(other,{'xaxis.range':range}).then(()=>{synchronizing=false;clearTimeout(timer);timer=setTimeout(()=>detail(range).catch(reportError),120)}).catch(error=>{synchronizing=false;reportError(error)});
-   }
-   plots.forEach(id=>{const graph=document.getElementById(id);graph.removeAllListeners('plotly_relayout');graph.on('plotly_relayout',event=>link(id,event))});
-   await detail(full);
+   document.getElementById('detector-view-note').textContent='Fixed full-duration overview; zoom is disabled. Digital rows show exact half-supply crossing states (0/1); analogue rows retain time-bin extrema. Numerical metrics use the complete native analysis.';
+   window.CHANNEL_EVENT_STATUS={ready:true,pending:false,cases:records.length,dataset:entry.id,view:'fixed overview',window:full,rows:rows.length};
   }
   select.onchange=()=>draw().catch(reportError);await draw();
  }
- return {init,merge,unpack};
+ return {init};
 })();
-window.addEventListener('DOMContentLoaded',()=>window.QPIX_EVENT_VIEWER.init(window.QPIX_CHANNEL?.detector_replays||[]).catch(error=>{
+window.addEventListener('DOMContentLoaded',()=>window.QPIX_EVENT_VIEWER.init(window.QPIX_CHANNEL?.detector_replays||window.QPIX_MIM?.detector_replays||[]).catch(error=>{
  window.CHANNEL_ERRORS=window.CHANNEL_ERRORS||[];window.CHANNEL_ERRORS.push(String(error));
  document.getElementById('detector-note').textContent=String(error);
 }));

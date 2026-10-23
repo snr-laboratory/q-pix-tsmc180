@@ -2,7 +2,7 @@
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Q-Pix physical current replenisher</title>
 <script>window.MathJax={tex:{inlineMath:[['\\(','\\)']]}};</script>
-<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-svg.js"></script><script defer src="https://cdn.plot.ly/plotly-4.1.1.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-svg.js"></script><script defer src="https://cdn.plot.ly/plotly-4.1.1.min.js"></script><script defer src="assets/plot-data.js"></script>
 <script defer src="data/replenisher-v1.js"></script><script defer src="assets/replenisher-v1.js"></script>
 <style>
 :root{font-family:system-ui,sans-serif;color:#203e4c;background:#edf2f3}body{margin:0}main{max-width:1250px;margin:auto;padding:2rem 1rem 5rem}a{color:#126e7b}header,section{background:white;border:1px solid #d5e0e2;border-radius:12px;padding:1.4rem;margin:1rem 0}h1{font-size:2rem}h2{font-size:1.25rem;margin-top:0}.lead{font-size:1.1rem}.limit{border-left:5px solid #b66537;padding-left:1rem}.grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem}.plot{min-width:0}figure{margin:1rem 0}img{width:100%;height:auto;border:1px solid #dce4e6}figcaption{font-size:.9rem;color:#516972;margin-top:.5rem}select{font:inherit;max-width:100%;padding:.5rem}table{border-collapse:collapse;width:100%;font-size:.9rem}th,td{text-align:left;padding:.6rem;border-bottom:1px solid #dce4e6}.scroll{overflow:auto}pre{white-space:pre-wrap;overflow-wrap:anywhere;font-size:.8rem}p{line-height:1.55}.equation{text-align:center;margin:1.5rem 0}code{overflow-wrap:anywhere}@media(max-width:750px){.grid{grid-template-columns:1fr}main{padding:.5rem}header,section{padding:1rem}h1{font-size:1.5rem}}
@@ -10,7 +10,7 @@
 <header><p><a href="index.html">Architecture and detector replay</a> · <a href="csa-v4.html">Physical CSA</a> · <a href="comparator-v1.html">Physical comparator</a></p>
 <h1>Physical current replenisher</h1><p class="lead" id="status">Loading pinned native evidence…</p>
 <p><code>Modules/REPLENISH_CANCEL_V1</code> is one flat 32 × 40 µm cell, with 32 MOS units, 16 tied edge dummies, two coincident steering/isolation pair centroids and 809 via cuts. Shared bias generation remains outside the repeated module.</p>
-<p id="physical"></p></header>
+<p id="physical"></p><p class="plot-policy">Compact overview plots; zoom is disabled. Displayed samples preserve time-bin extrema. Numerical results use full native data retained locally.</p></header>
 <section><h2>Charge calibration and its limits</h2>
 <p>One independent 10 MHz training record at each temperature fixes the bias and charge gain before rate, history and compliance holdouts. The physical quantum is approximately \(0.5\,\mathrm{fC}\), or \(3.12\times10^3\) electrons. Source and PEX retain their own measured gains, with their absolute difference visible.</p>
 <div class="equation">\[q_k=\int_{kT}^{(k+1)T}i_{\mathrm{OUT}}(t)\,dt,\qquad \epsilon_k=q_k-b_kq_{\mathrm{cal}}.\]</div>
@@ -22,7 +22,7 @@
 <div class="grid"><div class="plot" id="power"></div><div class="plot" id="width"></div></div>
 <p>Idle physical-fixture draw is about 0.543 / 0.585 µW, warm / cold. Three- and five-ns commands characterize different acquisition modes and need their own calibrated charge.</p>
 <div class="scroll"><table><thead><tr><th>Implementation / temperature / rate</th><th>Net charge (fC)</th><th>Fixture power (µW)</th><th>Reverse lobe (fC)</th></tr></thead><tbody id="results"></tbody></table></div></section>
-<section><h2>Inspect every complete native trace</h2><p>Training, sparse pulses, idle, compliance failures and width variants remain available. Zoom axes together to inspect delivered current, integrated charge, EN, SUM and supplies. These are noise-off deterministic interference tests; they establish no intrinsic-noise statistics.</p>
+<section><h2>Inspect full-duration overview plots</h2><p>Training, sparse pulses, idle, compliance failures and width variants remain available. Fixed overview rows show delivered current, integrated charge, EN, SUM and supplies. These are noise-off deterministic interference tests; they establish no intrinsic-noise statistics.</p>
 <label for="case">Native case </label><select id="case"></select><p id="case-note"></p><div id="scope"></div></section>
 <section><h2>Human-readable circuit and physical construction</h2><figure><a href="figures/replenisher-v1-circuit.svg"><img src="figures/replenisher-v1-circuit.svg" alt="Flat paired-dummy current-steering transistor circuit"></a><figcaption>Current source, complementary steering, common-gate isolation and internal cancellation; edge dummies are literal schematic devices.</figcaption></figure>
 <div class="grid"><figure><a href="figures/replenisher-v1-layout.svg"><img src="figures/replenisher-v1-layout.svg" alt="Matched arrays, separate wells, guard rings and routed metal"></a><figcaption>One coherent cell, with shared diffusion only where nets agree and dense legal vias.</figcaption></figure>

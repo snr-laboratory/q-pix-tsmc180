@@ -19,8 +19,7 @@ document.addEventListener('DOMContentLoaded',async()=>{
  Plotly.newPlot('power',curves(nominal,v=>v.frequency_hz/1e6,v=>v.source_energy.total_fixture_power_w*1e6),{...style,height:370,xaxis:{title:{text:'Clock rate (MHz)'},tickvals:rates},yaxis:{title:{text:'Total fixture draw (µW)'}}},opts);
  const widths=[...rows.filter(v=>/\/width[35]-50m/.test(v.path)).map(v=>({...v,width_ns:v.path.includes('/width3-')?3:5})),...nominal.filter(v=>v.frequency_hz===50e6).map(v=>({...v,width_ns:4}))];
  Plotly.newPlot('width',curves(widths,v=>v.width_ns,v=>v.mean_quantum_c*1e15),{...style,height:370,xaxis:{title:{text:'Command width (ns)'},tickvals:[3,4,5]},yaxis:{title:{text:'Delivered charge (fC)'}}},opts);
- const bytes=Uint8Array.from(atob(data.packed_scopes),c=>c.charCodeAt(0));
- const scopes=await new Response(new Blob([bytes]).stream().pipeThrough(new DecompressionStream('gzip'))).json();
+ const scopes=await window.QPIX_PLOTS.loadAll(data.scopes);
  const select=document.getElementById('case');
  scopes.forEach((s,i)=>{const option=document.createElement('option');option.value=i;option.textContent=`${s.variant} · ${label(s.notes)} · SUM ${s.notes.sum_v} V`;select.appendChild(option);});
  async function draw(){

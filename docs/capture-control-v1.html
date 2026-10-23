@@ -2,7 +2,7 @@
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Q-Pix physical capture and replenishment controller</title>
 <script>window.MathJax={tex:{inlineMath:[['\\(','\\)']]}};</script>
-<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-svg.js"></script><script defer src="https://cdn.plot.ly/plotly-4.1.1.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-svg.js"></script><script defer src="https://cdn.plot.ly/plotly-4.1.1.min.js"></script><script defer src="assets/plot-data.js"></script>
 <script defer src="data/capture-control-v1.js"></script><script defer src="assets/capture-control-v1.js"></script>
 <style>
 :root{font-family:system-ui,sans-serif;color:#203e4c;background:#edf2f3}body{margin:0}main{max-width:1250px;margin:auto;padding:2rem 1rem 5rem}a{color:#126e7b}header,section{background:white;border:1px solid #d5e0e2;border-radius:12px;padding:1.4rem;margin:1rem 0}h1{font-size:2rem}h2{font-size:1.25rem;margin-top:0}.lead{font-size:1.1rem}.limit{border-left:5px solid #b66537;padding-left:1rem}.grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem}.plot{min-width:0}figure{margin:1rem 0;min-width:0}img{width:100%;height:auto;border:1px solid #dce4e6}figcaption{font-size:.9rem;color:#516972;margin-top:.5rem}select{font:inherit;max-width:100%;padding:.5rem}table{border-collapse:collapse;width:100%;font-size:.9rem}th,td{text-align:left;padding:.6rem;border-bottom:1px solid #dce4e6}.scroll{overflow:auto}pre{white-space:pre-wrap;overflow-wrap:anywhere;font-size:.8rem}p{line-height:1.55}.equation{text-align:center;margin:1.5rem 0;max-width:100%;overflow:auto}code{overflow-wrap:anywhere}@media(max-width:750px){.grid{grid-template-columns:1fr}main{padding:.5rem}header,section{padding:1rem}h1{font-size:1.5rem}}
@@ -10,7 +10,7 @@
 <header><p><a href="index.html">Architecture and detector replay</a> · <a href="comparator-v1.html">Physical comparator</a> · <a href="replenisher-v1.html">Physical replenisher</a> · <a href="clock-flat-v3.html">Single-clock generator</a></p>
 <h1>Physical capture and replenishment controller</h1><p class="lead" id="status">Loading pinned native evidence…</p>
 <p><code>Modules/CAPTURE_CONTROL_STD_V1</code> uses six unchanged STD-cell instances in two compact rows, plus five well/substrate taps and a contacted guard. The complete module is 20 × 14 µm. All 45 MOS channels and the original master masks are independently checked.</p>
-<p id="physical"></p></header>
+<p id="physical"></p><p class="plot-policy">Compact overview plots; zoom is disabled. Displayed samples preserve time-bin extrema. Numerical results use full native data retained locally.</p></header>
 <section><h2>Capture once; replenish on every qualified PHASE</h2>
 <p>The high-level latch follows D while CAPTURE is high. CAPTURE falling retains the comparator decision as HELD. OR selection, NOR validity and two AND gates generate EVENT and EN. Digital RESET clears/inhibits this path and has no connection across the CSA feedback capacitor.</p>
 <div class="equation">\[\mathrm{EVENT}=(\mathrm{HELD}\lor\mathrm{FORCE})\land\neg(\mathrm{INHIBIT}\lor\mathrm{RESET}),\qquad\mathrm{EN}=\mathrm{EVENT}\land\mathrm{PHASE}.\]</div>

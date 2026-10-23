@@ -2,9 +2,9 @@
   "report": {
     "title": "Q-Pix in TSMC180: charge, timing and heat",
     "date": "2026-10-16",
-    "built_utc": "2026-10-22T00:58:05.498304+00:00",
+    "built_utc": "2026-10-22T09:05:30.145104+00:00",
     "branch": "qpix_tsmc180",
-    "head": "cb9b57241b1031eaff00babf88cfb147d3182b86",
+    "head": "c247a6fd8b533eecccb2705155120001c1bb7a33",
     "source_state": "working-tree design and experiment sources; exact hashes in provenance",
     "selected_rate_hz": 10000000,
     "selected_input_f": 3e-12
@@ -15,8 +15,16 @@
   },
   "report_sources": [
     {
+      "path": "plot_data.py",
+      "sha256": "50272bb6cbd8105e73d6694ee44adf3fc1bd18249ce65322da6549a1db933df2"
+    },
+    {
+      "path": "src/plot-data.js",
+      "sha256": "d4ba9aa7ec6ae1c228055e12891bad0645b13778a45e62d82b56eb1afa67f9ac"
+    },
+    {
       "path": "build_report.py",
-      "sha256": "33152b0788122f27978e6e84d047717f2bf36cfbf3011bf7247e8aaf5ceed9ce"
+      "sha256": "e70238d67116b999a8f26898f7d35ad9ec8e59cb2f59a13d4753422e53ac2ee8"
     },
     {
       "path": "latest.py",
@@ -28,11 +36,11 @@
     },
     {
       "path": "wave_scope.py",
-      "sha256": "f35be947ce9eca5c90baf067adb766eead809a12ed3d350909be0d8dc7cbd220"
+      "sha256": "9e1bb604596ee9c7d3bfcef91c2af5c65c2612da5aa67a305bf2f4b375468046"
     },
     {
       "path": "csa_v4.py",
-      "sha256": "fff4eddf07c735088f121dd3c4028ce371b1385aed28cbe3c321905db47b3931"
+      "sha256": "2099aaab99295a45b744593158f4d3f39ff0ae68abed7b9a236cb2216cd40685"
     },
     {
       "path": "csa_v4.toml",
@@ -40,7 +48,7 @@
     },
     {
       "path": "comparator_v1.py",
-      "sha256": "b1dde317d6f0483ba436e416e7b16e0825b08e250f288112d101bdaf8fb4a3aa"
+      "sha256": "937a0043923b2aaeee9bc57117cc74bf6c99bdf4fd45140ea4b900c94bff9857"
     },
     {
       "path": "comparator_v1.toml",
@@ -48,7 +56,7 @@
     },
     {
       "path": "replenisher_v1.py",
-      "sha256": "35e46dc10f758f8048cd4556d358dbf9bc042760b271102ac01cee4aa1e3d50e"
+      "sha256": "81964ad19987cb2fee8e9776d1c4d6f6c12e5cdb1c726ab7ff7acc63ab44cc91"
     },
     {
       "path": "replenisher_v1.toml",
@@ -56,15 +64,15 @@
     },
     {
       "path": "src/replenisher-v1.html",
-      "sha256": "9d816baedf98141813c720c1ea6afcda047c782b09ea3a987bb3e43c471cfbc9"
+      "sha256": "9421b49c23bc53cccad5268a0e9450835789fe125f6b7477087152d46bc2b58b"
     },
     {
       "path": "src/replenisher-v1.js",
-      "sha256": "518d4a81a2714e524621dfb6d16b5f60ebcf5fd4ff6eb1cfb5cff2349e47c173"
+      "sha256": "ea69903c8530184b55cd054cc68795f10565a606a6b9448ea585c58cc275c106"
     },
     {
       "path": "clock_flat_v1.py",
-      "sha256": "f6b12c7afa381889617764686674ba032600df6f95f99c6ed82886c35c290654"
+      "sha256": "e76d6607d8c9961ea313999bb93cec464132b077ebfe9487cfc410ca55011d66"
     },
     {
       "path": "clock_flat_v1.toml",
@@ -72,11 +80,11 @@
     },
     {
       "path": "src/clock-flat-v1.html",
-      "sha256": "a4a9f3d5d235f6cce8f865697f6ac4fa7e65dbc0d9de9f851860433470155a33"
+      "sha256": "93f53c0e6f8333852fef27fb600bc86ea8ae09424803ca29139c915098808dd3"
     },
     {
       "path": "src/clock-flat-v1.js",
-      "sha256": "f503827ff6a58dc0d0ac81f3464f9a4a54122ec1109a6d7bfeac7ebaeadd702a"
+      "sha256": "16aebff9b83f38eedf9d94dd0f42c87c35d6323e6a275c634e7231ca9c6b19f1"
     },
     {
       "path": "report.toml",
@@ -84,7 +92,7 @@
     },
     {
       "path": "src/index.html",
-      "sha256": "69bc90396a325fbdd256d099c96c67c312e54ac1f5b658ed99575f246c27a790"
+      "sha256": "3ef855c9b77b3fd4c7b93ef2c6c8c2052aaab76be6acd523f4a8d3fd75793cde"
     },
     {
       "path": "src/report.css",
@@ -92,7 +100,7 @@
     },
     {
       "path": "src/report.js",
-      "sha256": "2f5396197688e65605f9ff80c37938f35e4451fea7a22e7dfe224576a5e673dc"
+      "sha256": "8ee9d74d03f39ffa4eb6912bcba338925c9261e83c3c734c8a1e19eca27e2a8b"
     },
     {
       "path": "src/csa-v4.html",
@@ -104,15 +112,15 @@
     },
     {
       "path": "src/comparator-v1.html",
-      "sha256": "432ecfb0c1203dea54f39dfad6306ad179f38f613309c4571855d1c0d85321bc"
+      "sha256": "a1ec24458ef1d0c22aeecfcb3e2a23c1815a90efa074e36196d7e09b5115ae21"
     },
     {
       "path": "src/comparator-v1.js",
-      "sha256": "1c2baf038de686a3ce07af110a53587bcde4c5632cbbaea29cb1dc2af117d0a8"
+      "sha256": "005a2f1cfa3251a64f1aaf5cbffa99a7b0e9747bc95dd5ac365964ac4975a0f9"
     },
     {
       "path": "clock_flat_v3.py",
-      "sha256": "5d280de1c6ce37e20dec9cc28b8e8cc7dcf80d8927ed3b30ab7dcf3e9281cc48"
+      "sha256": "1cefda0f43de6114dbf5e0254cfa03cad15a03bc3e9fb3d8d0ca71faa8c19682"
     },
     {
       "path": "clock_flat_v3.toml",
@@ -120,15 +128,15 @@
     },
     {
       "path": "src/clock-flat-v3.html",
-      "sha256": "ce8a80c0553f23797cdb9c23e5269c003ab697edfac852e02e99c5d1df3b50b3"
+      "sha256": "13564a4ed2b0a20ea5009be9137974c3f0bccbe0578244cd3b130798532ae032"
     },
     {
       "path": "src/clock-flat-v3.js",
-      "sha256": "c99d70185f10c16266f929e40ab0e104daf440a53b894e6490c7f701462f708d"
+      "sha256": "3c4766e23c590b4f2e5a682b7b4465c1fce509172f20d18af8bdab6d593805c7"
     },
     {
       "path": "capture_control_v1.py",
-      "sha256": "135cd48b69c5c0bb7075b81a7f63d56e6cc64318754d936141503a42c35348ff"
+      "sha256": "66d1b4887af6e4749669c325930b2b52113a8b733b83f81f4d5567e70c7a60d9"
     },
     {
       "path": "capture_control_v1.toml",
@@ -140,11 +148,11 @@
     },
     {
       "path": "src/capture-control-v1.js",
-      "sha256": "d3f72ead185571fdccf5941d8c64aeaa7ade0e7f25dc5d794ae2e838743f1d8f"
+      "sha256": "c7c5dd25a06e27fe5dafe52e77d20f276e63c10d980a392f600c458c81f630fb"
     },
     {
       "path": "shared_bias_v1.py",
-      "sha256": "7c56772f55ccdd99f8215ddc64db9e53951f858849cdd43cd7281c5645cc8ca0"
+      "sha256": "02cedd33224ac84858a8e237bda6ce1dccb1ecb19f5e3f9f75d559cacb0efe32"
     },
     {
       "path": "shared_bias_v1.toml",
@@ -152,39 +160,39 @@
     },
     {
       "path": "src/shared-bias-v1.html",
-      "sha256": "9d89276e19c0aed591eebde3af8eb6b4fa8edd4b72184d1f7c0d03cf2dee9742"
+      "sha256": "1a880e9244f1ef38e0997644d4bf23c859c92008af2623916e73bb9d749739cf"
     },
     {
       "path": "src/shared-bias-v1.js",
-      "sha256": "fb57c1bcbc8ba42cd539d08df905e4450b40ae79dbfcf0c3182485ee4ed09a6d"
+      "sha256": "abf9a3348b806415b2ba90d999e36bad7b56df23fd19c783913baa8597944303"
     },
     {
       "path": "channel_v1.py",
-      "sha256": "95765f7ac357b43eb8add002302de6054e61d0b9ec48e534aae6d21b5c39cdc1"
+      "sha256": "90b9de6ebcf0ee4f29bedfe00284b9d5c3aa95bbdffa3648b2284da0f302bfc8"
     },
     {
       "path": "channel_v1.toml",
-      "sha256": "8d88753f9b19e7282c7953732ced6b9b94815f23c10db7c7165dd4a577609c9d"
+      "sha256": "b3cfe2fd112ef89de677834ada45ab873b5b572f8bcf9dc63f832d0481d24c92"
     },
     {
       "path": "event_scope.py",
-      "sha256": "7ea30493476cf7f85271d406997aea0aff49cbe40b7942fed044384326b7ba50"
+      "sha256": "480e8322dbc167d711460111dbb9cdb3e583170a8a8d4c02b4c08a86a6d2a940"
     },
     {
       "path": "src/channel-v1.html",
-      "sha256": "94d7911dc26f8d2be3b0d0986dcb0cf499a22ab19d126e81995ab71ae83cff59"
+      "sha256": "f865e735c62b9182b9e271dd2f358e8f3fdef435aea213754861d91b930dc96a"
     },
     {
       "path": "src/channel-v1.js",
-      "sha256": "9e6361a6b65d3d2be971c9e9e0f15dce4c331a076605990839140e966c7807de"
+      "sha256": "a70dd759e5ae8ec47c00c4eb1d0a047fe0e8a1ee764f9d93f8b637beed8bbb25"
     },
     {
       "path": "src/channel-event.js",
-      "sha256": "54b0134ca87ce465de7456baa7a6eafbc2b8ccd37fb6615147515e2891a6256d"
+      "sha256": "6e16c17bdcb30e903de88c2684bbf00679ba36b7d241648c50008c57ed5fa94b"
     },
     {
       "path": "mim_v1.py",
-      "sha256": "fa6cb34c02104174848fb444de0307f770c66e056f328ce1bf60a2d2bceec2f2"
+      "sha256": "94b3aa3c8f18e175e2bce5ee967bff8e83c2ecd9fb79add34086d7d2c9facd3a"
     },
     {
       "path": "mim_v1.toml",
@@ -192,11 +200,11 @@
     },
     {
       "path": "src/mim-v1.html",
-      "sha256": "8e2615b7ec8082210ce11171f34eb938ccff71238fc8d8ead586a89281cd93fa"
+      "sha256": "cb5f7d1e55b3c9d8bc8bd9100c874bd9e612343b3927693a6d4e3a5b29d6f0fa"
     },
     {
       "path": "src/mim-v1.js",
-      "sha256": "ae793e9857a42963fdbebb7ddfe53d0e6f133c561f99aeb8997813a9e2c54162"
+      "sha256": "ec3c3f88ab351b8e0606e5fbbf4b9d7a21875395acf90905fc7cf8f2d4960687"
     }
   ],
   "files": [

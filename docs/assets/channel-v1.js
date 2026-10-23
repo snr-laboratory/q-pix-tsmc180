@@ -17,8 +17,7 @@ window.addEventListener('DOMContentLoaded',async()=>{
  }
  await Plotly.newPlot('charge',plot,{...style,height:460,xaxis:{title:{text:'External replenisher seed / stock seed'}},yaxis:{title:{text:'Measured signed packet (fC)'}},shapes:[{type:'line',xref:'paper',x0:0,x1:1,y0:.1,y1:.1,line:{color:'#71828b',dash:'dot'}}]},opts);
  document.getElementById('calibration-table').innerHTML=cal.map(r=>`<tr><td>${temp(r)} · ${r.kind}</td><td>${fmt(r.seed_scale,6)}</td><td>${fmt(r.mean_quantum_c*1e15,5)}</td><td>${fmt(r.deterministic_cycle_rms_c*1e15,6)}</td><td>${fmt(r.mean_quantum_c*50e6*1e9)}</td></tr>`).join('');
- const bytes=Uint8Array.from(atob(d.packed_scopes),v=>v.charCodeAt(0));
- const scopes=JSON.parse(await new Response(new Blob([bytes]).stream().pipeThrough(new DecompressionStream('gzip'))).text());
+ const scopes=await window.QPIX_PLOTS.loadAll(d.scopes);
  const views={};
  async function scopePlot(id,scope,rows,extra=[]){
   const data=[],layout={...style,height:rows.length*105+85,showlegend:false,margin:{l:170,r:25,t:35,b:55},grid:{rows:rows.length,columns:1,pattern:'independent'},annotations:[]};
@@ -29,7 +28,7 @@ window.addEventListener('DOMContentLoaded',async()=>{
    layout['yaxis'+axis]={fixedrange:false,tickfont:{size:10}};
    layout.annotations.push({xref:'paper',x:0,xanchor:'right',xshift:-43,yref:'y'+axis+' domain',y:.5,
     text:row.label.replace(' (','<br>('),showarrow:false,align:'right',font:{size:12,color:'#203e4c'}});
-   data.push({x:trace.time_us,y:trace.value.map(v=>(v-offset)*scale),type:'scatter',mode:'lines',name:row.label,xaxis:'x'+axis,yaxis:'y'+axis,line:{color:colors[i%3],width:1.4}});
+   data.push({x:trace.time_us,y:trace.value.map(v=>(v-offset)*scale),type:'scatter',mode:row.mode??'lines',name:row.label,xaxis:'x'+axis,yaxis:'y'+axis,line:{color:colors[i%3],width:1.4,shape:row.shape??'linear'},marker:{size:4}});
    if(row.overlay){const other=scope.signals[row.overlay];data.push({x:other.time_us,y:other.value.map(v=>(v-offset)*scale),type:'scatter',mode:'lines',name:row.overlay,xaxis:'x'+axis,yaxis:'y'+axis,line:{color:'#b66537',dash:'dot',width:1.3}})}
   });
   for(const trace of extra)data.push(trace);
@@ -98,6 +97,41 @@ window.addEventListener('DOMContentLoaded',async()=>{
  await Plotly.newPlot('power',[{x:labels,y:energy.map(e=>e.upstream_rail_power_w.AVDD*1e6),name:'Upstream AVDD',type:'bar',marker:{color:colors[0]}},{x:labels,y:energy.map(e=>e.upstream_rail_power_w.DVDD*1e6),name:'Upstream DVDD, including complete clock',type:'bar',marker:{color:colors[1]}},{x:labels,y:energy.map(e=>Object.values(e.positive_external_boundary_energy_j).reduce((a,b)=>a+b,0)/(e.window_s[1]-e.window_s[0])*1e6),name:'Positive external clock/control/reference work',type:'bar',marker:{color:colors[2]}}],{...style,height:460,barmode:'stack',yaxis:{title:{text:'Whole one-channel fixture (µW)'},rangemode:'tozero'},margin:{l:90,r:25,t:30,b:110}},opts);
  document.getElementById('power-note').textContent=energy.map((e,i)=>`${labels[i]}: ${fmt(e.total_fixture_power_w*1e6)} µW over ${e.complete_clock_cycles} complete cycles`).join('; ')+'.';
  document.getElementById('numerical-table').innerHTML=d.numerical.map(r=>`<tr><td>${r.title}</td><td>${r.passed?'Pass':'Outside bounds'}</td><td>${fmt(r.frontend.CSA_OUT.maximum_absolute_delta_v*1e6)} / ${fmt(r.frontend.CSA_OUT.time_weighted_rms_delta_v*1e6)}</td><td>${fmt(Math.max(...Object.values(r.edges).map(e=>e.maximum_absolute_edge_delta_s??0))*1e12)}</td></tr>`).join('');
- document.getElementById('evidence').textContent=JSON.stringify({scope:d.physical.scope,nativePexJob:d.physical.native_pex_job,tracking:d.tracking.map(r=>({title:r.title,job:r.row.native_job_id,requested:r.row.requested_execution,observed:r.row.observed_execution,actualThreads:r.row.actual_threads,timing:r.row.native_timing,warnings:r.row.native_warnings,floatingNodeGuards:r.row.numerical_floating_node_guards,initialReadback:r.row.full_checkpoint_readback,scope:r.scope})),files:d.provenance},null,2);
- window.CHANNEL_STATUS={ready:true,views,trackingCases:tracking.length,calibrationCases:calibration.length,errors:window.CHANNEL_ERRORS};
+ const noise=d.core_noise;
+ if(noise){
+  document.getElementById('core-noise-content').hidden=false;
+  const label=r=>`${r.implementation==='full'?'Unreduced':'HPA'} · ${r.noise_scale===1?'noise on':'near-zero (10⁻¹²)'}`;
+  document.getElementById('core-noise-summary').textContent=`Four actual native cases use the same physical stimulus and independently frozen ${fmt(noise.quantum_c*1e15,6)}-fC quantum. Both near-zero numerical controls ${noise.all_numerical_controls_passed?'pass every original bound':'retain their actual numerical misses'}. The stochastic records are one seed each; this does not qualify noise statistics, false-trigger rates, HPA noise equivalence or full noisy-event reconstruction.`;
+  document.getElementById('core-noise-results').innerHTML=noise.rows.map(r=>`<tr><td>${label(r)}</td><td>${fmt(r.actual_noise.native_reported.noisefmin/1e6,6)}</td><td>${fmt(r.frontend_on_minus_off.CSA_OUT.time_weighted_rms_delta_v*1e3,6)}</td><td>${fmt(r.paired_charge_ledger.packet_bins.rms_charge_difference_c*1e15,6)}</td><td>${fmt(r.paired_charge_ledger.rms_diagnostic_increment_c*1e15,6)}</td><td>${r.paired_charge_ledger.noise_on_enable_pulses} / ${r.paired_charge_ledger.noise_off_enable_pulses}</td><td>${fmt(r.source_energy.total_fixture_power_w*1e6,2)}</td><td>${r.noise_scale===1?'Stochastic record':r.numerical_control_agreement_passed?'Pass':'Outside bounds'}</td></tr>`).join('');
+  const select=document.getElementById('core-noise-case'),details=document.getElementById('core-noise-waveforms');
+  noise.rows.forEach((r,i)=>{const o=document.createElement('option');o.value=String(i);o.textContent=label(r);select.appendChild(o)});
+  select.value=String(noise.rows.findIndex(r=>r.implementation==='full'&&r.noise_scale===1));
+  function noiseNote(){
+   const r=noise.rows[Number(select.value)],n=r.actual_noise;
+   document.getElementById('core-noise-note').textContent=`${label(r)}: seed ${n.seed}. Requested lower corner ${fmt(n.requested_minimum_frequency_hz/1e3,0)} kHz; native ${fmt(n.native_reported.noisefmin/1e6,6)} MHz, upper ${fmt(n.native_reported.noisefmax/1e6,0)} MHz. Packet-bin count-only change is ${fmt(r.paired_charge_ledger.packet_bins.rms_charge_difference_c*1e15,6)} fC RMS, with ${fmt(r.paired_charge_ledger.packet_bins.full_record_count_charge_difference_c*1e15,6)} fC total count change over this record. The separate detector-capacitor storage term changes by ${fmt(r.paired_charge_ledger.detector_storage.rms_increment_difference_c*1e15,6)} fC RMS between same-phase samples. The lower corner flattens colored noise; it is not a hard high-pass. This record does not establish the requested low-frequency spectrum. Whole-fixture upstream work is ${fmt(r.source_energy.total_fixture_power_w*1e6,2)} µW over ${r.source_energy.complete_clock_cycles} complete cycles, including all clock/shared support and positive boundary work, with no reservoir subtraction. Requested / observed threads: ${r.requested_threads} / ${r.actual_threads}. ${r.native_timing.join(' ')}`;
+   document.getElementById('core-noise-details').textContent=JSON.stringify({record:r,completion:noise.completions[r.name],scope:noise.scope},null,2);
+  }
+  async function drawNoise(){
+   const r=noise.rows[Number(select.value)],asset=d.core_noise_scopes.find(s=>s.name===r.name);
+   const s=await window.QPIX_PLOTS.load(asset);
+   const rows=[{name:'INPUT_CURRENT_NA',label:'Detector current (nA)'},
+    {name:'CSA_OUT',overlay:'CSA_OUT_BASELINE',label:'CSA / noise off (mV)',scale:1e3},
+    {name:'CSA_DELTA_UV',label:'CSA change (mV)',scale:1e-3},
+    {name:'COUNT_ONLY_DELTA_FC',label:'Sampled count change (fC)',shape:'hv',mode:'lines+markers'},
+    {name:'DETECTOR_STORAGE_DELTA_FC',label:'Detector storage change (fC)',mode:'lines+markers'},
+    ...['SUM','DUMMY','VCM_QUIET','VTH_QUIET','CSA_VPB','CMP_NBIAS','DAC_VPB'].map(name=>({name,label:name+' (mV)',scale:1e3})),
+    ...['CLK_IN','RUN','RESET','EVAL','CAPTURE','PHASE','CMP_OUT','HELD','FORCE','INHIBIT','EVENT','EN'].map(name=>({name,label:name+' (V)'}))];
+   const offRises=r.noise_off_logic.cycles.flatMap(c=>c.edges_s.EN.rising);
+   const markers={x:offRises.map(t=>t*1e6),y:offRises.map(()=>0),type:'scatter',mode:'markers',
+    name:'Noise-off EN rising edges',xaxis:'x'+rows.length,yaxis:'y'+rows.length,
+    marker:{color:'#b66537',symbol:'triangle-up-open',size:10}};
+   views.coreNoise=await scopePlot('core-noise-scope',s,rows,[markers]);
+   window.CHANNEL_NOISE_VIEW={name:r.name,rows:rows.length,window:s.window_us};
+  }
+  const redraw=()=>drawNoise().catch(e=>window.CHANNEL_ERRORS.push(String(e)));
+  select.addEventListener('change',()=>{noiseNote();if(details.open)redraw()});
+  details.addEventListener('toggle',()=>{if(details.open)redraw()});noiseNote();
+ }
+ document.getElementById('evidence').textContent=JSON.stringify({scope:d.physical.scope,nativePexJob:d.physical.native_pex_job,tracking:d.tracking.map(r=>({title:r.title,job:r.row.native_job_id,requested:r.row.requested_execution,observed:r.row.observed_execution,actualThreads:r.row.actual_threads,timing:r.row.native_timing,warnings:r.row.native_warnings,floatingNodeGuards:r.row.numerical_floating_node_guards,initialReadback:r.row.full_checkpoint_readback,scope:r.scope})),noise:noise?.completions,files:d.provenance},null,2);
+ window.CHANNEL_STATUS={ready:true,views,trackingCases:tracking.length,calibrationCases:calibration.length,noiseCases:noise?.rows.length??0,errors:window.CHANNEL_ERRORS};
 });

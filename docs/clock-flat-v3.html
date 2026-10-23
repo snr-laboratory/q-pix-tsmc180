@@ -2,7 +2,7 @@
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Q-Pix physical single-clock generator V3</title>
 <script>window.MathJax={tex:{inlineMath:[['\\(','\\)']]}};</script>
-<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-svg.js"></script><script defer src="https://cdn.plot.ly/plotly-4.1.1.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-svg.js"></script><script defer src="https://cdn.plot.ly/plotly-4.1.1.min.js"></script><script defer src="assets/plot-data.js"></script>
 <script defer src="data/clock-flat-v3.js"></script><script defer src="assets/clock-flat-v3.js"></script>
 <style>
 *{box-sizing:border-box}:root{font-family:system-ui,sans-serif;color:#203e4c;background:#edf2f3}body{margin:0}main{max-width:1250px;margin:auto;padding:2rem 1rem 5rem}header,section{background:#fff;border:1px solid #d5e0e2;border-radius:12px;padding:1.4rem;margin:1rem 0}a{color:#126e7b}h1{font-size:2rem}h2{font-size:1.25rem;margin-top:0}p{line-height:1.55}.notice{border-left:5px solid #b66537;background:#fff6e9;padding:.8rem 1rem}.grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem}.plot{min-width:0}.scroll,.equation{overflow:auto;max-width:100%}.equation{text-align:center;margin:1.5rem 0}figure{margin:1rem 0}img{width:100%;height:auto;border:1px solid #dce4e6}figcaption{font-size:.9rem;color:#516972;margin-top:.5rem}table{border-collapse:collapse;width:100%;font-size:.9rem}th,td{text-align:left;padding:.6rem;border-bottom:1px solid #dce4e6}select,button,input{font:inherit;max-width:100%;padding:.45rem}input{width:7rem}code,pre{overflow-wrap:anywhere}pre{white-space:pre-wrap;font-size:.8rem}.pending{color:#9c4e25}#scope{min-height:1100px}@media(max-width:750px){.grid{grid-template-columns:1fr}main{padding:.5rem}header,section{padding:1rem}h1{font-size:1.5rem}}
@@ -11,7 +11,7 @@
 <h1>Physical single-clock generator · V3</h1><p id="status">Loading pinned evidence…</p>
 <p id="coverage" class="notice"></p>
 <p>One CLK_IN produces EVAL, CAPTURE and PHASE through six adjustable delay sections. Sixty static internal control bits tune two resistor bypasses and eight capacitor weights per section. Configuration registers and a full clock-distribution tree remain separate implementation work; this generator requires no continuous delay-bias current.</p>
-<p id="native-summary"></p></header>
+<p id="native-summary"></p><p class="plot-policy">Compact overview plots; zoom is disabled. Displayed samples preserve time-bin extrema. Numerical results use full native data retained locally.</p></header>
 <section><h2>Native layout and source correspondence</h2>
 <p id="matching"></p><p id="warnings"></p>
 <figure><a href="figures/clock-flat-v3-layout.svg"><img src="figures/clock-flat-v3-layout.svg" alt="V3 native device placement and upper-metal routing"></a><figcaption>Full selected native layers: diffusion/poly above and M4/M5 below. All streamed masks and 68 port locations were compared against the intended layout. The circuit is one flat cell.</figcaption></figure>
@@ -32,7 +32,7 @@
 <p id="allocation"></p><div class="scroll"><table><thead><tr><th>MHz</th><th>Room active / idle µW</th><th>77 K model active / idle µW</th><th>Allocated active µW/channel, room / cold</th></tr></thead><tbody id="power-table"></tbody></table></div>
 <p>This assumed allocation excludes an implemented distribution tree and configuration-register bank. It is not a chip heat-budget qualification. Per-channel heat must include each channel's analog/digital consumption and its share of all common work.</p></section>
 <section><h2>Inspect full-duration logic traces</h2>
-<p>Each signal has its own aligned row. The default view spans all eight acquisition clocks; “Include startup” also reveals reset and settling. All time axes zoom together. Metrics use native data; reduction applies only to display points.</p>
+<p>Each signal has its own aligned row. The default view spans all eight acquisition clocks; “Include startup” also reveals reset and settling. Zoom is disabled. Metrics use native data; reduction applies only to display points.</p>
 <label for="case">Simulation case </label><select id="case"></select> <button id="startup" type="button">Include startup</button>
 <p id="case-note"></p><div id="scope"></div></section>
 <section><h2>Calibration and numerical controls</h2>

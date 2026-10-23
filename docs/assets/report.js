@@ -118,7 +118,7 @@
       uirevision:scope.id,dragmode:'zoom',
       xaxis:{...axis(''),type:'linear',range:scope.window_us,showticklabels:false,anchor:'y'},
       xaxis2:{...axis(''),type:'linear',range:scope.window_us,showticklabels:false,anchor:'y2',matches:'x'},
-      xaxis3:{...axis('Time (µs) · drag horizontally to zoom'),type:'linear',range:scope.window_us,anchor:'y3',matches:'x'},
+      xaxis3:{...axis('Time (µs)'),type:'linear',range:scope.window_us,anchor:'y3',matches:'x'},
       yaxis:{...axis('Input (nA)'),domain:[.89,1],fixedrange:true},
       yaxis2:{...axis('CSA (mV)'),domain:[.74,.84],anchor:'x2',fixedrange:true},
       yaxis3:{...axis(''),domain:[0,.66],anchor:'x3',fixedrange:true,
@@ -131,7 +131,7 @@
       legend:{orientation:'h',x:0,y:narrow?1:1.02,yanchor:'bottom',font:{size:10}}
     });
     status.logicScopes = {...status.logicScopes, [id]:{id:scope.id,window_us:scope.window_us,signals:names,
-      native_points:scope.native_points,voltage_error_bound_v:scope.voltage_error_bound_v}};
+      native_points:scope.native_points,display_policy:scope.display_policy,source_voltage_error_bound_v:scope.source_voltage_error_bound_v}};
   }
   function sourceLinks() {
     const labels = {ota_pmos_front_bias: "CSA · PMOS input", input_preamplifier: "Differential preamplifier", comparator_preamplified: "Dynamic comparator and buffers", feedback_steer_cancel: "Replenisher and edge cancellation", capture_latch: "Static decision latch", feedback_control: "Feedback control", bias_reference_startup: "Bias mirrors", compare_preamplified_tb: "Comparator timing fixture", clock_buffer: "Clock buffer"};
@@ -227,7 +227,7 @@
     ], {xaxis: axis("Cycle boundary (µs)"), yaxis: axis("Integrated charge (fC)"), annotations: [{text: `Final ledger residual ${fmt(r.closure_fc, 5)} fC`, xref: "paper", yref: "paper", x: .99, y: .03, showarrow: false, xanchor: "right", font: {size: 10, color: C.muted}}]}));
     const domains = Object.keys(r.domains_uw);
     jobs.push(plot("power-domains", [{type: "bar", x: domains.map(n => ({ota: "CSA", comp: "Comparator", dac: "Replenisher", driver: "Local drivers/control", bias: "Bias mirrors"}[n] || n)).concat(["Positive interface work"]), y: Object.values(r.domains_uw).concat([r.power_plus_ports_uw - r.power_uw]), marker: {color: [C.teal, C.cold, C.warm, C.blue, C.gray, "#cf9b61"]}, hovertemplate: "%{x}<br>%{y:.5f} µW<extra></extra>"}], {yaxis: axis("Source draw (µW)"), margin: {l: 64, r: 25, t: 45, b: 75}, annotations: [titleNote(`${tempName(t)} · ${rate} MHz · ${cap} pF — ${r.power_cycles} complete cycles; ΔEdec = ${fmt(r.reservoir_delta_fj, 4)} fJ`)]}));
-    $("case-evidence").innerHTML = `<a href="${esc(r.result_href)}" target="_blank" rel="noopener">Original result and full run parameters ↗</a> · ${esc(r.case)}<br>Supply window ${fmt(r.power_start_us)}–${fmt(r.power_stop_us)} µs · ${r.power_cycles} complete cycles. Full transient ${fmt(scope.window_us[0])}–${fmt(scope.window_us[1])} µs; logic retains every native 50% transition bracket with ≤${fmt(scope.voltage_error_bound_v*1e3,1)} mV interpolation error. Zoom is linked across the analog, logic and charge plots. Model SHA-256 <code>${esc(r.model_sha256)}</code>.`;
+    $("case-evidence").innerHTML = `<a href="${esc(r.result_href)}" target="_blank" rel="noopener">Original result and full run parameters ↗</a> · ${esc(r.case)}<br>Supply window ${fmt(r.power_start_us)}–${fmt(r.power_stop_us)} µs · ${r.power_cycles} complete cycles. Full transient ${fmt(scope.window_us[0])}–${fmt(scope.window_us[1])} µs; compact plot samples preserve time-bin extrema. Zoom is disabled; full-resolution traces remain local. Model SHA-256 <code>${esc(r.model_sha256)}</code>.`;
     await Promise.all(jobs);
     await linkTime('case',['case-overview','case-detail','case-ledger'],scope.window_us,r.id);
     status.caseReady = r.id;
@@ -274,7 +274,7 @@
     if (request !== waveLogicRequest) return;
     await logicScope('wave-logic',scope);
     await linkTime('wave',['wave-current','wave-charge','wave-logic'],scope.window_us,row.scope_id);
-    $('wave-logic-evidence').textContent = `${tempName(temperature)} · ${rate} MHz · full ${scope.window_us[0]}–${scope.window_us[1]} µs native record. All logic transitions retained; ≤${fmt(scope.voltage_error_bound_v*1e3,1)} mV voltage interpolation error. CLK ref. is the diagnostic clock in this ideal-phase reference. Zoom is linked with Figures 6 and 7.`;
+    $('wave-logic-evidence').textContent = `${tempName(temperature)} · ${rate} MHz · full ${scope.window_us[0]}–${scope.window_us[1]} µs native record. Compact overview with time-bin extrema; full-resolution traces remain local. CLK ref. is the diagnostic clock in this ideal-phase reference. Zoom is disabled.`;
     status.waveLogicReady = row.scope_id;
   }
   async function waveMetrics() {
@@ -499,7 +499,7 @@
     const labels = ['EVAL ↑','CAPTURE ↑','CAPTURE ↓','EVAL ↓','PHASE ↑','PHASE ↓'];
     await Promise.all([
       plot('native-clock-logic',signals,{
-        xaxis:{...axis('Time (µs) · drag horizontally to zoom'),range:row.window_us},
+        xaxis:{...axis('Time (µs)'),range:row.window_us},
         yaxis:{...axis(''),fixedrange:true,tickmode:'array',showgrid:false,zeroline:false,
           tickvals:names.map((_,i)=>(names.length-1-i)*gap+row.vdd_v/2),ticktext:names,
           range:[-.15,(names.length-1)*gap+row.vdd_v+.2]},
